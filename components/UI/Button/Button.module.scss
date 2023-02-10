@@ -1,0 +1,96 @@
+.btn {
+    border: none;
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+  }
+  
+  ///active
+  
+  .orangered {
+    color: white;
+    background: #ff7152;
+  
+    &:hover {
+      color: white;
+      background: linear-gradient(
+          0deg,
+          rgba(0, 5, 15, 0.35),
+          rgba(0, 5, 15, 0.35)
+        ),
+        #ff7152;
+    }
+  }
+  
+  .blue {
+    color: white;
+    background-color: #0500ff;
+    &:hover {
+      color: white;
+      background: linear-gradient(
+          0deg,
+          rgba(0, 5, 15, 0.35),
+          rgba(0, 5, 15, 0.35)
+        ),
+        #0500ff;
+    }
+  }
+  
+  .Socials {
+    border: 1px solid #7497d7;
+    columns: #4786ff;
+    &:hover {
+      background-color: #4786ff;
+    }
+  }
+  
+  .cardButton {
+    color: white;
+    border: 1px solid white;
+    &:hover {
+      color: white;
+      background: rgba(255, 255, 255, 0.1);
+    }
+  }
+  
+  //secondary
+  
+  .secondaryBlue {
+    border: 1px solid #0500ff;
+    color: white;
+  }
+  
+  .secondaryOrange {
+    border: 1px solid #ff7152;
+    color: white;
+  }
+  
+  .secondaryDisable {
+    border: 1px solid #4d5057;
+    columns: #808287;
+  }
+  
+  .cardButtonDisable {
+    border: 1px solid #e5e5e5;
+    color: #808287;
+  }
+  
+  //size
+  
+  .btn-sm {
+    width: 100px;
+    height: 32px;
+  }
+  
+  .btn-pass {
+    width: 150px;
+    height: 42px;
+  }
+  
+  .btn-big {
+    width: 300px;
+    height: 55px;
+  }
+  
