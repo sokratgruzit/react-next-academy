@@ -11,8 +11,6 @@ import BgImage from "../UI/BackgroundImg/BgImage";
 
 import styles from "./Articles.module.scss";
 
-const styles = {};
-
 const CATEGORIS_BTN_DATA = [
   {
     name: "security",
@@ -74,7 +72,7 @@ const TOPICS_BTN_DATA = [
 
 function Articles({ commonData }) {
   const [articles, setArticles] = useState(null);
-  const { categories, levels, tags } = commonData;
+  // const { categories, levels, tags } = commonData;
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(true);
   const [active, setActive] = useState(1);
@@ -199,7 +197,7 @@ function Articles({ commonData }) {
       <div className={styles.darkImg}>
         <BgImage id={5} />
       </div>
-      <div className={styles.articlesPage}>
+      {/* <div className={styles.articlesPage}>
         <div className="container">
           <div className={styles.top}>
             <h2 className={styles.title}>Articles</h2>
@@ -212,7 +210,7 @@ function Articles({ commonData }) {
                 margin: "89px auto",
               }}
             >
-              {/* <div style={{ display: "flex" }}>
+              <div style={{ display: "flex" }}>
                 <Tags data={CATEGORIS_BTN_DATA} type="categories" />
               </div>
               <div style={{ display: "flex" }}>
@@ -220,7 +218,7 @@ function Articles({ commonData }) {
               </div>
               <div style={{ display: "flex" }}>
                 <Tags data={DIFICULITY_BTN_DATA} type="dificulity" />
-              </div> */}
+              </div>
             </div>
             <div className={styles.articleFilters}>
               <div className={styles.icon}>
@@ -334,7 +332,7 @@ function Articles({ commonData }) {
               </div>
             </div>
           </div>
-          {/* <div className={styles.articleList}>
+          <div className={styles.articleList}>
             {isLoading ? (
               <Loading progress={progress} trackWidth={66} indicatorWidth={66} />
             ) : articles && articles.docs.length ? (
@@ -351,8 +349,8 @@ function Articles({ commonData }) {
                 teaser={"No articles purchased yet."}
               />
             )}
-          </div> */}
-          {/* <div className={styles.paginarion}>
+          </div>
+          <div className={styles.paginarion}>
             {articles && articles.total ? (
               <Pagination
                 data={{
@@ -365,9 +363,9 @@ function Articles({ commonData }) {
             ) : (
               ""
             )}
-          </div> */}
+          </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
