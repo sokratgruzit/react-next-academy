@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react";
-import { connect } from "react-redux";
 import { useRouter } from "next/router";
-import useFetch from "../../hooks/useFetch";
 // import Article from "../../components/Article/Article";
 // import Loading from "../../components/Loading/Loading";
 // import Pagination from "../../components/UI/Pagination/Pagination";
 // import NotResult from "../../components/UI/NoResult/NotResult";
-// import Tags from "../../components/UI/Tags/Tags";
-import BgImage from "../UI/BackgroundImg/BgImage";
+// import Tags from "../UI/Tags/Tags";
+// import BgImage from "../UI/BackgroundImg/BgImage";
 
 import styles from "./Articles.module.scss";
 
@@ -156,12 +154,10 @@ function Articles({ commonData }) {
   const getData = async () => {
     if (!router.query.page) router.push({ query: { ...router.query, page: 1 } });
     if (!router.query.limit) router.push({ query: { ...router.query, limit: 15 } });
-    const { data, isPending, error } = useFetch(
-      `${process.env.DATA_URL}/api/data${router.asPath}`,
-    );
 
-    setArticles(data);
-    setIsLoading(isPending);
+    const res = await fetch(`${process.env.DATA_URL}/api/data${router.asPath}`);
+    setArticles(res.data);
+    setIsLoading(false);
   };
 
   useEffect(() => {
@@ -187,16 +183,16 @@ function Articles({ commonData }) {
   //     clearTimeout(loadingTimeout);
   //   };
   // }, [progress, loading]);
-  console.log("Sgf");
+  // console.log("Sgf");
 
   return (
     <div>
-      <div className={styles.lightImg}>
+      {/* <div className={styles.lightImg}>
         <BgImage id={51} />
       </div>
       <div className={styles.darkImg}>
         <BgImage id={5} />
-      </div>
+      </div> */}
       {/* <div className={styles.articlesPage}>
         <div className="container">
           <div className={styles.top}>
@@ -370,10 +366,4 @@ function Articles({ commonData }) {
   );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    commonData: state.commonDataState,
-  };
-};
-
-export default connect(mapStateToProps, null)(Articles);
+export default Articles;
