@@ -5,14 +5,13 @@ import { setSettings } from "@/store/settings/settingsSlice";
 
 import axios from "axios";
 
-function Layout({ children, setSettings, setCommonData }) {
-  console.log(setSettings, "func");
+function Layout({ children }) {
   const dispatch = useDispatch();
   useEffect(() => {
     axios
-      .get(`${process.env.DATA_URL}/api/data/settings`)
+      .get(`${process.env.NEXT_PUBLIC_DATA_URL}/api/data/settings`)
       .then((res) => {
-        console.log(res);
+        dispatch(setSettings(res.data));
       })
       .catch((e) => {});
 
@@ -25,12 +24,18 @@ function Layout({ children, setSettings, setCommonData }) {
       results.forEach((result) => {
         mappedResults = results.map((result) => {
           if (result.status === "fulfilled") {
-            return result.value;
+            return result.value.data;
           }
           return null;
         });
       });
-      // dispatch(setCommonData(mappedResults));
+      dispatch(
+        setCommonData({
+          categories: mappedResults[0],
+          levels: mappedResults[1],
+          tags: mappedResults[2],
+        }),
+      );
     });
   }, []);
 
