@@ -1,4 +1,4 @@
-// @import '../variables.scss';
+@import "../../../styles/variables.scss";
 
 body:global(.light) .notResult h1 {
     color: $c-dark;

@@ -1,4 +1,4 @@
-import styles from "./NotResult.module.scss";
+import styles from "./NoResult.module.scss";
 
 function NotResult({ title, teaser }) {
   return (
