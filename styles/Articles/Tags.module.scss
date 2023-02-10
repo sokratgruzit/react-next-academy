@@ -1,0 +1,130 @@
+.categories {
+    width: fit-content;
+    height: fit-content;
+    border: 1px solid white;
+    padding: 4px 10px;
+    margin: 0px 4px;
+    border-radius: 4px;
+    font-family: 'Lack';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.categories:hover {
+    border: 1px solid rgb(150, 150, 150);
+    color: rgb(150, 150, 150);
+}
+
+.categories:active {
+    border: 1px solid transparent;
+    background-color: #0500FF;
+}
+
+.topics {
+    width: fit-content;
+    height: fit-content;
+    border: 1px solid rgba(183, 182, 182, 0.7);
+    padding: 4px 10px;
+    margin: 0px 4px;
+    border-radius: 4px;
+    font-family: 'Lack';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.7);
+    color: black;
+    cursor: pointer;
+}
+
+.topics:hover {
+    border: 1px solid transparent;
+    background-color: rgba(255, 255, 255, 0.7);
+    opacity: 0.5;
+    color: black;
+}
+
+.topics:active {
+    border: 1px solid transparent;
+    background-color: #0500FF;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.dificulity {
+    width: fit-content;
+    height: fit-content;
+    margin: 0px 4px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-family: 'Lack';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // border: 1px solid #0B91BB;
+    cursor: pointer;
+    &:before {
+
+        content: "";
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 4px;
+        margin-right: 4px;
+    }
+}
+.dificulitycolorOptionGreen {
+    border: 1px solid #259C55;
+    &:before {
+        background: #259C55;
+    }
+}
+
+.dificulitycolorOptionPurple {
+    border: 1px solid #AC26A4;
+    &:before {
+        background: #AC26A4;
+    }
+}
+
+.dificulitycolorOptionBlue {
+    border: 1px solid #0B91BB;
+    &:before {
+        background: #0B91BB;
+    }
+}
+.dificulitycolorOptionRed {
+    border: 1px solid #FF7152;
+    &:before {
+        background: #FF7152;
+    }
+}
+
+.dificulity:hover {
+    opacity: 0.5;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.dificulity:active {
+    border: 1px solid transparent;
+    background-color: #259C55;
+    opacity: 1;
+    color: #FFFFFF;
+    &::before{
+        background: #FFFFFF;
+    }
+}

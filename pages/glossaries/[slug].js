@@ -66,7 +66,7 @@ function Glossary({ res, featured }) {
       />
       {data ? (
         <div key={data._id} className='container textStyles'>
-          <Link href={"/glossaries"}>
+          <Link href={"/glossaries"} legacyBehavior>
             <div className={styles.backBtn}>
               <svg
                 width='14'
@@ -221,7 +221,7 @@ function Glossary({ res, featured }) {
                       <div className={styles.item__text}>
                         <h4>{item?.title}</h4>
                         <p>{item?.teaser}</p>
-                        <Link href={item?.slug}>
+                        <Link href={item?.slug} legacyBehavior>
                           <div className={styles.fullBtn}>Full Defination</div>
                         </Link>
                       </div>

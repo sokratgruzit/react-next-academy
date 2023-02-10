@@ -1,0 +1,57 @@
+@import "../variables.scss";
+
+body:global(.light) .articles .top .title {
+  color: $c-dark;
+}
+body:global(.light) .articles .top span {
+  color: #4d5057;
+}
+body:global(.light) .articles .top span path {
+  fill: #4d5057;
+}
+.articles {
+  margin-top: 100px;
+  position: relative;
+}
+.articles .top {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 30px;
+
+  .title {
+    @extend %large;
+    text-transform: capitalize;
+  }
+  span {
+    font-size: 15px;
+    svg {
+      margin-left: 10px;
+      transition: 0.5s;
+    }
+    &:hover svg {
+      transform: translateX(5px);
+    }
+  }
+  .explore-btn {
+    margin-top: 12px;
+  }
+}
+.articles .list {
+  margin-top: 40px;
+
+  .item {
+    margin-right: 30px;
+    margin-bottom: 16px;
+    width: 100%;
+  }
+  .item:nth-child(3n) {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .articles .top {
+    margin-bottom: 25px;
+  }
+}

@@ -1,10 +1,9 @@
 import React from "react";
 import { Provider } from "react-redux";
-import { composeWithDevTools } from "redux-devtools-extension";
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
 
-import AuthContectProvider from "../contexts/AuthContext";
+import AuthContextProvider from "../contexts/AuthContext";
 import Layout from "../components/Layouts/Layout";
 import MainLayout from "../components/Layouts/MainLayout";
 
@@ -13,6 +12,8 @@ import "@/styles/index.scss";
 import store from '../store/store';
 
 function MyApp({ Component, pageProps }) {
+  const router = useRouter();
+
   const pageVariants = {
     initial: {
       opacity: 0,
@@ -24,12 +25,11 @@ function MyApp({ Component, pageProps }) {
       opacity: 0,
     },
   }
-  const router = useRouter();
 
   return (
     <Provider store={store}>
       <Layout>
-        <AuthContectProvider>
+        <AuthContextProvider>
           <motion.div
             key={router.asPath}
             initial='initial'
@@ -42,7 +42,7 @@ function MyApp({ Component, pageProps }) {
               <Component {...pageProps} />
             </MainLayout>
           </motion.div>
-        </AuthContectProvider>
+        </AuthContextProvider>
       </Layout>
     </Provider>
   );

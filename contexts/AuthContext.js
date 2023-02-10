@@ -4,7 +4,7 @@ import WalletConnect from "@walletconnect/client";
 
 export const AuthContect = createContext();
 
-function AuthContectProvider(props) {
+function AuthContextProvider(props) {
   const [isLogged, setIsLogged] = useState(false);
   const [currentAccount, setCurrentAccount] = useState("");
   const [currentChainID, setCurrentChainID] = useState(-1);
@@ -72,4 +72,4 @@ function AuthContectProvider(props) {
   );
 }
 
-export default AuthContectProvider;
+export default AuthContextProvider;

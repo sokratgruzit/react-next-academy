@@ -1,0 +1,130 @@
+@import "../variables.scss";
+
+body:global(.light) .background {
+  display: none;
+}
+
+body:global(.light) .backgroundLight {
+  display: block;
+}
+
+body:global(.light) .head h2,
+body:global(.light) .item h3 {
+  color: $c-dark;
+}
+
+body:global(.light) .item p,
+body:global(.light) .seeAll p {
+  color: #4d5057 !important;
+}
+
+body:global(.light) .seeAll svg path {
+  fill: #4d5057;
+}
+
+body:global(.light) .itemInner {
+  background: none !important;
+}
+
+.glossary {
+  margin-top: 80px;
+  display: flex;
+  width: 100%;
+  height: 600px;
+  flex-direction: column;
+  position: relative;
+
+  .background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .backgroundLight {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .head {
+    & h2 {
+      padding-top: 60px;
+    }
+
+    .seeAll {
+      margin-top: 7px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      width: fit-content;
+      cursor: pointer;
+    }
+
+    .seeAll p {
+      color: $c-white;
+    }
+
+    .seeAll svg {
+      transition: 0.5s;
+    }
+
+    .seeAll:hover svg {
+      transform: translateX(5px);
+    }
+  }
+
+  .itemOuter {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    gap: 40px;
+
+    .item p {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .glossary {
+    height: 870px;
+
+    .itemOuter {
+      .item {
+        width: 100%;
+      }
+
+      .item:last-child {
+        margin-top: 0px;
+      }
+    }
+  }
+}
+
+@media (max-width: 414px) {
+  .glossary {
+    height: 870px;
+
+    .itemOuter {
+      grid-template-columns: 1fr;
+      .item {
+        width: 100%;
+      }
+      .item:last-child {
+        margin-top: 0px;
+      }
+    }
+  }
+}

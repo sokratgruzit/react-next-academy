@@ -1,9 +1,8 @@
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 import GlosarryCard from "../UI/Glossary/GlosarryCard";
 
-import styles from "./Glossaries.module.scss";
+import styles from "../../styles/Glossaries/Glossaries.module.scss";
 
 function GlossaryInner({ data }) {
   const cardVariants = {
@@ -35,7 +34,7 @@ function GlossaryInner({ data }) {
       <div className='container'>
         <div className={`${styles.head} ${"textStyles"}`}>
           <h2>270+ Terms in our Glossary</h2>
-          <Link href={"/glossaries"}>
+          <Link href={"/glossaries"} legacyBehavior>
             <div className={styles.seeAll}>
               <p>Go to the Glossary</p>
               <svg

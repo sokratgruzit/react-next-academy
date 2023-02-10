@@ -1,4 +1,4 @@
-@import "../../styles/variables.scss";
+@import "../variables.scss";
 
 body:global(.light) .articlesPage .top .title {
   color: $c-dark;
@@ -132,7 +132,7 @@ body:global(.light) .darkImg {
     width: calc(33.33% - 20px);
     margin-bottom: 25px;
   }
-
+   
   .item:nth-child(3n) {
     margin-right: 0;
   }

@@ -1,9 +1,9 @@
 import { Link as ScrollLink, Element } from "react-scroll";
 import Link from "next/link";
 
-import CornerDecor from "../UI/Border/CornerDecor";
+import CornerDecor from "../UI/CornerDecor/CornerDecor";
 
-import styles from "./Glossaries.module.scss";
+import styles from "../../styles/Glossaries/Glossaries.module.scss";
 
 const Glossaries = ({ res }) => {
   const glossaries = res?.data?.result || null;
@@ -56,6 +56,7 @@ const Glossaries = ({ res }) => {
                   <Link
                     href={"glossaries/" + groupedItem.slug}
                     key={groupedItem._id}
+                    legacyBehavior
                   >
                     <div className={styles.listItem}>
                       <a className={styles.content}>

@@ -1,4 +1,4 @@
-import styles from "./CornerDecor.module.css";
+import styles from "../../../styles/UI/CornerDecor/CornerDecor.module.scss";
 
 const CornerDecor = () => {
   return (

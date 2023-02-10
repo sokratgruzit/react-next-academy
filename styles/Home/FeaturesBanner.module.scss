@@ -1,0 +1,62 @@
+@import "../variables.scss";
+
+body:global(.light) .svgLight {
+  display: block !important;
+}
+body:global(.light) .svg__dark {
+  display: none;
+}
+
+.itemWrap {
+  display: flex;
+  width: 100%;
+  margin-top: 150px;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  gap: 60px;
+
+  .item {
+    display: flex;
+    width: 100%;
+    padding: 55px 55px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 30%;
+    height: 100%;
+
+    .svgLight {
+      display: none;
+    }
+
+    .text {
+      padding-top: 26px;
+      text-align: center;
+
+      .title {
+        color: $c-orange;
+      }
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .itemWrap {
+    flex-direction: column;
+    padding: 55px 0px;
+
+    .item {
+      width: 100%;
+
+      .text {
+        
+        .title {
+          padding-bottom: 4px;
+        }
+      }
+    }
+  }
+}
+
+
