@@ -1,3 +1,10 @@
+import Articles from "@/components/Articles/Articles";
+
 export default function Home() {
-  return <>new next app</>;
+  return (
+    <>
+      <Articles />
+    </>
+    )
+  ;
 }
