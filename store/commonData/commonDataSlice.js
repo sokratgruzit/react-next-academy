@@ -20,6 +20,6 @@ export const commonDataSlice = createSlice({
   
 export const {
   setCommonData,
-} = statsSlice.actions
+} = commonDataSlice.actions
 
 export default commonDataSlice.reducer

@@ -1,5 +1,4 @@
 import React from "react";
-import { createStore } from "redux";
 import { Provider } from "react-redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { useRouter } from "next/router";
