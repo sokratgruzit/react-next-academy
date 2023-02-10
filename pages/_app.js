@@ -1,18 +1,16 @@
 import React from "react";
-import { createStore } from "redux";
 import { Provider } from "react-redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
 
 import AuthContectProvider from "../contexts/AuthContext";
-import rootReducer from "../reducers/index";
 import Layout from "../components/Layouts/Layout";
 import MainLayout from "../components/Layouts/MainLayout";
 
 import "@/styles/index.scss";
 
-const store = createStore(rootReducer, composeWithDevTools());
+import store from '../store/store';
 
 function MyApp({ Component, pageProps }) {
   const pageVariants = {
