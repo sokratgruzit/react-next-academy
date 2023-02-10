@@ -25,8 +25,7 @@ function MyApp({ Component, pageProps }) {
     out: {
       opacity: 0,
     },
-  };
-  
+  }
   const router = useRouter();
 
   return (
