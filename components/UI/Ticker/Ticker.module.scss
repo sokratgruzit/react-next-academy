@@ -1,6 +1,17 @@
 @import "../../../styles/variables.scss";
 
+body:global(.light) .outer {
+  border: 1px solid $c-dirty-grey;
+}
+
 .outer {
-  margin: 89px 0px 89px 0px;
+  margin: 100px 0px 100px 0px;
+  border: 1px solid #192233;
+  border-left: none;
+  border-right: none !important;
   transition: 0.8s;
+
+  .inner {
+    padding: 55px 0px 55px 0px;
+  }
 }
