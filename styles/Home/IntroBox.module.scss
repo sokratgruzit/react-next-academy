@@ -1,19 +1,19 @@
 @import '../variables.scss';
 
-body:global(.light) .introBox {
+// body:global(.light) .introBox {
 
-    .inner {
+//     .inner {
 
-        .title {
-            text-align: center!important;
-            background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
-            background-size: cover;
-            color: transparent;
-            -moz-background-clip: text;
-            -webkit-background-clip: text;
-        }
-    }
-}
+//         .title {
+//             text-align: center!important;
+//             background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+//             background-size: cover;
+//             color: transparent;
+//             -moz-background-clip: text;
+//             -webkit-background-clip: text;
+//         }
+//     }
+// }
 
 .introBox {
     margin-top: 100px;
