@@ -1,0 +1,42 @@
+.header {
+  margin-top: 40px;
+
+  .headerInner {
+    display: flex;
+    justify-content: space-between;
+
+    .flex {
+      display: flex;
+      align-items: center;
+
+      .connectBtn {
+        padding: 0 22px;
+        height: 42px;
+        background-color: #ff7152;
+        margin-left: 35px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .toggleBtn {
+        cursor: pointer;
+      }
+    }
+
+    .nav {
+      justify-content: center;
+
+      .dropDownWrap {
+        cursor: pointer;
+      }
+
+      .dropDown {
+        margin-left: 6px;
+      }
+
+      .navItem {
+        margin-right: 40px;
+      }
+    }
+  }
+}

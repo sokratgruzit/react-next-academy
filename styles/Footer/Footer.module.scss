@@ -1,0 +1,25 @@
+.footer {
+  margin: 40px 0;
+  width: 100%;
+
+  .footerNav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 50px;
+  }
+
+  .footerItem {
+    display: flex;
+    flex-direction: column;
+
+    .core {
+      inline-size: 200px;
+    }
+  }
+
+  .flex {
+    display: flex;
+    align-items: center;
+  }
+}
