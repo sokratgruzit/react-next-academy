@@ -14,8 +14,8 @@ function Article({ data }) {
           <div className={styles.cornerBorder}>
             <div className={styles.imgBox}>
               <img
-                src="/img/Article/article1.png"
-                alt="articleImage"
+                src={process.env.NEXT_PUBLIC_IMG_PATH + data.image?.path}
+                alt={data.image?.alt}
                 className={styles.imgAbsolute}
               />
               <div className={styles.pins}>
