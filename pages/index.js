@@ -6,13 +6,15 @@ import Articles from "../components/Articles/Articles";
 import IntroBox from "../components/Home/IntroBox";
 import FeaturesBanner from "../components/Home/FeaturesBanner";
 import ChallangeBanner from "../components/Home/ChallangeBanner";
-import Marquee from "../components/Home/MarqueeComponent";
+import Ticker from "../components/UI/Ticker/Ticker";
 import EmailBanner from "../components/Home/EmailBanner";
 import MotionLayout from "../components/UI/MotionLayout/MotionLayout";
-import GlossaryInner from "../components/Glossaries/GlossaryInner";
+import GlossaryInner from "../components/Glossary/GlossaryInner";
 /*import LeaderboardTab from "../components/Leaderboard/LeaderboardTab";
 import QuizSlider from "../components/MainPage/QuizSlider";
 import Banner from "../components/UI/Banners/Banner";*/
+
+import styles from "../styles/Home/Home.module.scss";
 
 export const getStaticProps = async () => {
   const { data: glossaries } = await fetchData(
@@ -63,124 +65,81 @@ function Home({
   category,
   featured,
   security,
-  essentials
+  essentials,
 }) {
-  const cardVariants = {
-    offscreen: {
-      y: 40,
-      opacity: 0,
-    },
-    onscreen: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-      },
-    },
-  };
-
-  const type = "two";
-  const nameTwo = "2";
-  const titleTwo = "Want a Challenge?";
-  const subTitle = "Test your knowledge while you learn with our range of quizzes.";
-  const buttonTwo = "Take a Quizzes";
-
   return (
-    <div className="home-page">
+    <div className={styles.home__page}>
       <img
-        className="main-bg-img default-bg"
-        src="img/MainPage/background.png"
-        alt="background"
-      />
-      <div className="container">
-        <IntroBox />
-        <MotionLayout>
-          <motion.div variants={cardVariants}>
-            <FeaturesBanner />
-          </motion.div>
-        </MotionLayout>
-        <MotionLayout>
-          <motion.div variants={cardVariants}>
-            {featured && featured.docs.length ? (
-              <Articles data={featured} title="Featured" />
-            ) : (
-              ""
-            )}
-          </motion.div>
-        </MotionLayout>
+          className="main-bg-img default-bg"
+          src="img/Bg/bg_0.png"
+          alt="background"
+        />
+      <div className={styles.home__content__top}>
+        <div className={`${styles.content__top__inner} ${'container'}`}>
+          <IntroBox />
+          <FeaturesBanner />
+        </div>
       </div>
-      <MotionLayout className="carouselContainer">
-        <motion.div variants={cardVariants}>
+      <div className={styles.home__content}>
+        <img
+          className={styles.home__content__bg}
+          src="img/Bg/bg_999.png"
+          alt="background"
+        />
+        <div className={`${styles.content__top__inner} ${'container'}`}>
+          {featured && featured.docs.length ? (
+            <Articles data={featured} title="Featured" />
+          ) : (
+            ""
+          )}
           {releases && releases.docs.length ? (
             <Articles data={releases} title="Latest Releases" />
           ) : (
             ""
           )}
-        </motion.div>
-      </MotionLayout>
-      <MotionLayout>
-        <motion.div variants={cardVariants}>
-          {/* {glossaries && glossaries.result?.length ? (
-            <GlossaryInner data={glossaryShort} />
-          ) : (
-            ""
-          )} */}
-        </motion.div>
-      </MotionLayout>
-      <MotionLayout className="carouselContainer">
-        <motion.div variants={cardVariants}>
-          {blockchain && blockchain.docs.length ? (
-            <Articles data={blockchain} title="Blockchain" />
-          ) : (
-            ""
-          )}
-        </motion.div>
-      </MotionLayout>
-      {/*<MotionLayout>
-        <motion.div variants={cardVariants}>
-          <Banner
-            type={type}
-            nameTwo={nameTwo}
-            titleTwo={titleTwo}
-            subTitle={subTitle}
-            buttonTwo={buttonTwo}
-          />
-        </motion.div>
-      </MotionLayout>
-      <MotionLayout>
-        <motion.div variants={cardVariants}>
-          <QuizSlider />
-        </motion.div>
-      </MotionLayout>*/}
-      {/*<LeaderboardTab />*/}
-      <MotionLayout className="container">
-        <motion.div variants={cardVariants}>
-          {essentials && essentials.docs.length ? (
-            <Articles data={essentials} title="Essentials" />
-          ) : (
-            ""
-          )}
-        </motion.div>
-      </MotionLayout>
-      <MotionLayout className="carouselContainer">
-        <motion.div variants={cardVariants}>
-          {security && security.docs.length ? (
-            <Articles data={security} title="Security" />
-          ) : (
-            ""
-          )}
-        </motion.div>
-      </MotionLayout>
-      <MotionLayout>
-        <motion.div variants={cardVariants}>
-          <Marquee />
-        </motion.div>
-      </MotionLayout>
-      <MotionLayout>
-        <motion.div variants={cardVariants}>
-          <EmailBanner />
-        </motion.div>
-      </MotionLayout>
+        </div>
+      </div>
+      <div>
+        <h1 style={{ height: "500px", background: "red", textAlign: "auto" }}>
+          ### HERE GOES GLOSSARY CARDs ###
+        </h1>
+      </div>
+      <div>
+        <h1 style={{ height: "500px", background: "red", textAlign: "auto" }}>
+          ### HERE GOES COURSES CARDs ###
+        </h1>
+      </div>
+
+      <div>
+        {blockchain && blockchain.docs.length ? (
+          <Articles data={blockchain} title="Blockchain" />
+        ) : (
+          ""
+        )}
+      </div>
+      <div>
+        <ChallangeBanner />
+      </div>
+      <div className="container">
+        <h1 style={{ height: "500px", background: "red", textAlign: "auto" }}>
+          ### HERE GOES QUIZ SLIDER ###
+        </h1>
+        <h1 style={{ height: "500px", background: "red", textAlign: "auto" }}>
+          ### HERE GOES LEADERBOARD ###
+        </h1>
+        {essentials && essentials.docs.length ? (
+          <Articles data={essentials} title="Essentials" />
+        ) : (
+          ""
+        )}
+        {security && security.docs.length ? (
+          <Articles data={security} title="Security" />
+        ) : (
+          ""
+        )}
+      </div>
+      <Ticker elements={"academyElements"} />
+      <EmailBanner />
     </div>
   );
 }

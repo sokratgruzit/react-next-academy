@@ -95,3 +95,43 @@ body.light .default-bg {
     padding-left: 16px;
   }
 }
+
+.home-page {
+  .container {
+      .home-content-top {
+          position: relative;
+          width: 100%;
+          height: auto;
+
+          &img {
+              position: absolute;
+              left: 0;
+              top: -10%;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              z-index: -1;
+          }
+
+          .content-top-inner {
+              padding: 0px 0px 150px 0px;
+          }
+      }
+      .home-content {
+          position: relative;
+          width: 100%;
+          height: auto;
+
+          .home-content-bg {
+              position: absolute;
+              left: 0;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              z-index: -1;
+
+          }
+      }
+  }
+}

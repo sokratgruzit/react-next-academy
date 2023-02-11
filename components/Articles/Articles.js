@@ -40,7 +40,7 @@ function Articles({ data, title }) {
         </Link>
       </div>
       <div className={styles.list}>
-        {data.docs?.length ? (
+        {data?.docs?.length ? (
           <Swiper
             spaceBetween={30}
             slidesPerView={3}
