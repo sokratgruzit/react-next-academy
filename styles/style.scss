@@ -726,13 +726,17 @@ header {
   line-height: 34px;
 }
 
-@media (max-width: 1900px) {}
+@media (max-width: 1900px) {
+}
 
-@media (max-width: 1599px) {}
+@media (max-width: 1599px) {
+}
 
-@media (max-width: 1365px) {}
+@media (max-width: 1365px) {
+}
 
-@media (max-width: 1023px) {}
+@media (max-width: 1023px) {
+}
 
 @media (max-width: 767px) {
   .intro-box {
@@ -796,13 +800,17 @@ header {
   }
 }
 
-@media (max-width: 1900px) {}
+@media (max-width: 1900px) {
+}
 
-@media (max-width: 1599px) {}
+@media (max-width: 1599px) {
+}
 
-@media (max-width: 1365px) {}
+@media (max-width: 1365px) {
+}
 
-@media (max-width: 1023px) {}
+@media (max-width: 1023px) {
+}
 
 @media (max-width: 767px) {
   .features-banner {
@@ -1118,13 +1126,17 @@ body:global(.light) .articles .top {
   }
 }
 
-@media (max-width: 1900px) {}
+@media (max-width: 1900px) {
+}
 
-@media (max-width: 1599px) {}
+@media (max-width: 1599px) {
+}
 
-@media (max-width: 1365px) {}
+@media (max-width: 1365px) {
+}
 
-@media (max-width: 1023px) {}
+@media (max-width: 1023px) {
+}
 
 @media (max-width: 767px) {
   .list {
@@ -1170,13 +1182,17 @@ body:global(.light) .articles .top {
   }
 }
 
-@media (max-width: 1900px) {}
+@media (max-width: 1900px) {
+}
 
-@media (max-width: 1599px) {}
+@media (max-width: 1599px) {
+}
 
-@media (max-width: 1365px) {}
+@media (max-width: 1365px) {
+}
 
-@media (max-width: 1023px) {}
+@media (max-width: 1023px) {
+}
 
 @media (max-width: 767px) {
   .glossaries {
@@ -1260,7 +1276,7 @@ body:global(.light) .articles .top {
       }
     }
 
-    .wrap>.ttl {
+    .wrap > .ttl {
       flex: none;
       font-size: $f-medium;
       letter-spacing: 0.1em;
@@ -1272,12 +1288,12 @@ body:global(.light) .articles .top {
       }
     }
 
-    .wrap>.activeTtl {
+    .wrap > .activeTtl {
       font-size: $f-medium;
       letter-spacing: 0.1em;
     }
 
-    .wrap>.activeTtl::before {
+    .wrap > .activeTtl::before {
       content: "";
       display: block;
       position: absolute;

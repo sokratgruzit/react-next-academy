@@ -63,7 +63,7 @@ function Home({
   category,
   featured,
   security,
-  essentials
+  essentials,
 }) {
   const cardVariants = {
     offscreen: {
@@ -82,7 +82,8 @@ function Home({
   const type = "two";
   const nameTwo = "2";
   const titleTwo = "Want a Challenge?";
-  const subTitle = "Test your knowledge while you learn with our range of quizzes.";
+  const subTitle =
+    "Test your knowledge while you learn with our range of quizzes.";
   const buttonTwo = "Take a Quizzes";
 
   return (
