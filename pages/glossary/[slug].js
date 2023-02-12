@@ -30,9 +30,11 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params }) => {
   const slug = params.slug || undefined;
+
   const res = await useFetch(
     `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/glossaries/${slug}`
   );
+  
   const featured = await useFetch(
     `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/glossaries`
   );

@@ -1,5 +1,5 @@
-import Header from "../Modules/Header";
-import Footer from "../Modules/Footer";
+import Header from "./Header";
+import Footer from "./Footer";
 import Head from "next/head";
 
 function MainLayout({ children, title = "Core Academy" }) {

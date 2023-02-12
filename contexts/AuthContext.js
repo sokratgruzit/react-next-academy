@@ -2,7 +2,7 @@ import { createContext, useEffect, useState } from "react";
 
 import WalletConnect from "@walletconnect/client";
 
-export const AuthContect = createContext();
+export const AuthContext = createContext();
 
 function AuthContextProvider(props) {
   const [isLogged, setIsLogged] = useState(false);
@@ -54,7 +54,7 @@ function AuthContextProvider(props) {
   }, []);
 
   return (
-    <AuthContect.Provider
+    <AuthContext.Provider
       value={{
         isLogged,
         setIsLogged,
@@ -68,7 +68,7 @@ function AuthContextProvider(props) {
       }}
     >
       {props.children}
-    </AuthContect.Provider>
+    </AuthContext.Provider>
   );
 }
 
