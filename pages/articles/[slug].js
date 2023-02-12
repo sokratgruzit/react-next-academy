@@ -1,21 +1,17 @@
 import { useRouter } from "next/router";
-import { connect } from "react-redux";
-import { parse } from "html-react-parser";
-import { Moment } from "react-moment";
+import parse from "html-react-parser";
+import Moment from "react-moment";
 
 import { fetchData } from "@/utils/queries";
-import { getItemById } from "../../helpers";
-
-import { ExploreArticles } from "./ExploreArticles";
 
 export const getStaticPaths = async () => {
-  const res = await fetchData(`${process.env.NEXT_PUBLIC_DATA_URL}/api/articles`);
-
-  const paths = res.data.results.map((items) => {
-    return {
-      params: { slug: items.slug },
-    };
-  });
+  const articles = await fetchData(`${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles`);
+  
+  const paths = articles.data.docs.map(item => ({
+    params: {
+      slug: item.slug
+    }
+  }));
 
   return {
     paths,
@@ -24,21 +20,22 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async (context) => {
-  const slug = context.params.slug;
-  const res = await fetchData(`${process.env.NEXT_PUBLIC_DATA_URL}/api/articles/${slug}`);
+  const slug = context.params.slug || undefined;
+
+  const article = await fetchData(
+    `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles/${slug}`
+  );
 
   return {
-    props: { res },
+    props: {
+      article
+    },
   };
 };
 
-function Article({ levels, res }) {
+const Article = ({ article }) => {
   const router = useRouter();
-  const data = res.data;
-
-  let level = null;
-  if (levels && levels.data && data)
-    level = getItemById(levels.data, data.level);
+  const data = article.data.result || null;
 
   return (
     <div>
@@ -47,7 +44,7 @@ function Article({ levels, res }) {
           <div className='container'>
             <div className='top'>
               <div className='img-box'>
-                <img src='/img/article.png' alt='' className='img-absolute' />
+                <img src={process.env.NEXT_PUBLIC_IMG_PATH + data.image.path} alt={data.image.alt} className='img-absolute' />
               </div>
               <div className='back-btn' onClick={() => router.back()}>
                 <svg
@@ -67,11 +64,18 @@ function Article({ levels, res }) {
               </div>
               <h1 className='title'>{data.title}</h1>
               <div className='info'>
-                {level && (
+                {data.level && (
                   <div
-                    className={`item lev-item-simple ${level.title.toLowerCase()}`}
+                    className={`item lev-item-simple ${data.level.title.toLowerCase()}`}
                   >
-                    {level.title}
+                    {data.level.title}
+                  </div>
+                )}
+                {data.tag.length > 0 && (
+                  <div
+                    className={`item lev-item-simple}`}
+                  >
+                    {data.tag[0].title}
                   </div>
                 )}
                 <div className='item'>
@@ -178,20 +182,13 @@ function Article({ levels, res }) {
                 </div>
               </div>
             </div>
-            <div className='content text'>{parse(data.description)}</div>
+            <div className='content text'>{parse(data.editor)}</div>
             <div className='explore-more'></div>
           </div>
-          <ExploreArticles category={data.category} id={data.id} />
         </div>
       )}
     </div>
   );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    levels: state.commonDataState.levels,
-  };
-};
-
-export default connect(mapStateToProps, null)(Article);
+export default Article;
