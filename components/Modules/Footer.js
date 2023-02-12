@@ -1,116 +1,270 @@
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { connect } from "react-redux";
+import { animateScroll } from "react-scroll";
+
+import { fetchData } from "../../utils/queries";
+
+import DarkFooterIcons from "../UI/Icons/DarkFooterIcons";
 
 import styles from "../../styles/Footer/Footer.module.scss";
 
-// some elements are custom. i'll replace them later, with components.
-
 function Footer() {
+  const scroll = animateScroll;
+
+  const [ activeMenu, setActiveMenu ] = useState(false);
+  const [ footerLinks, setFooterLinks ] = useState(null);
+  const [ theme, setTheme ] = useState(false);
+  const [ show1, setShow1 ] = useState(false);
+  const [ show2, setShow2 ] = useState(false);
+  const [ show3, setShow3 ] = useState(false);
+
+  let openMenu = (id) => {
+    if (activeMenu == id) {
+      setActiveMenu(false);
+    } else {
+      setActiveMenu(id);
+    }
+  };
+
+  const getFooterLinks = async () => {
+    await fetchData(`${process.env.NEXT_PUBLIC_DATA_URL}/api/data/footer`)
+    .then(res => {
+      const links = res.data.result;
+      setFooterLinks(links);
+    });
+  };
+
+  const handleOpen1 = () => {
+    setShow1(!show1);
+  };
+  
+  const handleOpen2 = () => {
+    setShow2(!show2);
+  };
+  
+  const handleOpen3 = () => {
+    setShow3(!show3);
+  };
+
+  useEffect(() => {
+    const body = document.getElementsByTagName("body")[0];
+
+    if (theme) {
+      body.classList.add("light");
+      localStorage.setItem("mode", "true");
+    } else {
+      body.classList.remove("light");
+      localStorage.setItem("mode", "false");
+    }
+  }, [theme]);
+
+  const arrow = <svg
+    width='10'
+    height='5'
+    viewBox='0 0 10 5'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+  >
+    <path
+      fillRule='evenodd'
+      clipRule='evenodd'
+      d='M0.209209 0.198521C0.488155 -0.0661736 0.940416 -0.0661736 1.21936 0.198521L4.7475 3.5464C4.88522 3.67709 5.11478 3.67709 5.2525 3.5464L8.78064 0.198521C9.05958 -0.0661736 9.51184 -0.0661736 9.79079 0.198521C10.0697 0.463215 10.0697 0.892369 9.79079 1.15706L6.26265 4.50495C5.56704 5.16502 4.43296 5.16502 3.73735 4.50495L0.209209 1.15706C-0.0697365 0.892369 -0.0697365 0.463215 0.209209 0.198521Z'
+      fill='white'
+    />
+  </svg>;
+
+  const getLinks = (row) => {
+    if (!footerLinks) return false;
+
+    return footerLinks
+    .filter((item) => item.row === row)
+    .map((link) => {
+      return  <Link href={link.url} key={link._id} target={!link.target ? "_blank" : "_self"} className='link'>{link.title}</Link>;
+    });
+  };
+
+  useEffect(() => {
+    getFooterLinks();
+
+    const mode = localStorage.getItem("mode");
+    !mode || mode === "false" ? setTheme(false) : setTheme(true);
+  }, []);
+
   return (
-    <div className={styles.footer}>
-      <div className="container">
-        <div className={styles.footerInner}>
-          <div className={styles.footerNav}>
-            <div className={`${styles.footerItem}`}>
-              <div>
-                <img src="/svg/dark-logo.svg" alt="logo" />
-              </div>
-              <div className={styles.flex}>
-                <div>Light Mode</div>
-                <div>
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M12 6.25391C8.82436 6.25391 6.25 8.82827 6.25 12.0039C6.25 15.1795 8.82436 17.7539 12 17.7539C15.1756 17.7539 17.75 15.1795 17.75 12.0039C17.75 8.82827 15.1756 6.25391 12 6.25391ZM4.75 12.0039C4.75 7.99984 7.99594 4.75391 12 4.75391C16.0041 4.75391 19.25 7.99984 19.25 12.0039C19.25 16.008 16.0041 19.2539 12 19.2539C7.99594 19.2539 4.75 16.008 4.75 12.0039Z"
-                      fill="white"
-                    />
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M12 1.00391C12.5523 1.00391 13 1.45162 13 2.00391V2.08391C13 2.63619 12.5523 3.08391 12 3.08391C11.4477 3.08391 11 2.63619 11 2.08391V2.00391C11 1.45162 11.4477 1.00391 12 1.00391ZM4.15289 4.1568C4.54342 3.76628 5.17658 3.76628 5.56711 4.1568L5.69711 4.2868C6.08763 4.67732 6.08763 5.31049 5.69711 5.70101C5.30658 6.09154 4.67342 6.09154 4.28289 5.70101L4.15289 5.57101C3.76237 5.18049 3.76237 4.54732 4.15289 4.1568ZM19.8471 4.1568C20.2376 4.54732 20.2376 5.18049 19.8471 5.57101L19.7171 5.70101C19.3266 6.09154 18.6934 6.09154 18.3029 5.70101C17.9124 5.31049 17.9124 4.67733 18.3029 4.2868L18.4329 4.1568C18.8234 3.76628 19.4566 3.76627 19.8471 4.1568ZM1 12.0039C1 11.4516 1.44772 11.0039 2 11.0039H2.08C2.63228 11.0039 3.08 11.4516 3.08 12.0039C3.08 12.5562 2.63228 13.0039 2.08 13.0039H2C1.44772 13.0039 1 12.5562 1 12.0039ZM20.92 12.0039C20.92 11.4516 21.3677 11.0039 21.92 11.0039H22C22.5523 11.0039 23 11.4516 23 12.0039C23 12.5562 22.5523 13.0039 22 13.0039H21.92C21.3677 13.0039 20.92 12.5562 20.92 12.0039ZM5.69711 18.3068C6.08763 18.6973 6.08763 19.3305 5.69711 19.721L5.56711 19.851C5.17658 20.2415 4.54342 20.2415 4.15289 19.851C3.76237 19.4605 3.76237 18.8273 4.15289 18.4368L4.28289 18.3068C4.67342 17.9163 5.30658 17.9163 5.69711 18.3068ZM18.3029 18.3068C18.6934 17.9163 19.3266 17.9163 19.7171 18.3068L19.8471 18.4368C20.2376 18.8273 20.2376 19.4605 19.8471 19.851C19.4566 20.2415 18.8234 20.2415 18.4329 19.851L18.3029 19.721C17.9124 19.3305 17.9124 18.6973 18.3029 18.3068ZM12 20.9239C12.5523 20.9239 13 21.3716 13 21.9239V22.0039C13 22.5562 12.5523 23.0039 12 23.0039C11.4477 23.0039 11 22.5562 11 22.0039V21.9239C11 21.3716 11.4477 20.9239 12 20.9239Z"
-                      fill="white"
-                    />
-                  </svg>
+    <footer className={styles.footer}>
+      <div className={styles.footerLogoMob}>
+        <Link href='/' className='logo'>
+          <img src={theme ? '/svg/lightLogo.svg' : '/svg/logo.svg'} alt='logo' />
+        </Link>
+      </div>
+      <div className={styles.footerTop}>
+        <div className={styles.footerLeft}>
+          <div className={styles.footerLogo}>
+            <Link href='/' className='logo'>
+              <img src={theme ? '/svg/lightLogo.svg' : '/svg/logo.svg'} alt='logo' />
+            </Link>
+          </div>
+          <div className={styles.lightMode}>
+            <label className={styles.switcher}>
+              <input
+                className={styles.input}
+                type='checkbox'
+                checked={theme}
+                onChange={(event) => setTheme(event.target.checked)}
+              />
+              <div className={styles.marker}>
+                <div className={theme ? 'lightLogo' : 'darkLogo'}>
+                  <div className={styles.themes}>
+                    <p className={styles.mode}>{theme ? 'Dark Mode' : 'Light Mode'}</p>
+                    <svg
+                      className={styles.svg}
+                      width='24'
+                      height='24'
+                      viewBox='0 0 24 24'
+                      fill='none'
+                      xmlns='http://www.w3.org/2000/svg'
+                    >
+                      {theme ? <path
+                        fillRule='evenodd'
+                        clipRule='evenodd'
+                        d='M10.2352 1.63082C10.8577 2.21617 10.7142 3.10965 10.4178 3.79041L10.4173 3.79157C9.96799 4.81849 9.72097 5.94434 9.73013 7.13519L9.73015 7.13786C9.74844 11.5573 13.422 15.3276 17.9208 15.5116C18.585 15.5393 19.2205 15.4932 19.837 15.3829C20.2418 15.3091 20.6358 15.2967 20.9885 15.379C21.3479 15.4628 21.7051 15.6578 21.9264 16.0199C22.1467 16.3805 22.1582 16.7855 22.0737 17.1409C21.9905 17.4911 21.8069 17.8367 21.5646 18.165C19.4404 21.0712 15.9042 22.9114 11.9577 22.7403C6.35695 22.494 1.66975 18.0139 1.28204 12.4741C0.927802 7.56338 3.8423 3.28647 8.07872 1.4999C8.75853 1.21196 9.63602 1.06744 10.2352 1.63082ZM9.17031 2.74633C9.07022 2.74909 8.90207 2.78006 8.66292 2.88146L8.66158 2.88202C4.97825 4.43535 2.47284 8.13805 2.7782 12.3669L2.77833 12.3687C3.11104 17.1283 7.16385 21.0278 12.0226 21.2417M9.17031 2.74633C9.16436 2.83426 9.13423 2.98076 9.04281 3.19085C8.51239 4.40342 8.21952 5.73693 8.23016 7.1454C8.25259 12.3854 12.5787 16.7944 17.8595 17.0103C18.6347 17.0426 19.3793 16.9887 20.1024 16.8592L20.1048 16.8588C20.3442 16.8151 20.5064 16.8171 20.604 16.8316C20.574 16.9277 20.5034 17.077 20.3569 17.2753L20.3546 17.2785C18.5187 19.7913 15.4552 21.3903 12.0226 21.2417M20.6954 16.855C20.6954 16.855 20.6949 16.8547 20.6941 16.8543L20.6954 16.855Z'
+                        fill='#00050F'
+                      /> :
+                      <g>
+                        <path
+                          fillRule='evenodd'
+                          clipRule='evenodd'
+                          d='M12.0002 6.25293C8.82461 6.25293 6.25024 8.82729 6.25024 12.0029C6.25024 15.1786 8.82461 17.7529 12.0002 17.7529C15.1759 17.7529 17.7502 15.1786 17.7502 12.0029C17.7502 8.82729 15.1759 6.25293 12.0002 6.25293ZM4.75024 12.0029C4.75024 7.99886 7.99618 4.75293 12.0002 4.75293C16.0043 4.75293 19.2502 7.99886 19.2502 12.0029C19.2502 16.007 16.0043 19.2529 12.0002 19.2529C7.99618 19.2529 4.75024 16.007 4.75024 12.0029Z'
+                          fill='white'
+                        />
+                        <path
+                          fillRule='evenodd'
+                          clipRule='evenodd'
+                          d='M12.0002 1.00293C12.5525 1.00293 13.0002 1.45064 13.0002 2.00293V2.08293C13.0002 2.63521 12.5525 3.08293 12.0002 3.08293C11.448 3.08293 11.0002 2.63521 11.0002 2.08293V2.00293C11.0002 1.45064 11.448 1.00293 12.0002 1.00293ZM4.15314 4.15582C4.54366 3.7653 5.17683 3.7653 5.56735 4.15582L5.69735 4.28582C6.08787 4.67635 6.08787 5.30951 5.69735 5.70004C5.30683 6.09056 4.67366 6.09056 4.28314 5.70004L4.15314 5.57004C3.76261 5.17951 3.76261 4.54635 4.15314 4.15582ZM19.8473 4.15582C20.2379 4.54635 20.2379 5.17951 19.8474 5.57003L19.7174 5.70004C19.3268 6.09056 18.6937 6.09056 18.3031 5.70004C17.9126 5.30951 17.9126 4.67635 18.3031 4.28582L18.4331 4.15582C18.8237 3.7653 19.4568 3.7653 19.8473 4.15582ZM1.00024 12.0029C1.00024 11.4506 1.44796 11.0029 2.00024 11.0029H2.08024C2.63253 11.0029 3.08024 11.4506 3.08024 12.0029C3.08024 12.5552 2.63253 13.0029 2.08024 13.0029H2.00024C1.44796 13.0029 1.00024 12.5552 1.00024 12.0029ZM20.9202 12.0029C20.9202 11.4506 21.368 11.0029 21.9202 11.0029H22.0002C22.5525 11.0029 23.0002 11.4506 23.0002 12.0029C23.0002 12.5552 22.5525 13.0029 22.0002 13.0029H21.9202C21.368 13.0029 20.9202 12.5552 20.9202 12.0029ZM5.69735 18.3058C6.08788 18.6964 6.08787 19.3295 5.69735 19.72L5.56735 19.85C5.17682 20.2406 4.54366 20.2406 4.15314 19.85C3.76261 19.4595 3.76261 18.8263 4.15314 18.4358L4.28314 18.3058C4.67366 17.9153 5.30683 17.9153 5.69735 18.3058ZM18.3031 18.3058C18.6937 17.9153 19.3268 17.9153 19.7174 18.3058L19.8474 18.4358C20.2379 18.8263 20.2379 19.4595 19.8474 19.85C19.4568 20.2406 18.8237 20.2406 18.4331 19.85L18.3031 19.72C17.9126 19.3295 17.9126 18.6963 18.3031 18.3058ZM12.0002 20.9229C12.5525 20.9229 13.0002 21.3706 13.0002 21.9229V22.0029C13.0002 22.5552 12.5525 23.0029 12.0002 23.0029C11.448 23.0029 11.0002 22.5552 11.0002 22.0029V21.9229C11.0002 21.3706 11.448 20.9229 12.0002 20.9229Z'
+                          fill='white'
+                        />
+                      </g>}
+                    </svg>
+                  </div>
                 </div>
               </div>
-              <div className={styles.core}>
-                © CORE Academy, 2021 All rights reserved
-              </div>
-            </div>
-            <div className={styles.footerItem}>
-              <div>services</div>
-              <div>articles</div>
-              <div>glossary</div>
-              <div>become an instructor</div>
-              <div>introduction</div>
-            </div>
-            <div className={styles.footerItem}>
-              <div>services</div>
-              <div>articles</div>
-              <div>glossary</div>
-              <div>become an instructor</div>
-              <div>introduction</div>
-            </div>
-            <div className={styles.footerItem}>
-              <div>services</div>
-              <div>articles</div>
-              <div>glossary</div>
-              <div>become an instructor</div>
-              <div>introduction</div>
-            </div>
-            <div className={styles.footerItem}>
-              <svg
-                width="64"
-                height="64"
-                viewBox="0 0 64 64"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <circle cx="32" cy="32" r="31" stroke="white" strokeWidth="2" />
-                <path
-                  d="M27.1246 38.24C29.7006 38.24 31.5726 36.96 31.5726 33.856V27.136H29.8286V33.824C29.8286 35.76 28.8686 36.56 27.1246 36.56C25.6526 36.56 24.4206 35.76 24.4206 33.824V27.136H22.6766V33.856C22.6766 36.96 24.5486 38.24 27.1246 38.24ZM34.0534 41.392H35.7814V37.12C36.3254 37.712 37.2054 38.24 38.5654 38.24C41.0934 38.24 42.8854 36.288 42.8854 33.872C42.8854 31.456 41.0934 29.488 38.5654 29.488C37.3654 29.488 36.3574 29.952 35.7814 30.528V29.728H34.0534V41.392ZM38.5974 36.704C37.0454 36.704 35.6854 35.664 35.6854 33.872C35.6854 32.064 37.0454 31.024 38.5974 31.024C40.1494 31.024 41.2054 32.304 41.2054 33.872C41.2054 35.44 40.1494 36.704 38.5974 36.704Z"
-                  fill="white"
-                />
-              </svg>
+            </label>
+          </div>
+          <div className={styles.copyright}>
+            © CORE Multi-Chain, 2022 All rights reserved
+          </div>
+          <div className={styles.icons}>
+            <div className={styles.lightIcons}>
+              <DarkFooterIcons />
             </div>
           </div>
-          <div className={styles.footerDescription}>
-            <div>
-              Disclaimer: Nothing in this Website shall be deemed to constitute
-              a prospectus of any sort or a solicitation for investment, nor
-              does it in any way pertain to an offering or a solicitation of an
-              offer to buy any securities in any jurisdiction.All of the
-              information provided within this Website is provided “as is” and
-              with no warranties. coremultichain.com makes no representations
-              and extends no warranties of any type to the accuracy or
-              completeness of any information or content on this Website. Like
-              any blockchain technology, the acquisition of tokens is associated
-              with a high financial risk level. All contributions are made at
-              your discretion, and you are solely responsible before the time of
-              contributions for determining all possible risks and doing your
-              due diligence. CORE is a software platform ONLY. In no event shall
-              www.coremultichain.com or its subcontractors be liable for any
-              damages (including, without limitation, damages for loss of data
-              or profit, or due to business interruption) arising out of the use
-              of this platform. Note: Our team is committed to enhancing this
-              website, and this is an on-going process. We will have more
-              exciting content and include it as early as possible. Every great
-              piece of technology is continuously evolving to unlock its full
-              potential. We will post all stages of the progress on this
-              website.
+        </div>
+        <div className={styles.footerRight}>
+          <div className={styles.footerRightCol}>
+            <div
+              className={`${styles.footerRightColTtl} ${show1 === true ? styles.active : ""}`}
+              onClick={handleOpen1}
+            >
+              <h4>services</h4>
+              {arrow}
             </div>
-            <div></div>
+            {show1 && (
+              <div
+                className={`${styles.footerRightColLink} ${show1 ? styles.show : ""}`}
+              >
+                {getLinks(1)}
+              </div>
+            )}
+            <div className={styles.footerRightColLinks}>{getLinks(1)}</div>
+          </div>
+          <div className={styles.footerRightCol}>
+            <div
+              className={`${styles.footerRightColTtl} ${show2 === true ? styles.active : ""}`}
+              onClick={handleOpen2}
+            >
+              <h4>company</h4>
+              {arrow}
+            </div>
+            {show2 && (
+              <div className={`${styles.footerRightColLink} ${show2 ? styles.show : ""}`}>
+                {getLinks(2)}
+              </div>
+            )}
+            <div className={styles.footerRightColLinks}>{getLinks(2)}</div>
+          </div>
+          <div className={styles.footerRightCol}>
+            <div
+              className={`${styles.footerRightColTtl} ${show3 === true ? styles.active : ""}`}
+              onClick={handleOpen3}
+            >
+              <h4>support</h4>
+              {arrow}
+            </div>
+            {show3 && (
+              <div className={`${styles.footerRightColLink} ${show3 ? styles.show : ""}`}>
+                {getLinks(3)}
+              </div>
+            )}
+            <div className={styles.footerRightColLinks}>{getLinks(3)}</div>
           </div>
         </div>
       </div>
-    </div>
+      <div>
+        <button className={styles.upBtn} onClick={() => scroll.scrollToTop()}>
+          up
+        </button>
+      </div>
+      <div className={styles.bottom}>
+        <div>
+          <p className={styles.txt}>
+            Disclaimer: Nothing in this Website shall be deemed to constitute a
+            prospectus of any sort or a solicitation for investment, nor does it
+            in any way pertain to an offering or a solicitation of an offer to
+            buy any securities in any jurisdiction.All of the information
+            provided within this Website is provided “as is” and with no
+            warranties. coremultichain.com makes no representations and extends
+            no warranties of any type to the accuracy or completeness of any
+            information or content on this Website. Like any blockchain
+            technology, the acquisition of tokens is associated with a high
+            financial risk level. All contributions are made at your discretion,
+            and you are solely responsible before the time of contributions for
+            determining all possible risks and doing your due diligence. CORE is
+            a software platform ONLY. In no event shall www.coremultichain.com
+            or its subcontractors be liable for any damages (including, without
+            limitation, damages for loss of data or profit, or due to business
+            interruption) arising out of the use of this platform.
+          </p>
+          <p className={styles.txt}>
+            Note: Our team is committed to enhancing this website, and this is
+            an on-going process. We will have more exciting content and include
+            it as early as possible. Every great piece of technology is
+            continuously evolving to unlock its full potential. We will post all
+            stages of the progress on this website.
+          </p>
+        </div>
+        <div className={styles.logo}>
+          <div className={theme ? 'lightLogo' : 'darkLogo'}>
+            <img src={theme ? '/svg/footer-dark-logo.svg' : '/svg/footer-logo.svg'} alt='logo' />
+          </div>
+        </div>
+      </div>
+      <div className={styles.bottomLogo}>
+        <div className={styles.copyrightbottom}>
+          © CORE Multi-Chain, 2022 All rights reserved
+        </div>
+        <div className={theme ? 'lightLogo' : 'darkLogo'}>
+          <img src={theme ? '/svg/footer-dark-logo.svg' : '/svg/footer-logo.svg'} alt='logo' />
+        </div>
+      </div>
+    </footer>
   );
 }
 
-export default Footer;
+const mapStateToProps = (state) => {
+  return {
+    //settings_data: state.settings,
+  };
+};
+
+export default connect(mapStateToProps, null)(Footer);
