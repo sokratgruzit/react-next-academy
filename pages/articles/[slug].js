@@ -119,7 +119,7 @@ const Article = ({ article }) => {
                     </svg>
                   </div>
                   <Moment className='value' format='Do/MMM/YYYY'>
-                    {data.created_at}
+                    {data.createdAt}
                   </Moment>
                 </div>
                 <div className='item'>
@@ -155,7 +155,7 @@ const Article = ({ article }) => {
                     </svg>
                   </div>
                   <Moment className='value' format='Do/MMM/YYYY'>
-                    {data.updated_at}
+                    {data.updatedAt}
                   </Moment>
                 </div>
                 <div className='item'>

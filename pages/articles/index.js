@@ -1,7 +1,9 @@
-import Articles from "@/components/Articles/Articles";
 import React from "react";
+import { useRouter } from "next/router";
 
 import { fetchData } from "@/utils/queries";
+
+import Articles from "@/components/Articles/Articles";
 
 export const getStaticProps = async () => {
   const { data: articles } = await fetchData(
