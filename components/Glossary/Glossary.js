@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import GlosarryCard from "../UI/Glossary/GlosarryCard";
 
-import styles from "../../styles/Glossaries/Glossaries.module.scss";
+import styles from "../../styles/Glossary/Glossaries.module.scss";
 
 function GlossaryInner({ data }) {
   const cardVariants = {

@@ -74,12 +74,10 @@ function Home({
           src="img/Bg/bg_0.png"
           alt="background"
         />
-      <div className={styles.home__content__top}>
         <div className={`${styles.content__top__inner} ${'container'}`}>
           <IntroBox />
           <FeaturesBanner />
         </div>
-      </div>
       <div className={styles.home__content}>
         <img
           className={styles.home__content__bg}
