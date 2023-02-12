@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import CornerDecor from "../../UI/CornerDecor/CornerDecor";
 
-import styles from "../../../styles/Glossaries/GlossaryCard.module.scss";
+import styles from "../../../styles/Glossary/GlossaryCard.module.scss";
 
 const GlosarryCard = ({ data}) => {
   return (

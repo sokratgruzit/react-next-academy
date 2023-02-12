@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import CornerDecor from "../UI/CornerDecor/CornerDecor";
 
-import styles from "../../styles/Glossaries/Glossaries.module.scss";
+import styles from "../../styles/Glossary/Glossaries.module.scss";
 
 const Glossaries = ({ res }) => {
   const glossaries = res?.data?.result || null;
@@ -81,15 +81,15 @@ const Glossaries = ({ res }) => {
           <div style={{ position: "relative" }}>
             <img
               className={styles.background}
-              src='img/glossaries/innerbg1.png'
-              alt='background'
+              src="img/glossaries/innerbg1.png"
+              alt="background"
             />
             <img
               className={styles.backgroundL}
-              src='img/glossaries/background1Light.png'
-              alt='background'
+              src="img/glossaries/background1Light.png"
+              alt="background"
             />
-            <div className='container textStyles'>
+            <div className="container textStyles">
               <div className={styles.top}>
                 <h1 className={styles.title}>The Words of Crypto</h1>
                 <h4 className={styles.teaser}>
@@ -124,7 +124,7 @@ const Glossaries = ({ res }) => {
       ) : isPending ? (
         <div className={styles.loading}>Loading ...</div>
       ) : (
-        ''
+        ""
         // <NotResult
         //   title={"Oops! Nothing yet"}
         //   teaser={"No glossaries purchased yet."}
