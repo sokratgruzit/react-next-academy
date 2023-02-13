@@ -1,0 +1,122 @@
+.customInput {
+    width: 100%;
+    height: auto;
+    border: none;
+    outline: none;
+    background-color: transparent;
+
+    textarea:focus {
+        border-color: #0500ff;
+    }
+
+    textarea:focus~.labelTitle {
+        color: #0500ff;
+    }
+
+    .customTextarea {
+        width: 100%;
+        resize: none;
+        display: flex;
+        justify-content: flex-start;
+        border-radius: 4px;
+        height: 130px;
+        background: transparent;
+        resize: none;
+        padding: 14px 0px 0px 16px;
+        font-size: 12px;
+        border: 1px solid #060d1e;
+        transition: border .5s;
+        transition-delay: .1s;
+    }
+}
+
+.inputWithIcon {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    border-radius: 4px;
+    transition: border .5s;
+    transition-delay: .1s;
+    border: 1px solid #060d1e;
+
+    .inputWrapp {
+        width: 100%;
+        height: 100%;
+
+        .inputWithIconLabel {
+            font-size: 14px;
+            color: #969ba6;
+            position: absolute;
+            top: -25px;
+            left: 0;
+            transition: .5s;
+            transition-delay: .1s;
+        }
+    }
+
+    .customInput {
+        height: 44px;
+        width: 100%;
+        padding-left: 10px;
+        font-size: 12px;
+        border: none;
+        outline: none;
+        background-color: transparent;
+    }
+}
+
+.inputWithIcon:focus-within {
+    border: 1px solid #0500ff;
+}
+
+.inputWithIcon:focus-within svg path {
+    stroke: #0500FF;
+}
+
+.customInput:focus+.inputWithIconLabel {
+    color: #0500FF;
+}
+
+.inputWithButton {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    transition: border .5s;
+    transition-delay: .1s;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid #060d1e;
+
+    .inputWrapp {
+        width: 80%;
+        height: 100%;
+
+        .customInput {
+            height: 56px;
+            width: 100%;
+            padding-left: 10px;
+            font-size: 12px;
+            border: none;
+            outline: none;
+            background-color: transparent;
+        }
+
+        .inputWithIconLabel {
+            font-size: 14px;
+            color: #969ba6;
+            position: absolute;
+            top: -25px;
+            left: 0;
+            transition: .5s;
+            transition-delay: .1s;
+        }
+    }
+
+}
+
+.inputWithButton:focus-within {
+    border: 1px solid blue;
+}
