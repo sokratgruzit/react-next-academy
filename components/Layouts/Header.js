@@ -205,7 +205,9 @@ function Header({ commonData }) {
                 </label>
               </div>
             </div>
-            <div onClick={handleConnectClick}>Wallet Connect</div>
+            <div className={styles.connectBtn} onClick={handleConnectClick}>
+              Wallet Connect
+            </div>
             <button
               className={styles.burger}
               onClick={() => setBurger(!burger)}

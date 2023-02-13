@@ -187,6 +187,16 @@ body:global(.light) .headerInner .right {
   padding: 24px 0;
   height: 90px;
 
+  .connectBtn {
+    height: 42px;
+    padding: 0 22px;
+    cursor: pointer;
+    background-color: #ff7152;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+  }
+
   .right {
     display: flex;
     justify-content: space-between;
@@ -225,7 +235,7 @@ body:global(.light) .headerInner .right {
 
 .header .navigation {
   display: flex;
-    
+
   .item {
     color: #ffffffb3;
     transition: 0.5s;
@@ -283,7 +293,7 @@ body:global(.light) .headerInner .right {
       background: $c-orange;
       transition: 0.4s;
       margin-right: 16px;
-      
+
       span {
         color: $c-white;
       }
