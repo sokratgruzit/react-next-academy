@@ -1,9 +1,11 @@
 import Link from "next/link";
 
 import Article from "./Article";
-import { Swiper, SwiperSlide } from "swiper/react";
+// import { Swiper, SwiperSlide } from "swiper/react";
 
-import "swiper/css";
+// import "swiper/css";
+import SwiperWrapper from "../UI/SwiperWrapper/SwiperWrapper";
+
 import styles from "../../styles/Articles/Articles.module.scss";
 
 function Articles({ data, title }) {
@@ -41,34 +43,9 @@ function Articles({ data, title }) {
       </div>
       <div className={styles.list}>
         {data?.docs?.length ? (
-          <Swiper
-            spaceBetween={30}
-            slidesPerView={3}
-            breakpoints={{
-              0: {
-                slidesPerView: 1.3,
-                spaceBetween: 16,
-              },
-              768: {
-                slidesPerView: 2.5,
-                spaceBetween: 30,
-              },
-              1023: {
-                slidesPerView: 3,
-                spaceBetween: 30,
-              },
-            }}
-          >
-            {data.docs.map((itemData) => {
-              return (
-                <SwiperSlide key={itemData?._id}>
-                  <div className={styles.item}>
-                    <Article data={itemData} />
-                  </div>
-                </SwiperSlide>
-              );
-            })}
-          </Swiper>
+          <SwiperWrapper>
+            {data.docs.map((item) => <Article data={item} />)}
+          </SwiperWrapper>
         ) : null}
       </div>
     </div>
