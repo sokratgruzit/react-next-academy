@@ -16,7 +16,7 @@ function GlossaryInner({ data }) {
         src="img/Glossaries/background1Light.png"
         alt="background"
       />
-      <div className={`${styles.top} ${'container textStyles'}`}>
+      <div className={`${styles.top} ${"textStyles"} ${"container"}`}>
         <h2 className={styles.title}>270+ Terms in our Glossary</h2>
         <Link href={`/glossary`} className={"grey-btn"} legacyBehavior>
           <a style={{ width: "fit-content" }}>
@@ -45,9 +45,9 @@ function GlossaryInner({ data }) {
             </span>
           </a>
         </Link>
-      </div>
-      <div className={styles.content}>
-        <GlosarryCard data={data} />
+        <div className={styles.content}>
+          <GlosarryCard data={data} />
+        </div>
       </div>
     </div>
   );
