@@ -1,17 +1,19 @@
-import useFetch from "@/hooks/useFetch";
+import React from "react";
+
+import { fetchData } from "@/utils/queries";
 
 import Glossaries from "@/components/Glossary/Glossaries";
 
 export const getStaticProps = async () => {
-  const res = await useFetch(`${process.env.NEXT_PUBLIC_DATA_URL}/api/data/glossaries`);
+  const { data: glossaries } = await fetchData(`${process.env.NEXT_PUBLIC_DATA_URL}/api/data/glossaries`);
 
   return {
-    props: { res },
+    props: { glossaries },
   };
 };
 
-function index({ res }) {
-  return <Glossaries res={res} />;
+function index({ glossaries }) {
+  return <Glossaries data={glossaries} />;
 }
 
 export default index;
