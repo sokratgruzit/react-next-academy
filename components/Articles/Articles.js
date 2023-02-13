@@ -3,19 +3,19 @@ import Link from "next/link";
 import Article from "./Article";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import "swiper/css";
 import styles from "../../styles/Articles/Articles.module.scss";
+import "swiper/css";
 
-function Articles({ data, title }) {
+function Articles({ title, data }) {
   return (
     <div className={styles.articles}>
       <div className={styles.top}>
         <h2 className={styles.title}>{title}</h2>
         <Link
-          href={`articles?category=${data?.docs[0]?.category?.slug}`}
+          href={`articles?category=${data?.docs ? data?.docs[0]?.category?.slug : ""}`}
           className={"grey-btn"}
           legacyBehavior
-        > 
+        >
           <a style={{ width: "fit-content" }}>
             <span>
               Explore All
@@ -59,7 +59,7 @@ function Articles({ data, title }) {
               },
             }}
           >
-            {data.docs.map((itemData) => {
+            {data?.docs?.map((itemData) => {
               return (
                 <SwiperSlide key={itemData?._id}>
                   <div className={styles.item}>
