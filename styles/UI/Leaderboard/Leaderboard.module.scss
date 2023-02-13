@@ -44,6 +44,7 @@ body:global(.light) .LeaderboardContent .score p {
         top: -35%;
         z-index: -10;
         width: 95%;
+        pointer-events: none;
     }
 
     .mainContent {
