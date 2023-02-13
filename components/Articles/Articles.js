@@ -41,7 +41,11 @@ function Articles({ title, data }) {
       <div className={styles.list}>
         {data?.docs?.length ? (
           <SwiperWrapper>
-            {data?.docs.map((item) => <Card data={item} type={"default"} /> )}
+            {data?.docs.map((item, index) => (
+              <div key={index} className={styles.item}>
+                <Card data={item} type={"default"} />
+              </div>
+            ))}
           </SwiperWrapper>
         ) : null}
       </div>
