@@ -18,7 +18,7 @@ function AuthContextProvider(props) {
 
       if (
         connector.connected &&
-        connector.accounts.length > 0 &&
+        connector.accounts?.length > 0 &&
         connector.accounts[0] !== currentAccount
       ) {
         setIsLogged(true);
@@ -31,7 +31,7 @@ function AuthContextProvider(props) {
         method: "eth_accounts",
       });
 
-      if (accounts.length > 0 && accounts[0] !== currentAccount) {
+      if (accounts?.length > 0 && accounts[0] !== currentAccount) {
         setIsLogged(true);
         setCurrentAccount(accounts[0]);
         setCurrentChainID(parseInt(id, 16));

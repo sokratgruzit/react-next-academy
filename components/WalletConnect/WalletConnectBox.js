@@ -60,7 +60,7 @@ function WalletConnectBox() {
 
         // Get updated accounts and chainId
         const { accounts, chainId } = payload.params[0];
-        if (accounts.length === 0) {
+        if (accounts?.length === 0) {
           SignOut();
           setMessage("");
         } else if (accounts[0] !== currentAccount) {

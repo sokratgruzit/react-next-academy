@@ -16,12 +16,12 @@ function GlossaryInner({ data }) {
         src="img/Glossaries/background1Light.png"
         alt="background"
       />
-      <div className="container textStyles">
-        <div className={styles.top}>
-          <h2 className={styles.title}>270+ Terms in our Glossary</h2>
-          <div className={styles.seeAll}>
-            <Link href={"/glossary"}>
-              <p>Go to the Glossary</p>
+      <div className={`${styles.top} ${'container textStyles'}`}>
+        <h2 className={styles.title}>270+ Terms in our Glossary</h2>
+        <Link href={`/glossary`} className={"grey-btn"} legacyBehavior>
+          <a style={{ width: "fit-content" }}>
+            <span>
+              Go To Glossary
               <svg
                 width="14"
                 height="11"
@@ -42,12 +42,12 @@ function GlossaryInner({ data }) {
                   fill="white"
                 />
               </svg>
-            </Link>
-          </div>
-        </div>
-        <div className={styles.content}>
-          <GlosarryCard data={data} />
-        </div>
+            </span>
+          </a>
+        </Link>
+      </div>
+      <div className={styles.content}>
+        <GlosarryCard data={data} />
       </div>
     </div>
   );
