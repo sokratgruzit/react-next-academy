@@ -15,6 +15,8 @@ import QuizSlider from "../components/MainPage/QuizSlider";
 import Banner from "../components/UI/Banners/Banner";*/
 // import GlossaryCard from "../components/UI/Glossary/GlosarryCard";
 import GlossaryBanner from "../components/Glossary/GlossariesBanner";
+import Leaderboard from "../components/UI/Leaderboard/Leaderboard";
+
 
 import styles from "../styles/Home/Home.module.scss";
 
@@ -101,6 +103,27 @@ function Home({
         <div className={styles.content__top__inner}>
           <GlossaryBanner data={glossaries} />
         </div>
+        <div>
+          <h1 style={{ height: "500px", background: "red", textAlign: "auto" }}>
+            ### HERE GOES COURSES CARDs ###
+          </h1>
+        </div>
+        <div className="container">
+          {blockchain && blockchain.docs.length ? (
+            <Articles data={blockchain} title="Blockchain" />
+          ) : (
+            ""
+          )}
+        </div>
+        <div>
+          <ChallangeBanner />
+        </div>
+        <h1 style={{ height: "500px", background: "red", textAlign: "auto" }}>
+          ### HERE GOES QUIZ SLIDER ###
+        </h1>
+        <div className="container">
+            <Leaderboard />
+        </div>
       </div>
       {/* <div>
         <h1 style={{ height: "500px", background: "red", textAlign: "auto" }}>
@@ -114,7 +137,7 @@ function Home({
       </div>
 
       <div>
-        {blockchain && blockchain.docs.length ? (
+        {bloackchain && blockchain.docs.length ? (
           <Articles data={blockchain} title="Blockchain" />
         ) : (
           ""
