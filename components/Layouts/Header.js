@@ -105,44 +105,6 @@ function Header({ commonData }) {
                 />
               </div>
             </Link>
-            <nav className={styles.navigation}>
-              <div
-                ref={topicsWrap}
-                className={`topics ${topicsBox ? "active" : ""} ${
-                  styles.customBtn
-                }`}
-              >
-                <button
-                  className={`${styles.item} ${
-                    topicsBox ? styles.active__item : ""
-                  }`}
-                  onClick={() => setTopicsBox(!topicsBox)}
-                >
-                  Topics
-                </button>
-                <svg
-                  className={`${styles.arrow} ${
-                    topicsBox ? styles.rotated : ""
-                  }`}
-                  width="11"
-                  height="6"
-                  viewBox="0 0 11 6"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  {" "}
-                  <path
-                    d="M9.44588 0.281726L5.5 4.2276L1.55412 0.281724L0.500001 1.33585L4.44588 5.28172C4.72548 5.56124 5.10465 5.71826 5.5 5.71826C5.89535 5.71826 6.27452 5.56124 6.55412 5.28172L10.5 1.33585L9.44588 0.281726Z"
-                    fill="white"
-                  ></path>{" "}
-                </svg>
-                <div ref={topicsWrap} className={styles.toppicsWrap}>
-                  <AnimatePresence>
-                    {topicsBox && <TopicsBox data={tags} />}
-                  </AnimatePresence>
-                </div>
-              </div>
-            </nav>
             <div className={styles.endOfHeader}>
               <nav className={styles.navigation}>
                 {headerLinks
@@ -159,6 +121,45 @@ function Header({ commonData }) {
                     })
                   : ""}
               </nav>
+              <nav className={styles.navigation}>
+                <div
+                  ref={topicsWrap}
+                  className={`topics ${topicsBox ? "active" : ""} ${
+                    styles.customBtn
+                  }`}
+                >
+                  <button
+                    className={`${styles.item} ${
+                      topicsBox ? styles.active__item : ""
+                    }`}
+                    onClick={() => setTopicsBox(!topicsBox)}
+                  >
+                    Topics
+                  </button>
+                  <svg
+                    className={`${styles.arrow} ${
+                      topicsBox ? styles.rotated : ""
+                    }`}
+                    width="12"
+                    height="6"
+                    viewBox="0 0 12 6"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5.9994 5.80036C5.59107 5.80036 5.18273 5.64286 4.87357 5.3337L1.07023 1.53036C0.901068 1.3612 0.901068 1.0812 1.07023 0.912031C1.2394 0.742865 1.5194 0.742865 1.68857 0.912031L5.4919 4.71536C5.7719 4.99536 6.2269 4.99536 6.5069 4.71536L10.3102 0.912031C10.4794 0.742865 10.7594 0.742865 10.9286 0.912031C11.0977 1.0812 11.0977 1.3612 10.9286 1.53036L7.12523 5.3337C6.81607 5.64286 6.40773 5.80036 5.9994 5.80036Z"
+                      fill="white"
+                    />
+                  </svg>
+                  <div ref={topicsWrap} className={styles.toppicsWrap}>
+                    <AnimatePresence>
+                      {topicsBox && <TopicsBox data={tags} />}
+                    </AnimatePresence>
+                  </div>
+                </div>
+              </nav>
+            </div>
+            <div className={styles.handleWrap}>
               <div className={styles.switch}>
                 <label className={styles.switcher}>
                   <input
@@ -170,6 +171,7 @@ function Header({ commonData }) {
                   <div className={styles.marker}>
                     <div className={theme ? "lightLogo" : "darkLogo"}>
                       <svg
+                        className={styles.switchIcon}
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
@@ -204,9 +206,9 @@ function Header({ commonData }) {
                   </div>
                 </label>
               </div>
-            </div>
-            <div className={styles.connectBtn} onClick={handleConnectClick}>
-              Wallet Connect
+              <div className={styles.connectBtn} onClick={handleConnectClick}>
+                Wallet Connect
+              </div>
             </div>
             <button
               className={styles.burger}
