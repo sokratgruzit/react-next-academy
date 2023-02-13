@@ -2069,7 +2069,6 @@ body.light .textStyles a {
   display: inline-flex;
   color: $c-blue;
   font-size: 15px;
-  text-decoration: underline; // esec xels mishlis
   transition: 0.6s;
   cursor: pointer;
 
@@ -2127,7 +2126,6 @@ body.light .textStyles a {
 
 .textStyles h1 {
   @extend %largest;
-  // text-align: left !important; // es xels mishlis yvelgan
   line-height: 61px;
   text-transform: capitalize;
 }
