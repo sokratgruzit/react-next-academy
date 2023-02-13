@@ -5,40 +5,12 @@ import CornerDecor from "../UI/CornerDecor/CornerDecor";
 
 import styles from "../../styles/Glossary/Glossaries.module.scss";
 
-const Glossaries = ({ res }) => {
-  const glossaries = res?.data?.result || null;
-  const isPending = res?.isPending;
-  const ALPHABET = [
-    "#",
-    "A",
-    "B",
-    "C",
-    "D",
-    "E",
-    "F",
-    "G",
-    "H",
-    "I",
-    "J",
-    "K",
-    "L",
-    "M",
-    "N",
-    "O",
-    "P",
-    "Q",
-    "R",
-    "S",
-    "T",
-    "U",
-    "V",
-    "W",
-    "X",
-    "Y",
-    "Z",
-  ];
-
+const Glossaries = ({ data }) => {
+  const glossaries = data?.result || null;
+  const isPending = data?.isPending;
   let group = null;
+  
+  const ALPHABET = ["#", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
   if (!isPending && glossaries && glossaries?.length) {
     group = ALPHABET.map((character) => {
@@ -51,18 +23,17 @@ const Glossaries = ({ res }) => {
           <Element className={styles.item} key={character} name={character}>
             <div className={styles.value}>{character}</div>
             <div className={`${styles.contentList} ${"textStyles"}`}>
-              {GROUPED_BY_LETTER.map((groupedItem, index) => {
+              {GROUPED_BY_LETTER.map((groupedItem) => {
                 return (
                   <Link
-                    href={"glossaries/" + groupedItem.slug}
+                    href={"glossary/" + groupedItem.slug}
                     key={groupedItem._id}
-                    legacyBehavior
                   >
                     <div className={styles.listItem}>
-                      <a className={styles.content}>
+                      <div className={styles.content}>
                         <h3>{groupedItem.title}</h3>
                         <p>{groupedItem.teaser}</p>
-                      </a>
+                      </div>
                     </div>
                   </Link>
                 );

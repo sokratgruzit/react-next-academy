@@ -1,4 +1,3 @@
-import React from "react";
 import { useState } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -15,6 +14,22 @@ const SwiperWrapper = ({ children, ...props }) => {
             index={index}
             onIndexChanged={setIndex}
             {...props}
+            spaceBetween={30}
+            slidesPerView={3}
+            breakpoints={{
+              0: {
+                slidesPerView: 1.3,
+                spaceBetween: 16,
+              },
+              768: {
+                slidesPerView: 2.5,
+                spaceBetween: 30,
+              },
+              1023: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+              },
+            }}
         >
             {children.map((child) => (
                 <div className={styles.item}>
