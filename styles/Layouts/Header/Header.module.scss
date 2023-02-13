@@ -27,7 +27,7 @@ body:global(.light) .header .connectBtnWrap {
 body:global(.light) .header .connectBtnWrap .connectBtn {
   border: 1px solid $bg-orange;
   background: $c-orange;
-  transition: 0.4s;
+  transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
 }
 
 body:global(.light) .header .connectBtnWrap .connectBtn span {
@@ -51,16 +51,16 @@ body:global(.light) .header .connectBtnWrap .connectBtn:hover {
 body:global(.light) .header .connectBtnWrap .connectBtn.connected .arrow {
   display: block;
   margin-left: 9px;
-  transition: 0.4s;
+  transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
 }
 
 body:global(.light) .header .arrow {
   margin-left: 5px;
-  transition: 0.4s;
+  transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
 }
 
 body:global(.light) .header .arrow path {
-  transition: 0.4s;
+  transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
 }
 
 body:global(.light) .header .navigation ul {
@@ -74,7 +74,7 @@ body:global(.light) .header .navigation ul li {
 body:global(.light) .header .navigation ul li .item {
   cursor: pointer;
   color: $c-dark;
-  transition: 0.4s;
+  transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
 }
 
 body:global(.light) .header .navigation ul li:last-child {
@@ -91,11 +91,11 @@ body:global(.light) .header .navigation ul li.topics {
 
 body:global(.light) .header .navigation ul li.topics .arrow {
   margin-left: 5px;
-  transition: 0.4s;
+  transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
 }
 
 body:global(.light) .header .navigation ul li.topics .arrow path {
-  transition: 0.4s;
+  transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
 }
 
 body:global(.light)
@@ -133,7 +133,7 @@ body:global(.light)
 
 body:global(.light) .header .navigation ul .item {
   cursor: pointer;
-  transition: 0.4s;
+  transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
 }
 
 body:global(.light) .header .navigation ul .item:hover {
@@ -178,6 +178,12 @@ body:global(.light) .headerInner .right {
   .input:checked ~ .marker {
     cursor: pointer;
   }
+  .switchIcon {
+    transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
+  }
+  .switchIcon:hover {
+    opacity: 0.5;
+  }
 }
 
 .headerInner {
@@ -185,8 +191,27 @@ body:global(.light) .headerInner .right {
   justify-content: space-between;
   align-items: center;
   padding: 24px 0;
-  height: 90px;
 
+  .connectBtn {
+    border: 1px solid #ff7152;
+    height: 42px;
+    padding: 0 22px;
+    cursor: pointer;
+    background-color: #ff7152;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
+  }
+  .connectBtn:hover {
+    border: 1px solid #ff7152;
+    background-color: transparent;
+  }
+  .handleWrap {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
   .right {
     display: flex;
     justify-content: space-between;
@@ -206,10 +231,11 @@ body:global(.light) .headerInner .right {
       display: flex;
       align-items: center;
       justify-content: center;
+      gap: 40px;
 
       .switch {
         margin-right: 16px;
-        transition: 0.4s;
+        transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
       }
     }
   }
@@ -219,17 +245,21 @@ body:global(.light) .headerInner .right {
     align-items: center;
     .rotated {
       transform: rotate(180deg);
+      transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
+    }
+    .rotated path {
+      fill: #ff7152;
     }
   }
 }
 
 .header .navigation {
   display: flex;
-    
+  gap: 40px;
+
   .item {
     color: #ffffffb3;
-    transition: 0.5s;
-    margin-right: 40px;
+    transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
   }
 
   .item:hover {
@@ -248,11 +278,11 @@ body:global(.light) .headerInner .right {
     position: relative;
 
     .arrow {
-      transition: 0.4s;
+      transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
     }
 
     .arrow path {
-      transition: 0.4s;
+      transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
     }
   }
 
@@ -281,9 +311,9 @@ body:global(.light) .headerInner .right {
       border-radius: 4px;
       border: 1px solid $bg-orange;
       background: $c-orange;
-      transition: 0.4s;
+      transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
       margin-right: 16px;
-      
+
       span {
         color: $c-white;
       }
@@ -297,7 +327,7 @@ body:global(.light) .headerInner .right {
       &.connected .arrow {
         display: block;
         margin-left: 9px;
-        transition: 0.4s;
+        transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
       }
       &.connected:hover .arrow {
         transform: rotate(180deg);
@@ -309,6 +339,10 @@ body:global(.light) .headerInner .right {
   }
   .arrow {
     margin-left: 5px;
+    transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
+  }
+  .arrow path {
+    fill: rgba(255, 255, 255, 0.7019607843);
   }
 }
 
