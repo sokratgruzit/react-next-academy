@@ -77,7 +77,7 @@ const Article = ({ article }) => {
                     {data.level.title}
                   </div>
                 )}
-                {data.tag.length > 0 && (
+                {data.tag?.length > 0 && (
                   <div className={`item lev-item-simple}`}>{data.tag[0].title}</div>
                 )}
                 <div className="item">

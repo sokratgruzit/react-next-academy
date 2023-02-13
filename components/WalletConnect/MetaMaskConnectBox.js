@@ -48,7 +48,7 @@ function MetamMaskConnectBox() {
   };
 
   const handleAccountsChanged = async (accounts) => {
-    if (accounts.length === 0) {
+    if (accounts?.length === 0) {
       // MetaMask is locked or the user has not connected any accounts
       setMessage("Please connect to MetaMask.");
       SignOut();

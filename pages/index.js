@@ -87,12 +87,12 @@ function Home({
           alt="background"
         />
         <div className={`${styles.content__top__inner} ${"container"}`}>
-          {featured && featured.docs.length ? (
+          {featured && featured.docs?.length ? (
             <Articles data={featured} title="Featured" />
           ) : (
             ""
           )}
-          {releases && releases.docs.length ? (
+          {releases && releases.docs?.length ? (
             <Articles data={releases} title="Latest Releases" />
           ) : (
             ""

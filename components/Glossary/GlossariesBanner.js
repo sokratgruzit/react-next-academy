@@ -8,18 +8,18 @@ function GlossaryInner({ data }) {
     <div className={styles.glossariesBanner}>
       <img
         className={`${styles.bg} ${styles.dark}`}
-        src='img/Glossaries/background1.png'
-        alt='background'
+        src="img/Glossaries/background1.png"
+        alt="background"
       />
       <img
         className={`${styles.bg} ${styles.light}`}
-        src='img/Glossaries/background1Light.png'
-        alt='background'
+        src="img/Glossaries/background1Light.png"
+        alt="background"
       />
-      <div className={`${styles.top} ${'container textStyles'}`}>
+      <div className={`${styles.top} ${"container textStyles"}`}>
         <h2 className={styles.title}>270+ Terms in our Glossary</h2>
         <Link href={`/glossary`} className={"grey-btn"} legacyBehavior>
-          <a style={{ width: "fit-content" }}>
+          <span style={{ width: "fit-content" }}>
             <span>
               Go To Glossary
               <svg
@@ -39,7 +39,7 @@ function GlossaryInner({ data }) {
                 />
               </svg>
             </span>
-          </a>
+          </span>
         </Link>
       </div>
       <div className={styles.content}>
