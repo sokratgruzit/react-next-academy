@@ -4,10 +4,14 @@ import CornerDecor from "../../UI/CornerDecor/CornerDecor";
 
 import styles from "../../../styles/Glossary/GlossaryCard.module.scss";
 
-const GlosarryCard = ({ data}) => {
+const GlosarryCard = ({ data }) => {
+  let chunk = data.result.sort(() => 1 - Math.random());
+  const items = 2;
+  let resultGlossary = chunk.slice(0.5, items);
+
   return (
     <>
-      {data?.map((item, index) => {
+      {resultGlossary?.map((item, index) => {
         return (
           <div className={styles.item} key={index}>
             <div className={styles.itemInner}>
@@ -17,10 +21,8 @@ const GlosarryCard = ({ data}) => {
                 <p>{item.teaser}</p>
               </div>
               <div className={styles.button}>
-                <Link href={`/glossaries/${item.slug}`}>
-                  <a>
-                    <span>Full definition</span>
-                  </a>
+                <Link href={`/glossary/${item.slug}`}>
+                  <span>Full definition</span>
                 </Link>
               </div>
             </div>
