@@ -1,0 +1,196 @@
+@import "../../variables.scss";
+
+body:global(.light) .mainStyle .bluCloud {
+    display: none;
+}
+
+body:global(.light) .mainStyle .mainContent .container>div:first-child {
+    background: linear-gradient(90deg, #FFC164 0% #EFEFEF 100%);
+}
+
+body:global(.light) .mainStyle .mainContent .container>div:nth-child(2) {
+    background: linear-gradient(90deg, #EFEFEF 0% rgba(239, 239, 239, 0) 100%);
+}
+
+body:global(.light) .mainStyle .mainContent .container>div:nth-child(3) {
+    background: linear-gradient(90deg, #864101 0% #EFEFEF 100%);
+}
+
+body:global(.light) .LeaderboardContent {
+    background-color: rgba(128, 130, 135, 0.05)
+}
+
+body:global(.light) .LeaderboardContent:hover {
+    box-shadow: 0px 12px 24px 0px #c5c8cc9a;
+}
+
+body:global(.light) .LeaderboardContent .userContent .numbering {
+    color: black;
+}
+
+body:global(.light) .LeaderboardContent .userContent .numbering p {
+    color: black;
+}
+
+body:global(.light) .LeaderboardContent .score p {
+    color: black;
+}
+
+.mainStyle {
+    position: relative;
+
+    .bluCloud {
+        position: absolute;
+        top: -35%;
+        z-index: -10;
+        width: 95%;
+    }
+
+    .mainContent {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 30px;
+        row-gap: 10px;
+
+        .container>div:first-child {
+            background: linear-gradient(90deg, rgba(255, 193, 100, 0.1) 0%, rgba(255, 193, 100, 0.09) 100%);
+        }
+
+        .container>div:nth-child(2) {
+            background: linear-gradient(90deg, rgba(239, 239, 239, 0.1) 0%, rgba(129, 131, 136, .15) 100%);
+        }
+
+        .container>div:nth-child(3) {
+            background: linear-gradient(90deg, rgba(134, 65, 1, 0.1) 0%, rgba(134, 65, 1, 0.09) 0%);
+        }
+    }
+}
+
+.LeaderboardContent {
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px 0 0;
+    border-radius: $border-radius;
+    background-color: #ffffff0d;
+    align-items: baseline;
+    gap: 30px;
+
+    &:hover {
+        box-shadow: 0px 12px 24px 0px rgba(0, 0%, 0%, 0.7);
+        transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
+        cursor: pointer;
+    }
+
+    .userContent {
+        display: flex;
+        align-items: center;
+
+        .numbering {
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 60px;
+            margin-right: 20px;
+        }
+
+        .nickname {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+        }
+
+        .nickname img {
+            width: 71px;
+            height: 54px;
+            object-fit: contain;
+        }
+
+        & h4 {
+            white-space: nowrap;
+            width: 200px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    .score {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+    }
+}
+
+
+
+@media (max-width:1023px) {
+    .LeaderboardContent {
+
+        .userContent {
+
+            .nickname h4 {
+                white-space: nowrap;
+                width: 100px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+
+        .score {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+        }
+    }
+}
+
+@media (max-width:767px) {
+    .mainStyle {
+        .bluCloud {
+            position: absolute;
+            top: -5%;
+            z-index: -10;
+            width: 97%;
+        }
+
+        .mainContent {
+            grid-template-columns: 1fr;
+            row-gap: 0px;
+        }
+    }
+
+    .LeaderboardContent {
+        margin-bottom: 12px;
+        align-items: baseline;
+
+        .userContent {
+            display: flex;
+            align-items: center;
+
+            .numbering {
+                height: 90px;
+                margin-right: 10px;
+            }
+
+            .nickname {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .nickname img {
+                width: 40px;
+            }
+
+            .nickname h4 {
+                white-space: nowrap;
+                width: 80px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+}
