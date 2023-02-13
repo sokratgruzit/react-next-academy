@@ -1,21 +1,20 @@
 import Link from "next/link";
 
-import Article from "./Article";
-import { Swiper, SwiperSlide } from "swiper/react";
+import Card from "../UI/Card/Card";
+import SwiperWrapper from "../UI/SwiperWrapper/SwiperWrapper";
 
-import "swiper/css";
 import styles from "../../styles/Articles/Articles.module.scss";
 
-function Articles({ data, title }) {
+function Articles({ title, data }) {
   return (
     <div className={styles.articles}>
       <div className={styles.top}>
         <h2 className={styles.title}>{title}</h2>
         <Link
-          href={`articles?category=${data?.docs[0]?.category?.slug}`}
+          href={`articles?category=${data?.docs ? data?.docs[0]?.category?.slug : ""}`}
           className={"grey-btn"}
           legacyBehavior
-        > 
+        >
           <a style={{ width: "fit-content" }}>
             <span>
               Explore All
@@ -41,34 +40,9 @@ function Articles({ data, title }) {
       </div>
       <div className={styles.list}>
         {data?.docs?.length ? (
-          <Swiper
-            spaceBetween={30}
-            slidesPerView={3}
-            breakpoints={{
-              0: {
-                slidesPerView: 1.3,
-                spaceBetween: 16,
-              },
-              768: {
-                slidesPerView: 2.5,
-                spaceBetween: 30,
-              },
-              1023: {
-                slidesPerView: 3,
-                spaceBetween: 30,
-              },
-            }}
-          >
-            {data.docs.map((itemData) => {
-              return (
-                <SwiperSlide key={itemData?._id}>
-                  <div className={styles.item}>
-                    <Article data={itemData} />
-                  </div>
-                </SwiperSlide>
-              );
-            })}
-          </Swiper>
+          <SwiperWrapper>
+            {data?.docs.map((item) => <Card data={item} type={"default"} /> )}
+          </SwiperWrapper>
         ) : null}
       </div>
     </div>
