@@ -1,10 +1,10 @@
 import Link from "next/link";
 
-import Article from "./Article";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import styles from "../../styles/Articles/Articles.module.scss";
 import "swiper/css";
+import Card from "../UI/Card/Card";
 
 function Articles({ title, data }) {
   return (
@@ -63,7 +63,7 @@ function Articles({ title, data }) {
               return (
                 <SwiperSlide key={itemData?._id}>
                   <div className={styles.item}>
-                    <Article data={itemData} />
+                    <Card data={itemData} type={"default"} />
                   </div>
                 </SwiperSlide>
               );
