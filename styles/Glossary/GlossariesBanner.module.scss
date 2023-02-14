@@ -1,4 +1,5 @@
 @import "../variables.scss";
+
 body:global(.light) .glossariesBanner {
   .light {
     opacity: 1;
@@ -10,29 +11,10 @@ body:global(.light) .glossariesBanner {
 .glossariesBanner .top {
   display: flex;
   flex-direction: column;
-  gap: 5px;
-
-  .seeAll a {
-    margin-top: 7px;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    width: fit-content;
-    cursor: pointer;
-  }
-
-  .seeAll p {
-    color: $c-white;
-  }
-
-  .seeAll svg {
-    transition: 0.5s;
-  }
-
-  .seeAll:hover svg {
-    transform: translateX(5px);
-  }
+  
+  
 }
+
 .glossariesBanner {
   margin-top: 100px;
   padding-top: 50px;
