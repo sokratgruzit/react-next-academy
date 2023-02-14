@@ -29,7 +29,7 @@ function Footer() {
 
   const getFooterLinks = async () => {
     await fetchData(`${process.env.NEXT_PUBLIC_DATA_URL}/api/data/footer`).then((res) => {
-      const links = res.data.result;
+      const links = res.data?.result;
       setFooterLinks(links);
     });
   };

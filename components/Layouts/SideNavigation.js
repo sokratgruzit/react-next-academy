@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 // import DarkFooterIcons from "../UI/Icons/DarkFooterIcons";
 
-import styles from "../../styles/SideNavigation/SideNavigation.module.scss";
+import styles from "../../styles/Layouts/SideNavigation/SideNavigation.module.scss";
 
 function SideNavigation({ setBurger, data, links }) {
   const ref = useRef();
