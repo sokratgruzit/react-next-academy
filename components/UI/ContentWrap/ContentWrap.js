@@ -36,7 +36,7 @@ const ContentWrap = ({ title, btnText, element, row, href, btn }) => {
           </Link>
           )}
         </div>
-        <div style={{marginTop: !btn ? '50px' : ''}}  className={row ? styles.content : ""}>{element}</div>
+        <div style={{marginTop: !btn ? '50px' : null}}  className={row ? styles.content : ""}>{element}</div>
       </div>
     </div>
   );

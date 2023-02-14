@@ -83,6 +83,7 @@ function Home({
         <div className={styles.content__top__inner}>
           <ContentWrap
             title={"Featured"}
+            btn={true}
             btnText={"Explore All"}
             href={`articles?category=${
               featured?.docs ? featured?.docs[0]?.category?.slug : ""
