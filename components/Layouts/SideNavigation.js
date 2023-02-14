@@ -2,8 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
 import Link from "next/link";
-// import DarkFooterIcons from "../UI/Icons/DarkFooterIcons";
 
+import { Facebook, GitHub, Linkedin, Twitter } from "@/svg";
 import styles from "../../styles/Layouts/SideNavigation/SideNavigation.module.scss";
 
 function SideNavigation({ setBurger, data, links }) {
@@ -197,10 +197,20 @@ function SideNavigation({ setBurger, data, links }) {
       </ul>
       <div className={styles.bottomLogo}>
         <h4 className={styles.bottomTitle}>Following</h4>
-        <div className={styles.mobNavigationIcons}>
-          <div>
-            {/* <DarkFooterIcons /> */}
-            HERE GOES ICONS OF SOCIAL NETWORKS
+        <div className={styles.icons}>
+          <div className={styles.lightIcons}>
+            <a className={styles.socialIconLink} href={"facebook.com"} target="_blank">
+              <Facebook className={theme ? styles.socialIcon : ''} />
+            </a>
+            <a className={styles.socialIconLink} href={"facebook.com"} target="_blank">
+              <Twitter className={theme ? styles.socialIcon : ''} />
+            </a>
+            <a className={styles.socialIconLink} href={"facebook.com"} target="_blank">
+              <Linkedin className={theme ? styles.socialIcon : ''} />
+            </a>
+            <a className={styles.socialIconLink} href={"facebook.com"} target="_blank">
+              <GitHub className={theme ? styles.socialIcon : ''} />
+            </a>
           </div>
         </div>
         <div className={styles.copyrightbottom}>
