@@ -166,11 +166,9 @@ function Footer() {
               <h4>services</h4>
               <Arrow />
             </div>
-            {show1 && (
-              <div className={`${styles.footerRightColLink} ${show1 ? styles.show : ""}`}>
-                {getLinks(1)}
-              </div>
-            )}
+            <div className={`${styles.footerRightColLink} ${show1 ? styles.show : ""}`}>
+              {getLinks(1)}
+            </div>
             <div className={styles.footerRightColLinks}>{getLinks(1)}</div>
           </div>
           <div className={styles.footerRightCol}>
@@ -183,11 +181,9 @@ function Footer() {
               <h4>company</h4>
               <Arrow />
             </div>
-            {show2 && (
-              <div className={`${styles.footerRightColLink} ${show2 ? styles.show : ""}`}>
-                {getLinks(2)}
-              </div>
-            )}
+            <div className={`${styles.footerRightColLink} ${show2 ? styles.show : ""}`}>
+              {getLinks(2)}
+            </div>
             <div className={styles.footerRightColLinks}>{getLinks(2)}</div>
           </div>
           <div className={styles.footerRightCol}>
@@ -200,11 +196,9 @@ function Footer() {
               <h4>support</h4>
               <Arrow />
             </div>
-            {show3 && (
-              <div className={`${styles.footerRightColLink} ${show3 ? styles.show : ""}`}>
-                {getLinks(3)}
-              </div>
-            )}
+            <div className={`${styles.footerRightColLink} ${show3 ? styles.show : ""}`}>
+              {getLinks(3)}
+            </div>
             <div className={styles.footerRightColLinks}>{getLinks(3)}</div>
           </div>
         </div>
