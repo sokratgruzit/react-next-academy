@@ -116,17 +116,6 @@ const Filter = ({ className }) => {
     );
   }
 
-  const handleCheck = (e) => {
-    const checked = e.currentTarget.checked;
-    setSelectedProperties((prev) => ({
-      ...prev,
-      [item.title]: {
-        ...prev[item.title],
-        [subItem.title]: checked,
-      },
-    }));
-  };
-
   return (
     <div
       className={`${
@@ -158,9 +147,18 @@ const Filter = ({ className }) => {
                           <p className={styles.label}>{subItem.title}</p>
                           <input
                             type="checkbox"
-                            value={selectedProperties?.[item.title]?.[subItem.title]}
-                            checked={selectedProperties?.[item.title]?.[subItem.title]}
-                            onChange={handleCheck}
+                            value={selectedProperties?.[item?.title]?.[subItem?.title]}
+                            checked={selectedProperties?.[item?.title]?.[subItem?.title]}
+                            onChange={(e) => {
+                              const checked = e.currentTarget.checked;
+                              setSelectedProperties((prev) => ({
+                                ...prev,
+                                [item.title]: {
+                                  ...prev[item.title],
+                                  [subItem.title]: checked,
+                                },
+                              }));
+                            }}
                           />
                           <span className={styles.mark}></span>
                         </label>
