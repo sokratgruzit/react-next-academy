@@ -13,7 +13,7 @@ body:global(.light) .darkLogo {
   display: flex !important;
 }
 
-body:global(.light) .list .listItem a {
+body:global(.light) .list .listItem span {
   color: $c-dark;
   transition: 0.5s;
 }
@@ -202,6 +202,7 @@ body:global(.light) .logo .darkImg {
     .close:hover path {
       stroke: $c-dark;
     }
+
   }
 
   .list {
@@ -314,8 +315,22 @@ body:global(.light) .logo .darkImg {
     .bottomTitle {
       margin-top: 30px;
     }
-    .mobNavigationIcons {
-      margin-top: 17px;
+    .icons {
+      .lightIcons {
+        padding-top: 20px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        svg {
+          transition: 0.5s cubic-bezier(0.79, 0.01, 0.15, 0.99);
+          &:hover {
+            fill: rgb(255, 140, 115);
+          }
+        }
+        .socialIcon {
+          fill: #00050f;
+        }
+      }
     }
     .copyrightbottom {
       margin-top: 30px;
