@@ -1,6 +1,6 @@
 import Input from "../../components/UI/Input/Input";
 import Button from "../../components/UI/Button/Button.js";
-import BgImage from "../../components/UI/BackgroundImg/BgImage";
+// import BgImage from "../../components/UI/BackgroundImg/BgImage";
 
 import styles from "../../styles/InstructorRegistration/InstructorRegistration.module.scss";
 
@@ -36,9 +36,9 @@ const InstructorRegistration = () => {
   return (
     <div className={`${styles.mainBoxInstructor} `}>
       <div className={`${"contact container"} ${styles.box} ${"textStyles"}`}>
-        <div className={styles.bgImg}>
+        {/* <div className={styles.bgImg}>
           <BgImage id={10} />
-        </div>
+        </div> */}
         <div className={styles.inputBox}>
           <Input data={FROM_DATA} type="input" />
           <div className={`${styles.testInput} textSyles`}>

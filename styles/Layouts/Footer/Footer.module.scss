@@ -296,7 +296,11 @@
             display: flex;
             flex-direction: column;
             transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);
+            height: 0;
             overflow: hidden;
+          }
+          .show {
+            height: 112px;
           }
           .active {
             svg {
@@ -306,6 +310,7 @@
               fill: $c-orange;
             }
           }
+
           .footerRightColTtl {
             display: flex;
             justify-content: space-between;

@@ -37,7 +37,7 @@ export const getStaticProps = async (context) => {
 
 const Article = ({ article }) => {
   const router = useRouter();
-  const data = article.data.result || null;
+  const data = article?.data?.result || null;
 
   return (
     <div>
