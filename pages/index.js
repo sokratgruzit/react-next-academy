@@ -10,10 +10,6 @@ import Ticker from "../components/UI/Ticker/Ticker";
 import EmailBanner from "../components/Home/EmailBanner";
 import MotionLayout from "../components/UI/MotionLayout/MotionLayout";
 import Glossary from "../components/Glossary/Glossary";
-/*import LeaderboardTab from "../components/Leaderboard/LeaderboardTab";
-import QuizSlider from "../components/MainPage/QuizSlider";
-import Banner from "../components/UI/Banners/Banner";*/
-// import GlossaryCard from "../components/UI/Glossary/GlosarryCard";
 import GlossaryBanner from "../components/Glossary/GlossariesBanner";
 import Leaderboard from "../components/UI/Leaderboard/Leaderboard";
 import ContentWrap from "../components/UI/ContentWrap/ContentWrap";

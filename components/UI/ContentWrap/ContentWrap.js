@@ -10,7 +10,8 @@ const ContentWrap = ({ title, btnText, element, row, href }) => {
           <Link href={`${href}`}>
             <div className={styles.btn}>
               <p>{btnText}</p>
-              <svg
+              <svg 
+                className={styles.arrow}
                 width="14"
                 height="11"
                 viewBox="0 0 14 11"

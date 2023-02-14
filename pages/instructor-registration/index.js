@@ -45,7 +45,7 @@ const InstructorRegistration = () => {
             <label className={`mainBox ${styles.mainBoxLbl} `}>
               <p className={`${styles.title} `}>
                 By signing up, you agree to{""}
-                <span className={`${styles.borderColor} ${styles.changSpam} `}>
+                <span className={styles.borderColor}>
                   Terms of Service and Privacy Policy.
                 </span>
               </p>
