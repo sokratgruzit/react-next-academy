@@ -27,6 +27,8 @@ body:global(.light) .contentWrap {
 
     .arrow {
       transition: 0.5s;
+      margin-top: 1px;
+
       &path {
         transition: 0.5s;
         fill: $c-orange;

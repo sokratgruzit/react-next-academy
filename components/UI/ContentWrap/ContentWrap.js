@@ -1,13 +1,14 @@
 import Link from "next/link";
 import styles from "../../../styles/UI/ContentWrap/ContentWrap.module.scss";
 
-const ContentWrap = ({ title, btnText, element, row, href }) => {
+const ContentWrap = ({ title, btnText, element, row, href, btn }) => {
   return (
     <div className="container">
       <div className={styles.contentWrap}>
         <div className="textStyles">
           <h3 className={styles.title}>{title}</h3>
-          <Link href={`${href}`}>
+          {btn && (
+            <Link href={`${href}`}>
             <div className={styles.btn}>
               <p>{btnText}</p>
               <svg 
@@ -33,8 +34,9 @@ const ContentWrap = ({ title, btnText, element, row, href }) => {
               </svg>
             </div>
           </Link>
+          )}
         </div>
-        <div className={row ? styles.content : ""}>{element}</div>
+        <div style={{marginTop: !btn ? '50px' : ''}}  className={row ? styles.content : ""}>{element}</div>
       </div>
     </div>
   );
