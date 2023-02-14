@@ -2,9 +2,9 @@ import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
 import Link from "next/link";
-import DarkFooterIcons from "../UI/Icons/DarkFooterIcons";
+// import DarkFooterIcons from "../UI/Icons/DarkFooterIcons";
 
-import styles from "../../styles/SideNavigation/SideNavigation.module.scss";
+import styles from "../../styles/Layouts/SideNavigation/SideNavigation.module.scss";
 
 function SideNavigation({ setBurger, data, links }) {
   const ref = useRef();
@@ -199,7 +199,8 @@ function SideNavigation({ setBurger, data, links }) {
         <h4 className={styles.bottomTitle}>Following</h4>
         <div className={styles.mobNavigationIcons}>
           <div>
-            <DarkFooterIcons />
+            {/* <DarkFooterIcons /> */}
+            HERE GOES ICONS OF SOCIAL NETWORKS
           </div>
         </div>
         <div className={styles.copyrightbottom}>

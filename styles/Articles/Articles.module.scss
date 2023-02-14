@@ -13,7 +13,8 @@ body:global(.light) .articles .top span path {
   margin-top: 100px;
   position: relative;
 }
-.articles .top {
+
+.list .top {
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -37,8 +38,8 @@ body:global(.light) .articles .top span path {
     margin-top: 12px;
   }
 }
-.articles .list {
-  margin-top: 40px;
+.list {
+  margin-top: 30px;
 
   .item {
     margin-right: 30px;

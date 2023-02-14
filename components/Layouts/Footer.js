@@ -5,7 +5,7 @@ import { animateScroll } from "react-scroll";
 
 import { fetchData } from "../../utils/queries";
 
-import DarkFooterIcons from "../UI/Icons/DarkFooterIcons";
+// import DarkFooterIcons from "../UI/Icons/DarkFooterIcons";
 
 import styles from "../../styles/Layouts/Footer/Footer.module.scss";
 
@@ -29,7 +29,7 @@ function Footer() {
 
   const getFooterLinks = async () => {
     await fetchData(`${process.env.NEXT_PUBLIC_DATA_URL}/api/data/footer`).then((res) => {
-      const links = res.data.result;
+      const links = res.data?.result;
       setFooterLinks(links);
     });
   };
@@ -169,7 +169,8 @@ function Footer() {
           </div>
           <div className={styles.icons}>
             <div className={styles.lightIcons}>
-              <DarkFooterIcons />
+              {/* <DarkFooterIcons /> */}
+              HERE GOES SOCIAL NETWORK ICONS
             </div>
           </div>
         </div>
