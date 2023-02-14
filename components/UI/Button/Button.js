@@ -1,16 +1,14 @@
-import React, { useState, useEffect } from "react";
-
-import styles from "./Button.module.scss";
+import styles from "../../../styles/UI/Button/Button.module.scss";
 
 const Button = ({ title, className, size, color, svg, onClick }) => {
   return (
-    <button
+    <div
       onClick={onClick}
-      className={`${styles.btn} ${styles[className]} ${styles[color]} ${styles[size]}`}
+      className={`${styles.btn} ${className} ${styles[color]} ${styles[size]}`}
     >
       {svg}
       {title}
-    </button>
+    </div>
   );
 };
 

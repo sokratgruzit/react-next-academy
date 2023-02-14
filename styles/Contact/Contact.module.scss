@@ -1,0 +1,62 @@
+@import "../variables.scss";
+
+body:global(.light) .bgImage {
+  opacity: 0;
+}
+
+.contact {
+  width: 100%;
+  height: auto;
+  padding: 44px 0;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  gap: 30px;
+
+  h2 {
+    font-size: 50px;
+  }
+
+  .contactPageTitle h5 {
+    margin-top: 20px;
+    color: #6F7178;
+    font-size: 30px;
+  }
+
+  img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: -80px;
+    z-index: -1;
+  }
+
+  .contactBox {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    gap: 30px;
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 1900px) {}
+
+/*Ipad Pro 1024*/
+@media (max-width: 1200px) {}
+
+/*Ipad 768*/
+@media (max-width: 1023px) {}
+
+/*Mobile 320*/
+@media (max-width: 767px) {
+  .contact {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+
+    .contactBox {
+      width: 100%;
+    }
+  }
+}
