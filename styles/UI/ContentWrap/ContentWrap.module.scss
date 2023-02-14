@@ -1,5 +1,11 @@
 @import "../../variables.scss";
-
+body:global(.light) .contentWrap {
+  .btn {
+    .arrow path {
+      fill: $c-dirty-grey;
+    }
+  }
+}
 .contentWrap {
   display: flex;
   flex-direction: column;
@@ -10,10 +16,34 @@
   .btn {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 7px;
     width: fit-content;
     cursor: pointer;
-    
+    margin-top: 7px;
+
+    &p {
+      transition: 0.5s;
+    }
+
+    .arrow {
+      transition: 0.5s;
+      &path {
+        transition: 0.5s;
+        fill: $c-orange;
+      }
+    }
+
+    &:hover p {
+      color: $c-orange;
+    }
+
+    &:hover .arrow {
+      transform: translateX(5px);
+    }
+
+    &:hover .arrow path {
+      fill: $c-orange;
+    }
   }
   .content {
     display: flex;
