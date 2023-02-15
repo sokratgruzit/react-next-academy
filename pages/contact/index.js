@@ -28,18 +28,22 @@ const FROM_TEXTAREA = {
 };
 
 const Contact = () => {
-
   return (
-    <div className={`${'contact container textStyles'} ${styles.contact}`}>
+    <div className={styles.contact}>
       <img src="img/Bg/bg_42.png" alt="bg" />
       <div className={styles.title}>
-        <h2>contact us</h2>
+        <h1>contact us</h1>
         <h5>We’re here with you every step way!</h5>
       </div>
-      <div className={styles.contactBox}>
+      <div className={`${styles.contactBox} ${'textStyles'}`}>
         <Input type="input" data={FORM_DATA} />
         <Input type="textarea" data={FROM_TEXTAREA} />
-        <Button size={"btn-big"} color={"blue"} title="send message" className={""} />
+        <Button
+          size={"btn-big"}
+          color={"blue"}
+          title="send message"
+          className={""}
+        />
       </div>
     </div>
   );
