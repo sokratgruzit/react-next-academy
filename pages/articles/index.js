@@ -20,7 +20,7 @@ export async function getServerSideProps(context) {
 }
 
 const index = ({ title, articles }) => {
-  return <Articles title={"Articles"} data={articles} />;
+  return <Articles title={title} data={articles} />;
 };
 
 export default index;
