@@ -98,9 +98,15 @@ function Header({ commonData }) {
         <div className={styles.headerInner}>
           <div className={styles.right}>
             <Link href="/" className={styles.logo}>
-              <div className={theme ? styles.lightImg : styles.darkImg}>
+              <div>
                 <img
-                  src={theme ? "/svg/lightLogo.svg" : "/svg/logo.svg"}
+                  className={styles.lightImg}
+                  src={"/svg/lightLogo.svg"}
+                  alt="logo"
+                />
+                <img
+                  className={styles.darkImg}
+                  src={"/svg/logo.svg"}
                   alt="logo"
                 />
               </div>

@@ -34,17 +34,17 @@ function Footer() {
     });
   };
 
-  useEffect(() => {
-    const body = document.getElementsByTagName("body")[0];
+  // useEffect(() => {
+  //   const body = document.getElementsByTagName("body")[0];
 
-    if (theme) {
-      body.classList.add("light");
-      localStorage.setItem("mode", "true");
-    } else {
-      body.classList.remove("light");
-      localStorage.setItem("mode", "false");
-    }
-  }, [theme]);
+  //   if (theme) {
+  //     body.classList.add("light");
+  //     localStorage.setItem("mode", "true");
+  //   } else {
+  //     body.classList.remove("light");
+  //     localStorage.setItem("mode", "false");
+  //   }
+  // }, [theme]);
 
   const getLinks = (row) => {
     if (!footerLinks) return false;
