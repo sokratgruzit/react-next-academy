@@ -10,7 +10,7 @@ import Ticker from "../components/UI/Ticker/Ticker";
 import EmailBanner from "../components/Home/EmailBanner";
 import MotionLayout from "../components/UI/MotionLayout/MotionLayout";
 import Glossary from "../components/Glossary/Glossary";
-import GlossaryBanner from "../components/Glossary/GlossariesBanner";
+
 import Leaderboard from "../components/UI/Leaderboard/Leaderboard";
 import ContentWrap from "../components/UI/ContentWrap/ContentWrap";
 import GlosarryCard from "../components/UI/Glossary/GlosarryCard";
@@ -75,7 +75,7 @@ function Home({
         src="img/Bg/bg_0.png"
         alt="background"
       />
-      <div  className={`${styles.content__top__inner} ${"container"}`}>
+      <div className={`${styles.content__top__inner} ${"container"}`}>
         <IntroBox />
         <FeaturesBanner />
       </div>

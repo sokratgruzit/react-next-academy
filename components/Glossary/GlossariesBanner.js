@@ -9,7 +9,7 @@ function GlossaryInner({ data }) {
     <div className={styles.glossariesBanner}>
       <div className={`${styles.top} ${"textStyles"} ${"container"}`}>
         <h3 className={styles.title}>270+ Terms in our Glossary</h3>
-        <Link href={`/glossary`}  legacyBehavior>
+        <Link href={`/glossary`} legacyBehavior>
           <span>
             Go To Glossary
             <svg

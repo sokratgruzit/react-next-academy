@@ -42,7 +42,9 @@ const Glossaries = ({ res }) => {
 
   if (!isPending && glossaries && glossaries?.length) {
     group = ALPHABET.map((character) => {
-      const GROUPED_BY_LETTER = glossaries.filter((item) => item.character === character);
+      const GROUPED_BY_LETTER = glossaries.filter(
+        (item) => item.character === character
+      );
 
       if (GROUPED_BY_LETTER?.length) {
         return (
@@ -54,7 +56,7 @@ const Glossaries = ({ res }) => {
             <div className={`${styles.contentList} ${"textStyles"}`}>
               {GROUPED_BY_LETTER.map((groupedItem, index) => {
                 return (
-                  <Link href={"glossaries/" + groupedItem.slug} key={groupedItem._id}>
+                  <Link href={"glossary/" + groupedItem.slug} key={groupedItem._id}>
                     <div className={styles.listItem}>
                       <span className={styles.content}>
                         <h3>{groupedItem.title}</h3>
@@ -89,7 +91,9 @@ const Glossaries = ({ res }) => {
             <div className="container textStyles">
               <div className={styles.top}>
                 <h1 className={styles.title}>The Words of Crypto</h1>
-                <h4 className={styles.teaser}>Time to understand the language</h4>
+                <h4 className={styles.teaser}>
+                  Time to understand the language
+                </h4>
               </div>
             </div>
             <div className={`${styles.search} ${"container"}`}>

@@ -5,8 +5,8 @@ import CornerDecor from "../../UI/CornerDecor/CornerDecor";
 import styles from "../../../styles/Glossary/GlossaryCard.module.scss";
 
 const GlosarryCard = ({ data }) => {
-  let chunk = data?.result.sort(() => 1 - Math.random());
   const items = 2;
+  let chunk = data?.result?.sort(() => 1 - Math.random());
   let resultGlossary = chunk?.slice(0.5, items);
 
   return (
