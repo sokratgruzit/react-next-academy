@@ -1,0 +1,95 @@
+@import "../../../styles/variables.scss";
+
+body:global(.light) .quizStructure {
+  .inner {
+    .swiper {
+      & div div p {
+        color: $c-dirty-grey;
+      }
+
+      & div .light circle {
+        stroke: $c-dark;
+      }
+    }
+
+    .controller {
+      & div svg path {
+        fill: $c-dark;
+      }
+    }
+  }
+}
+
+.lineSlide {
+  position: absolute;
+  width: 0px !important;
+}
+
+.structure {
+  margin-top: -30px;
+}
+.marginTop20 {
+  margin-top: 20px;
+}
+.startBtn {
+  margin-left: 70px;
+  margin-bottom: 30px;
+}
+.quizStructure {
+  margin-top: 150px;
+  width: 100%;
+  height: 300px;
+
+  .swiper {
+    position: initial;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 150px;
+    p {
+      font-size: 15px;
+      line-height: 21px;
+      text-align: center;
+      color: #b2b4b7;
+    }
+
+    & div div {
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      justify-content: center;
+    }
+  }
+  .line {
+    position: absolute;
+    left: 200px;
+    top: 43px;
+  }
+  .controller {
+    width: 100%;
+    margin-top: 60px;
+    gap: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & div {
+      width: 40px;
+      height: 33px;
+      cursor: pointer;
+
+      & svg {
+        transition: 0.5s;
+        & path {
+          transition: 0.5s;
+        }
+      }
+
+      &:hover svg path {
+        fill: $c-orange;
+      }
+    }
+  }
+}

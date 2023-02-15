@@ -5,7 +5,7 @@ import CornerDecor from "../CornerDecor/CornerDecor";
 import styles from "../../../styles/Articles/Article.module.scss";
 
 const Card = ({ data, type }) => {
-    
+    console.log(data)
     let element = null;
 
     if (type === 'default') {

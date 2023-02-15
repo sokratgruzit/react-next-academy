@@ -1,0 +1,266 @@
+@import "../../styles/variables.scss";
+
+.infoWrapper {
+  width: 665px;
+  margin: auto;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 1;
+  transition: 0.8s;
+}
+.window {
+  width: 100%;
+  background-color: #080d17;
+  margin-top: 150px;
+}
+
+body:global(.light) {
+  .quizzHead {
+    .headItem {
+      .itemSocial {
+        & div .icon path {
+          fill: $c-dark;
+        }
+        & div:hover .icon path {
+          fill: $c-orange;
+        }
+      }
+    }
+  }
+}
+
+.quizzHead {
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  height: auto;
+
+  & h3 {
+    text-align: center;
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  .levels {
+    position: relative;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 30px;
+      width: 185px;
+      height: 3px;
+      border-bottom: 1px solid $border-color;
+    }
+
+    .levelItem {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      & p {
+        margin: 0px;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .headItem {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin-top: 33px;
+
+    .itemSocial {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      margin-top: 13px;
+      width: 100%;
+
+      & div .icon {
+        transition: 0.8s;
+        cursor: pointer;
+
+        &:hover path {
+          fill: $c-blue;
+        }
+      }
+    }
+  }
+}
+
+body:global(.light) .quizzCard {
+  .itemBadge {
+    .title {
+      color: $c-dirty-grey;
+    }
+
+    .btn {
+      & svg path {
+        fill: $c-dark;
+      }
+
+      &:hover svg path {
+        fill: $c-blue;
+      }
+    }
+  }
+}
+.quizzCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  margin-top: 70px;
+
+  .item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 34px;
+
+    .card {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      min-height: 434px;
+      min-width: 434px;
+
+      & img {
+        object-fit: cover;
+        max-width: 420px;
+        max-height: 415px;
+      }
+    }
+
+    .text {
+      position: relative;
+      text-align: center;
+      color: #b2b4b7;
+      font-size: 15px;
+      line-height: 21px;
+    }
+  }
+
+  .itemBadge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+
+    &:before {
+      content: "";
+      border-top: 1px solid $border-color;
+      width: 200px;
+      height: 3px;
+      padding-top: 20px;
+    }
+
+    .title {
+      color: $c-white;
+    }
+
+    & img {
+      object-fit: cover;
+      margin-top: 13px;
+    }
+
+    & h6 {
+      margin-top: 10px;
+      font-size: 12px;
+      line-height: 14px;
+      text-align: center;
+      color: #b2b4b7;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 55px;
+      padding: 17px 55px;
+      border: 1px solid $c-orange;
+      border-radius: 50px;
+      cursor: pointer;
+
+      & p {
+        margin: 0px;
+        color: $c-orange;
+        transition: 0.5s;
+      }
+
+      & svg {
+        transition: 0.5s;
+      }
+
+      &:hover p {
+        color: $c-blue;
+      }
+
+      &:hover {
+        border: 1px solid $c-blue;
+      }
+
+      &:hover svg path {
+        fill: $c-blue;
+      }
+    }
+  }
+}
+
+@media (max-width: 1900px) {
+}
+
+@media (max-width: 1365px) {
+}
+
+@media (max-width: 1023px) {
+}
+
+@media (max-width: 767px) {
+  .quizzCard {
+    .item {
+      .card {
+        & img {
+          width: 255px;
+          height: auto;
+        }
+      }
+      .text {
+        width: 100%;
+        margin-top: 60px;
+      }
+    }
+  }
+}
+
+.graySml {
+  fill: #969ba6;
+  width: 4px;
+  height: 4px;
+}

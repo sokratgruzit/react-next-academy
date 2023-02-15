@@ -1,0 +1,20 @@
+.swiperButtons {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 120px;
+}
+
+.swiperButtons button:disabled .swiperArrowL {
+  opacity: 0.6;
+}
+
+.swiperArrowR {
+  rotate: 180deg;
+}
+
+.swiperButtons button:disabled .swiperArrowR {
+  opacity: 0.6;
+}

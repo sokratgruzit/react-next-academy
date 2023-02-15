@@ -6,7 +6,7 @@ import Glossaries from "@/components/Glossary/Glossaries";
 
 export const getStaticProps = async () => {
   const { data: glossaries } = await fetchData(
-    `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/glossaries`,
+    `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/glossaries`
   );
 
   return {

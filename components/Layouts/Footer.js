@@ -28,23 +28,25 @@ function Footer() {
   };
 
   const getFooterLinks = async () => {
-    await fetchData(`${process.env.NEXT_PUBLIC_DATA_URL}/api/data/footer`).then((res) => {
-      const links = res.data?.result;
-      setFooterLinks(links);
-    });
+    await fetchData(`${process.env.NEXT_PUBLIC_DATA_URL}/api/data/footer`).then(
+      (res) => {
+        const links = res.data?.result;
+        setFooterLinks(links);
+      }
+    );
   };
 
-  useEffect(() => {
-    const body = document.getElementsByTagName("body")[0];
+  // useEffect(() => {
+  //   const body = document.getElementsByTagName("body")[0];
 
-    if (theme) {
-      body.classList.add("light");
-      localStorage.setItem("mode", "true");
-    } else {
-      body.classList.remove("light");
-      localStorage.setItem("mode", "false");
-    }
-  }, [theme]);
+  //   if (theme) {
+  //     body.classList.add("light");
+  //     localStorage.setItem("mode", "true");
+  //   } else {
+  //     body.classList.remove("light");
+  //     localStorage.setItem("mode", "false");
+  //   }
+  // }, [theme]);
 
   const getLinks = (row) => {
     if (!footerLinks) return false;
@@ -76,14 +78,20 @@ function Footer() {
     <footer className={styles.footer}>
       <div className={styles.footerLogoMob}>
         <Link href="/" className="logo">
-          <img src={theme ? "/svg/lightLogo.svg" : "/svg/logo.svg"} alt="logo" />
+          <img
+            src={theme ? "/svg/lightLogo.svg" : "/svg/logo.svg"}
+            alt="logo"
+          />
         </Link>
       </div>
       <div className={styles.footerTop}>
         <div className={styles.footerLeft}>
           <div className={styles.footerLogo}>
             <Link href="/" className="logo">
-              <img src={theme ? "/svg/lightLogo.svg" : "/svg/logo.svg"} alt="logo" />
+              <img
+                src={theme ? "/svg/lightLogo.svg" : "/svg/logo.svg"}
+                alt="logo"
+              />
             </Link>
           </div>
           <div className={styles.lightMode}>
@@ -97,7 +105,9 @@ function Footer() {
               <div className={styles.marker}>
                 <div className={theme ? "lightLogo" : "darkLogo"}>
                   <div className={styles.themes}>
-                    <p className={styles.mode}>{theme ? "Dark Mode" : "Light Mode"}</p>
+                    <p className={styles.mode}>
+                      {theme ? "Dark Mode" : "Light Mode"}
+                    </p>
                     <svg
                       className={styles.svg}
                       width="24"
@@ -140,16 +150,32 @@ function Footer() {
           </div>
           <div className={styles.icons}>
             <div className={styles.lightIcons}>
-              <a className={styles.socialIconLink} href={"facebook.com"} target="_blank">
+              <a
+                className={styles.socialIconLink}
+                href={"facebook.com"}
+                target="_blank"
+              >
                 <Facebook className={styles.socialIcon} />
               </a>
-              <a className={styles.socialIconLink} href={"facebook.com"} target="_blank">
+              <a
+                className={styles.socialIconLink}
+                href={"facebook.com"}
+                target="_blank"
+              >
                 <Twitter className={styles.socialIcon} />
               </a>
-              <a className={styles.socialIconLink} href={"facebook.com"} target="_blank">
+              <a
+                className={styles.socialIconLink}
+                href={"facebook.com"}
+                target="_blank"
+              >
                 <Linkedin className={styles.socialIcon} />
               </a>
-              <a className={styles.socialIconLink} href={"facebook.com"} target="_blank">
+              <a
+                className={styles.socialIconLink}
+                href={"facebook.com"}
+                target="_blank"
+              >
                 <GitHub className={styles.socialIcon} />
               </a>
             </div>
@@ -166,7 +192,11 @@ function Footer() {
               <h4>services</h4>
               <Arrow />
             </div>
-            <div className={`${styles.footerRightColLink} ${show1 ? styles.show : ""}`}>
+            <div
+              className={`${styles.footerRightColLink} ${
+                show1 ? styles.show : ""
+              }`}
+            >
               {getLinks(1)}
             </div>
             <div className={styles.footerRightColLinks}>{getLinks(1)}</div>
@@ -181,7 +211,11 @@ function Footer() {
               <h4>company</h4>
               <Arrow />
             </div>
-            <div className={`${styles.footerRightColLink} ${show2 ? styles.show : ""}`}>
+            <div
+              className={`${styles.footerRightColLink} ${
+                show2 ? styles.show : ""
+              }`}
+            >
               {getLinks(2)}
             </div>
             <div className={styles.footerRightColLinks}>{getLinks(2)}</div>
@@ -196,7 +230,11 @@ function Footer() {
               <h4>support</h4>
               <Arrow />
             </div>
-            <div className={`${styles.footerRightColLink} ${show3 ? styles.show : ""}`}>
+            <div
+              className={`${styles.footerRightColLink} ${
+                show3 ? styles.show : ""
+              }`}
+            >
               {getLinks(3)}
             </div>
             <div className={styles.footerRightColLinks}>{getLinks(3)}</div>
@@ -211,26 +249,29 @@ function Footer() {
       <div className={styles.bottom}>
         <div>
           <p className={styles.txt}>
-            Disclaimer: Nothing in this Website shall be deemed to constitute a prospectus
-            of any sort or a solicitation for investment, nor does it in any way pertain
-            to an offering or a solicitation of an offer to buy any securities in any
-            jurisdiction.All of the information provided within this Website is provided
-            “as is” and with no warranties. coremultichain.com makes no representations
-            and extends no warranties of any type to the accuracy or completeness of any
-            information or content on this Website. Like any blockchain technology, the
-            acquisition of tokens is associated with a high financial risk level. All
-            contributions are made at your discretion, and you are solely responsible
-            before the time of contributions for determining all possible risks and doing
-            your due diligence. CORE is a software platform ONLY. In no event shall
-            www.coremultichain.com or its subcontractors be liable for any damages
-            (including, without limitation, damages for loss of data or profit, or due to
-            business interruption) arising out of the use of this platform.
+            Disclaimer: Nothing in this Website shall be deemed to constitute a
+            prospectus of any sort or a solicitation for investment, nor does it
+            in any way pertain to an offering or a solicitation of an offer to
+            buy any securities in any jurisdiction.All of the information
+            provided within this Website is provided “as is” and with no
+            warranties. coremultichain.com makes no representations and extends
+            no warranties of any type to the accuracy or completeness of any
+            information or content on this Website. Like any blockchain
+            technology, the acquisition of tokens is associated with a high
+            financial risk level. All contributions are made at your discretion,
+            and you are solely responsible before the time of contributions for
+            determining all possible risks and doing your due diligence. CORE is
+            a software platform ONLY. In no event shall www.coremultichain.com
+            or its subcontractors be liable for any damages (including, without
+            limitation, damages for loss of data or profit, or due to business
+            interruption) arising out of the use of this platform.
           </p>
           <p className={styles.txt}>
-            Note: Our team is committed to enhancing this website, and this is an on-going
-            process. We will have more exciting content and include it as early as
-            possible. Every great piece of technology is continuously evolving to unlock
-            its full potential. We will post all stages of the progress on this website.
+            Note: Our team is committed to enhancing this website, and this is
+            an on-going process. We will have more exciting content and include
+            it as early as possible. Every great piece of technology is
+            continuously evolving to unlock its full potential. We will post all
+            stages of the progress on this website.
           </p>
         </div>
         <div className={styles.logo}>
