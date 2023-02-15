@@ -132,7 +132,8 @@ const Filter = () => {
 
   return (
     <div
-      className={isMobile && filter ? styles.dropdown : styles.filterMainWrapp}>
+      className={isMobile && filter ? styles.dropdown : styles.filterMainWrapp}
+    >
       <CornerDecor />
       <div className={styles.FilterButton} onClick={showFIlter}>
         <Vector />

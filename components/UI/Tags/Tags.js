@@ -6,9 +6,9 @@ const Tags = ({ data, type }) => {
       {data.map((item, index) => {
         return (
           <div
-            className={`${type === "dificulity" ? styles[data[index].customStyle] : ""} ${
-              styles[type]
-            }`}
+            className={`${
+              type === "dificulity" ? styles[data[index].customStyle] : ""
+            } ${styles[type]}`}
             key={index}
           >
             {item.name}
