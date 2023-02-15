@@ -10,11 +10,10 @@ import Ticker from "../components/UI/Ticker/Ticker";
 import EmailBanner from "../components/Home/EmailBanner";
 import MotionLayout from "../components/UI/MotionLayout/MotionLayout";
 import Glossary from "../components/Glossary/Glossary";
-/*import LeaderboardTab from "../components/Leaderboard/LeaderboardTab";
-import QuizSlider from "../components/MainPage/QuizSlider";
-import Banner from "../components/UI/Banners/Banner";*/
-// import GlossaryCard from "../components/UI/Glossary/GlosarryCard";
 import GlossaryBanner from "../components/Glossary/GlossariesBanner";
+import Leaderboard from "../components/UI/Leaderboard/Leaderboard";
+import ContentWrap from "../components/UI/ContentWrap/ContentWrap";
+import GlosarryCard from "../components/UI/Glossary/GlosarryCard";
 
 import styles from "../styles/Home/Home.module.scss";
 
@@ -76,31 +75,113 @@ function Home({
         src="img/Bg/bg_0.png"
         alt="background"
       />
-      <div className={`${styles.content__top__inner} ${"container"}`}>
+      <div  className={`${styles.content__top__inner} ${"container"}`}>
         <IntroBox />
         <FeaturesBanner />
       </div>
       <div className={styles.home__content}>
-        <img
-          className={styles.home__content__bg}
-          src="img/Bg/bg_999.png"
-          alt="background"
-        />
-        <div className={`${styles.content__top__inner} ${"container"}`}>
-          {featured && featured.docs.length ? (
+        <div className={styles.content__top__inner}>
+          <ContentWrap
+            title={"Featured"}
+            btn={true}
+            btnText={"Explore All"}
+            href={`articles?category=${
+              featured?.docs ? featured?.docs[0]?.category?.slug : ""
+            }`}
+            row={false}
+            element={
+              featured && featured.docs?.length ? (
+                <Articles data={featured} />
+              ) : (
+                ""
+              )
+            }
+          />
+          <ContentWrap
+            title={"Latest Releases"}
+            btn={true}
+            btnText={"Explore All"}
+            href={`articles?category=${
+              releases?.docs ? releases?.docs[0]?.category?.slug : ""
+            }`}
+            row={false}
+            element={
+              releases && releases.docs?.length ? (
+                <Articles data={releases} />
+              ) : (
+                ""
+              )
+            }
+          />
+          <ContentWrap
+            title={"270+ Terms in our Glossary"}
+            btn={true}
+            btnText={"Go to the Glossary"}
+            href={"/glossary"}
+            row={true}
+            element={
+              glossaries && glossaries.result?.length ? (
+                <GlosarryCard data={glossaries} />
+              ) : (
+                ""
+              )
+            }
+          />
+          <ContentWrap
+            title={"Blockchain"}
+            btn={true}
+            btnText={"See All"}
+            href={`articles?category=${
+              blockchain?.docs ? blockchain?.docs[0]?.category?.slug : ""
+            }`}
+            row={false}
+            element={
+              blockchain && blockchain.docs.length ? (
+                <Articles data={blockchain} title="Blockchain" />
+              ) : (
+                ""
+              )
+            }
+          />
+          <ContentWrap
+            title={"Leaderboard"}
+            btn={false}
+            row={false}
+            element={<Leaderboard />}
+          />
+
+          {/* {featured && featured.docs?.length ? (
             <Articles data={featured} title="Featured" />
           ) : (
             ""
           )}
-          {releases && releases.docs.length ? (
+          {releases && releases.docs?.length ? (
             <Articles data={releases} title="Latest Releases" />
+          ) : (
+            ""
+          )} */}
+        </div>
+        <div>
+          <h1 style={{ height: "500px", background: "red", textAlign: "auto" }}>
+            ### HERE GOES COURSES CARDs ###
+          </h1>
+        </div>
+        <div className="container">
+          {blockchain && blockchain.docs.length ? (
+            <Articles data={blockchain} title="Blockchain" />
           ) : (
             ""
           )}
         </div>
-        <div className={styles.content__top__inner}>
-          <GlossaryBanner data={glossaries} />
+        <div>
+          <ChallangeBanner />
         </div>
+        <h1 style={{ height: "500px", background: "red", textAlign: "auto" }}>
+          ### HERE GOES QUIZ SLIDER ###
+        </h1>
+        {/* <div className="container">
+          <Leaderboard />
+        </div> */}
       </div>
       {/* <div>
         <h1 style={{ height: "500px", background: "red", textAlign: "auto" }}>
@@ -114,7 +195,7 @@ function Home({
       </div>
 
       <div>
-        {blockchain && blockchain.docs.length ? (
+        {bloackchain && blockchain.docs.length ? (
           <Articles data={blockchain} title="Blockchain" />
         ) : (
           ""

@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 
 import Aos from "aos";
-import "aos/dist/aos.css";
 
+import "aos/dist/aos.css";
 import styles from "../../../styles/UI/Leaderboard/Leaderboard.module.scss";
 
 let LeaderboardData = [
@@ -95,16 +95,16 @@ let firstFiveData = LeaderboardData.map((item, index) => {
           <div>
             <div className={styles.numbering}>
               <p>{item.numbering}</p>
-              {item.wing && <img src={item.wing} alt='' />}
+              {item.wing && <img src={item.wing} alt="" />}
             </div>
           </div>
           <div className={styles.nickname}>
-            <img src={item.icone} alt='icone' />
+            <img src={item.icone} alt="icone" />
             <h4>{item.nickname}</h4>
           </div>
         </div>
         <div className={styles.score}>
-          <img src={item.cup} alt='cup' />
+          <img src={item.cup} alt="cup" />
           <p>{item.score}</p>
         </div>
       </div>
@@ -120,12 +120,12 @@ let lastFiveData = LeaderboardData.map((item, index) => {
             <p className={styles.numbering}>{item.numbering}</p>
           </div>
           <div className={styles.nickname}>
-            <img src={item.icone} alt='icone' />
+            <img src={item.icone} alt="icone" />
             <h4>{item.nickname}</h4>
           </div>
         </div>
         <div className={styles.score}>
-          <img src={item.cup} alt='cup' />
+          <img src={item.cup} alt="cup" />
           <p>{item.score}</p>
         </div>
       </div>
@@ -142,33 +142,33 @@ const Leaderboard = () => {
   return (
     <>
       <div
-        className={`container textStyles ${styles.mainStyle}`}
-        data-aos='fade-up'
+        className={`textStyles ${styles.mainStyle}`}
+        data-aos="fade-up"
       >
         <svg
           className={styles.bluCloud}
-          width='1440'
-          height='1079'
-          viewBox='0 0 1440 1079'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'
+          width="1440"
+          height="1079"
+          viewBox="0 0 1440 1079"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
         >
           <rect
-            width='1440'
-            height='1079'
-            fill='url(#paint0_radial_6506_4317)'
+            width="1440"
+            height="1079"
+            fill="url(#paint0_radial_6506_4317)"
           />
           <defs>
             <radialGradient
-              id='paint0_radial_6506_4317'
-              cx='0'
-              cy='0'
-              r='1'
-              gradientUnits='userSpaceOnUse'
-              gradientTransform='translate(720 539.5) rotate(90) scale(539.5 720)'
+              id="paint0_radial_6506_4317"
+              cx="0"
+              cy="0"
+              r="1"
+              gradientUnits="userSpaceOnUse"
+              gradientTransform="translate(720 539.5) rotate(90) scale(539.5 720)"
             >
-              <stop stopColor='#000F2E' />
-              <stop offset='1' stopColor='#00050F' stopOpacity='0' />
+              <stop stopColor="#000F2E" />
+              <stop offset="1" stopColor="#00050F" stopOpacity="0" />
             </radialGradient>
           </defs>
         </svg>

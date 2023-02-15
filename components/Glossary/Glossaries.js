@@ -3,37 +3,63 @@ import Link from "next/link";
 
 import CornerDecor from "../UI/CornerDecor/CornerDecor";
 
-import styles from "../../styles/Glossary/Glossaries.module.scss";
+import styles from "../../styles/Glossary/GlossariesIndex.module.scss";
 
-const Glossaries = ({ data }) => {
-  const glossaries = data?.result || null;
-  const isPending = data?.isPending;
+const Glossaries = ({ res }) => {
+  const glossaries = res?.result || null;
+  const isPending = false;
+  const ALPHABET = [
+    "#",
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z",
+  ];
+
   let group = null;
-  
-  const ALPHABET = ["#", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
   if (!isPending && glossaries && glossaries?.length) {
     group = ALPHABET.map((character) => {
-      const GROUPED_BY_LETTER = glossaries.filter(
-        (item) => item.character === character
-      );
+      const GROUPED_BY_LETTER = glossaries.filter((item) => item.character === character);
 
-      if (GROUPED_BY_LETTER.length) {
+      if (GROUPED_BY_LETTER?.length) {
         return (
           <Element className={styles.item} key={character} name={character}>
-            <div className={styles.value}>{character}</div>
+            <div className={styles.characterScroll}>
+              <div className={styles.value}>{character}</div>
+            </div>
+
             <div className={`${styles.contentList} ${"textStyles"}`}>
-              {GROUPED_BY_LETTER.map((groupedItem) => {
+              {GROUPED_BY_LETTER.map((groupedItem, index) => {
                 return (
-                  <Link
-                    href={"glossary/" + groupedItem.slug}
-                    key={groupedItem._id}
-                  >
+                  <Link href={"glossaries/" + groupedItem.slug} key={groupedItem._id}>
                     <div className={styles.listItem}>
-                      <div className={styles.content}>
+                      <span className={styles.content}>
                         <h3>{groupedItem.title}</h3>
                         <p>{groupedItem.teaser}</p>
-                      </div>
+                      </span>
                     </div>
                   </Link>
                 );
@@ -63,9 +89,7 @@ const Glossaries = ({ data }) => {
             <div className="container textStyles">
               <div className={styles.top}>
                 <h1 className={styles.title}>The Words of Crypto</h1>
-                <h4 className={styles.teaser}>
-                  Time to understand the language
-                </h4>
+                <h4 className={styles.teaser}>Time to understand the language</h4>
               </div>
             </div>
             <div className={`${styles.search} ${"container"}`}>

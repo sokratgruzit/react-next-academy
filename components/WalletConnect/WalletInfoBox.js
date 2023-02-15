@@ -9,8 +9,8 @@ function WalletInfoBox({ closeInfoBox }) {
     0,
     4
   )}...${currentAccount.substring(
-    currentAccount.length - 4,
-    currentAccount.length
+    currentAccount?.length - 4,
+    currentAccount?.length
   )}`;
 
   const handleClick = () => {
