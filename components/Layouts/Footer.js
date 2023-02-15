@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { connect } from "react-redux";
 import { animateScroll } from "react-scroll";
 
 import { fetchData } from "../../utils/queries";
@@ -8,6 +7,7 @@ import { fetchData } from "../../utils/queries";
 // import DarkFooterIcons from "../UI/Icons/DarkFooterIcons";
 
 import styles from "../../styles/Layouts/Footer/Footer.module.scss";
+import { Arrow, Facebook, GitHub, Linkedin, Twitter } from "@/svg";
 
 function Footer() {
   const scroll = animateScroll;
@@ -34,18 +34,6 @@ function Footer() {
     });
   };
 
-  const handleOpen1 = () => {
-    setShow1(!show1);
-  };
-
-  const handleOpen2 = () => {
-    setShow2(!show2);
-  };
-
-  const handleOpen3 = () => {
-    setShow3(!show3);
-  };
-
   useEffect(() => {
     const body = document.getElementsByTagName("body")[0];
 
@@ -57,23 +45,6 @@ function Footer() {
       localStorage.setItem("mode", "false");
     }
   }, [theme]);
-
-  const arrow = (
-    <svg
-      width="10"
-      height="5"
-      viewBox="0 0 10 5"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M0.209209 0.198521C0.488155 -0.0661736 0.940416 -0.0661736 1.21936 0.198521L4.7475 3.5464C4.88522 3.67709 5.11478 3.67709 5.2525 3.5464L8.78064 0.198521C9.05958 -0.0661736 9.51184 -0.0661736 9.79079 0.198521C10.0697 0.463215 10.0697 0.892369 9.79079 1.15706L6.26265 4.50495C5.56704 5.16502 4.43296 5.16502 3.73735 4.50495L0.209209 1.15706C-0.0697365 0.892369 -0.0697365 0.463215 0.209209 0.198521Z"
-        fill="white"
-      />
-    </svg>
-  );
 
   const getLinks = (row) => {
     if (!footerLinks) return false;
@@ -169,8 +140,18 @@ function Footer() {
           </div>
           <div className={styles.icons}>
             <div className={styles.lightIcons}>
-              {/* <DarkFooterIcons /> */}
-              HERE GOES SOCIAL NETWORK ICONS
+              <a className={styles.socialIconLink} href={"facebook.com"} target="_blank">
+                <Facebook className={styles.socialIcon} />
+              </a>
+              <a className={styles.socialIconLink} href={"facebook.com"} target="_blank">
+                <Twitter className={styles.socialIcon} />
+              </a>
+              <a className={styles.socialIconLink} href={"facebook.com"} target="_blank">
+                <Linkedin className={styles.socialIcon} />
+              </a>
+              <a className={styles.socialIconLink} href={"facebook.com"} target="_blank">
+                <GitHub className={styles.socialIcon} />
+              </a>
             </div>
           </div>
         </div>
@@ -180,16 +161,14 @@ function Footer() {
               className={`${styles.footerRightColTtl} ${
                 show1 === true ? styles.active : ""
               }`}
-              onClick={handleOpen1}
+              onClick={() => setShow1((prev) => !prev)}
             >
               <h4>services</h4>
-              {arrow}
+              <Arrow />
             </div>
-            {show1 && (
-              <div className={`${styles.footerRightColLink} ${show1 ? styles.show : ""}`}>
-                {getLinks(1)}
-              </div>
-            )}
+            <div className={`${styles.footerRightColLink} ${show1 ? styles.show : ""}`}>
+              {getLinks(1)}
+            </div>
             <div className={styles.footerRightColLinks}>{getLinks(1)}</div>
           </div>
           <div className={styles.footerRightCol}>
@@ -197,16 +176,14 @@ function Footer() {
               className={`${styles.footerRightColTtl} ${
                 show2 === true ? styles.active : ""
               }`}
-              onClick={handleOpen2}
+              onClick={() => setShow2((prev) => !prev)}
             >
               <h4>company</h4>
-              {arrow}
+              <Arrow />
             </div>
-            {show2 && (
-              <div className={`${styles.footerRightColLink} ${show2 ? styles.show : ""}`}>
-                {getLinks(2)}
-              </div>
-            )}
+            <div className={`${styles.footerRightColLink} ${show2 ? styles.show : ""}`}>
+              {getLinks(2)}
+            </div>
             <div className={styles.footerRightColLinks}>{getLinks(2)}</div>
           </div>
           <div className={styles.footerRightCol}>
@@ -214,16 +191,14 @@ function Footer() {
               className={`${styles.footerRightColTtl} ${
                 show3 === true ? styles.active : ""
               }`}
-              onClick={handleOpen3}
+              onClick={() => setShow3((prev) => !prev)}
             >
               <h4>support</h4>
-              {arrow}
+              <Arrow />
             </div>
-            {show3 && (
-              <div className={`${styles.footerRightColLink} ${show3 ? styles.show : ""}`}>
-                {getLinks(3)}
-              </div>
-            )}
+            <div className={`${styles.footerRightColLink} ${show3 ? styles.show : ""}`}>
+              {getLinks(3)}
+            </div>
             <div className={styles.footerRightColLinks}>{getLinks(3)}</div>
           </div>
         </div>
@@ -282,10 +257,4 @@ function Footer() {
   );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    //settings_data: state.settings,
-  };
-};
-
-export default connect(mapStateToProps, null)(Footer);
+export default Footer;

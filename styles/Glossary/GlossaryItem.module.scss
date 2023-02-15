@@ -1,0 +1,198 @@
+@import "../variables.scss";
+
+body:global(.light) .background {
+  display: none;
+}
+
+body:global(.light) .backgroundLight {
+  display: block;
+}
+
+body:global(.light) .head h2,
+body:global(.light) .item h3 {
+  color: $c-dark;
+}
+
+body:global(.light) .item p,
+body:global(.light) .seeAll p {
+  color: #4d5057 !important;
+}
+
+body:global(.light) .seeAll svg path {
+  fill: #4d5057;
+}
+
+body:global(.light) .itemInner {
+  background: none !important;
+}
+
+body:global(.light) .backBtn P {
+  color: #ff7152;
+}
+
+body:global(.light) .item svg path {
+  stroke: #000000;
+}
+
+.glossaryPage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  .background {
+    position: absolute;
+    left: 0;
+    top: -19%;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .backgroundLight {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: -19%;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .backBtn {
+    margin: 100px 0 55px 0;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    display: inline-flex;
+    cursor: pointer;
+
+    & p {
+      color: #ff7152;
+    }
+  }
+
+  .backBtn:hover {
+    & p {
+      color: #0500ff;
+      transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);
+    }
+
+    path {
+      fill: #0500ff;
+      transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);
+    }
+  }
+
+  .head {
+    & h2 {
+      padding-top: 60px;
+    }
+
+    .seeAll {
+      margin-top: 7px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      width: fit-content;
+      cursor: pointer;
+    }
+
+    .seeAll p {
+      color: $c-white;
+    }
+
+    .seeAll svg {
+      transition: 0.5s;
+    }
+
+    .seeAll:hover svg {
+      transform: translateX(5px);
+    }
+  }
+
+  .inner {
+    display: grid;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+
+    .itemOuter {
+      display: grid;
+      grid-column-start: 3;
+      grid-column-end: 3;
+      align-items: baseline;
+      gap: 40px;
+
+      .item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        & p {
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+
+        .value {
+          color: #808287;
+        }
+      }
+
+      .wtf {
+        grid-column-start: 2;
+        grid-column-end: 2;
+      }
+    }
+
+    .teaser {
+      margin-top: 50px;
+      grid-column-start: 1;
+      grid-column-end: 4;
+    }
+  }
+
+  .exploreMore {
+    margin: 150px 0 25px 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .glossaryPage {
+    .inner {
+      display: grid;
+
+      .itemOuter {
+        display: grid;
+        grid-column-start: 1;
+        grid-column-end: 1;
+        margin-top: 50px;
+      }
+
+      .teaser {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-end: 3;
+      }
+    }
+  }
+}
+
+// @media (max-width: 414px) {
+//   .glossary {
+
+//     .itemOuter {
+//       .item {
+//         width: 100%;
+//       }
+
+//       .item:last-child {
+//         margin-top: 0px;
+//       }
+//     }
+//   }
+// }

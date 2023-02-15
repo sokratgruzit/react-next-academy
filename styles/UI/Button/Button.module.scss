@@ -5,35 +5,46 @@
     justify-content: center;
     align-items: center;
     border-radius: 4px;
+    width: 100%;
   }
   
   ///active
   
-  .orangered {
-    color: white;
+  .orange {
+    color: white !important;
     background: #ff7152;
   
     &:hover {
       color: white;
-      background: linear-gradient(
-          0deg,
+      background: linear-gradient(0deg,
           rgba(0, 5, 15, 0.35),
-          rgba(0, 5, 15, 0.35)
-        ),
+          rgba(0, 5, 15, 0.35)),
         #ff7152;
+    }
+  }
+  
+  .withoutColor {
+    color: white;
+    border: none;
+  
+    &:hover {
+      color: white;
+      background: linear-gradient(0deg,
+          rgba(0, 5, 15, 0.35),
+          rgba(0, 5, 15, 0.35)),
+        #0500ff;
     }
   }
   
   .blue {
     color: white;
     background-color: #0500ff;
+  
     &:hover {
       color: white;
-      background: linear-gradient(
-          0deg,
+      background: linear-gradient(0deg,
           rgba(0, 5, 15, 0.35),
-          rgba(0, 5, 15, 0.35)
-        ),
+          rgba(0, 5, 15, 0.35)),
         #0500ff;
     }
   }
@@ -41,6 +52,7 @@
   .Socials {
     border: 1px solid #7497d7;
     columns: #4786ff;
+  
     &:hover {
       background-color: #4786ff;
     }
@@ -49,6 +61,7 @@
   .cardButton {
     color: white;
     border: 1px solid white;
+  
     &:hover {
       color: white;
       background: rgba(255, 255, 255, 0.1);
@@ -80,17 +93,13 @@
   //size
   
   .btn-sm {
-    width: 100px;
     height: 32px;
   }
   
   .btn-pass {
-    width: 150px;
     height: 42px;
   }
   
   .btn-big {
-    width: 300px;
     height: 55px;
   }
-  

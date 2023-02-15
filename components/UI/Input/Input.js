@@ -1,6 +1,4 @@
-import React from "react";
-
-import styles from "./Input.module.scss";
+import styles from "../../../styles/UI/Input/Input.module.scss";
 
 const Input = ({ data, type }) => {
     return (
@@ -20,45 +18,45 @@ const Input = ({ data, type }) => {
                         );
                     })}
                 </>
-            : type === "textarea" ?
-                <div className={`${styles.customInput} custom-input`}>
-                    <textarea
-                        className={styles.customTextarea}
-                        placeholder={data.placeholder}
-                        type={data.type}
-                    />
-                    <label className={styles.labelTitle}>{data.label}</label>
-                </div>
-            : type === "inputWithIcon" ?
-                <>
-                    {data.map((item, index) => {
-                        return (
-                            <div className={styles.inputWithIcon} key={index}>
-                                {item.svg}
+                : type === "textarea" ?
+                    <div className={`${styles.customInput} custom-input`}>
+                        <textarea
+                            className={styles.customTextarea}
+                            placeholder={data.placeholder}
+                            type={data.type}
+                        />
+                        <label className={styles.labelTitle}>{data.label}</label>
+                    </div>
+                    : type === "inputWithIcon" ?
+                        <>
+                            {data.map((item, index) => {
+                                return (
+                                    <div className={styles.inputWithIcon} key={index}>
+                                        {item.svg}
+                                        <div className={styles.inputWrapp}>
+                                            <input className={styles.customInput}
+                                                type={item.type}
+                                                placeholder={item.placeholder}
+                                            />
+                                            <label className={styles.inputWithIconLabel}>{item.label}</label>
+                                        </div>
+                                    </div>
+                                );
+                            })}
+                        </>
+                        : type === "inputWithButton" ?
+                            <div className={styles.inputWithButton}>
                                 <div className={styles.inputWrapp}>
                                     <input className={styles.customInput}
-                                        type={item.type}
-                                        placeholder={item.placeholder}
+                                        type={data.type}
+                                        placeholder={data.placeholder}
+                                        onChange={data.onChange}
                                     />
-                                    <label className={styles.inputWithIconLabel}>{item.label}</label>
+                                    <label className={styles.inputWithIconLabel}>{data.label}</label>
                                 </div>
+                                <div className={styles.buttonInInput}>Join now</div>
                             </div>
-                        );
-                    })}
-                </>
-                : type === "inputWithButton" ?
-                    <div className={styles.inputWithButton}>
-                        <div className={styles.inputWrapp}>
-                            <input className={styles.customInput}
-                                type={data.type}
-                                placeholder={data.placeholder}
-                                onChange={data.onChange}
-                            />
-                            <label className={styles.inputWithIconLabel}>{data.label}</label>
-                        </div>
-                        <div className={styles.buttonInInput}>Join now</div>
-                    </div>
-                : ""
+                            : ""
             }
         </>
     );

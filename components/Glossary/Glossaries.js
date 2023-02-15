@@ -54,7 +54,7 @@ const Glossaries = ({ res }) => {
             <div className={`${styles.contentList} ${"textStyles"}`}>
               {GROUPED_BY_LETTER.map((groupedItem, index) => {
                 return (
-                  <Link href={"glossaries/" + groupedItem.slug} key={groupedItem._id}>
+                  <Link href={"glossary/" + groupedItem.slug} key={groupedItem._id}>
                     <div className={styles.listItem}>
                       <span className={styles.content}>
                         <h3>{groupedItem.title}</h3>
