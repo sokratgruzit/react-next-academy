@@ -75,7 +75,7 @@ function Home({
         src="img/Bg/bg_0.png"
         alt="background"
       />
-      <div  className={`${styles.content__top__inner} ${"container"}`}>
+      <div className={`${styles.content__top__inner} ${"container"}`}>
         <IntroBox />
         <FeaturesBanner />
       </div>
