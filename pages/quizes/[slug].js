@@ -1,4 +1,4 @@
-import QuizOverview from "@/components/Quizes/QuizOverview";
+import QuizOverview from "@/components/Quizes/QuizOverview/QuizOverview";
 import React from "react";
 
 const Index = () => {

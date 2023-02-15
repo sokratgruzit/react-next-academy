@@ -105,7 +105,7 @@ function Header({ commonData }) {
                 />
               </div>
             </Link>
-            <div className={styles.endOfHeader}>
+            <div className={`${styles.endOfHeader}`}>
               <nav className={styles.navigation}>
                 {headerLinks
                   ? headerLinks.map((item) => {

@@ -17,6 +17,22 @@ body:global(.light) .header .item.active {
 body:global(.light) .header .arrow path {
   fill: $bg-dark;
 }
+body:global(.light) .header {
+  .headerInner {
+    .right {
+      .endOfHeader a {
+        color: $c-dark;
+      }
+      .navigation {
+        .customBtn {
+          .item {
+            color: $c-dark;
+          }
+        }
+      }
+    }
+  }
+}
 
 body:global(.light) .header .connectBtnWrap {
   position: relative;

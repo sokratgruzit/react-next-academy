@@ -38,11 +38,10 @@
         }
       }
 
-      //   .darkIcons {
-      //     display: flex;
-      //   }
-      // }
       .lightMode {
+        width: fit-content;
+        cursor: pointer !important;
+
         .switcher {
           .input {
             display: none;

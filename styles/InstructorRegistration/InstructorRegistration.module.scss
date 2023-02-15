@@ -67,6 +67,11 @@ body:global(.light) .testInput {
         .mainBoxLbl {
           display: flex;
           flex-wrap: wrap;
+          .title {
+            &span {
+              margin-left: 3px;
+            }
+          }
         }
 
         .borderColor {

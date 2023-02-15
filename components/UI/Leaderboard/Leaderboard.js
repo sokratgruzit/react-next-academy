@@ -142,7 +142,7 @@ const Leaderboard = () => {
   return (
     <>
       <div
-        className={`container textStyles ${styles.mainStyle}`}
+        className={`textStyles ${styles.mainStyle}`}
         data-aos="fade-up"
       >
         <svg
