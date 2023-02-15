@@ -42,7 +42,9 @@ const Glossaries = ({ res }) => {
 
   if (!isPending && glossaries && glossaries?.length) {
     group = ALPHABET.map((character) => {
-      const GROUPED_BY_LETTER = glossaries.filter((item) => item.character === character);
+      const GROUPED_BY_LETTER = glossaries.filter(
+        (item) => item.character === character
+      );
 
       if (GROUPED_BY_LETTER?.length) {
         return (
@@ -89,7 +91,9 @@ const Glossaries = ({ res }) => {
             <div className="container textStyles">
               <div className={styles.top}>
                 <h1 className={styles.title}>The Words of Crypto</h1>
-                <h4 className={styles.teaser}>Time to understand the language</h4>
+                <h4 className={styles.teaser}>
+                  Time to understand the language
+                </h4>
               </div>
             </div>
             <div className={`${styles.search} ${"container"}`}>
