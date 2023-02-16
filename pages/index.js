@@ -14,6 +14,7 @@ import Glossary from "../components/Glossary/Glossary";
 import Leaderboard from "../components/UI/Leaderboard/Leaderboard";
 import ContentWrap from "../components/UI/ContentWrap/ContentWrap";
 import GlosarryCard from "../components/UI/Glossary/GlosarryCard";
+import Banner from "../components/UI/Banner/Banner";
 
 import styles from "../styles/Home/Home.module.scss";
 
