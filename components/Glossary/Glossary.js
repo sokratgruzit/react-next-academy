@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import GlosarryCard from "../UI/Glossary/GlosarryCard";
+import GlossaryCard from "../UI/Card/GlossaryCard";
 
 import styles from "../../styles/Glossary/Glossaries.module.scss";
 
@@ -61,7 +61,7 @@ function GlossaryInner({ data }) {
           </Link>
         </div>
         <div className={styles.itemOuter}>
-          <GlosarryCard data={data} />
+          <GlossaryCard data={data} />
         </div>
       </div>
     </div>

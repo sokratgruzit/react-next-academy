@@ -3,7 +3,7 @@ import { fetchData } from "@/utils/queries";
 import Link from "next/link";
 import Moment from "react-moment";
 
-import GlosarryCard from "@/components/UI/Glossary/GlosarryCard";
+import GlossaryCard from "@/components/UI/Card/GlossaryCard";
 
 import styles from "../../styles/Glossary/GlossaryItem.module.scss";
 
@@ -207,7 +207,7 @@ function Glossary({ res, featured }) {
           <div className={styles.exploreMore}>
             <h3>Explore More</h3>
             <div className={styles.itemWrap}>
-              <GlosarryCard data={featured} />
+              <GlossaryCard data={featured} />
             </div>
             {/* <div className={styles.itemWrap}>
               {chunk?.map((item) => {
