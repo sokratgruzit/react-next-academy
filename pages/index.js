@@ -81,7 +81,7 @@ function Home({
         <FeaturesBanner />
       </div>
       <div className={styles.home__content}>
-        <div className={styles.content__top__inner}>
+        <div>
           <ContentWrap
             title={"Featured"}
             btn={true}
