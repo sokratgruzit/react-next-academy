@@ -1197,7 +1197,11 @@ body.light .pagination {
 .aligning {
   width: 80%;
   margin-right: 20%;
-  background: radial-gradient(50% 50% at 50% 50%, #000f2e 0%, rgba(0, 5, 15, 0) 100%);
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #000f2e 0%,
+    rgba(0, 5, 15, 0) 100%
+  );
 }
 
 .text section {
@@ -1609,7 +1613,11 @@ body.light .text blockquote {
 .aligning {
   width: 80%;
   margin-right: 20%;
-  background: radial-gradient(50% 50% at 50% 50%, #000f2e 0%, rgba(0, 5, 15, 0) 100%);
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #000f2e 0%,
+    rgba(0, 5, 15, 0) 100%
+  );
 }
 
 .quizText section {
@@ -2536,7 +2544,11 @@ body.light .bottomLevel {
 .aligning {
   width: 80%;
   margin-right: 20%;
-  background: radial-gradient(50% 50% at 50% 50%, #000f2e 0%, rgba(0, 5, 15, 0) 100%);
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #000f2e 0%,
+    rgba(0, 5, 15, 0) 100%
+  );
 }
 
 .terms .aligning {
@@ -2712,6 +2724,10 @@ body.light .aligning {
     display: flex;
     align-items: center;
   }
+}
+
+.denayedFilterValue {
+  display: none;
 }
 
 .denayedFilterValue {

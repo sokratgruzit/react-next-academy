@@ -1,30 +1,25 @@
 import React, { useState } from "react";
+import { useRouter } from "next/router";
 
 import styles from "../../styles/Articles/ArticlesTabs.module.scss";
 
 function ArticlesTabs({ tabs }) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const router = useRouter();
 
   const handleTabClick = (index) => {
     setActiveIndex(index);
   };
 
+  const reset = () => {
+    router.push({
+      query: {},
+    });
+  };
+
   return (
     <div className={styles.tabs}>
-      <ul className={styles.tabsNav}>
-        {tabs.map((tab, index) => (
-          <li
-            key={index}
-            className={`${styles.tabsNavItem} ${
-              activeIndex === index ? styles.active : ""
-            }`}
-            onClick={() => handleTabClick(index)}
-          >
-            {tab.label}
-          </li>
-        ))}
-      </ul>
-      <div className={styles.filterMenu}>
+      <div className={styles.tabsMenu}>
         <div className={styles.filter}>
           <svg
             width="24"
@@ -42,8 +37,20 @@ function ArticlesTabs({ tabs }) {
           </svg>
           Filter by
         </div>
-        <div className={styles.tabsContent}>{tabs[activeIndex].content}</div>
-        <div className={styles.reset}>
+        <ul className={styles.tabsNav}>
+          {tabs.map((tab, index) => (
+            <li
+              key={index}
+              className={`${styles.tabsNavItem} ${
+                activeIndex === index ? styles.active : ""
+              }`}
+              onClick={() => handleTabClick(index)}
+            >
+              {tab.label}
+            </li>
+          ))}
+        </ul>
+        <div className={styles.reset} onClick={() => reset()}>
           <svg
             width="24"
             height="24"
@@ -66,6 +73,9 @@ function ArticlesTabs({ tabs }) {
           </svg>
           Reset Filter
         </div>
+      </div>
+      <div className="container">
+        <div className={styles.tabsContent}>{tabs[activeIndex].content}</div>
       </div>
     </div>
   );
