@@ -23,10 +23,18 @@ body:global(.light) .header {
       .endOfHeader a {
         color: $c-dark;
       }
+      .item {
+        &:hover {
+          color: $c-orange;
+        }
+      }
       .navigation {
         .customBtn {
           .item {
             color: $c-dark;
+            &:hover {
+              color: $c-orange;
+            }
           }
         }
       }
@@ -220,7 +228,6 @@ body:global(.light) .headerInner .right {
     transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
   }
   .connectBtn:hover {
-    border: 1px solid #ff7152;
     background-color: transparent;
   }
   .handleWrap {
@@ -277,9 +284,20 @@ body:global(.light) .headerInner .right {
     color: #ffffffb3;
     transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
   }
-
-  .item:hover {
-    color: $c-orange;
+  .arrow path {
+    transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
+  }
+  .customBtn {
+    &:hover .arrow path {
+      fill: $c-orange;
+      transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
+    }
+  }
+  .customBtn {
+    &:hover .item {
+      color: $c-orange;
+      transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
+    }
   }
 
   .active__item {
@@ -372,10 +390,9 @@ body:global(.light) .headerInner .right {
       left: 0;
       margin-left: 0;
     }
-    .endOfHeader {
-      .switch {
-        display: none;
-      }
+
+    .switch {
+      display: none;
     }
   }
 }
@@ -398,10 +415,6 @@ body:global(.light) .headerInner .right {
     .navigation {
       display: none;
     }
-
-    // .right{
-    //    justify-content: flex-end;
-    // }
   }
 }
 @media (max-width: 1023px) {
@@ -417,16 +430,19 @@ body:global(.light) .headerInner .right {
       left: 0;
       margin-left: 0;
     }
-    .endOfHeader {
-      .switch {
-        display: none;
-      }
+
+    .switch {
+      display: none;
     }
   }
 }
 
 @media (max-width: 380px) {
   .header {
+    .connectBtn {
+      inline-size: 100px;
+      justify-content: center;
+    }
     .connectBtnWrap {
       .connectBtn {
         display: none;

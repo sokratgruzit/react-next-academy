@@ -1,8 +1,8 @@
-import styles from "./NoResult.module.scss";
+import styles from "../../../styles/UI/NoResult/NoResult.module.scss";
 
-function NotResult({ title, teaser }) {
+const NoResult = ({ title, teaser }) => {
   return (
-    <div className={`${styles.notResult} ${"textStyles"}`}>
+    <div className={`${styles.noResult} ${"textStyles"}`}>
       <h1>{title}</h1>
       <h4>{teaser}</h4>
       <svg
@@ -41,4 +41,4 @@ function NotResult({ title, teaser }) {
   );
 }
 
-export default NotResult;
+export default NoResult;

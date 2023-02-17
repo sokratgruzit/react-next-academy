@@ -1,5 +1,3 @@
-// import styles from "../../../styles/UI/Filter/Filter.module.scss";
-
 const StrokeSvg = (props) => {
   return (
     <svg

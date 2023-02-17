@@ -2,6 +2,14 @@
   width: 318px;
 }
 
+.wrapper {
+  display: flex;
+}
+
+.productsWrapper {
+  width: calc(100% - 318px);
+}
+
 .products {
   width: 100%;
   display: flex;

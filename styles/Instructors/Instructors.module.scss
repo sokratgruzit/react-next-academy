@@ -1,0 +1,207 @@
+@import "../variables.scss";
+
+// body:global(.light) .bgheader {
+//   opacity: 0 !important;
+//   z-index: -1;
+// }
+
+// body:global(.light) .bgBottom {
+//   opacity: 0 !important;
+//   z-index: -1;
+// }
+
+// body:global(.light) .imgContainer {
+//   border: 10px solid rgb(255, 255, 255);
+// }
+
+// body:global(.light) .CornerDecor_decorBoxWrap__Xi0_S {
+//   border-color: transparent !important;
+// }
+
+.box {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+
+  .header {
+    display: flex;
+    width: 100%;
+    height: auto;
+    position: relative;
+    margin-top: -60px;
+
+    .title {
+      position: absolute;
+      padding: 150px 0px 100px 40px;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .bottom {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    .img {
+      position: relative;
+
+      .bottomImg {
+        width: 100%;
+        position: absolute;
+        z-index: -1;
+      }
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      margin-top: 5px;
+      width: 100%;
+      height: auto;
+      padding: 0 40px;
+
+      .instructorList {
+        display: flex;
+        position: relative;
+        gap: 50px;
+        backdrop-filter: blur(10px);
+        padding: 20px;
+        cursor: pointer;
+
+        &:nth-child(even) {
+          display: flex;
+          position: relative;
+          flex-direction: row-reverse;
+          text-align: right;
+          margin: 90px 0px 90px 0px;
+        }
+
+        &:nth-child(odd) {
+          .content {
+            align-items: flex-start;
+          }
+        }
+
+        .imgContainer {
+          width: 240px;
+          height: 240px;
+          position: relative;
+          transition: 0.8s;
+        }
+
+        .content {
+          display: flex;
+          flex-direction: column;
+          width: 40%;
+          gap: 30px;
+
+          .text {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 5;
+            /* number of lines to show */
+            line-clamp: 5;
+            -webkit-box-orient: vertical;
+            font-weight: 400;
+            line-height: 34px;
+          }
+
+          .names {
+            overflow: visible;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+@media (max-width: 1023px) {
+  .box {
+    .containerTow {
+      gap: 55px;
+    }
+
+    .instructorList {
+      margin-bottom: 50px;
+
+      // cursor: pointer;
+      .content {
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .box {
+    .bottom {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      position: relative;
+    }
+
+    .header {
+      .title {
+        padding: 80px 0 80px 40px;
+      }
+    }
+
+    .instructorList {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      width: 95%;
+      height: auto;
+      margin-bottom: 30px;
+
+      &:nth-child(even) {
+        text-align: left;
+        flex-direction: column;
+        margin: 50px 0px 50px 0px;
+
+        .content {
+          display: flex;
+          flex-direction: column;
+          gap: 0px;
+          align-items: flex-start;
+        }
+      }
+
+      &:nth-child(odd) {
+        text-align: left;
+
+        .content {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          font-size: 30px !important;
+        }
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 0px;
+      }
+
+      .imgContainer {
+        width: 100%;
+        height: 100%;
+        padding-top: 100%;
+      }
+    }
+  }
+}

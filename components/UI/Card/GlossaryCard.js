@@ -1,12 +1,12 @@
 import Link from "next/link";
 
-import CornerDecor from "../../UI/CornerDecor/CornerDecor";
+import CornerDecor from "../CornerDecor/CornerDecor";
 
 import styles from "../../../styles/Glossary/GlossaryCard.module.scss";
 
-const GlosarryCard = ({ data }) => {
-  let chunk = data?.result.sort(() => 1 - Math.random());
+const GlossaryCard = ({ data }) => {
   const items = 2;
+  let chunk = data?.result?.sort(() => 1 - Math.random());
   let resultGlossary = chunk?.slice(0.5, items);
 
   return (
@@ -33,4 +33,4 @@ const GlosarryCard = ({ data }) => {
   );
 };
 
-export default GlosarryCard;
+export default GlossaryCard;

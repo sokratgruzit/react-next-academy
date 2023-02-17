@@ -1,0 +1,65 @@
+@import "../variables.scss";
+
+body:global(.light) .greenBanner {
+  background-color: $c-white;
+}
+
+body:global(.light) .brabackground {
+  display: none;
+}
+
+.greenBanner {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.05);
+  z-index: 111;
+  margin: 150px 0;
+
+  .backgroundImg {
+    position: absolute;
+    width: 100%;
+    z-index: -111;
+  }
+
+  .subTitle {
+    font-weight: 400;
+    font-size: 30px;
+    line-height: $f-larger;
+    margin-top: 60px;
+  }
+
+  .text {
+    @extend %mediumSmall;
+    line-height: 24px;
+    max-width: 60%;
+    text-align: center;
+    margin-top: 16px;
+    margin-bottom: 42px;
+  }
+
+  .orangBtn {
+    width: 200px;
+    @extend %medium;
+    padding: 10px 30px;
+    margin-top: auto;
+    margin-bottom: 89px;
+    border-radius: 4px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .subTltLigth {
+    font-size: 30px !important;
+    text-align: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .subTltLigth {
+    font-size: 28px !important;
+    text-align: center;
+  }
+}

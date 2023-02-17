@@ -1,16 +1,16 @@
-@import "../../../styles/variables.scss";
+@import "../../variables.scss";
 
-body:global(.light) .notResult h1 {
+body:global(.light) .noResult h1 {
     color: $c-dark;
 }
-body:global(.light) .notResult h4 {
+body:global(.light) .noResult h4 {
     color: $c-dirty-grey;
 }
-body:global(.light) .notResult svg path {
+body:global(.light) .noResult svg path {
     fill: $c-dark;
 }
 
-.notResult {
+.noResult {
     width: 100%;
     height: 550px;
     display: flex;
@@ -18,10 +18,10 @@ body:global(.light) .notResult svg path {
     align-items: center;
 }
 
-.notResult h4 {
+.noResult h4 {
     margin-top: 10px;
 }
 
-.notResult svg {
+.noResult svg {
     margin-top: 50px;
 }

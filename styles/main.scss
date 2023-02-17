@@ -1197,11 +1197,7 @@ body.light .pagination {
 .aligning {
   width: 80%;
   margin-right: 20%;
-  background: radial-gradient(
-    50% 50% at 50% 50%,
-    #000f2e 0%,
-    rgba(0, 5, 15, 0) 100%
-  );
+  background: radial-gradient(50% 50% at 50% 50%, #000f2e 0%, rgba(0, 5, 15, 0) 100%);
 }
 
 .text section {
@@ -1409,9 +1405,9 @@ td {
 }
 
 //end ot text
+
 .title {
   @extend %largest;
-  // text-align: left !important; // es xels mishlis yvelgan
   line-height: 61px;
   text-transform: capitalize;
 }
@@ -1613,11 +1609,7 @@ body.light .text blockquote {
 .aligning {
   width: 80%;
   margin-right: 20%;
-  background: radial-gradient(
-    50% 50% at 50% 50%,
-    #000f2e 0%,
-    rgba(0, 5, 15, 0) 100%
-  );
+  background: radial-gradient(50% 50% at 50% 50%, #000f2e 0%, rgba(0, 5, 15, 0) 100%);
 }
 
 .quizText section {
@@ -1748,6 +1740,11 @@ td {
 
 .quizText h6 {
   @extend %small;
+}
+
+.quiz-swiper .swiper-slide {
+  margin-right: 0px !important;
+  width: 280px !important;
 }
 
 .quizText p,
@@ -2131,8 +2128,6 @@ body.light .textStyles a {
 
 .textStyles h1 {
   @extend %largest;
-  // text-align: left !important; // es xels mishlis yvelgan
-  line-height: 61px;
   text-transform: capitalize;
 }
 
@@ -2541,11 +2536,7 @@ body.light .bottomLevel {
 .aligning {
   width: 80%;
   margin-right: 20%;
-  background: radial-gradient(
-    50% 50% at 50% 50%,
-    #000f2e 0%,
-    rgba(0, 5, 15, 0) 100%
-  );
+  background: radial-gradient(50% 50% at 50% 50%, #000f2e 0%, rgba(0, 5, 15, 0) 100%);
 }
 
 .terms .aligning {
