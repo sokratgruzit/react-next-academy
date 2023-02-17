@@ -15,6 +15,7 @@ import Leaderboard from "../components/UI/Leaderboard/Leaderboard";
 import ContentWrap from "../components/UI/ContentWrap/ContentWrap";
 import GlossaryCard from "../components/UI/Card/GlossaryCard";
 import Banner from "../components/UI/Banner/Banner";
+import Button from "@/components/UI/Button/Button";
 
 import styles from "../styles/Home/Home.module.scss";
 
@@ -144,7 +145,23 @@ function Home({
               )
             }
           />
-          <ChallangeBanner />
+          {/* <ChallangeBanner /> */}
+          {/* <Banner type={"simple"} /> */}
+          <Banner
+            type={"simple"}
+            dependency={"challange"}
+            title={"Want A Challange?"}
+            teaser={
+              "Test Your Knowledge While You Learn With Our Range Of Quizzes."
+            }
+            img={"quizBg"}
+            clasName={"btn"}
+            btn={
+              <div className={styles.quizBtn}>
+                <Button title={"Take a Quizzes"} />
+              </div>
+            }
+          />
           <ContentWrap
             title={"Leaderboard"}
             btn={false}
@@ -184,7 +201,15 @@ function Home({
             }
           />
           <Ticker elements={"academyElements"} />
-          <EmailBanner />
+          <Banner
+            type={"simple"}
+            dependency={"email"}
+            title={"Keep Up To Date — Get E-Mail Updates"}
+            teaser={"Stay Tuned For The Latest Company News."}
+            placeholder={"name@example.com"}
+            img={"contactBg"}
+            btn={<Button title={"Join Now"} />}
+          />
         </div>
       </div>
     </div>
