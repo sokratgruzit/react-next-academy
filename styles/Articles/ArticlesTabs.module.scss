@@ -1,0 +1,126 @@
+@import "../variables.scss";
+.tabs {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 89px;
+
+  .tabsNav {
+    display: flex;
+    justify-content: center;
+    gap: 3px;
+    padding: 30px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    .tabsNavItem {
+      text-align: center;
+      line-height: 22px;
+      cursor: pointer;
+      font-size: 16px;
+      color: $c-dirty-grey;
+      transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
+    }
+
+    .tabsNavItem.active {
+      color: #eee;
+    }
+  }
+
+  .filterMenu {
+    padding: 20px;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
+
+    .tabsContent {
+      display: flex;
+      gap: 8px;
+      transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
+    }
+
+    .filter,
+    .reset {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
+      cursor: pointer;
+
+      svg path {
+        transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
+
+        &:hover {
+          fill: $c-orange;
+        }
+      }
+    }
+
+    .reset {
+      &:hover {
+        color: $c-orange;
+      }
+
+      &:hover svg path {
+        fill: $c-orange;
+      }
+    }
+
+    .filter {
+      &:hover {
+        color: $c-orange;
+      }
+
+      &:hover svg path {
+        fill: $c-orange;
+      }
+    }
+  }
+}
+
+body:global(.light) {
+  .tabs {
+    .tabsNav {
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      .tabsNavItem {
+        color: #4d5057;
+      }
+      .tabsNavItem.active {
+        color: #00050f;
+      }
+    }
+    .filterMenu {
+      .filter,
+      .reset {
+        color: #00050f;
+
+        svg path {
+          fill: #00050f;
+        }
+      }
+
+      .reset {
+        &:hover {
+          color: $c-orange;
+        }
+
+        &:hover svg path {
+          fill: $c-orange;
+        }
+      }
+
+      .filter {
+        &:hover {
+          color: $c-orange;
+        }
+
+        &:hover svg path {
+          fill: $c-orange;
+        }
+      }
+    }
+  }
+}
