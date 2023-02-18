@@ -38,8 +38,10 @@ body:global(.light) .bg {
   }
 
   .title {
-    @extend %large;
+    font-size: 30px;
+    line-height: 48px;
     text-transform: capitalize;
+    margin-top: 100px;
   }
 
   .background {
@@ -95,10 +97,6 @@ body:global(.light) .bg {
           }
         }
 
-        .itemTitle {
-          @extend %medium;
-        }
-
         .numLight {
           background: none !important;
         }
@@ -117,10 +115,12 @@ body:global(.light) .bg {
           display: flex;
           justify-content: center;
           align-items: center;
-          background: radial-gradient(circle,
-              rgba(0, 5, 15, 0) 0%,
-              rgba(255, 113, 82, 0.26094187675070024) 0%,
-              rgba(0, 5, 15, 1) 100%);
+          background: radial-gradient(
+            circle,
+            rgba(0, 5, 15, 0) 0%,
+            rgba(255, 113, 82, 0.26094187675070024) 0%,
+            rgba(0, 5, 15, 1) 100%
+          );
           transition: 0.5s;
         }
 
@@ -134,21 +134,22 @@ body:global(.light) .bg {
 
         .text {
           width: calc(50% - 96px);
-          padding: 16px;
+          padding: 20px;
           padding-right: 46px;
           max-width: 429px;
           background-color: rgba(0, 0, 0, 0.4);
           color: rgba(0, 0, 0, 0.7);
           cursor: pointer;
           transition: 0.5s;
-
           .itemTitle {
-            @extend %mediumSmall;
+            font-size: 20px;
+            line-height: 24px;
           }
 
           .itemQuote {
-            @extend %small;
-            padding-top: 10px;
+            margin-top: 10px;
+            font-size: 13px;
+            line-height: 24px;
             color: $c-dirty-grey;
           }
         }
@@ -167,30 +168,38 @@ body:global(.light) .bg {
 
 @media (max-width: 767px) {
   .beginnerSteps {
+    .title {
+      margin-top: 55px;
+    }
     .steps {
       width: 100%;
+      .itemWrap {
+        .item {
+          justify-content: flex-end;
+          .conectionLineWrapp {
+            left: calc(10% - 2.5px);
+            height: calc(100% - 80px);
+            top: 81px;
+          }
+          .num {
+            left: 10%;
+            width: 80px;
+            height: 80px;
+          }
 
-      .item {
-        justify-content: flex-end;
+          &:after {
+            left: 10%;
+            top: 80px;
+          }
 
-        .num {
-          left: 10%;
-          width: 80px;
-          height: 80px;
-        }
+          .text {
+            width: calc(70% - 0px);
+            padding-right: 15px;
+          }
 
-        &:after {
-          left: 10%;
-          top: 80px;
-        }
-
-        .text {
-          width: calc(70% - 0px);
-          padding-right: 15px;
-        }
-
-        .right {
-          justify-content: flex-start;
+          .right {
+            justify-content: flex-start;
+          }
         }
       }
     }

@@ -66,7 +66,13 @@ const BeginnerSteps = ({ data }) => {
                     <h4 className={styles.itemQuote}>{item.teaser}</h4>
                   </div>
                   <div className={styles.num}>{index + 1}</div>
-                  <div className={styles.conectionLineWrapp}>
+                  <div
+                    className={styles.conectionLineWrapp}
+                    style={{
+                      display:
+                        index + 1 === data.advantages.length ? "none" : "block",
+                    }}
+                  >
                     <motion.div
                       variants={childLine}
                       className={styles.conectionLine}

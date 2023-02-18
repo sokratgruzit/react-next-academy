@@ -8,10 +8,11 @@ body:global(.light) .itemTitle {
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-bottom: 100px;
+  margin-bottom: 150px;
+  padding-top: 150px;
+
 
   .EndingItem {
-    padding-top: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
