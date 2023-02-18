@@ -35,7 +35,7 @@ const Contact = () => {
         <h1>contact us</h1>
         <h5>We’re here with you every step way!</h5>
       </div>
-      <div className={`${styles.contactBox} ${'textStyles'}`}>
+      <div className={`${styles.contactBox} ${"textStyles"}`}>
         <Input type="input" data={FORM_DATA} />
         <Input type="textarea" data={FROM_TEXTAREA} />
         <Button
