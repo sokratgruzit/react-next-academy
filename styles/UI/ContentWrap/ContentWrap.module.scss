@@ -5,6 +5,9 @@ body:global(.light) .contentWrap {
     .arrow path {
       fill: $c-dirty-grey;
     }
+    &:hover .arrow path {
+      fill: $c-orange;
+    }
   }
 }
 .contentWrap {

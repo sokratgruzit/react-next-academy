@@ -318,20 +318,21 @@ body:global(.light) .banner .body {
       .button {
         position: absolute;
         right: 7px;
-        top: 5.5px;
+        top: 5.7px;
         height: 40px;
         padding: 7.5px 16px;
-        color: $c-white;
         background-color: $c-blue;        
         border: 1px solid $c-blue;
         border-radius: 4px;
         text-align: center;
         cursor: pointer;
 
+
         &:hover {
           background-color: rgba(5, 0, 255, 0.7);
           border: 1px solid rgba(5, 0, 255, 0.7);
         }
+
       }
     }
   }

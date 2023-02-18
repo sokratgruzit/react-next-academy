@@ -208,7 +208,7 @@ function Home({
             teaser={"Stay Tuned For The Latest Company News."}
             placeholder={"name@example.com"}
             img={"contactBg"}
-            btn={<Button title={"Join Now"} />}
+            btn={<Button customStyles={{color: '#fff'}} title={"Join Now"} />}
           />
         </div>
       </div>

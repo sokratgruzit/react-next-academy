@@ -61,7 +61,7 @@ const index = ({ articlesData, data }) => {
         <img src="/img/Article/articlesBgL.png" alt="" />
       </div>
       <div className={`darkImg ${styles.imgBox}`}>
-        <img src="/img/Article/articlesBg.png" alt="" />
+        <img src="/img/Article/articlesBG.png" alt="" />
       </div>
       <ArticlesHeader />
       <div className="container">
