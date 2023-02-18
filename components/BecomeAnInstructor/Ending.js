@@ -12,7 +12,7 @@ const Ending = () => {
             Join an expanding community of elite instructors delivering
             world-class educational content.
           </h5>
-          <Link href="/instructorRegistration" className={styles.itemHotLink}>
+          <Link href="/instructor-registration" className={styles.itemHotLink}>
             Need more details before you start? Click here to learn more.
           </Link>
         </div>

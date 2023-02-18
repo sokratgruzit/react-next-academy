@@ -1,10 +1,11 @@
 import styles from "../../../styles/UI/Button/Button.module.scss";
 
-const Button = ({ title, className, size, color, svg, onClick }) => {
+const Button = ({ title, svg, onClick, customStyles }) => {
   return (
     <div
       onClick={onClick}
-      className={`${styles.btn} ${className} ${styles[color]} ${styles[size]}`}
+      className={styles.className}
+      style={customStyles}
     >
       {svg}
       {title}

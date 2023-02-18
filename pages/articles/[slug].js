@@ -41,6 +41,7 @@ const Article = ({ article }) => {
 
   return (
     <div>
+      hey yo
       {data && (
         <div className="article-page">
           <div className="container">

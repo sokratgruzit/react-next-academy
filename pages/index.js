@@ -13,9 +13,12 @@ import Glossary from "../components/Glossary/Glossary";
 
 import Leaderboard from "../components/UI/Leaderboard/Leaderboard";
 import ContentWrap from "../components/UI/ContentWrap/ContentWrap";
-import GlosarryCard from "../components/UI/Glossary/GlosarryCard";
+import GlossaryCard from "../components/UI/Card/GlossaryCard";
+import Banner from "../components/UI/Banner/Banner";
+import Button from "@/components/UI/Button/Button";
 
 import styles from "../styles/Home/Home.module.scss";
+import QuizCard from "@/components/UI/Card/QuizCard";
 
 export const getStaticProps = async () => {
   const { data: glossaries } = await fetchData(
@@ -68,6 +71,59 @@ function Home({
   security,
   essentials,
 }) {
+  const DUMMY_DATA = [
+    {
+      img: "img/quiz/course1.png",
+      title: "Kali Linux For Beginners",
+      level: "Pro",
+      category: "Security",
+      time: "10 Hours",
+    },
+    {
+      img: "img/quiz/course1.png",
+      title: "Kali Linux For Beginners",
+      level: "Pro",
+      category: "Security",
+      time: "10 Hours",
+    },
+    {
+      img: "img/quiz/course1.png",
+      title: "Kali Linux For Beginners",
+      level: "Pro",
+      category: "Security",
+      time: "10 Hours",
+    },
+    {
+      img: "img/quiz/course1.png",
+      title: "Kali Linux For Beginners",
+      level: "Pro",
+      category: "Security",
+      time: "10 Hours",
+    },
+    {
+      img: "img/quiz/course1.png",
+      title: "Kali Linux For Beginners",
+      level: "Pro",
+      category: "Security",
+      time: "10 Hours",
+    },
+    {
+      img: "img/quiz/course1.png",
+      title: "Kali Linux For Beginners",
+      level: "Pro",
+      category: "Security",
+      time: "10 Hours",
+    },
+    {
+      img: "img/quiz/course1.png",
+      title: "Kali Linux For Beginners",
+      level: "Pro",
+      category: "Security",
+      time: "10 Hours",
+    },
+  ];
+  let quizData = DUMMY_DATA; // temporary
+
   return (
     <div className={styles.home__page}>
       <img
@@ -80,7 +136,7 @@ function Home({
         <FeaturesBanner />
       </div>
       <div className={styles.home__content}>
-        <div className={styles.content__top__inner}>
+        <div>
           <ContentWrap
             title={"Featured"}
             btn={true}
@@ -121,7 +177,7 @@ function Home({
             row={true}
             element={
               glossaries && glossaries.result?.length ? (
-                <GlosarryCard data={glossaries} />
+                <GlossaryCard data={glossaries} />
               ) : (
                 ""
               )
@@ -143,87 +199,85 @@ function Home({
               )
             }
           />
+          {/* <ChallangeBanner /> */}
+          {/* <Banner type={"simple"} /> */}
+          <Banner
+            type={"simple"}
+            dependency={"challange"}
+            title={"Want A Challange?"}
+            teaser={
+              "Test Your Knowledge While You Learn With Our Range Of Quizzes."
+            }
+            img={"quizBg"}
+            clasName={"btn"}
+            btn={
+              <div className={styles.quizBtn}>
+                <Button title={"Take a Quizzes"} />
+              </div>
+            }
+          />
+          <ContentWrap
+            title={"Trending Quiz"}
+            btn={false}
+            row={false}
+            element={
+              <div className={`${styles.products} ${"textStyles"}`}>
+                {quizData.map((item, index) => {
+                  return <QuizCard item={item} key={index} />;
+                })}
+              </div>
+            }
+          />
           <ContentWrap
             title={"Leaderboard"}
             btn={false}
             row={false}
             element={<Leaderboard />}
           />
-
-          {/* {featured && featured.docs?.length ? (
-            <Articles data={featured} title="Featured" />
-          ) : (
-            ""
-          )}
-          {releases && releases.docs?.length ? (
-            <Articles data={releases} title="Latest Releases" />
-          ) : (
-            ""
-          )} */}
+          <ContentWrap
+            title={"Essentials"}
+            btn={true}
+            btnText={"See All"}
+            href={`articles?category=${
+              essentials?.docs ? essentials?.docs[0]?.category?.slug : ""
+            }`}
+            row={false}
+            element={
+              essentials && essentials.docs.length ? (
+                <Articles data={essentials} />
+              ) : (
+                ""
+              )
+            }
+          />
+          <ContentWrap
+            title={"Security"}
+            btn={true}
+            btnText={"See All"}
+            href={`articles?category=${
+              security?.docs ? security?.docs[0]?.category?.slug : ""
+            }`}
+            row={false}
+            element={
+              security && security.docs.length ? (
+                <Articles data={security} />
+              ) : (
+                ""
+              )
+            }
+          />
+          <Ticker elements={"academyElements"} />
+          <Banner
+            type={"simple"}
+            dependency={"email"}
+            title={"Keep Up To Date — Get E-Mail Updates"}
+            teaser={"Stay Tuned For The Latest Company News."}
+            placeholder={"name@example.com"}
+            img={"contactBg"}
+            btn={<Button customStyles={{ color: "#fff" }} title={"Join Now"} />}
+          />
         </div>
-        <div>
-          <h1 style={{ height: "500px", background: "red", textAlign: "auto" }}>
-            ### HERE GOES COURSES CARDs ###
-          </h1>
-        </div>
-        <div className="container">
-          {blockchain && blockchain.docs.length ? (
-            <Articles data={blockchain} title="Blockchain" />
-          ) : (
-            ""
-          )}
-        </div>
-        <div>
-          <ChallangeBanner />
-        </div>
-        <h1 style={{ height: "500px", background: "red", textAlign: "auto" }}>
-          ### HERE GOES QUIZ SLIDER ###
-        </h1>
-        {/* <div className="container">
-          <Leaderboard />
-        </div> */}
       </div>
-      {/* <div>
-        <h1 style={{ height: "500px", background: "red", textAlign: "auto" }}>
-          ### HERE GOES GLOSSARY CARDs ###
-        </h1>
-      </div>
-      <div>
-        <h1 style={{ height: "500px", background: "red", textAlign: "auto" }}>
-          ### HERE GOES COURSES CARDs ###
-        </h1>
-      </div>
-
-      <div>
-        {bloackchain && blockchain.docs.length ? (
-          <Articles data={blockchain} title="Blockchain" />
-        ) : (
-          ""
-        )}
-      </div>
-      <div>
-        <ChallangeBanner />
-      </div>
-      <div className="container">
-        <h1 style={{ height: "500px", background: "red", textAlign: "auto" }}>
-          ### HERE GOES QUIZ SLIDER ###
-        </h1>
-        <h1 style={{ height: "500px", background: "red", textAlign: "auto" }}>
-          ### HERE GOES LEADERBOARD ###
-        </h1>
-        {essentials && essentials.docs.length ? (
-          <Articles data={essentials} title="Essentials" />
-        ) : (
-          ""
-        )}
-        {security && security.docs.length ? (
-          <Articles data={security} title="Security" />
-        ) : (
-          ""
-        )}
-      </div>
-      <Ticker elements={"academyElements"} />
-      <EmailBanner /> */}
     </div>
   );
 }
