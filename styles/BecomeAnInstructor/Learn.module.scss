@@ -48,12 +48,16 @@
 
         .itemTitle {
           color: $bg-orange;
+          font-size: 20px;
+          line-height: 24px;
           text-align: center;
-          padding-bottom: 10px;
+          padding-bottom: 8px;
         }
 
         .itemBlockquote {
           opacity: 0.7;
+          font-size: 16px;
+          line-height: 24px;
         }
 
         .paragraphGrey {
@@ -69,15 +73,16 @@
         top: 0%;
         right: 0px;
         background: rgb(116, 100, 215);
-        background: linear-gradient(0deg,
-            rgba(116, 100, 215, 0) 0%,
-            rgba(116, 100, 215, 1) 50%,
-            rgba(116, 100, 215, 0) 100%);
+        background: linear-gradient(
+          0deg,
+          rgba(116, 100, 215, 0) 0%,
+          rgba(116, 100, 215, 1) 50%,
+          rgba(116, 100, 215, 0) 100%
+        );
       }
-
-      .listIitem:last-child:after {
-        display: none;
-      }
+    }
+    .learnList > .listItem:last-child::after {
+      display: none;
     }
   }
 }
@@ -96,7 +101,7 @@
 
         .listItem {
           width: 100%;
-          padding: 45px 0px 0px 0px;
+          padding: 55px 0px 0px 0px;
         }
       }
     }
