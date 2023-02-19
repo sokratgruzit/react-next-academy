@@ -1,0 +1,145 @@
+@import "../variables.scss";
+
+body:global(.light) .lbl {
+  color: #00050f !important;
+}
+
+.box {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin-top: 100px;
+  margin-bottom: 130px;
+
+  .textContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 45%;
+    height: 100%;
+
+    .settingsTitle {
+      display: flex;
+      flex-wrap: wrap;
+      overflow: hidden;
+      max-width: 256px;
+      max-height: 132px;
+      height: auto;
+      margin-bottom: 5px;
+      margin-right: 30px;
+      font-size: 54px;
+      line-height: 66px;
+    }
+
+    .paragraph {
+      display: flex;
+      flex-wrap: wrap;
+      overflow: hidden;
+      max-width: 217px;
+      max-height: 68px;
+      color: $c-white;
+    }
+  }
+
+  .acountContact {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: flex-start;
+    width: 55%;
+    height: 100%;
+
+    .profileImg {
+      width: 161.31px;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .name {
+      margin-top: 16px;
+    }
+
+    .conteiner {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 330px;
+      margin: 30px 0px 25px 0px;
+    }
+
+    .buttonbox {
+      width: 330px;
+      cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .box {
+    .acountContact {
+      .conteiner {
+        width: 400px;
+      }
+
+      .buttonbox {
+        width: 400px;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .box {
+    display: flex;
+    flex-direction: column;
+    margin-left: 7px;
+
+    .textContainer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+      text-align: center;
+
+      .settingsTitle {
+        width: 100%;
+        margin: 0px 7px 0px 7px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .paragraph {
+        margin: 0px 0px 0px 24px;
+      }
+    }
+
+    .acountContact {
+      display: flex;
+      width: 100%;
+
+      .profileImg {
+        margin-top: 40px;
+        margin-left: auto;
+        margin-right: auto;
+        object-fit: cover;
+      }
+
+      .name {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .conteiner {
+        width: 95%;
+      }
+
+      .buttonbox {
+        width: 95%;
+      }
+    }
+  }
+}
