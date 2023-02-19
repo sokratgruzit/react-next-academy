@@ -2,10 +2,14 @@
 
 body:global(.light) .greenBanner {
   background-color: $c-white;
-}
 
-body:global(.light) .brabackground {
-  display: none;
+  .subTitle {
+    color: $c-dark;
+  }
+
+  .text {
+    color: #808287;
+  }
 }
 
 .greenBanner {
@@ -14,27 +18,28 @@ body:global(.light) .brabackground {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: rgba(255, 255, 255, 0.05);
+  background: #0d121e;
   z-index: 111;
   margin: 150px 0;
+  padding: 89px 40px;
 
   .backgroundImg {
     position: absolute;
+    z-index: -1;
     width: 100%;
-    z-index: -111;
+    svg {
+      width: 100%;
+    }
   }
 
   .subTitle {
-    font-weight: 400;
     font-size: 30px;
-    line-height: $f-larger;
-    margin-top: 60px;
+    line-height: 44px;
   }
 
   .text {
-    @extend %mediumSmall;
+    font-size: 16px;
     line-height: 24px;
-    max-width: 60%;
     text-align: center;
     margin-top: 16px;
     margin-bottom: 42px;
@@ -45,12 +50,23 @@ body:global(.light) .brabackground {
     @extend %medium;
     padding: 10px 30px;
     margin-top: auto;
-    margin-bottom: 89px;
     border-radius: 4px;
+    background-color: $bg-orange;
+    text-align: center;
+    color: $c-white;
+    transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.95);
+    cursor: pointer;
+
+    &:hover {
+      background-color: #a64c3a;
+    }
   }
 }
 
 @media (max-width: 1023px) {
+  .greenBanner {
+    padding: 89px 32px;
+  }
   .subTltLigth {
     font-size: 30px !important;
     text-align: center;
@@ -58,6 +74,9 @@ body:global(.light) .brabackground {
 }
 
 @media (max-width: 767px) {
+  .greenBanner {
+    padding: 89px 16px;
+  }
   .subTltLigth {
     font-size: 28px !important;
     text-align: center;

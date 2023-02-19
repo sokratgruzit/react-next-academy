@@ -45,34 +45,38 @@ const Instructors = () => {
         <div className={styles.title}>
           <h1>Instructors</h1>
         </div>
-        <img src='/img/InstructorImgs/bgheder.png' />
+        <img className="darkImg" src="/img/InstructorImgs/bgheder.png" />
+        <img className="lightImg" src="/img/InstructorImgs/bgLight.png" />
       </div>
       <div className={styles.bottom}>
         <div className={styles.img}>
-          <img className={styles.bottomImg} src='/img/InstructorImgs/bgbottom.png' />
+          <img
+            className={`darkImg ${styles.bottomImg}`}
+            src="/img/InstructorImgs/bgbottom.png"
+          />
         </div>
-        <div className={styles.container}>
+        <div className={`${styles.container} container`}>
           {INSTRUCTOR_DATA.map((item) => {
             return (
-                <motion.div
-                    initial='offscreen'
-                    whileInView='onscreen'
-                    viewport={{ once: true, amount: 0.4 }}
-                    key={item.id}
-                    variants={CARD_VARIANTS}
-                    className={styles.instructorList}
-                    onClick={() => router.push(`/instructors/${item.id}`)}
-                    style={{ zIndex: '150'}}
-                >
-                    <CornerDecor />
-                    <div className={styles.imgContainer}>
-                        <img src={item.img} alt='instructor img' />
-                    </div>
-                    <div className={styles.content}>
-                        <h3 className={styles.names}>{item.name}</h3>
-                        <p className={`${styles.text}`}>{item.text}</p>
-                    </div>
-                </motion.div>
+              <motion.div
+                initial="offscreen"
+                whileInView="onscreen"
+                viewport={{ once: true, amount: 0.4 }}
+                key={item.id}
+                variants={CARD_VARIANTS}
+                className={styles.instructorList}
+                onClick={() => router.push(`/instructors/${item.id}`)}
+                style={{ zIndex: "150" }}
+              >
+                <CornerDecor />
+                <div className={styles.imgContainer}>
+                  <img src={item.img} alt="instructor img" />
+                </div>
+                <div className={styles.content}>
+                  <h3 className={styles.names}>{item.name}</h3>
+                  <p className={`${styles.text}`}>{item.text}</p>
+                </div>
+              </motion.div>
             );
           })}
         </div>
