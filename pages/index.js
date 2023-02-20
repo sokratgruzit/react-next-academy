@@ -20,6 +20,8 @@ import Button from "@/components/UI/Button/Button";
 import styles from "../styles/Home/Home.module.scss";
 import QuizCard from "@/components/UI/Card/QuizCard";
 
+import TrendingQuiz from "@/components/TrendingQuiz/TrendingQuiz";
+
 export const getStaticProps = async () => {
   const { data: glossaries } = await fetchData(
     `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/glossaries?limit=3`
@@ -71,58 +73,58 @@ function Home({
   security,
   essentials,
 }) {
-  const DUMMY_DATA = [
-    {
-      img: "img/quiz/course1.png",
-      title: "Kali Linux For Beginners",
-      level: "Pro",
-      category: "Security",
-      time: "10 Hours",
-    },
-    {
-      img: "img/quiz/course1.png",
-      title: "Kali Linux For Beginners",
-      level: "Pro",
-      category: "Security",
-      time: "10 Hours",
-    },
-    {
-      img: "img/quiz/course1.png",
-      title: "Kali Linux For Beginners",
-      level: "Pro",
-      category: "Security",
-      time: "10 Hours",
-    },
-    {
-      img: "img/quiz/course1.png",
-      title: "Kali Linux For Beginners",
-      level: "Pro",
-      category: "Security",
-      time: "10 Hours",
-    },
-    {
-      img: "img/quiz/course1.png",
-      title: "Kali Linux For Beginners",
-      level: "Pro",
-      category: "Security",
-      time: "10 Hours",
-    },
-    {
-      img: "img/quiz/course1.png",
-      title: "Kali Linux For Beginners",
-      level: "Pro",
-      category: "Security",
-      time: "10 Hours",
-    },
-    {
-      img: "img/quiz/course1.png",
-      title: "Kali Linux For Beginners",
-      level: "Pro",
-      category: "Security",
-      time: "10 Hours",
-    },
-  ];
-  let quizData = DUMMY_DATA; // temporary
+  // const DUMMY_DATA = [
+  //   {
+  //     img: "img/quiz/course1.png",
+  //     title: "Kali Linux For Beginners",
+  //     level: "Pro",
+  //     category: "Security",
+  //     time: "10 Hours",
+  //   },
+  //   {
+  //     img: "img/quiz/course1.png",
+  //     title: "Kali Linux For Beginners",
+  //     level: "Pro",
+  //     category: "Security",
+  //     time: "10 Hours",
+  //   },
+  //   {
+  //     img: "img/quiz/course1.png",
+  //     title: "Kali Linux For Beginners",
+  //     level: "Pro",
+  //     category: "Security",
+  //     time: "10 Hours",
+  //   },
+  //   {
+  //     img: "img/quiz/course1.png",
+  //     title: "Kali Linux For Beginners",
+  //     level: "Pro",
+  //     category: "Security",
+  //     time: "10 Hours",
+  //   },
+  //   {
+  //     img: "img/quiz/course1.png",
+  //     title: "Kali Linux For Beginners",
+  //     level: "Pro",
+  //     category: "Security",
+  //     time: "10 Hours",
+  //   },
+  //   {
+  //     img: "img/quiz/course1.png",
+  //     title: "Kali Linux For Beginners",
+  //     level: "Pro",
+  //     category: "Security",
+  //     time: "10 Hours",
+  //   },
+  //   {
+  //     img: "img/quiz/course1.png",
+  //     title: "Kali Linux For Beginners",
+  //     level: "Pro",
+  //     category: "Security",
+  //     time: "10 Hours",
+  //   },
+  // ];
+  // let quizData = DUMMY_DATA; // temporary
 
   return (
     <div className={styles.home__page}>
@@ -221,10 +223,8 @@ function Home({
             btn={false}
             row={false}
             element={
-              <div className={`${styles.products} ${"textStyles"}`}>
-                {quizData.map((item, index) => {
-                  return <QuizCard item={item} key={index} />;
-                })}
+              <div style={{ position: "relative" }}>
+                <TrendingQuiz type={"default"} />
               </div>
             }
           />
