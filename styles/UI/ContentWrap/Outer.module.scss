@@ -1,0 +1,26 @@
+@import "../../variables.scss";
+
+.outer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .background {
+    position: absolute;
+    top: -10%;
+    left: 0;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  .inner {
+    padding-top: 150px;
+  }
+
+  .element {
+    margin-top: 100px;
+  }
+}
