@@ -4,7 +4,7 @@ const Button = ({ title, onClick, customStyles }) => {
   return (
     <div onClick={onClick} style={customStyles}>
       {title}
-      {svg}
+      {/* {svg} */}
       btn
     </div>
   );
