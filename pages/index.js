@@ -13,7 +13,8 @@ import Glossary from "../components/Glossary/Glossary";
 
 import Leaderboard from "../components/UI/Leaderboard/Leaderboard";
 import ContentWrap from "../components/UI/ContentWrap/ContentWrap";
-import GlosarryCard from "../components/UI/Glossary/GlosarryCard";
+import GlossaryCard from "../components/UI/Card/GlossaryCard";
+import Banner from "../components/UI/Banner/Banner";
 
 import styles from "../styles/Home/Home.module.scss";
 
@@ -80,7 +81,7 @@ function Home({
         <FeaturesBanner />
       </div>
       <div className={styles.home__content}>
-        <div className={styles.content__top__inner}>
+        <div>
           <ContentWrap
             title={"Featured"}
             btn={true}
@@ -121,7 +122,7 @@ function Home({
             row={true}
             element={
               glossaries && glossaries.result?.length ? (
-                <GlosarryCard data={glossaries} />
+                <GlossaryCard data={glossaries} />
               ) : (
                 ""
               )
@@ -143,87 +144,49 @@ function Home({
               )
             }
           />
+          <ChallangeBanner />
           <ContentWrap
             title={"Leaderboard"}
             btn={false}
             row={false}
             element={<Leaderboard />}
           />
-
-          {/* {featured && featured.docs?.length ? (
-            <Articles data={featured} title="Featured" />
-          ) : (
-            ""
-          )}
-          {releases && releases.docs?.length ? (
-            <Articles data={releases} title="Latest Releases" />
-          ) : (
-            ""
-          )} */}
+          <ContentWrap
+            title={"Essentials"}
+            btn={true}
+            btnText={"See All"}
+            href={`articles?category=${
+              essentials?.docs ? essentials?.docs[0]?.category?.slug : ""
+            }`}
+            row={false}
+            element={
+              essentials && essentials.docs.length ? (
+                <Articles data={essentials} />
+              ) : (
+                ""
+              )
+            }
+          />
+          <ContentWrap
+            title={"Security"}
+            btn={true}
+            btnText={"See All"}
+            href={`articles?category=${
+              security?.docs ? security?.docs[0]?.category?.slug : ""
+            }`}
+            row={false}
+            element={
+              security && security.docs.length ? (
+                <Articles data={security} />
+              ) : (
+                ""
+              )
+            }
+          />
+          <Ticker elements={"academyElements"} />
+          <EmailBanner />
         </div>
-        <div>
-          <h1 style={{ height: "500px", background: "red", textAlign: "auto" }}>
-            ### HERE GOES COURSES CARDs ###
-          </h1>
-        </div>
-        <div className="container">
-          {blockchain && blockchain.docs.length ? (
-            <Articles data={blockchain} title="Blockchain" />
-          ) : (
-            ""
-          )}
-        </div>
-        <div>
-          <ChallangeBanner />
-        </div>
-        <h1 style={{ height: "500px", background: "red", textAlign: "auto" }}>
-          ### HERE GOES QUIZ SLIDER ###
-        </h1>
-        {/* <div className="container">
-          <Leaderboard />
-        </div> */}
       </div>
-      {/* <div>
-        <h1 style={{ height: "500px", background: "red", textAlign: "auto" }}>
-          ### HERE GOES GLOSSARY CARDs ###
-        </h1>
-      </div>
-      <div>
-        <h1 style={{ height: "500px", background: "red", textAlign: "auto" }}>
-          ### HERE GOES COURSES CARDs ###
-        </h1>
-      </div>
-
-      <div>
-        {bloackchain && blockchain.docs.length ? (
-          <Articles data={blockchain} title="Blockchain" />
-        ) : (
-          ""
-        )}
-      </div>
-      <div>
-        <ChallangeBanner />
-      </div>
-      <div className="container">
-        <h1 style={{ height: "500px", background: "red", textAlign: "auto" }}>
-          ### HERE GOES QUIZ SLIDER ###
-        </h1>
-        <h1 style={{ height: "500px", background: "red", textAlign: "auto" }}>
-          ### HERE GOES LEADERBOARD ###
-        </h1>
-        {essentials && essentials.docs.length ? (
-          <Articles data={essentials} title="Essentials" />
-        ) : (
-          ""
-        )}
-        {security && security.docs.length ? (
-          <Articles data={security} title="Security" />
-        ) : (
-          ""
-        )}
-      </div>
-      <Ticker elements={"academyElements"} />
-      <EmailBanner /> */}
     </div>
   );
 }

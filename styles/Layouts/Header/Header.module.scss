@@ -23,10 +23,18 @@ body:global(.light) .header {
       .endOfHeader a {
         color: $c-dark;
       }
+      .item {
+        &:hover {
+          color: $c-orange;
+        }
+      }
       .navigation {
         .customBtn {
           .item {
             color: $c-dark;
+            &:hover {
+              color: $c-orange;
+            }
           }
         }
       }

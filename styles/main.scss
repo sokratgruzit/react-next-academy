@@ -1405,9 +1405,9 @@ td {
 }
 
 //end ot text
+
 .title {
   @extend %largest;
-  // text-align: left !important; // es xels mishlis yvelgan
   line-height: 61px;
   text-transform: capitalize;
 }
