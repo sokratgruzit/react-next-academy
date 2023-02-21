@@ -5,9 +5,7 @@ import { fetchData } from "@/utils/queries";
 import Articles from "../components/Articles/Articles";
 import IntroBox from "../components/Home/IntroBox";
 import FeaturesBanner from "../components/Home/FeaturesBanner";
-import ChallangeBanner from "../components/Home/ChallangeBanner";
 import Ticker from "../components/UI/Ticker/Ticker";
-import EmailBanner from "../components/Home/EmailBanner";
 import MotionLayout from "../components/UI/MotionLayout/MotionLayout";
 import Glossary from "../components/Glossary/Glossary";
 
@@ -73,59 +71,6 @@ function Home({
   security,
   essentials,
 }) {
-  // const DUMMY_DATA = [
-  //   {
-  //     img: "img/quiz/course1.png",
-  //     title: "Kali Linux For Beginners",
-  //     level: "Pro",
-  //     category: "Security",
-  //     time: "10 Hours",
-  //   },
-  //   {
-  //     img: "img/quiz/course1.png",
-  //     title: "Kali Linux For Beginners",
-  //     level: "Pro",
-  //     category: "Security",
-  //     time: "10 Hours",
-  //   },
-  //   {
-  //     img: "img/quiz/course1.png",
-  //     title: "Kali Linux For Beginners",
-  //     level: "Pro",
-  //     category: "Security",
-  //     time: "10 Hours",
-  //   },
-  //   {
-  //     img: "img/quiz/course1.png",
-  //     title: "Kali Linux For Beginners",
-  //     level: "Pro",
-  //     category: "Security",
-  //     time: "10 Hours",
-  //   },
-  //   {
-  //     img: "img/quiz/course1.png",
-  //     title: "Kali Linux For Beginners",
-  //     level: "Pro",
-  //     category: "Security",
-  //     time: "10 Hours",
-  //   },
-  //   {
-  //     img: "img/quiz/course1.png",
-  //     title: "Kali Linux For Beginners",
-  //     level: "Pro",
-  //     category: "Security",
-  //     time: "10 Hours",
-  //   },
-  //   {
-  //     img: "img/quiz/course1.png",
-  //     title: "Kali Linux For Beginners",
-  //     level: "Pro",
-  //     category: "Security",
-  //     time: "10 Hours",
-  //   },
-  // ];
-  // let quizData = DUMMY_DATA; // temporary
-
   return (
     <div className={styles.home__page}>
       <img
@@ -262,7 +207,7 @@ function Home({
               security && security.docs.length ? (
                 <Articles data={security} />
               ) : (
-                ""
+                "where is fkin data?"
               )
             }
           />

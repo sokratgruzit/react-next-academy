@@ -2,8 +2,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import SlideIcons from "../UI/TotalReviews/SlideIcons";
 
-import Card from "../UI/TrendingCards/Card.js";
-import { data } from "../UI/TrendingCards/data";
+import Card from "../UI/Card/TrendingCard";
+import { data } from "../UI/Card/helper";
 
 import "swiper/css";
 
