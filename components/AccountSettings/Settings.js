@@ -49,11 +49,10 @@ function Settings() {
           </div>
           <div className={styles.buttonbox}>
             <Button
-              size={"btn-pass"}
-              color={"blue"}
-              title="Change Password"
-              className={"btn"}
+              title={'Register'}
+              customStyles={{background: '#0500ff'}}
             />
+            {/* BUTTON ALERT !!! */}
           </div>
         </div>
       </div>

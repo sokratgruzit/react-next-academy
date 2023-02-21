@@ -40,12 +40,7 @@ const Contact = () => {
         <div className={`${styles.contactBox} ${"textStyles"}`}>
           <Input type="input" data={FORM_DATA} />
           <Input type="textarea" data={FROM_TEXTAREA} />
-          <Button
-            size={"btn-big"}
-            color={"blue"}
-            title="send message"
-            className={""}
-          />
+          <Button title={"Send Message"} background={'orange'} customStyles={{padding: '17px 0px 17px 0px', borderRadius: '4px'}} />
         </div>
       </div>
     </div>
