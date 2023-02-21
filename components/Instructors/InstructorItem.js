@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const InstructorItem = () => {
-  return (
-    <div>InstructorItem</div>
-  )
-}
+  return <div>InstructorItem</div>;
+};
 
 export default InstructorItem;
