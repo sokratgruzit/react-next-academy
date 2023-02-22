@@ -35,8 +35,11 @@ export const getStaticProps = async ({ params }) => {
   const res = await fetchData(
     `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/glossaries/${slug}`
   );
-  const featured = await fetchData(
-    `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/glossaries`
+  // const featured = await fetchData(
+  //   `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/glossaries`
+  // );
+  const { data: featured } = await fetchData(
+    `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/glossaries?category=62fb6bd0ab723fa8b038fcdf&limit=3`
   );
 
   return {
@@ -91,7 +94,7 @@ function Glossary({ res, featured }) {
             </div>
           </Link>
           <div className={styles.inner}>
-            <h3>{data.title}</h3>
+            <h3 className={styles.title}>{data.title}</h3>
             <div className={styles.itemOuter}>
               <div className={styles.item}>
                 <svg
@@ -180,7 +183,7 @@ function Glossary({ res, featured }) {
                   {data.createdAt}
                 </Moment>
               </div>
-              <div className={`${styles.item} ${styles.wtf}`}>
+              <div className={`${styles.item} ${styles.ItemDate}`}>
                 <svg
                   width="24"
                   height="24"
@@ -205,9 +208,15 @@ function Glossary({ res, featured }) {
             <div className={styles.teaser}>{data.teaser}</div>
           </div>
           <div className={styles.exploreMore}>
-            <h3>Explore More</h3>
+            <h3 className={styles.explore}>Explore More</h3>
             <div className={styles.itemWrap}>
-              <GlossaryCard data={featured} />
+              {featured && featured.result?.length ? (
+                <div className={styles.cards}>
+                  <GlossaryCard quantity={"3"} data={featured} />
+                </div>
+              ) : (
+                ""
+              )}
             </div>
             {/* <div className={styles.itemWrap}>
               {chunk?.map((item) => {
