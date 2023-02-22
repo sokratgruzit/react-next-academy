@@ -149,8 +149,8 @@ function Home({
             img={"quizBg"}
             clasName={"btn"}
             btn={
-              <div className={styles.quizBtn}>
-                <Button title={"Take a Quizzes"} />
+              <div>
+                <Button type={"transparent-btn"} title={"Take a Quizzes"} />
               </div>
             }
           />

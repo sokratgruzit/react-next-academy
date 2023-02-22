@@ -216,20 +216,6 @@ body:global(.light) .headerInner .right {
   align-items: center;
   padding: 24px 0;
 
-  .connectBtn {
-    border: 1px solid #ff7152;
-    height: 42px;
-    padding: 0 22px;
-    cursor: pointer;
-    background-color: #ff7152;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
-  }
-  .connectBtn:hover {
-    background-color: transparent;
-  }
   .handleWrap {
     display: flex;
     align-items: center;
@@ -331,46 +317,46 @@ body:global(.light) .headerInner .right {
     margin-left: 20px;
   }
 
-  .connectBtnWrap {
-    position: relative;
-    margin-right: 0;
-    margin-left: auto;
-    display: flex;
+  // .connectBtnWrap {
+  //   position: relative;
+  //   margin-right: 0;
+  //   margin-left: auto;
+  //   display: flex;
 
-    .connectBtn {
-      flex: none;
-      display: flex;
-      align-items: center;
-      padding: 10px 22px;
-      border-radius: 4px;
-      border: 1px solid $bg-orange;
-      background: $c-orange;
-      transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
-      margin-right: 16px;
+  //   .connectBtn {
+  //     flex: none;
+  //     display: flex;
+  //     align-items: center;
+  //     padding: 10px 22px;
+  //     border-radius: 4px;
+  //     border: 1px solid $bg-orange;
+  //     background: $c-orange;
+  //     transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
+  //     margin-right: 16px;
 
-      span {
-        color: $c-white;
-      }
+  //     span {
+  //       color: $c-white;
+  //     }
 
-      &.connected,
-      &:hover {
-        background: transparent;
-        border: 1px solid $c-orange;
-      }
+  //     &.connected,
+  //     &:hover {
+  //       background: transparent;
+  //       border: 1px solid $c-orange;
+  //     }
 
-      &.connected .arrow {
-        display: block;
-        margin-left: 9px;
-        transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
-      }
-      &.connected:hover .arrow {
-        transform: rotate(180deg);
-      }
-    }
-    .connectBtnTwo {
-      display: none;
-    }
-  }
+  //     &.connected .arrow {
+  //       display: block;
+  //       margin-left: 9px;
+  //       transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
+  //     }
+  //     &.connected:hover .arrow {
+  //       transform: rotate(180deg);
+  //     }
+  //   }
+  //   .connectBtnTwo {
+  //     display: none;
+  //   }
+  // }
   .arrow {
     margin-left: 5px;
     transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);

@@ -1,3 +1,4 @@
+import Button from "../components/UI/Button/Button";
 import Link from "next/link";
 
 import styles from "../styles/404.module.scss";
@@ -12,8 +13,8 @@ function NotFound() {
           <h4 className={styles.teaser}>
             Your browser sent a request that this server could not understand
           </h4>
-          <Link className={styles.mainBtn} href="/">
-            <div className={styles.btn}>Go Back To Main Page</div>
+          <Link className={styles.return} href="/">
+            <Button type={"blue-btn"} title={"Go Back To Main Page"} />
           </Link>
         </div>
       </div>

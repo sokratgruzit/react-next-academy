@@ -1,13 +1,36 @@
 import styles from "../../../styles/UI/Button/Button.module.scss";
 
-const Button = ({ title, onClick, customStyles }) => {
+const Button = ({ type, title, onClick, customStyles }) => {
   return (
-    <div onClick={onClick} style={customStyles}>
-      {title}
-      {/* {svg} */}
-      btn
-    </div>
+    <>
+      {type === "transparent-btn" ? (
+        <div
+          className={`${styles.transparentBtn} ${styles.button}`}
+          onClick={onClick}
+          style={customStyles}
+        >
+          {title}
+        </div>
+      ) : type === "blue-btn" ? (
+        <div
+          className={`${styles.blueBtn} ${styles.button}`}
+          onClick={onClick}
+          style={customStyles}
+        >
+          {title}
+        </div>
+      ) : type === "orange-btn" ? (
+        <div
+          className={`${styles.orangeBtn} ${styles.button}`}
+          onClick={onClick}
+          style={customStyles}
+        >
+          {title}
+        </div>
+      ) : (
+        ""
+      )}
+    </>
   );
 };
-
 export default Button;
