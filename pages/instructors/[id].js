@@ -1,6 +1,4 @@
-import React from "react";
-
-import InstructorItem from "@/components/Instructors/InstructorItem";
+import InstructorItem from "../../components/Instructors/InstructorItem";
 
 const DUMMY_DATA = {
   id: 0,
