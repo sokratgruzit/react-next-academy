@@ -25,11 +25,10 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const slug = context.params.slug || undefined;
-
   const article = await fetchData(
     `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles/${slug}`
   );
-
+    console.log(`${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles/${slug}`)
   return {
     props: {
       article,
@@ -38,13 +37,14 @@ export const getStaticProps = async (context) => {
 };
 
 const Article = ({ article }) => {
-  console.log(article)
+  console.log(article, "article");
   const router = useRouter();
   const data = article?.data?.result || null;
 
   return (
     <div>
       hey yo
+      {/* we need help here */}
       {data && (
         <div className="article-page">
           <div className="container">

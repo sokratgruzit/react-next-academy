@@ -1,10 +1,20 @@
 @import "../../variables.scss";
 
-.btn {
+.orangeBtn {
+  &:hover {
+    background-color: $c-orange;
+  }
+}
+.button {
   display: flex;
+  align-items: center;
   justify-content: center;
   transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
   cursor: pointer;
+
+  &:hover {
+    background: transparent;
+  }
 }
 
 // .btn {

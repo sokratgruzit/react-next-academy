@@ -1,24 +1,18 @@
-import { motion } from "framer-motion";
-
 import { fetchData } from "@/utils/queries";
 
 import Articles from "../components/Articles/Articles";
 import IntroBox from "../components/Home/IntroBox";
 import FeaturesBanner from "../components/Home/FeaturesBanner";
-import ChallangeBanner from "../components/Home/ChallangeBanner";
-import Ticker from "../components/UI/Ticker/Ticker";
-import EmailBanner from "../components/Home/EmailBanner";
-import MotionLayout from "../components/UI/MotionLayout/MotionLayout";
-import Glossary from "../components/Glossary/Glossary";
+import TrendingQuiz from "../components/TrendingQuiz/TrendingQuiz";
 
+import Ticker from "../components/UI/Ticker/Ticker";
 import Leaderboard from "../components/UI/Leaderboard/Leaderboard";
 import ContentWrap from "../components/UI/ContentWrap/ContentWrap";
 import GlossaryCard from "../components/UI/Card/GlossaryCard";
 import Banner from "../components/UI/Banner/Banner";
-import Button from "@/components/UI/Button/Button";
+import Button from "../components/UI/Button/Button";
 
 import styles from "../styles/Home/Home.module.scss";
-import QuizCard from "@/components/UI/Card/QuizCard";
 
 export const getStaticProps = async () => {
   const { data: glossaries } = await fetchData(
@@ -55,7 +49,6 @@ export const getStaticProps = async () => {
       releases,
       blockchain,
       featured,
-      category,
       security,
       essentials,
     },
@@ -66,64 +59,10 @@ function Home({
   glossaries,
   releases,
   blockchain,
-  category,
   featured,
   security,
   essentials,
 }) {
-  const DUMMY_DATA = [
-    {
-      img: "img/quiz/course1.png",
-      title: "Kali Linux For Beginners",
-      level: "Pro",
-      category: "Security",
-      time: "10 Hours",
-    },
-    {
-      img: "img/quiz/course1.png",
-      title: "Kali Linux For Beginners",
-      level: "Pro",
-      category: "Security",
-      time: "10 Hours",
-    },
-    {
-      img: "img/quiz/course1.png",
-      title: "Kali Linux For Beginners",
-      level: "Pro",
-      category: "Security",
-      time: "10 Hours",
-    },
-    {
-      img: "img/quiz/course1.png",
-      title: "Kali Linux For Beginners",
-      level: "Pro",
-      category: "Security",
-      time: "10 Hours",
-    },
-    {
-      img: "img/quiz/course1.png",
-      title: "Kali Linux For Beginners",
-      level: "Pro",
-      category: "Security",
-      time: "10 Hours",
-    },
-    {
-      img: "img/quiz/course1.png",
-      title: "Kali Linux For Beginners",
-      level: "Pro",
-      category: "Security",
-      time: "10 Hours",
-    },
-    {
-      img: "img/quiz/course1.png",
-      title: "Kali Linux For Beginners",
-      level: "Pro",
-      category: "Security",
-      time: "10 Hours",
-    },
-  ];
-  let quizData = DUMMY_DATA; // temporary
-
   return (
     <div className={styles.home__page}>
       <img
@@ -183,6 +122,7 @@ function Home({
               )
             }
           />
+          <Banner type={"coming-soon"} title={"Courses"} img={"comingSoon"} />
           <ContentWrap
             title={"Blockchain"}
             btn={true}
@@ -199,8 +139,6 @@ function Home({
               )
             }
           />
-          {/* <ChallangeBanner /> */}
-          {/* <Banner type={"simple"} /> */}
           <Banner
             type={"simple"}
             dependency={"challange"}
@@ -221,10 +159,8 @@ function Home({
             btn={false}
             row={false}
             element={
-              <div className={`${styles.products} ${"textStyles"}`}>
-                {quizData.map((item, index) => {
-                  return <QuizCard item={item} key={index} />;
-                })}
+              <div style={{ position: "relative" }}>
+                <TrendingQuiz type={"default"} />
               </div>
             }
           />
@@ -262,7 +198,7 @@ function Home({
               security && security.docs.length ? (
                 <Articles data={security} />
               ) : (
-                ""
+                "where is fkin data?"
               )
             }
           />

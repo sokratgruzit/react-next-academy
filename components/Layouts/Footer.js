@@ -4,8 +4,6 @@ import { animateScroll } from "react-scroll";
 
 import { fetchData } from "../../utils/queries";
 
-// import DarkFooterIcons from "../UI/Icons/DarkFooterIcons";
-
 import styles from "../../styles/Layouts/Footer/Footer.module.scss";
 import { Arrow, Facebook, GitHub, Linkedin, Twitter } from "@/svg";
 
@@ -50,7 +48,6 @@ function Footer() {
 
   const getLinks = (row) => {
     if (!footerLinks) return false;
-
     return footerLinks
       .filter((item) => item.row === row)
       .map((link) => {

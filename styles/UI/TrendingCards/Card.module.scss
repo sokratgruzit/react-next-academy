@@ -1,0 +1,203 @@
+@import "../../variables.scss";
+
+body:global(.light) .quiz .border .imgBox {
+  background: #fff;
+}
+
+body:global(.light) .quiz .border .content .bottom .level,
+body:global(.light) .quiz .border .content .bottom .itemDot {
+  color: $c-dark;
+}
+
+.quiz {
+  display: flex;
+  cursor: pointer;
+  flex-wrap: wrap;
+  position: relative;
+  width: 100%;
+  height: 222px;
+
+  &:hover .border .imgBox .img {
+    transform: scale(1.09);
+  }
+
+  .border {
+    display: flex;
+    position: relative;
+    padding: 10px;
+    gap: 10px;
+
+    .imgBox {
+      position: relative;
+      width: 202px;
+      height: 202px;
+      background: #0a0f18;
+
+      & .img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        padding: 10px;
+      }
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      max-width: 1000px;
+      width: calc(100% - 202px);
+      overflow: hidden;
+
+      .h4 {
+        font-size: 20px;
+        margin-top: 10px;
+        line-height: 28px;
+        // height: 60px;
+        overflow: hidden;
+      }
+
+      & .p {
+        margin-top: 10px;
+        font-size: 15px;
+        margin-bottom: 20px;
+        max-height: 73px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .bottom {
+        display: flex;
+        // width: 100%;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: auto 0;
+        position: absolute;
+        bottom: 20px;
+        overflow-x: hidden;
+        top: auto;
+
+        .level {
+          position: relative;
+          margin-top: auto;
+          //   padding-left: 20px;
+          font-size: $f-smallest;
+          text-transform: uppercase;
+          color: $c-white;
+
+          &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: 3px;
+            left: 0;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+          }
+        }
+
+        .dot {
+          //   content: "";
+          //   display: block;
+          //   position: absolute;
+          //   bottom: 8px;
+          //   left: 0;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          //   margin-right: 10px;
+          background: #259c55;
+        }
+
+        .itemDot {
+          position: relative;
+          font-size: 13px;
+          line-height: 18px;
+          padding-right: 15px;
+          color: $c-white;
+
+          &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0px;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background-color: $c-secondary;
+          }
+
+          &:last-child::after {
+            display: none;
+          }
+
+          &:last-child {
+            margin-right: 0;
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .quiz {
+    .border {
+      .content {
+        .h4 {
+          height: 60px;
+        }
+
+        & .p {
+          height: 69px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .quiz {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: 100%;
+    min-height: 500px;
+
+    .border {
+      flex-direction: column;
+
+      .imgBox {
+        max-height: 300px;
+        min-height: 265px;
+        width: 100%;
+      }
+
+      .content {
+        max-width: 100%;
+        width: 100%;
+        height: calc(100% - 300px);
+
+        .h4 {
+          height: 75px;
+        }
+
+        & .p {
+          height: 113px;
+        }
+
+        .bottom {
+          margin-top: 16px;
+        }
+      }
+    }
+  }
+}
