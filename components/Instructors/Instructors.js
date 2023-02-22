@@ -27,14 +27,15 @@ const Instructors = () => {
   ];
   const instructorData = DUMMY__DATA;
 
-
   return (
     <div className={styles.instructors}>
       <img
         className={`darkImg ${styles.background}`}
         src="/img/InstructorImgs/bgbottom.png"
       />
-      <InstructorCard data={instructorData} />
+      <div className="container">
+        <InstructorCard data={instructorData} />
+      </div>
     </div>
   );
 };
@@ -45,7 +46,7 @@ const Instructors = () => {
         </div> */
 }
 {
-  /* <img className="darkImg" src="/img/InstructorImgs/bgheder.png" /> */
+  /* <wimg className="darkImg" src="/img/InstructorImgs/bgheder.png" /> */
 }
 {
   /* <img className="lightImg" src="/img/InstructorImgs/bgLight.png" /> */

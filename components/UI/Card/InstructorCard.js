@@ -8,27 +8,29 @@ const InstructorCard = ({ data }) => {
   const router = useRouter();
 
   return (
-    <>
-      {data?.map((item) => {
+    <div className={`${styles.instructorWrap} ${'textStyles'}`}>
+      {data?.map((item, index) => {
         return (
           <div
-            key={item.id}
-            className={`${styles.instructorItem}`}
+            key={index}
+            className={`${styles.instructorItem} ${
+              index % 2 ?? 0 ? styles.right : ""
+            }`}
             onClick={() => router.push(`/instructors/${item.id}`)}
             style={{ zIndex: "150" }}
           >
             <CornerDecor />
-            <div className={styles.imgContainer}>
-              <img src={item.img} alt="instructor img" />
+            <div className={styles.imgWrap}>
+              <img className={styles.img} src={item.img} alt="instructor img" />
             </div>
             <div className={styles.content}>
-              <h3 className={styles.names}>{item.name}</h3>
-              <p className={`${styles.text}`}>{item.text}</p>
+              <h3>{item.name}</h3>
+              <p className={styles.text}>{item.text}</p>
             </div>
           </div>
         );
       })}
-    </>
+    </div>
   );
 };
 
