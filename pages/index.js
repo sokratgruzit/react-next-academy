@@ -86,7 +86,19 @@ function Home({
             row={false}
             element={
               featured && featured.docs?.length ? (
-                <Articles data={featured} />
+                <div className={styles.featured}>
+                  <img
+                    src="img/Bg/bg_999.png"
+                    alt="background"
+                    className="img-absolute darkImg"
+                  />
+                  <img
+                    src="img/Bg/bg_998.png"
+                    alt="background"
+                    className="img-absolute lightImg"
+                  />
+                  <Articles data={featured} />
+                </div>
               ) : (
                 ""
               )
@@ -150,6 +162,7 @@ function Home({
             clasName={"btn"}
             btn={
               <div className={styles.quizBtn}>
+                <img src="/img/banner/stars.svg" />
                 <Button title={"Take a Quizzes"} />
               </div>
             }
@@ -180,7 +193,14 @@ function Home({
             row={false}
             element={
               essentials && essentials.docs.length ? (
-                <Articles data={essentials} />
+                <div className={styles.assentials}>
+                  <img
+                    src="img/Bg/bg_13.png"
+                    alt="background"
+                    className="img-absolute darkImg"
+                  />
+                  <Articles data={essentials} />
+                </div>
               ) : (
                 ""
               )
