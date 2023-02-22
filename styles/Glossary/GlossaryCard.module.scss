@@ -1,3 +1,7 @@
+body:global(.light) .item .itemInner p {
+  line-height: 21px;
+}
+
 .item {
   position: relative;
   width: calc(50% - 15px);
