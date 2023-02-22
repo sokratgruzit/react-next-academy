@@ -1,15 +1,11 @@
 import Button from "../UI/Button/Button";
 
 import styles from "../../styles/Instructors/BecomeInstructorInfo.module.scss";
+import Link from "next/link";
 
 const BecomeInstructorInfo = () => {
   return (
     <div className={styles.greenBanner}>
-      {/* <img
-        className={styles.backgroundImg}
-        src='../../img/BecomeInstructor/backgroundgra.png'
-      /> */}
-
       <div className={`${styles.backgroundImg} darkImg`}>
         <svg
           width="1438"
@@ -32,8 +28,8 @@ const BecomeInstructorInfo = () => {
               gradientUnits="userSpaceOnUse"
               gradientTransform="translate(719 719) rotate(90) scale(719)"
             >
-              <stop stop-color="#000F2E" />
-              <stop offset="1" stop-color="#00050F" stop-opacity="0" />
+              <stop stopColor="#000F2E" />
+              <stop offset="1" stopColor="#00050F" stopOpacity="0" />
             </radialGradient>
           </defs>
         </svg>
@@ -45,12 +41,14 @@ const BecomeInstructorInfo = () => {
         Teach what you love. Corrector gives you the tools to create a course.
       </p>
       <div className={styles.orangBtn}>
-        <Button
-          size={"btn-big"}
-          color={"orange"}
-          title={"Start Teaching"}
-          className={"btn"}
-        />
+        <Link href={"/become-an-instructor"}>
+          <Button
+            size={"btn-big"}
+            color={"orange"}
+            title={"Start Teaching"}
+            className={"btn"}
+          />
+        </Link>
       </div>
     </div>
   );
