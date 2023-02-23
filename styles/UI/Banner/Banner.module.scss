@@ -284,7 +284,7 @@ body:global(.light) .banner .body {
     flex-direction: column;
     align-items: center;
     gap: 17px;
-    
+
     .teaser {
       color: $c-orange;
     }
@@ -326,24 +326,6 @@ body:global(.light) .banner .body {
           color: $c-secondaryGray;
           font-size: 16px;
           line-height: 22px;
-        }
-      }
-
-      .button {
-        position: absolute;
-        right: 7px;
-        top: 5.7px;
-        height: 40px;
-        padding: 7.5px 16px;
-        background-color: $c-blue;
-        border: 1px solid $c-blue;
-        border-radius: 4px;
-        text-align: center;
-        cursor: pointer;
-
-        &:hover {
-          background-color: rgba(5, 0, 255, 0.7);
-          border: 1px solid rgba(5, 0, 255, 0.7);
         }
       }
     }

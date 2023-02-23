@@ -28,7 +28,7 @@ const InstructorItem = ({ data }) => {
                     return (
                       <div key={index} className={styles.bottomItem}>
                         {item.icon}
-                        <p>
+                        <p className={styles.subItem}>
                           {item.value}
                           <span>{item.name}</span>
                         </p>

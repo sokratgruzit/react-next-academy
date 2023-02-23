@@ -97,7 +97,7 @@ function Home({
                     alt="background"
                     className="img-absolute lightImg"
                   />
-                  <Articles data={featured} />
+                  <div className="container"><Articles data={featured} /></div>
                 </div>
               ) : (
                 ""
@@ -114,7 +114,7 @@ function Home({
             row={false}
             element={
               releases && releases.docs?.length ? (
-                <Articles data={releases} />
+              <div className="container"><Articles data={releases} /></div>
               ) : (
                 ""
               )
@@ -128,7 +128,24 @@ function Home({
             row={true}
             element={
               glossaries && glossaries.result?.length ? (
-                <GlossaryCard data={glossaries} />
+                <div className={styles.glossariesWrap}>
+                  <img
+                    className="img-absolute darkImg"
+                    src="img/glossaries/background1.png"
+                    alt="background"
+                  />
+                  <img
+                    className={styles.dodgeColor}
+                    src="img/Bg/stars.svg"
+                    alt="background"
+                  />
+                  <img
+                    className="img-absolute lightImg"
+                    src="img/glossaries/bgL.png"
+                    alt="background"
+                  />
+                 <div className={`container ${styles.glossaryFlex}`}><GlossaryCard quantity={"2"} data={glossaries} /></div>                 
+                </div>
               ) : (
                 ""
               )
@@ -145,7 +162,7 @@ function Home({
             row={false}
             element={
               blockchain && blockchain.docs.length ? (
-                <Articles data={blockchain} title="Blockchain" />
+              <div className="container"><Articles data={blockchain} title="Blockchain" /></div>  
               ) : (
                 ""
               )
@@ -162,7 +179,11 @@ function Home({
             clasName={"btn"}
             btn={
               <div className={styles.quizBtn}>
-                <img src="/img/banner/stars.svg" alt="background" className="darkImg" />
+                <img
+                  src="/img/Banner/stars.svg"
+                  alt="background"
+                  className="img-absolute darkImg"
+                />
                 <Button title={"Take a Quizzes"} />
               </div>
             }
@@ -173,7 +194,7 @@ function Home({
             row={false}
             element={
               <div style={{ position: "relative" }}>
-                <TrendingQuiz type={"default"} />
+               <div className={styles.quizzContainer}><TrendingQuiz type={"default"} /></div> 
               </div>
             }
           />
@@ -181,7 +202,7 @@ function Home({
             title={"Leaderboard"}
             btn={false}
             row={false}
-            element={<Leaderboard />}
+            element={<div className="container"><Leaderboard /></div>}
           />
           <ContentWrap
             title={"Essentials"}
@@ -199,7 +220,7 @@ function Home({
                     alt="background"
                     className="img-absolute darkImg"
                   />
-                  <Articles data={essentials} />
+                  <div className="container"><Articles data={essentials} /></div>
                 </div>
               ) : (
                 ""
@@ -216,22 +237,24 @@ function Home({
             row={false}
             element={
               security && security.docs.length ? (
-                <Articles data={security} />
+                <div className="container"> <Articles data={security} /></div> 
               ) : (
                 "where is fkin data?"
               )
             }
           />
           <Ticker elements={"academyElements"} />
-          <Banner
-            type={"simple"}
-            dependency={"email"}
-            title={"Keep Up To Date — Get E-Mail Updates"}
-            teaser={"Stay Tuned For The Latest Company News."}
-            placeholder={"name@example.com"}
-            img={"contactBg"}
-            btn={<Button customStyles={{ color: "#fff" }} title={"Join Now"} />}
-          />
+            <Banner
+              type={"simple"}
+              dependency={"email"}
+              title={"Keep Up To Date — Get E-Mail Updates"}
+              teaser={"Stay Tuned For The Latest Company News."}
+              placeholder={"name@example.com"}
+              // img={"contactBg"}
+              btn={
+                <Button customStyles={{ color: "#fff" }} title={"Join Now"} />
+              }
+            />
         </div>
       </div>
     </div>

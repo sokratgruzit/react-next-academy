@@ -40,7 +40,7 @@ const Contact = () => {
         <div className={`${styles.contactBox} ${"textStyles"}`}>
           <Input type="input" data={FORM_DATA} />
           <Input type="textarea" data={FROM_TEXTAREA} />
-          <Button title={"Send Message"} />
+          <Button type={"blue-btn"} title={"Send Message"} />
         </div>
       </div>
     </div>

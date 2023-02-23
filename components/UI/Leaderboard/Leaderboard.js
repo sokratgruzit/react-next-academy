@@ -145,14 +145,14 @@ const Leaderboard = () => {
         <svg
           className={styles.bluCloud}
           width="1440"
-          height="1079"
-          viewBox="0 0 1440 1079"
+          height="900"
+          viewBox="0 0 1440 900"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
           <rect
             width="1440"
-            height="1079"
+            height="900"
             fill="url(#paint0_radial_6506_4317)"
           />
           <defs>

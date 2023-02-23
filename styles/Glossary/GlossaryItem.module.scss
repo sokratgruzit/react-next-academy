@@ -119,6 +119,11 @@ body:global(.light) .item svg path {
     justify-content: space-between;
     margin-bottom: 30px;
 
+    .title {
+      font-size: 30px;
+      line-height: 21px;
+    }
+
     .itemOuter {
       display: grid;
       grid-column-start: 3;
@@ -140,10 +145,12 @@ body:global(.light) .item svg path {
 
         .value {
           color: #808287;
+          font-size: 13px;
+          line-height: 21px;
         }
       }
 
-      .wtf {
+      .ItemDate {
         grid-column-start: 2;
         grid-column-end: 2;
       }
@@ -157,7 +164,31 @@ body:global(.light) .item svg path {
   }
 
   .exploreMore {
-    margin: 150px 0 25px 0;
+    margin: 150px 0px;
+    .explore {
+      font-size: 30px;
+      line-height: 21px;
+    }
+    .itemWrap {
+      .cards {
+        display: flex;
+        gap: 30px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .glossaryPage {
+    .exploreMore {
+      .itemWrap {
+        .cards {
+          > :last-child {
+            display: none;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -180,6 +211,18 @@ body:global(.light) .item svg path {
       }
     }
   }
+  .exploreMore {
+    margin: 100px 0 150px 0;
+
+    .itemWrap {
+      .cards {
+        flex-direction: column;
+        > :nth-child(2) {
+          margin-top: 0px;
+        }
+      }
+    }
+  }
 }
 
 // @media (max-width: 414px) {
@@ -190,7 +233,7 @@ body:global(.light) .item svg path {
 //         width: 100%;
 //       }
 
-//       .item:last-child {
+//       .item {
 //         margin-top: 0px;
 //       }
 //     }
