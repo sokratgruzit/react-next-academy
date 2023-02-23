@@ -5,6 +5,7 @@ import CornerDecor from "../CornerDecor/CornerDecor";
 import styles from "../../../styles/Articles/Article.module.scss";
 
 const Card = ({ data, type }) => {
+  //Images added
   let element = null;
 
   if (type === "default") {
@@ -15,7 +16,7 @@ const Card = ({ data, type }) => {
           <div className={styles.cornerBorder}>
             <div className={styles.imgBox}>
               <img
-                src={process.env.NEXT_PUBLIC_IMG_PATH + data.image?.path}
+                src={data.image?.path}
                 alt={data.image?.alt}
                 className={styles.imgAbsolute}
               />

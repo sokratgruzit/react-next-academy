@@ -51,7 +51,7 @@ const Article = ({ article }) => {
             <div className="top">
               <div className="img-box">
                 <img
-                  src={process.env.NEXT_PUBLIC_IMG_PATH + data.image.path}
+                  src={data.image.path}
                   alt={data.image.alt}
                   className="img-absolute"
                 />
