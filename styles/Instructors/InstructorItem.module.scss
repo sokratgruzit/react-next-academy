@@ -1,5 +1,65 @@
 @import "../variables.scss";
 
-// .instructor {
+.instructorOuter {
+  position: relative;
+  width: 100%;
+  height: auto;
 
-// }
+  .bg {
+    position: absolute;
+    top: -20%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+  }
+
+  .instructor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 150px;
+    width: 100%;
+
+    .avatar {
+      position: relative;
+      width: calc(30% - 5px);
+      height: 434px;
+
+      .img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 10px solid #111826;
+        z-index: -1;
+        object-fit: cover;
+      }
+    }
+
+    .text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 0px 20px 0px;
+      gap: 20px;
+    }
+
+    .bottom {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        padding-top: 20px;
+        border-top: 1px solid $border-color;
+
+        .bottomItem {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+    }
+  }
+}

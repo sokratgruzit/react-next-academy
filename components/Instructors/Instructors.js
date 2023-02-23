@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-
 import InstructorCard from "../UI/Card/InstructorCard";
 
 import styles from "../../styles/Instructors/Instructors.module.scss";
@@ -39,55 +37,5 @@ const Instructors = () => {
     </div>
   );
 };
-
-{
-  /* <div className={styles.title}>
-          <h1>Instructors</h1>
-        </div> */
-}
-{
-  /* <wimg className="darkImg" src="/img/InstructorImgs/bgheder.png" /> */
-}
-{
-  /* <img className="lightImg" src="/img/InstructorImgs/bgLight.png" /> */
-}
-{
-  /* </div> */
-}
-{
-  /* <div className={styles.bottom}>
-        <div className={styles.img}>
-          <img
-            className={`darkImg ${styles.bottomImg}`}
-            src="/img/InstructorImgs/bgbottom.png"
-          />
-        </div>
-        <div className={`${styles.container} container`}>
-          {INSTRUCTOR_DATA.map((item) => {
-            return (
-              <motion.div
-                initial="offscreen"
-                whileInView="onscreen"
-                viewport={{ once: true, amount: 0.4 }}
-                key={item.id}
-                variants={CARD_VARIANTS}
-                className={styles.instructorList}
-                onClick={() => router.push(`/instructors/${item.id}`)}
-                style={{ zIndex: "150" }}
-              >
-                <CornerDecor />
-                <div className={styles.imgContainer}>
-                  <img src={item.img} alt="instructor img" />
-                </div>
-                <div className={styles.content}>
-                  <h3 className={styles.names}>{item.name}</h3>
-                  <p className={`${styles.text}`}>{item.text}</p>
-                </div>
-              </motion.div>
-            );
-          })}
-        </div>
-      </div> */
-}
 
 export default Instructors;
