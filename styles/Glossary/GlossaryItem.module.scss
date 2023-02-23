@@ -34,6 +34,10 @@ body:global(.light) .item svg path {
   stroke: #000000;
 }
 
+body:global(.light) .glossaryPage .inner .teaser {
+  color: #4d5057;
+}
+
 .glossaryPage {
   position: relative;
   display: flex;
@@ -69,6 +73,10 @@ body:global(.light) .item svg path {
     display: inline-flex;
     cursor: pointer;
 
+    // &:hover svg {
+    //   transform: translateX(-5px);
+    // }
+
     & p {
       color: #ff7152;
     }
@@ -83,6 +91,10 @@ body:global(.light) .item svg path {
     path {
       fill: #0500ff;
       transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);
+    }
+
+    svg {
+      transform: translateX(-5px);
     }
   }
 
@@ -121,7 +133,7 @@ body:global(.light) .item svg path {
 
     .title {
       font-size: 30px;
-      line-height: 21px;
+      line-height: 37px;
     }
 
     .itemOuter {
@@ -129,7 +141,7 @@ body:global(.light) .item svg path {
       grid-column-start: 3;
       grid-column-end: 3;
       align-items: baseline;
-      gap: 40px;
+      gap: 52px;
 
       .item {
         display: flex;
@@ -157,7 +169,7 @@ body:global(.light) .item svg path {
     }
 
     .teaser {
-      margin-top: 50px;
+      margin-top: 43px;
       grid-column-start: 1;
       grid-column-end: 4;
     }
@@ -198,13 +210,14 @@ body:global(.light) .item svg path {
       display: grid;
 
       .itemOuter {
-        display: grid;
         grid-column-start: 1;
         grid-column-end: 1;
         margin-top: 50px;
+        gap: 30px;
       }
 
       .teaser {
+        margin-top: 30px;
         grid-column-start: 1;
         grid-column-end: 4;
         grid-row-end: 3;
@@ -225,17 +238,22 @@ body:global(.light) .item svg path {
   }
 }
 
-// @media (max-width: 414px) {
-//   .glossary {
-
-//     .itemOuter {
-//       .item {
-//         width: 100%;
-//       }
-
-//       .item {
-//         margin-top: 0px;
-//       }
-//     }
-//   }
-// }
+@media (max-width: 414px) {
+  .glossaryPage {
+    .inner {
+      .itemOuter {
+        gap: 20px;
+      }
+    }
+  }
+}
+@media (max-width: 300px) {
+  .glossaryPage {
+    .inner {
+      .itemOuter {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+  }
+}

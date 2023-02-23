@@ -56,7 +56,10 @@ const Glossaries = ({ res }) => {
             <div className={`${styles.contentList} ${"textStyles"}`}>
               {GROUPED_BY_LETTER.map((groupedItem, index) => {
                 return (
-                  <Link href={"glossary/" + groupedItem.slug} key={groupedItem._id}>
+                  <Link
+                    href={"glossary/" + groupedItem.slug}
+                    key={groupedItem._id}
+                  >
                     <div className={styles.listItem}>
                       <span className={styles.content}>
                         <h3>{groupedItem.title}</h3>
@@ -79,15 +82,21 @@ const Glossaries = ({ res }) => {
         <div className={styles.inner}>
           <div style={{ position: "relative" }}>
             <img
-              className={styles.background}
+              className={`darkImg ${styles.background}`}
               src="img/glossaries/innerbg1.png"
               alt="background"
             />
             <img
-              className={styles.backgroundL}
+              className={`lightImg ${styles.backgroundL}`}
               src="img/glossaries/background1Light.png"
               alt="background"
             />
+            <img
+              className={`img-absolute  ${styles.stars}`}
+              src="img/glossaries/stars.svg"
+              alt="stars"
+            />
+
             <div className="container textStyles">
               <div className={styles.top}>
                 <h1 className={styles.title}>The Words of Crypto</h1>
