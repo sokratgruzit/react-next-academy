@@ -1,4 +1,9 @@
 @import "../../variables.scss";
+body:global(.light) .orangeBtn {
+  &:hover {
+    color: #000;
+  }
+}
 .button {
   display: flex;
   justify-content: center;
