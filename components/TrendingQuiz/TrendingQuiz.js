@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import SlideIcons from "../UI/TotalReviews/SlideIcons";
 
-import Card from "../UI/Card/TrendingCard";
+import TrendingCard from "../UI/Card/TrendingCard";
 import { data } from "../UI/Card/helper";
 
 import "swiper/css";
@@ -42,7 +42,7 @@ const TrendingQuiz = (props) => {
           {data.map((item, index) => {
             return (
               <SwiperSlide key={index}>
-                <Card
+                <TrendingCard
                   type={"one"}
                   key={index}
                   img={item.img}
