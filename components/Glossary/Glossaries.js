@@ -1,7 +1,8 @@
-import { Link as ScrollLink, Element } from "react-scroll";
 import Link from "next/link";
+import { Link as ScrollLink, Element } from "react-scroll";
 
 import CornerDecor from "../UI/CornerDecor/CornerDecor";
+import NoResult from "../UI/NoResult/NoResult";
 
 import styles from "../../styles/Glossary/GlossariesIndex.module.scss";
 
@@ -75,7 +76,7 @@ const Glossaries = ({ res }) => {
       }
     });
   }
-
+  
   return (
     <div className={styles.glossariesPage}>
       {!isPending && glossaries?.length ? (
@@ -126,11 +127,10 @@ const Glossaries = ({ res }) => {
       ) : isPending ? (
         <div className={styles.loading}>Loading ...</div>
       ) : (
-        ""
-        // <NotResult
-        //   title={"Oops! Nothing yet"}
-        //   teaser={"No glossaries purchased yet."}
-        // />
+        <NoResult
+          title={"Oops! Nothing yet"}
+          teaser={"No glossaries found."}
+        />
       )}
     </div>
   );
