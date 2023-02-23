@@ -1,4 +1,5 @@
 import InstructorItem from "../../components/Instructors/InstructorItem";
+import CoursesByInstructor from "../../components/Instructors/CoursesByInstructor";
 
 const DUMMY_DATA = [
   {
@@ -148,7 +149,12 @@ const DUMMY_DATA = [
 ];
 
 const Instructor = () => {
-  return <InstructorItem data={DUMMY_DATA} />;
+  return (
+    <div>
+      <InstructorItem data={DUMMY_DATA} />
+      <CoursesByInstructor data={DUMMY_DATA} />
+    </div>
+  );
 };
 
 export default Instructor;
