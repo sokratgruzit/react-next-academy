@@ -173,9 +173,8 @@ function Home({
             img={"quizBg"}
             clasName={"btn"}
             btn={
-              <div className={styles.quizBtn}>
-                <img src="/img/banner/stars.svg" />
-                <Button title={"Take a Quizzes"} />
+              <div>
+                <Button type={"transparent-btn"} title={"Take a Quizzes"} />
               </div>
             }
           />
