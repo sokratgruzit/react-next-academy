@@ -1,29 +1,28 @@
 @import "../variables.scss";
 
 body:global(.light) .instructorOuter {
-    .instructor {
-        
-        .avatar {
-
-            .img {
-                border: 10px solid transparent; 
-            }
-        }
-        .bottom {
-
-            .bottomItem {
-
-                svg path {
-                    fill: $c-dark;
-                }
-
-                .subItem {
-                    color: $c-dark;
-                }    
-            }
-        }
+  .instructor {
+    .avatar {
+      .img {
+        border: 10px solid transparent;
+      }
     }
-} 
+    .bottom {
+      .bottomItem {
+        svg path {
+          fill: $c-dark;
+        }
+
+        .subItem {
+          color: $c-dark;
+        }
+        .subItem span {
+          color: $c-dirty-grey;
+        }
+      }
+    }
+  }
+}
 
 .instructorOuter {
   position: relative;
@@ -74,23 +73,23 @@ body:global(.light) .instructorOuter {
     }
 
     .bottom {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      padding-top: 20px;
+      border-top: 1px solid $border-color;
+
+      .bottomItem {
         display: flex;
         align-items: center;
-        gap: 30px;
-        padding-top: 20px;
-        border-top: 1px solid $border-color;
+        gap: 14px;
 
-        .bottomItem {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            
-            .subItem {
-                display: flex;
-                gap: 5px;
-                color: $c-white;
-            }
+        .subItem {
+          display: flex;
+          gap: 5px;
+          color: $c-white;
         }
+      }
     }
   }
 }

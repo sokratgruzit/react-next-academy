@@ -1,5 +1,12 @@
 @import "../../variables.scss";
 
+body:global(.light) .instructorWrap {
+  .instructorItem {
+    .imgWrap {
+      border: 10px solid $c-white;
+    }
+  }
+}
 .instructorWrap {
   display: flex;
   flex-direction: column;
@@ -19,7 +26,6 @@
     .imgWrap {
       position: relative;
       width: calc(20% - 10px);
-      //   height: 100%;
       border: 10px solid #0a0f18;
       .img {
         position: absolute;

@@ -138,6 +138,23 @@ const DUMMY_DATA = [
     ],
     courses: [
       {
+        img: "/img/Marketplace/product.png",
+        title: "Kak Kushat Xui",
+        price: "Free",
+        level: "Legendary",
+        language: "ENG",
+        time: "120hrs",
+      },
+      {
+        img: "/img/Marketplace/product.png",
+        title: "Kak Kushat Xui",
+        price: "Free",
+        level: "Legendary",
+        language: "ENG",
+        time: "120hrs",
+      },
+      {
+        img: "/img/Marketplace/product.png",
         title: "Kak Kushat Xui",
         price: "Free",
         level: "Legendary",
