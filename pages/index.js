@@ -162,7 +162,7 @@ function Home({
             clasName={"btn"}
             btn={
               <div className={styles.quizBtn}>
-                <img src="/img/banner/stars.svg" />
+                <img src="/img/banner/stars.svg" alt="background" className="darkImg" />
                 <Button title={"Take a Quizzes"} />
               </div>
             }
