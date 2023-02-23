@@ -7,14 +7,14 @@ const CourseCard = ({ data }) => {
     <div className={styles.courseCard}>
       <CornerDecor />
       <div className={styles.top}>
-        <img src={data.img} />
+        <img className={styles.img} src={data.img} />
       </div>
       <div className={styles.bottom}>
         <p>{data.title}</p>
         <h4>{data.price}</h4>
       </div>
       <div className={styles.row}>
-        <div>
+        <div className={styles.rowItem}>
           <svg
             width="8"
             height="9"
@@ -26,7 +26,7 @@ const CourseCard = ({ data }) => {
           </svg>
           {data.level}
         </div>
-        <div>
+        <div className={styles.rowItem}>
           <svg
             width="4"
             height="4"
@@ -41,7 +41,7 @@ const CourseCard = ({ data }) => {
           </svg>
           {data.language}
         </div>
-        <div>
+        <div className={styles.rowItem}>
           <svg
             width="4"
             height="4"
