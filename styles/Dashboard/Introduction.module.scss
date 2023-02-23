@@ -1,0 +1,109 @@
+.aboutUser {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 150px;
+
+  .text {
+    width: fit-content;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+
+    .introduction :is(h1, h5) {
+      font-size: 30px;
+    }
+
+    .day {
+      font-size: 12px;
+    }
+  }
+
+  .boxes {
+    width: 70%;
+    display: flex;
+    gap: 40px;
+    min-height: 150px;
+
+    .coursedPurchased {
+      position: relative;
+      width: 35%;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 30px;
+
+      .numberGreen {
+        color: rgba(79, 189, 123, 1);
+        font-size: 30px;
+      }
+    }
+
+    .totalSpent {
+      position: relative;
+      width: 65%;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 30px;
+
+      .numberBlue {
+        color: #413eda;
+        font-size: 30px;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 1023px) {
+  .aboutUser {
+    .boxes {
+      gap: 32px;
+      width: 66%;
+      .totalSpent {
+        width: 50%;
+      }
+      .coursedPurchased {
+        width: 50%;
+      }
+    }
+
+    .text {
+      width: 33%;
+      .introduction :is(h1, h5) {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutUser {
+    flex-direction: column;
+    .boxes {
+      gap: 16px;
+      width: 100%;
+      .totalSpent {
+        width: 60%;
+      }
+      .coursedPurchased {
+        width: 40%;
+      }
+    }
+
+    .text {
+      width: 100%;
+      .introduction :is(h1, h5) {
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+

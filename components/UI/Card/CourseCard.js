@@ -1,8 +1,10 @@
+import Link from "next/link";
+
 import CornerDecor from "../CornerDecor/CornerDecor";
 
 import styles from "../../../styles/UI/Card/CourseCard.module.scss";
 
-export default function CourseCard(props) {
+const  CourseCard = ({type, data, img, title, price, time, lang, level}) => {
   let element = null;
 
   if (type === "column") {
@@ -71,25 +73,25 @@ export default function CourseCard(props) {
         <CornerDecor />
         <div className={styles.product}>
           <div className={styles.imgBox}>
-            <img className={`img-absolute ${styles.img}`} src={props.img} />
+            <img className={`img-absolute ${styles.img}`} src={img} />
           </div>
           <div className={styles.wrap}>
             <div className={styles.text}>
-              <p>{props.title}</p>
-              <h4>{props.price}</h4>
+              <p>{title}</p>
+              <h4>{price}</h4>
             </div>
             <div className={styles.info}>
               <div className={styles.info__item}>
                 <div className={styles.div1}></div>
-                <p>{props.level}</p>
+                <p>{level}</p>
               </div>
               <div className={styles.info__item}>
                 <div className={styles.div2}></div>
-                <p>{props.lang}</p>
+                <p>{lang}</p>
               </div>
               <div className={styles.info__item}>
                 <div className={styles.div2}></div>
-                <p>{props.time}</p>
+                <p>{time}</p>
               </div>
             </div>
           </div>
@@ -100,3 +102,5 @@ export default function CourseCard(props) {
 
   return element;
 }
+
+export default CourseCard;

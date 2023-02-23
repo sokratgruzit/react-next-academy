@@ -1,13 +1,12 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import SlideIcons from "../UI/TotalReviews/SlideIcons";
+import SlideIcons from "../TotalReviews/SlideIcons";
 
-import Card from "../UI/Card/TrendingCard";
-import { data } from "../UI/Card/helper";
+import TrendingCard from "../Card/TrendingCard";
+import { data } from "../Card/helper";
 
 import "swiper/css";
-
-import styles from "../../styles/TrendingQuiz/TrendingQuiz.module.scss";
+import styles from "../../../styles/UI/TrendingQuiz/TrendingQuiz.module.scss";
 
 const TrendingQuiz = (props) => {
   return (
@@ -42,7 +41,7 @@ const TrendingQuiz = (props) => {
           {data.map((item, index) => {
             return (
               <SwiperSlide key={index}>
-                <Card
+                <TrendingCard
                   type={"one"}
                   key={index}
                   img={item.img}

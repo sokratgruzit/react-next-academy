@@ -3,7 +3,7 @@ import { fetchData } from "@/utils/queries";
 import Articles from "../components/Articles/Articles";
 import IntroBox from "../components/Home/IntroBox";
 import FeaturesBanner from "../components/Home/FeaturesBanner";
-import TrendingQuiz from "../components/TrendingQuiz/TrendingQuiz";
+import TrendingQuiz from "../components/UI/TrendingQuiz/TrendingQuiz";
 
 import Ticker from "../components/UI/Ticker/Ticker";
 import Leaderboard from "../components/UI/Leaderboard/Leaderboard";

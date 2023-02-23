@@ -4,7 +4,7 @@ import CornerDecor from "../CornerDecor/CornerDecor";
 
 import styles from "../../../styles/UI/TrendingCards/Card.module.scss";
 
-const Card = (props) => {
+const TrendingCard = (props) => {
   let element = null;
 
   if (props.type === "one") {
@@ -60,4 +60,4 @@ const Card = (props) => {
   return element;
 };
 
-export default Card;
+export default TrendingCard;
