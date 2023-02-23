@@ -116,7 +116,19 @@ function Home({
             row={true}
             element={
               glossaries && glossaries.result?.length ? (
-                <GlossaryCard data={glossaries} />
+                <div className={styles.glossariesWrap}>
+                  <img
+                    className="img-absolute darkImg"
+                    src="img/glossaries/background1.png"
+                    alt="background"
+                  />
+                  <img
+                    className="img-absolute lightImg"
+                    src="img/glossaries/bgL.png"
+                    alt="background"
+                  />
+                  <GlossaryCard quantity={"2"} data={glossaries} />
+                </div>
               ) : (
                 ""
               )

@@ -56,5 +56,26 @@ body:global(.light) .home__page {
       object-fit: cover;
       z-index: -1;
     }
+
+    .glossariesWrap {
+      position: relative;
+      display: flex;
+      gap: 30px;
+      height: 410px;
+
+      img {
+        top: -20%;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .home__page {
+    .home__content {
+      .glossariesWrap {
+        flex-direction: column;
+      }
+    }
   }
 }

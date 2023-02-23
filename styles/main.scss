@@ -2339,7 +2339,8 @@ body.light .textStyles {
 
 body.light .textStyles span {
   @extend %mediumSmall;
-  color: $c-dirty-grey;
+  // color: $c-dirty-grey;
+  color: #fff;
 }
 
 body.light .textStyles div {
