@@ -1,11 +1,12 @@
+import Link from "next/link";
+
 import CornerDecor from "../CornerDecor/CornerDecor";
 
 import styles from "../../../styles/UI/Card/CourseCard.module.scss";
-import Link from "next/link";
 
 const CourseCard = ({ data }) => {
   return (
-    <Link href={'/'}>
+    <Link className={styles.outer} href={"/"}>
       <div className={styles.courseCard}>
         <CornerDecor />
         <div className={styles.top}>

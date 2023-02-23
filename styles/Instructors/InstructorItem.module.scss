@@ -28,6 +28,7 @@ body:global(.light) .instructorOuter {
   position: relative;
   width: 100%;
   height: auto;
+  padding-top: 150px;
 
   .bg {
     position: absolute;
@@ -44,13 +45,13 @@ body:global(.light) .instructorOuter {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: 150px;
     width: 100%;
 
     .avatar {
       position: relative;
-      width: calc(30% - 5px);
-      height: 434px;
+      width: 30%;
+      padding-top: 30%;
+      height: auto;
 
       .img {
         position: absolute;
@@ -88,6 +89,60 @@ body:global(.light) .instructorOuter {
           display: flex;
           gap: 5px;
           color: $c-white;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1600px) {
+  .instructorOuter {
+    .instructor {
+      .avatar {
+        width: 33%;
+        padding-top: 33%;
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .instructorOuter {
+    .instructor {
+      .avatar {
+        width: 35%;
+        padding-top: 35%;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .instructorOuter {
+    padding-top: 100px;
+
+    .instructor {
+      .avatar {
+        width: 100%;
+        padding-top: 100%;
+      }
+
+      .text {
+        padding: 40px 0px 40px 0px;
+        gap: 30px;
+      }
+
+      .bottom {
+        flex-direction: column;
+        width: 100%;
+        // border-bottom: 1px solid $border-color  ;
+        .bottomItem {
+          border-bottom: 1px solid $border-color;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding-bottom: 20px;
         }
       }
     }
