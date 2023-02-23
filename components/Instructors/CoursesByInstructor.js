@@ -14,7 +14,7 @@ const CoursesByInstructor = ({ data }) => {
                 {item.courses && (
                   item.courses.map((item, index) => {
                     return (
-                      <CourseCard key={index} data={item} />
+                      <CourseCard type={'column'} key={index} data={item} />
                     )
                   })
                 )}
