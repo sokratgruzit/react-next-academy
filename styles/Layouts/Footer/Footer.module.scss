@@ -297,8 +297,11 @@ body:global(.light) .footer {
           display: flex;
           align-items: center;
           justify-content: space-between;
+          padding: 20px 0px 20px 0px;
           margin-bottom: 0px;
           border-bottom: 1px solid $c-dark-grey;
+          width: 100%;
+          cursor: pointer;
 
           .switcher {
             width: 100%;
@@ -308,17 +311,15 @@ body:global(.light) .footer {
             font-size: 15px;
           }
           svg {
-            cursor: pointer;
             margin-left: auto;
           }
         }
         .footerLogo {
           display: none;
         }
-        // .icons {
-        //   margin-top: 30px;
-        //   padding-bottom: 30px;
-        // }
+        .icons {
+          padding: 20px 0px 10px 0px;
+        }
       }
       .footerRight {
         width: 100%;
@@ -358,6 +359,8 @@ body:global(.light) .footer {
             line-height: 30px;
             pointer-events: all;
             padding: 20px 0px;
+            cursor: pointer;
+            
             svg {
               display: flex;
               transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);
