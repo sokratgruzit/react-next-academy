@@ -29,7 +29,7 @@ const DashboardTabs = () => {
       <div
         className={`container ${styles.viewContent} ${styles.headerViewContent}`}
       >
-        <DashboardHeader />
+        {/* <DashboardHeader /> */}
         <Introduction />
       </div>
       <div

@@ -2,8 +2,12 @@ body:global(.light) .decorBoxWrap {
   border: 1px solid #cccdcf !important;
 }
 
-body:global(.light) .decorBoxWrapGreen {
-  border: 1px solid #cccdcf !important;
+body:global(.light) {
+  .decorBoxWrapGreen,
+  .decorBoxWrapTop {
+    border: 1px solid #cccdcf;
+    border-top: none !important;
+  }
 }
 
 .decorBoxWrap {
