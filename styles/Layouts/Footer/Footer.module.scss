@@ -1,4 +1,21 @@
 @import "../../variables.scss";
+body:global(.light) .footer {
+  .footerTop {
+    .footerLeft {
+      .icons {
+        .lightIcons {
+          .socialIcon {
+            fill: $c-dark;
+
+            &:hover {
+              fill: $c-orange;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
 @at-root .footer {
   width: 100%;
@@ -11,6 +28,7 @@
   background: $c-dark-blue;
   padding: 40px;
   margin: 0 auto;
+  transition: 0.5s cubic-bezier(0.79, 0.01, 0.15, 0.99);
 
   .footerLogoMob {
     display: none;
@@ -22,6 +40,20 @@
       width: 400px;
       display: flex;
       flex-direction: column;
+      .footerLogo {
+        position: relative;
+        width: 160px;
+        height: 36px;
+
+        .logo {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          transition: 0.5s cubic-bezier(0.79, 0.01, 0.15, 0.99);
+        }
+      }
 
       .icons {
         .lightIcons {
@@ -57,6 +89,8 @@
       .themes {
         display: flex;
         align-items: center;
+        gap: 7px;
+
         .mode {
           color: $c-grey;
           margin-right: 17px;
@@ -89,8 +123,14 @@
           font-size: 20px;
           line-height: 30px;
           pointer-events: none;
+
           svg {
             display: none;
+          }
+
+          h4 {
+            text-transform: capitalize;
+            padding-bottom: 7px;
           }
         }
 

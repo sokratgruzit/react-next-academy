@@ -97,7 +97,9 @@ function Home({
                     alt="background"
                     className="img-absolute lightImg"
                   />
-                  <div className="container"><Articles data={featured} /></div>
+                  <div className="container">
+                    <Articles data={featured} />
+                  </div>
                 </div>
               ) : (
                 ""
@@ -114,7 +116,9 @@ function Home({
             row={false}
             element={
               releases && releases.docs?.length ? (
-              <div className="container"><Articles data={releases} /></div>
+                <div className="container">
+                  <Articles data={releases} />
+                </div>
               ) : (
                 ""
               )
@@ -144,14 +148,27 @@ function Home({
                     src="img/glossaries/bgL.png"
                     alt="background"
                   />
-                 <div className={`container ${styles.glossaryFlex}`}><GlossaryCard quantity={"2"} data={glossaries} /></div>                 
+                  <div className={`container ${styles.glossaryFlex}`}>
+                    <GlossaryCard quantity={"2"} data={glossaries} />
+                  </div>
                 </div>
               ) : (
                 ""
               )
             }
           />
-          <Banner type={"coming-soon"} title={"Courses"} img={"comingSoon"} />
+          <Banner
+            type={"coming-soon"}
+            title={"Courses"}
+            img={"comingSoon"}
+            btn={
+              <Button
+                
+                type={"blue-btn"}
+                title={"Join now"}
+              />
+            }
+          />
           <ContentWrap
             title={"Blockchain"}
             btn={true}
@@ -162,7 +179,9 @@ function Home({
             row={false}
             element={
               blockchain && blockchain.docs.length ? (
-              <div className="container"><Articles data={blockchain} title="Blockchain" /></div>  
+                <div className="container">
+                  <Articles data={blockchain} title="Blockchain" />
+                </div>
               ) : (
                 ""
               )
@@ -178,13 +197,13 @@ function Home({
             img={"quizBg"}
             clasName={"btn"}
             btn={
-              <div className={styles.quizBtn}>
+              <div>
                 <img
                   src="/img/Banner/stars.svg"
                   alt="background"
                   className="img-absolute darkImg"
                 />
-                <Button title={"Take a Quizzes"} />
+                <Button type={'transparent-btn'} title={"Take a Quizzes"} />
               </div>
             }
           />
@@ -194,7 +213,9 @@ function Home({
             row={false}
             element={
               <div style={{ position: "relative" }}>
-               <div className={styles.quizzContainer}><TrendingQuiz type={"default"} /></div> 
+                <div className={styles.quizzContainer}>
+                  <TrendingQuiz type={"default"} />
+                </div>
               </div>
             }
           />
@@ -202,7 +223,11 @@ function Home({
             title={"Leaderboard"}
             btn={false}
             row={false}
-            element={<div className="container"><Leaderboard /></div>}
+            element={
+              <div className="container">
+                <Leaderboard />
+              </div>
+            }
           />
           <ContentWrap
             title={"Essentials"}
@@ -220,7 +245,9 @@ function Home({
                     alt="background"
                     className="img-absolute darkImg"
                   />
-                  <div className="container"><Articles data={essentials} /></div>
+                  <div className="container">
+                    <Articles data={essentials} />
+                  </div>
                 </div>
               ) : (
                 ""
@@ -237,24 +264,25 @@ function Home({
             row={false}
             element={
               security && security.docs.length ? (
-                <div className="container"> <Articles data={security} /></div> 
+                <div className="container">
+                  {" "}
+                  <Articles data={security} />
+                </div>
               ) : (
                 "where is fkin data?"
               )
             }
           />
           <Ticker elements={"academyElements"} />
-            <Banner
-              type={"simple"}
-              dependency={"email"}
-              title={"Keep Up To Date — Get E-Mail Updates"}
-              teaser={"Stay Tuned For The Latest Company News."}
-              placeholder={"name@example.com"}
-              // img={"contactBg"}
-              btn={
-                <Button customStyles={{ color: "#fff" }} title={"Join Now"} />
-              }
-            />
+          <Banner
+            type={"simple"}
+            dependency={"email"}
+            title={"Keep Up To Date — Get E-Mail Updates"}
+            teaser={"Stay Tuned For The Latest Company News."}
+            placeholder={"name@example.com"}
+            // img={"contactBg"}
+            btn={<Button customStyles={{ color: "#fff" }} title={"Join Now"} />}
+          />
         </div>
       </div>
     </div>
