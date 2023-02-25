@@ -28,7 +28,7 @@ export const getStaticProps = async (context) => {
   const article = await fetchData(
     `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles/${slug}`
   );
-    console.log(`${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles/${slug}`)
+  console.log(`${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles/${slug}`);
   return {
     props: {
       article,
