@@ -1,14 +1,64 @@
-import styles from "../../styles/UserHistory/HistoryHeader.module.scss";
+import { GitHub, Twitter } from "@/svg";
 
-const HistoryHeader = () => {
+import styles from "../../styles/UserHistory/UserMainBoard.module.scss";
+
+const UserMainBoard = () => {
   return (
-    <div className={`${styles.headerMainWrap} textStyles`}>
+    <div className={styles.outer}>
       <img
-        className={styles.backgroundDark}
-        src="img/History/background-dark.png"
+        className={`${"darkImg"} ${styles.bg}`}
+        src="img/UserHistory/dark-background.png"
         alt="background"
       />
-      <div className={styles.heder}>
+      <div className="container textStyles">
+        <div className={styles.inner}>
+          <div className={styles.top}>
+            <div className={styles.avatar}>
+              <img
+                className={styles.img}
+                src="img/UserHistory/avatar.png"
+                alt="img"
+              />
+            </div>
+            <h4>0xF5 ... 301c</h4>
+            <p>Student since July 22, 2022</p>
+          </div>
+          <div className={styles.bottom}>
+            <p>About</p>
+            <p className={styles.text}>
+              Crag yeaned fence noontide journeys sloven noun horse wish equal
+              fell, effort unworthy wires. Lowing pealed executive explore peer
+              grazed.
+            </p>
+          </div>
+          <div className={styles.ending}>
+            <div className={styles.icons}>
+              <a
+                className={styles.socialIconLink}
+                href={"Twitter.com"}
+                target="_blank"
+              >
+                <Twitter className={styles.icon} />
+              </a>
+              <a
+                className={styles.socialIconLink}
+                href={"Github.com"}
+                target="_blank"
+              >
+                <GitHub className={styles.icon} />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default UserMainBoard;
+
+{
+  /* <div className={styles.heder}>
         <div className={styles.secondWrap}>
           <img
             src="img/History/205.png"
@@ -53,9 +103,5 @@ const HistoryHeader = () => {
             />
           </svg>
         </div>
-      </div>
-    </div>
-  );
-};
-
-export default HistoryHeader;
+      </div> */
+}
