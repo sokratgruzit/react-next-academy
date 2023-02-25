@@ -1,6 +1,5 @@
 @import "../../variables.scss";
 
-
 // course card column
 
 body:global(.light) .outer {
@@ -201,6 +200,7 @@ body:global(.light) .products .product .info .info__item .div2 {
           p {
             font-size: 13px;
             line-height: 18px;
+            text-transform: uppercase;
           }
 
           .div1 {
@@ -221,4 +221,3 @@ body:global(.light) .products .product .info .info__item .div2 {
     }
   }
 }
-
