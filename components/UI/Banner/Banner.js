@@ -9,22 +9,6 @@ function Banner({
   teaser,
   btn,
   dependency,
-  img,
-  btnTxt,
-  button,
-  name,
-  nameTwo,
-  picture,
-  level,
-  category,
-  time,
-  subTitle,
-  buttonTwo,
-  titleTwo,
-  subTitleTwo,
-  buttonThree,
-  titleThree,
-  nameThree,
   placeholder,
 }) {
   let element = null;
@@ -46,7 +30,6 @@ function Banner({
               placeholder={placeholder}
             />
             <div>
-              {btn && btn}
               <Button
                 customStyles={{
                   position: "absolute",

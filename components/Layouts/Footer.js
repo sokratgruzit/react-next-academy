@@ -34,17 +34,17 @@ function Footer() {
     );
   };
 
-  // useEffect(() => {
-  //   const body = document.getElementsByTagName("body")[0];
+  useEffect(() => {
+    const body = document.getElementsByTagName("body")[0];
 
-  //   if (theme) {
-  //     body.classList.add("light");
-  //     localStorage.setItem("mode", "true");
-  //   } else {
-  //     body.classList.remove("light");
-  //     localStorage.setItem("mode", "false");
-  //   }
-  // }, [theme]);
+    if (theme) {
+      body.classList.add("light");
+      localStorage.setItem("mode", "true");
+    } else {
+      body.classList.remove("light");
+      localStorage.setItem("mode", "false");
+    }
+  }, [theme]);
 
   const getLinks = (row) => {
     if (!footerLinks) return false;
@@ -75,20 +75,16 @@ function Footer() {
     <footer className={styles.footer}>
       <div className={styles.footerLogoMob}>
         <Link href="/" className="logo">
-          <img
-            src={theme ? "/svg/lightLogo.svg" : "/svg/logo.svg"}
-            alt="logo"
-          />
+          <img className="lightImg" src="/svg/lightLogo.svg" alt="logo" />
+          <img className="darkImg" src="/svg/logo.svg" alt="logo" />
         </Link>
       </div>
       <div className={styles.footerTop}>
         <div className={styles.footerLeft}>
           <div className={styles.footerLogo}>
             <Link href="/" className="logo">
-              <img
-                src={theme ? "/svg/lightLogo.svg" : "/svg/logo.svg"}
-                alt="logo"
-              />
+              <img className={`${"lightImg"} ${styles.logo}`} src="/svg/lightLogo.svg" alt="logo" />
+              <img className={`${"darkImg"} ${styles.logo}`} src="/svg/logo.svg" alt="logo" />
             </Link>
           </div>
           <div className={styles.lightMode}>
