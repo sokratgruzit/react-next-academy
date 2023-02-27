@@ -16,6 +16,7 @@ import DashboardHeader from "../Layouts/DashboardHeader";
 import Introduction from "./Introduction";
 
 import styles from "../../styles/Dashboard/DashboardTabs.module.scss";
+import DashboardSideNavigation from "../Layouts/DashboardSideNavigation";
 
 const DashboardTabs = () => {
   const [curentTab, setCurentTab] = useState("0");
@@ -29,7 +30,7 @@ const DashboardTabs = () => {
       <div
         className={`container ${styles.viewContent} ${styles.headerViewContent}`}
       >
-        <DashboardHeader />
+        <DashboardHeader tab={curentTab} handlerClick={handlerClick} />
         <Introduction />
       </div>
       <div

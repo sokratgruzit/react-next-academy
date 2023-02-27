@@ -219,7 +219,7 @@ function DashboardSideNavigation({ setBurger, data, links, handlerClick }) {
 
   return (
     <motion.div
-      className={`${styles.mobNavigation} textStyles`}
+      className={`container ${styles.mobNavigation} textStyles `}
       initial={{ x: 100, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       exit={{ x: 100, opacity: 0 }}
@@ -349,7 +349,7 @@ function DashboardSideNavigation({ setBurger, data, links, handlerClick }) {
           </svg>
         </button>
       </div>
-      <div className={`textStyles ${styles.sideBar}`}>
+      <div className={`container ${styles.sideBar}`}>
         <div className={styles.sidebarWrap}>
           {SIDE_DATA.map((item, index) => {
             return (
