@@ -56,9 +56,9 @@ function Banner({
 
   let wrap = (
     <div className={styles.banner}>
-      {/* <div className="darkImg">
+      <div className="darkImg">
         <img
-          className={`${"img-absolute"}`}
+          className={`${"img-absolute"} ${styles.challengeHeight}`}
           src={`/img/Banner/${img}.png`}
           alt="bannerImage"
         />
@@ -69,7 +69,7 @@ function Banner({
           src={`/img/Banner/lBg1.png`}
           alt="bannerImage"
         />
-      </div> */}
+      </div>
       <div className="container">{element}</div>
     </div>
   );

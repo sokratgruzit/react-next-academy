@@ -139,7 +139,7 @@ function Home({
                     alt="background"
                   />
                   <img
-                    className={styles.dodgeColor}
+                    className={`darkImg ${styles.dodgeColor}`}
                     src="img/Bg/stars.svg"
                     alt="background"
                   />
@@ -157,18 +157,7 @@ function Home({
               )
             }
           />
-          <Banner
-            type={"coming-soon"}
-            title={"Courses"}
-            img={"comingSoon"}
-            btn={
-              <Button
-                
-                type={"blue-btn"}
-                title={"Join now"}
-              />
-            }
-          />
+          <Banner type={"coming-soon"} title={"Courses"} />
           <ContentWrap
             title={"Blockchain"}
             btn={true}
@@ -187,26 +176,28 @@ function Home({
               )
             }
           />
-          <Banner
-            type={"simple"}
-            dependency={"challange"}
-            title={"Want A Challange?"}
-            teaser={
-              "Test Your Knowledge While You Learn With Our Range Of Quizzes."
-            }
-            img={"quizBg"}
-            clasName={"btn"}
-            btn={
-              <div>
-                <img
-                  src="/img/Banner/stars.svg"
-                  alt="background"
-                  className="img-absolute darkImg"
-                />
-                <Button type={'transparent-btn'} title={"Take a Quizzes"} />
-              </div>
-            }
-          />
+          <div className={styles.challenge}>
+            <Banner
+              type={"simple"}
+              dependency={"challange"}
+              title={"Want A Challange?"}
+              teaser={
+                "Test Your Knowledge While You Learn With Our Range Of Quizzes."
+              }
+              img={"quizBg"}
+              clasName={"btn"}
+              btn={
+                <div className={styles.quizBtn}>
+                  <Button title={"Take a Quizzes"} />
+                </div>
+              }
+            />
+            <img
+              src="/img/Banner/lastBigStar.svg"
+              alt="background"
+              className={`img-absolute darkImg ${styles.bigStars}`}
+            />
+          </div>
           <ContentWrap
             title={"Trending Quiz"}
             btn={false}
@@ -266,10 +257,12 @@ function Home({
               security && security.docs.length ? (
                 <div className="container">
                   {" "}
-                  <Articles data={security} />
+                  <div className="container">
+                    <Articles data={security} />
+                  </div>
                 </div>
               ) : (
-                "where is fkin data?"
+                <div className="container">"where is fkin data?"</div>
               )
             }
           />
@@ -280,7 +273,7 @@ function Home({
             title={"Keep Up To Date — Get E-Mail Updates"}
             teaser={"Stay Tuned For The Latest Company News."}
             placeholder={"name@example.com"}
-            // img={"contactBg"}
+            img={"contactBg"}
             btn={<Button customStyles={{ color: "#fff" }} title={"Join Now"} />}
           />
         </div>
