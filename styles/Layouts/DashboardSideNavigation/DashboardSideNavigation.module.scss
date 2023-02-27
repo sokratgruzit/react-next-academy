@@ -56,6 +56,46 @@ body:global(.light) .mobNavigation {
   overflow: auto;
   display: flex;
   flex-direction: column;
+  .sideBar {
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+
+    .sidebarWrap {
+      &:last-child {
+        margin-bottom: 0px;
+      }
+    }
+
+    .sideBarContent {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      transition: 0.6s;
+      cursor: pointer;
+      margin-bottom: 30px;
+
+      &:hover p {
+        color: blue;
+      }
+
+      &:hover svg path {
+        stroke: blue;
+      }
+    }
+
+    .sideBarContent:target {
+      background-color: blue;
+    }
+
+    .mainPage {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  }
 
   ul:first-child {
     margin-top: 20px;
@@ -139,12 +179,6 @@ body:global(.light) .mobNavigation {
             display: flex;
             gap: 5px;
           }
-        }
-
-        .line {
-          height: 30px;
-          width: 1px;
-          background-color: rgba(255, 255, 255, 0.2);
         }
 
         .burgerMenu {
