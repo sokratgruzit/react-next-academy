@@ -58,7 +58,7 @@ function Banner({
     <div className={styles.banner}>
       {/* <div className="darkImg">
         <img
-          className={`${"img-absolute"}`}
+          className={`${"img-absolute"} ${dependency === 'email' styles.emailBg : ''}`}
           src={`/img/Banner/${img}.png`}
           alt="bannerImage"
         />
