@@ -266,16 +266,20 @@ function Home({
               )
             }
           />
-          <Ticker elements={"academyElements"} />
-          <Banner
-            type={"simple"}
-            dependency={"email"}
-            title={"Keep Up To Date — Get E-Mail Updates"}
-            teaser={"Stay Tuned For The Latest Company News."}
-            placeholder={"name@example.com"}
-            img={"contactBg"}
-            btn={<Button customStyles={{ color: "#fff" }} title={"Join Now"} />}
-          />
+          <div>
+            <Ticker elements={"academyElements"} />
+            <Banner
+              type={"simple"}
+              dependency={"email"}
+              title={"Keep Up To Date — Get E-Mail Updates"}
+              teaser={"Stay Tuned For The Latest Company News."}
+              placeholder={"name@example.com"}
+              img={"contactBg"}
+              btn={
+                <Button customStyles={{ color: "#fff" }} title={"Join Now"} />
+              }
+            />
+          </div>
         </div>
       </div>
     </div>
