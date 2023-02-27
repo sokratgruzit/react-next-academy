@@ -35,9 +35,7 @@ export const getStaticProps = async ({ params }) => {
   const res = await fetchData(
     `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/glossaries/${slug}`
   );
-  // const featured = await fetchData(
-  //   `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/glossaries`
-  // );
+  
   const { data: featured } = await fetchData(
     `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/glossaries?category=62fb6bd0ab723fa8b038fcdf&limit=3`
   );
