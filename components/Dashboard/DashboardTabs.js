@@ -27,6 +27,7 @@ const DashboardTabs = () => {
   return (
     <>
       <SideMenu tab={curentTab} handlerClick={handlerClick} />
+
       <div
         className={`container ${styles.viewContent} ${styles.headerViewContent}`}
       >

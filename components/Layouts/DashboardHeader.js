@@ -216,7 +216,6 @@ const DashboardHeader = (tab) => {
                 handlerClick={handlerClick}
               />
             )}
-            {console.log(curentTab)}
           </AnimatePresence>
         </div>
       </div>

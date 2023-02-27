@@ -3,14 +3,7 @@ import Button from "../Button/Button";
 
 import styles from "../../../styles/UI/Banner/Banner.module.scss";
 
-function Banner({
-  type,
-  title,
-  teaser,
-  btn,
-  dependency,
-  placeholder,
-}) {
+function Banner({ type, title, teaser, btn, dependency, placeholder }) {
   let element = null;
 
   type === "simple" &&
