@@ -135,7 +135,7 @@ function Home({
                 <div className={styles.glossariesWrap}>
                   <img
                     className="img-absolute darkImg"
-                    src="img/glossaries/background1.png"
+                    src="/img/Glossaries/background1.png"
                     alt="background"
                   />
                   <img
@@ -145,7 +145,7 @@ function Home({
                   />
                   <img
                     className="img-absolute lightImg"
-                    src="img/glossaries/bgL.png"
+                    src="/img/Glossaries/bgL.png"
                     alt="background"
                   />
                   <div className={`container ${styles.glossaryFlex}`}>
@@ -157,8 +157,7 @@ function Home({
               )
             }
           />
-          {/* testetseste */}
-          <Banner type={"coming-soon"} title={"Courses"} />
+          <Banner type={"coming-soon"} img={'comingSoon'} title={"Courses"} />
           <ContentWrap
             title={"Blockchain"}
             btn={true}
@@ -267,20 +266,16 @@ function Home({
               )
             }
           />
-          <div>
-            <Ticker elements={"academyElements"} />
-            <Banner
-              type={"simple"}
-              dependency={"email"}
-              title={"Keep Up To Date — Get E-Mail Updates"}
-              teaser={"Stay Tuned For The Latest Company News."}
-              placeholder={"name@example.com"}
-              img={"contactBg"}
-              btn={
-                <Button customStyles={{ color: "#fff" }} title={"Join Now"} />
-              }
-            />
-          </div>
+          <Ticker elements={"academyElements"} />
+          <Banner
+            type={"simple"}
+            dependency={"email"}
+            title={"Keep Up To Date — Get E-Mail Updates"}
+            teaser={"Stay Tuned For The Latest Company News."}
+            placeholder={"name@example.com"}
+            img={"contactBg"}
+            btn={<Button customStyles={{ color: "#fff" }} title={"Join Now"} />}
+          />
         </div>
       </div>
     </div>
