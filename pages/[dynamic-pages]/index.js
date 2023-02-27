@@ -20,7 +20,8 @@ export async function getServerSideProps(context) {
 
 import Introduction from "@/components/Introduction/Introduction";
 
-const index = () => {
+const index = ({content}) => {
+  console.log(content)
   return 
     // <NotFound />
   // <Introduction />

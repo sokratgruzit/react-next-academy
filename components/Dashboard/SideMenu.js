@@ -2,7 +2,7 @@ import React from "react";
 
 import styles from "../../styles/Dashboard/SideMenu.module.scss";
 
-let SIDE_DATA = [
+const SIDE_DATA = [
   {
     id: 0,
     list: "Dashboard",

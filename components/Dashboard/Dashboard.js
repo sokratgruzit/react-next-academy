@@ -15,7 +15,7 @@ const Dashboard = () => {
 
   return (
     <>
-      <div className={styles.courseContainer}>
+      <div className={`${styles.courseContainer} textStyles`}>
         <RelatedThemes title="Course You Might Like" />
         <div className={styles.swiperOne}>
           <Swiper
@@ -44,7 +44,7 @@ const Dashboard = () => {
               return (
                 <SwiperSlide key={index}>
                   <CourseCard
-                    type={'row'}
+                    type={"row"}
                     img={item.img}
                     title={item.title}
                     price={item.price}

@@ -37,36 +37,38 @@ const index = ({ articlesData, data }) => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(true);
 
-  const getData = async () => {
-    // if (!router.query.page)
-    //   router.push({ query: { ...router.query, page: 1 } });
-    // if (!router.query.limit)
-    //   router.push({ query: { ...router.query, limit: 15 } });
-    const res = await fetchData(
-      `${process.env.NEXT_PUBLIC_DATA_URL}/api/data${router.asPath}`
-    );
-    setArticles(res.data);
-    setIsLoading(false);
-  };
+  // const getData = async () => {
+  //   if (!router.query.page)
+  //     router.push({ query: { ...router.query, page: 1 } });
+  //   if (!router.query.limit)
+  //     router.push({ query: { ...router.query, limit: 15 } });
+  //   const res = await fetchData(
+  //     `${process.env.NEXT_PUBLIC_DATA_URL}/api/data${router.asPath}`
+  //   );
+  //   setArticles(res.data);
+  //   setIsLoading(false);
+  // };
 
-  useEffect(() => {
-    if (router.isReady) {
-      getData();
-    }
-  }, [router]);
+  // useEffect(() => {
+  //   if (router.isReady) {
+  //     getData();
+  //   }
+  // }, [router]);
+
+  // console.log(articles, isLoading)
 
   return (
     <div>
       <div className={`lightImg ${styles.imgBox}`}>
-        <img src="/img/Article/articlesBgL.png" alt="" />
+        <img src="/img/Article/articlesBgL.png" alt="background" />
       </div>
       <div className={`darkImg ${styles.imgBox}`}>
-        <img src="/img/Article/articlesBG.png" alt="" />
+        <img src="/img/Article/articlesBG.png" alt="background" />
       </div>
       <ArticlesHeader />
       <div className="container">
         <div className={styles.articleList}>
-          {isLoading ? (
+          {!isLoading ? (
             ""
           ) : articlesData && articlesData.docs.length ? (
             articlesData?.docs.map((item, index) => {

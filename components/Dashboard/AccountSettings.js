@@ -9,7 +9,7 @@ import styles from "../../styles/Dashboard/AccountSettings.module.scss";
 
 function AccountSettings() {
   return (
-    <div className={styles.account}>
+    <div className={`${styles.account} textStyles`}>
       <RelatedThemes title="Account settings" />
       <div className={styles.box}>
         <Upload />

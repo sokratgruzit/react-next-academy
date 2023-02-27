@@ -9,22 +9,6 @@ function Banner({
   teaser,
   btn,
   dependency,
-  img,
-  btnTxt,
-  button,
-  name,
-  nameTwo,
-  picture,
-  level,
-  category,
-  time,
-  subTitle,
-  buttonTwo,
-  titleTwo,
-  subTitleTwo,
-  buttonThree,
-  titleThree,
-  nameThree,
   placeholder,
 }) {
   let element = null;
@@ -46,7 +30,6 @@ function Banner({
               placeholder={placeholder}
             />
             <div>
-              {btn && btn}
               <Button
                 customStyles={{
                   position: "absolute",
@@ -73,9 +56,9 @@ function Banner({
 
   let wrap = (
     <div className={styles.banner}>
-      <div className="darkImg">
+      {/* <div className="darkImg">
         <img
-          className={`${"img-absolute"} ${styles.challengeHeight}`}
+          className={`${"img-absolute"} ${dependency === 'email' styles.emailBg : ''}`}
           src={`/img/Banner/${img}.png`}
           alt="bannerImage"
         />
@@ -86,7 +69,7 @@ function Banner({
           src={`/img/Banner/lBg1.png`}
           alt="bannerImage"
         />
-      </div>
+      </div> */}
       <div className="container">{element}</div>
     </div>
   );

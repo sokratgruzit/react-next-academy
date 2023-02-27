@@ -5,7 +5,7 @@ import styles from "../../styles/Dashboard/Introduction.module.scss";
 
 function Introduction() {
   return (
-    <div className={styles.aboutUser}>
+    <div className={`${styles.aboutUser} textStyles`}>
       <div className={styles.text}>
         <div className={styles.introduction}>
           <h5>hello,</h5>

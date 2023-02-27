@@ -20,7 +20,7 @@ const Input = ({ data, type }) => {
           })}
         </>
       ) : type === "textarea" ? (
-        <div className={`${styles.customInput} custom-input`}>
+        <div className={`${styles.customInputTextarea} custom-input`}>
           <textarea
             className={styles.customTextarea}
             placeholder={data.placeholder}
