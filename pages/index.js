@@ -157,6 +157,7 @@ function Home({
               )
             }
           />
+          {/* testetseste */}
           <Banner type={"coming-soon"} title={"Courses"} />
           <ContentWrap
             title={"Blockchain"}
