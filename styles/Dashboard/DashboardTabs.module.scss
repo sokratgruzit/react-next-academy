@@ -1,0 +1,30 @@
+.viewContent {
+  width: calc(100% - 275px);
+  margin-left: 275px;
+  padding-bottom: 120px;
+}
+
+.headerViewContent {
+  padding-top: 89px;
+}
+
+// @media (max-width: 1023px) {
+//   .viewContent {
+//   }
+// }
+
+@media (max-width: 768px) {
+  .viewContent {
+    margin-left: 0;
+    width: 100%;
+  }
+  .headerViewContent {
+    padding-top: 100px;
+  }
+}
+
+@media (max-width: 420px) {
+  .headerViewContent {
+    padding-top: 60px;
+  }
+}

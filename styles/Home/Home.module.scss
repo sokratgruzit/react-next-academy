@@ -16,7 +16,7 @@ body:global(.light) .home__page {
       left: 0;
       top: -10%;
       width: 100%;
-      height: 100%;
+      height: 70%;
       object-fit: cover;
       z-index: -1;
     }
@@ -29,24 +29,57 @@ body:global(.light) .home__page {
     position: relative;
     width: 100%;
     height: auto;
+    margin-top: 150px;
 
-    .quizBtn {
-      background-color: transparent;
-      padding: 14px 40px;
-      text-align: center;
-      margin-top: 50px;
-      border: 1px solid $c-white;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
+    .featured {
+      position: relative;
+      width: 100%;
 
-      &:hover {
-        border: 1px solid $c-orange;
-      }
-      &:hover div {
-        color: $c-orange;
+      img {
+        top: -25%;
+        min-height: 700px;
       }
     }
+
+    .assentials {
+      position: relative;
+      width: 100%;
+
+      img {
+        min-height: 1000px;
+        top: -33%;
+      }
+    }
+
+    .challenge {
+      position: relative;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+      .quizBtn {
+        background-color: transparent;
+        padding: 14px 40px;
+        text-align: center;
+        margin-top: 50px;
+        border: 1px solid $c-white;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
+        &:hover {
+          border: 1px solid $c-orange;
+        }
+        &:hover div {
+          color: $c-orange;
+        }
+      }
+      .bigStars {
+        top: -15%;
+        min-height: 900px;
+        mix-blend-mode: color-dodge;
+      }
+    }
+
     .home__content__bg {
       position: absolute;
       left: 0;
@@ -55,6 +88,45 @@ body:global(.light) .home__page {
       height: 100%;
       object-fit: cover;
       z-index: -1;
+    }
+
+    .glossariesWrap {
+      position: relative;
+      .glossaryFlex {
+        display: flex;
+        gap: 30px;
+      }
+
+      .dodgeColor {
+        position: absolute;
+        mix-blend-mode: color-dodge;
+        z-index: -1;
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+      }
+      img {
+        top: -40%;
+        min-height: 600px;
+      }
+    }
+    .quizzContainer {
+      padding-left: 40px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .home__page {
+    .home__content {
+      .glossariesWrap {
+        .glossaryFlex {
+          flex-direction: column;
+        }
+        img {
+          top: 40%;
+        }
+      }
     }
   }
 }

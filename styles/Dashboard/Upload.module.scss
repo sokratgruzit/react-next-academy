@@ -1,0 +1,81 @@
+@import "../variables.scss";
+
+body:global(.light) .profile .imgBox {
+  background-color: $c-white;
+}
+
+body:global(.light) .profile .imgBox .icon svg path {
+  fill: $c-dark;
+}
+
+.profile {
+  display: flex;
+  position: relative;
+  padding: 10px;
+  width: 346px;
+  height: 400px;
+
+  .imgBox {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+    background: #0a0f18;
+
+    &:hover img {
+      transform: scale(1.09);
+    }
+
+    .img {
+      transition: 0.6s;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      padding: 10px 10px 64px 10px;
+      object-fit: cover;
+    }
+
+    .icon {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+
+      svg {
+        position: absolute;
+        bottom: 16px;
+        width: 32px;
+        height: 32px;
+        z-index: 1;
+      }
+
+      input {
+        bottom: 16px;
+        cursor: pointer;
+        position: absolute;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+        opacity: 0;
+      }
+
+      .imgContainer {
+        width: 100%;
+        height: 100%;
+        padding: 10px 10px 64px 10px;
+        z-index: 999;
+
+        .changedImg {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

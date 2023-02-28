@@ -1,0 +1,89 @@
+@import "../variables.scss";
+
+body:global(.light) .selectors {
+
+  .coll {
+
+    .label {
+      color: rgba(0, 5, 15, 0.5);
+    }
+
+    select {
+      border: 1px solid rgba(0, 5, 15, 0.1);
+      color: $c-dark;
+
+      * {
+        color: $c-dark;
+      }
+    }
+  }
+
+  .coll:hover .label {
+    color: $c-blue;
+  }
+
+  .coll:hover select {
+    border: 1px solid $c-blue;
+    color: $c-blue;
+  }
+
+  .coll:hover select * {
+    border: 1px solid $c-blue;
+  }
+}
+
+.selectors {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  .coll {
+    display: flex;
+    flex-direction: column;
+    width: calc(50% - 15px);
+
+    .label {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 0.02em;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    select {
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background-color: transparent;
+      padding-left: 16px;
+      padding-right: 16px;
+      padding-top: 14px;
+      padding-bottom: 14px;
+      color: #fff;
+      margin-bottom: 30px;
+
+      * {
+        background: transparent;
+        color: $c-dark;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background-color: transparent;
+        padding-left: 16px;
+        padding-top: 14px;
+        padding-bottom: 14px;
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  .coll:hover .label {
+    color: $c-blue;
+  }
+
+  .coll:hover select {
+    border: 1px solid $c-blue;
+    color: $c-blue;
+  }
+
+  .coll:hover select * {
+    border: 1px solid $c-blue;
+  }
+}

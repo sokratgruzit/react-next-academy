@@ -130,7 +130,7 @@ let instructorElements = (
 let academyElements = (
   <>
     <svg
-      style={{ margin: "0px 30px 0px 30px" }}
+      style={{ margin: "0px 15px 0px 15px" }}
       width="566"
       height="50"
       viewBox="0 0 566 50"
@@ -185,7 +185,7 @@ let academyElements = (
       </g>
     </svg>
     <svg
-      style={{ margin: "0px 30px 0px 30px" }}
+      style={{ margin: "0px 15px 0px 15px" }}
       width="566"
       height="50"
       viewBox="0 0 566 50"
@@ -240,7 +240,7 @@ let academyElements = (
       </g>
     </svg>
     <svg
-      style={{ margin: "0px 30px 0px 30px" }}
+      style={{ margin: "0px 15px 0px 15px" }}
       width="567"
       height="50"
       viewBox="0 0 567 50"

@@ -1,0 +1,90 @@
+@import "../variables.scss";
+
+body:global(.light) {
+  .sideBar {
+    border-right: 1px solid rgba(0, 5, 15, 0.1);
+
+    .sideBarContent {
+      svg path {
+        stroke: $c-dark;
+      }
+      &:hover svg path {
+        stroke: blue;
+      }
+    }
+
+    .mainPage {
+      svg path {
+        fill: $c-dark;
+      }
+      color: #808287;
+    }
+  }
+}
+
+.sideBar {
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  // justify-content: space-around;
+  flex-direction: column;
+  position: fixed;
+  height: calc(100vh - 80px);
+  width: 275px;
+  padding-left: 40px;
+  padding-top: 300px;
+
+  .sidebarWrap {
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+
+  .sideBarContent {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    transition: 0.6s;
+    cursor: pointer;
+    margin-bottom: 32px;
+
+    &:hover p {
+      color: blue;
+    }
+
+    &:hover svg path {
+      stroke: blue;
+    }
+  }
+
+  .sideBarContent:target {
+    background-color: blue;
+  }
+
+  .mainPage {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 300px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .sideBar {
+    padding-left: 32px;
+    padding-top: 200px;
+    .mainPage {
+      margin-top: 210px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .sideBar {
+    display: none;
+    padding-top: 300px;
+    .mainPage {
+      margin-top: 320px;
+    }
+  }
+}

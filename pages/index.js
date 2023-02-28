@@ -1,24 +1,18 @@
-import { motion } from "framer-motion";
-
 import { fetchData } from "@/utils/queries";
 
 import Articles from "../components/Articles/Articles";
 import IntroBox from "../components/Home/IntroBox";
 import FeaturesBanner from "../components/Home/FeaturesBanner";
-import ChallangeBanner from "../components/Home/ChallangeBanner";
-import Ticker from "../components/UI/Ticker/Ticker";
-import EmailBanner from "../components/Home/EmailBanner";
-import MotionLayout from "../components/UI/MotionLayout/MotionLayout";
-import Glossary from "../components/Glossary/Glossary";
+import TrendingQuiz from "../components/UI/TrendingQuiz/TrendingQuiz";
 
+import Ticker from "../components/UI/Ticker/Ticker";
 import Leaderboard from "../components/UI/Leaderboard/Leaderboard";
 import ContentWrap from "../components/UI/ContentWrap/ContentWrap";
 import GlossaryCard from "../components/UI/Card/GlossaryCard";
 import Banner from "../components/UI/Banner/Banner";
-import Button from "@/components/UI/Button/Button";
+import Button from "../components/UI/Button/Button";
 
 import styles from "../styles/Home/Home.module.scss";
-import QuizCard from "@/components/UI/Card/QuizCard";
 
 export const getStaticProps = async () => {
   const { data: glossaries } = await fetchData(
@@ -55,7 +49,6 @@ export const getStaticProps = async () => {
       releases,
       blockchain,
       featured,
-      category,
       security,
       essentials,
     },
@@ -66,64 +59,10 @@ function Home({
   glossaries,
   releases,
   blockchain,
-  category,
   featured,
   security,
   essentials,
 }) {
-  const DUMMY_DATA = [
-    {
-      img: "img/quiz/course1.png",
-      title: "Kali Linux For Beginners",
-      level: "Pro",
-      category: "Security",
-      time: "10 Hours",
-    },
-    {
-      img: "img/quiz/course1.png",
-      title: "Kali Linux For Beginners",
-      level: "Pro",
-      category: "Security",
-      time: "10 Hours",
-    },
-    {
-      img: "img/quiz/course1.png",
-      title: "Kali Linux For Beginners",
-      level: "Pro",
-      category: "Security",
-      time: "10 Hours",
-    },
-    {
-      img: "img/quiz/course1.png",
-      title: "Kali Linux For Beginners",
-      level: "Pro",
-      category: "Security",
-      time: "10 Hours",
-    },
-    {
-      img: "img/quiz/course1.png",
-      title: "Kali Linux For Beginners",
-      level: "Pro",
-      category: "Security",
-      time: "10 Hours",
-    },
-    {
-      img: "img/quiz/course1.png",
-      title: "Kali Linux For Beginners",
-      level: "Pro",
-      category: "Security",
-      time: "10 Hours",
-    },
-    {
-      img: "img/quiz/course1.png",
-      title: "Kali Linux For Beginners",
-      level: "Pro",
-      category: "Security",
-      time: "10 Hours",
-    },
-  ];
-  let quizData = DUMMY_DATA; // temporary
-
   return (
     <div className={styles.home__page}>
       <img
@@ -147,7 +86,21 @@ function Home({
             row={false}
             element={
               featured && featured.docs?.length ? (
-                <Articles data={featured} />
+                <div className={styles.featured}>
+                  <img
+                    src="img/Bg/bg_999.png"
+                    alt="background"
+                    className="img-absolute darkImg"
+                  />
+                  <img
+                    src="img/Bg/bg_998.png"
+                    alt="background"
+                    className="img-absolute lightImg"
+                  />
+                  <div className="container">
+                    <Articles data={featured} />
+                  </div>
+                </div>
               ) : (
                 ""
               )
@@ -163,7 +116,9 @@ function Home({
             row={false}
             element={
               releases && releases.docs?.length ? (
-                <Articles data={releases} />
+                <div className="container">
+                  <Articles data={releases} />
+                </div>
               ) : (
                 ""
               )
@@ -177,12 +132,32 @@ function Home({
             row={true}
             element={
               glossaries && glossaries.result?.length ? (
-                <GlossaryCard data={glossaries} />
+                <div className={styles.glossariesWrap}>
+                  <img
+                    className="img-absolute darkImg"
+                    src="/img/Glossaries/background1.png"
+                    alt="background"
+                  />
+                  <img
+                    className={`darkImg ${styles.dodgeColor}`}
+                    src="img/Bg/stars.svg"
+                    alt="background"
+                  />
+                  <img
+                    className="img-absolute lightImg"
+                    src="/img/Glossaries/bgL.png"
+                    alt="background"
+                  />
+                  <div className={`container ${styles.glossaryFlex}`}>
+                    <GlossaryCard quantity={"2"} data={glossaries} />
+                  </div>
+                </div>
               ) : (
                 ""
               )
             }
           />
+          <Banner type={"coming-soon"} img={'comingSoon'} title={"Courses"} />
           <ContentWrap
             title={"Blockchain"}
             btn={true}
@@ -193,38 +168,45 @@ function Home({
             row={false}
             element={
               blockchain && blockchain.docs.length ? (
-                <Articles data={blockchain} title="Blockchain" />
+                <div className="container">
+                  <Articles data={blockchain} title="Blockchain" />
+                </div>
               ) : (
                 ""
               )
             }
           />
-          {/* <ChallangeBanner /> */}
-          {/* <Banner type={"simple"} /> */}
-          <Banner
-            type={"simple"}
-            dependency={"challange"}
-            title={"Want A Challange?"}
-            teaser={
-              "Test Your Knowledge While You Learn With Our Range Of Quizzes."
-            }
-            img={"quizBg"}
-            clasName={"btn"}
-            btn={
-              <div className={styles.quizBtn}>
-                <Button title={"Take a Quizzes"} />
-              </div>
-            }
-          />
+          <div className={styles.challenge}>
+            <Banner
+              type={"simple"}
+              dependency={"challange"}
+              title={"Want A Challange?"}
+              teaser={
+                "Test Your Knowledge While You Learn With Our Range Of Quizzes."
+              }
+              img={"quizBg"}
+              clasName={"btn"}
+              btn={
+                <div className={styles.quizBtn}>
+                  <Button title={"Take a Quizzes"} />
+                </div>
+              }
+            />
+            <img
+              src="/img/Banner/lastBigStar.svg"
+              alt="background"
+              className={`img-absolute darkImg ${styles.bigStars}`}
+            />
+          </div>
           <ContentWrap
             title={"Trending Quiz"}
             btn={false}
             row={false}
             element={
-              <div className={`${styles.products} ${"textStyles"}`}>
-                {quizData.map((item, index) => {
-                  return <QuizCard item={item} key={index} />;
-                })}
+              <div style={{ position: "relative" }}>
+                <div className={styles.quizzContainer}>
+                  <TrendingQuiz type={"default"} />
+                </div>
               </div>
             }
           />
@@ -232,7 +214,11 @@ function Home({
             title={"Leaderboard"}
             btn={false}
             row={false}
-            element={<Leaderboard />}
+            element={
+              <div className="container">
+                <Leaderboard />
+              </div>
+            }
           />
           <ContentWrap
             title={"Essentials"}
@@ -244,7 +230,16 @@ function Home({
             row={false}
             element={
               essentials && essentials.docs.length ? (
-                <Articles data={essentials} />
+                <div className={styles.assentials}>
+                  <img
+                    src="img/Bg/bg_13.png"
+                    alt="background"
+                    className="img-absolute darkImg"
+                  />
+                  <div className="container">
+                    <Articles data={essentials} />
+                  </div>
+                </div>
               ) : (
                 ""
               )
@@ -260,9 +255,14 @@ function Home({
             row={false}
             element={
               security && security.docs.length ? (
-                <Articles data={security} />
+                <div className="container">
+                  {" "}
+                  <div className="container">
+                    <Articles data={security} />
+                  </div>
+                </div>
               ) : (
-                ""
+                <div className="container">"where is fkin data?"</div>
               )
             }
           />

@@ -60,7 +60,10 @@ function calculateFilterObj(data) {
 }
 
 const Filter = ({ className }) => {
-  const filterObj = useMemo(() => calculateFilterObj(DUMMY_FILTER), [DUMMY_FILTER]);
+  const filterObj = useMemo(
+    () => calculateFilterObj(DUMMY_FILTER),
+    [DUMMY_FILTER]
+  );
   const [filter, setFilter] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [selectedProperties, setSelectedProperties] = useState(filterObj);
@@ -98,7 +101,9 @@ const Filter = ({ className }) => {
           className={styles.svgWrapp}
           style={{ transform: filter ? "rotateX(180deg)" : "rotateX(0)" }}
         >
-          <StrokeSvg className={filter ? styles.svgRed : styles.svgLightmode2} />
+          <StrokeSvg
+            className={filter ? styles.svgRed : styles.svgLightmode2}
+          />
         </div>
       </div>
       <div className={styles.filterWrapp}>
@@ -115,8 +120,16 @@ const Filter = ({ className }) => {
                           <p className={styles.label}>{subItem.title}</p>
                           <input
                             type="checkbox"
-                            value={selectedProperties?.[item?.title]?.[subItem?.title]}
-                            checked={selectedProperties?.[item?.title]?.[subItem?.title]}
+                            value={
+                              selectedProperties?.[item?.title]?.[
+                                subItem?.title
+                              ]
+                            }
+                            checked={
+                              selectedProperties?.[item?.title]?.[
+                                subItem?.title
+                              ]
+                            }
                             onChange={(e) => {
                               const checked = e.currentTarget.checked;
                               setSelectedProperties((prev) => ({
@@ -138,7 +151,10 @@ const Filter = ({ className }) => {
             );
           })}
           <div className={styles.resetBtn}>
-            <p className={styles.btnTxt} onClick={() => setSelectedProperties(filterObj)}>
+            <p
+              className={styles.btnTxt}
+              onClick={() => setSelectedProperties(filterObj)}
+            >
               Reset Filter
             </p>
           </div>

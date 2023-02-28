@@ -6,7 +6,7 @@ import Link from "next/link";
 
 import { motion } from "framer-motion";
 
-const QuizCard = ({ item }) => {
+const QuizCard = ({ type, item }) => {
   const cardVariants = {
     offscreen: {
       y: 80,
@@ -20,33 +20,44 @@ const QuizCard = ({ item }) => {
       },
     },
   };
-  return (
-    <Link href={"/quizes/2"} className={styles.product}>
-      <div className={styles.test}>
-        <CornerDecor />
-        <div className={styles.img}>
-          <img src={item.img} />
-        </div>
-        <div className={styles.text}>
-          <p>{item.title}</p>
-        </div>
-        <div className={styles.info}>
-          <div className={styles.info__item}>
-            <div className={styles.div1}></div>
-            <h6>{item.level}</h6>
+
+  let card = null;
+
+  if (type === "default") {
+    card = (
+      <Link href={"/quizes/2"} className={styles.product}>
+        <div className={styles.test}>
+          <CornerDecor />
+          <div className={styles.img}>
+            <img src={item.img} />
           </div>
-          <div className={styles.info__item}>
-            <div className={styles.div2}></div>
-            <h6>{item.category}</h6>
+          <div className={styles.text}>
+            <p>{item.title}</p>
           </div>
-          <div className={styles.info__item}>
-            <div className={styles.div2}></div>
-            <h6>{item.time}</h6>
+          <div className={styles.info}>
+            <div className={styles.info__item}>
+              <div className={styles.div1}></div>
+              <h6>{item.level}</h6>
+            </div>
+            <div className={styles.info__item}>
+              <div className={styles.div2}></div>
+              <h6>{item.category}</h6>
+            </div>
+            <div className={styles.info__item}>
+              <div className={styles.div2}></div>
+              <h6>{item.time}</h6>
+            </div>
           </div>
         </div>
-      </div>
-    </Link>
-  );
+      </Link>
+    );
+  }
+  if (type === "row") {
+    card = <Link href={"/quizes/2"}>
+      HI
+    </Link>;
+  }
+  return card;
 };
 
 export default QuizCard;

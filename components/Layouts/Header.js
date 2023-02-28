@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { AnimatePresence } from "framer-motion";
 import { fetchData } from "../../utils/queries";
 
+import Button from "../UI/Button/Button";
 import TopicsBox from "../UI/TopicsBox/TopicsBox";
 import SideNavigation from "./SideNavigation";
 import WalletConnectModal from "../WalletConnect/WalletConnectModal";
@@ -212,9 +213,12 @@ function Header({ commonData }) {
                   </div>
                 </label>
               </div>
-              <div className={styles.connectBtn} onClick={handleConnectClick}>
-                Wallet Connect
-              </div>
+              <Button
+                className={styles.connectBtn}
+                type={"orange-btn"}
+                title={"Wallet Connect"}
+                onClick={handleConnectClick}
+              />
             </div>
             <button
               className={styles.burger}

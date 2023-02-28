@@ -9,7 +9,7 @@ export async function getServerSideProps(context) {
     `${process.env.NEXT_PUBLIC_DATA_URL}/api/content/pages/${context.query['dynamic-pages']}`,
   );
 
-  console.log(content)
+  // console.log(content)
 
   return {
     props: {
@@ -20,8 +20,12 @@ export async function getServerSideProps(context) {
 
 import Introduction from "@/components/Introduction/Introduction";
 
-const index = () => {
-  return <Introduction />;
+const index = ({content}) => {
+  console.log(content)
+  return 
+    // <NotFound />
+  // <Introduction />
+  ;
 };
 
 export default index;

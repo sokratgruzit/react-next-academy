@@ -1,7 +1,8 @@
-import { Link as ScrollLink, Element } from "react-scroll";
 import Link from "next/link";
+import { Link as ScrollLink, Element } from "react-scroll";
 
 import CornerDecor from "../UI/CornerDecor/CornerDecor";
+import NoResult from "../UI/NoResult/NoResult";
 
 import styles from "../../styles/Glossary/GlossariesIndex.module.scss";
 
@@ -56,7 +57,10 @@ const Glossaries = ({ res }) => {
             <div className={`${styles.contentList} ${"textStyles"}`}>
               {GROUPED_BY_LETTER.map((groupedItem, index) => {
                 return (
-                  <Link href={"glossary/" + groupedItem.slug} key={groupedItem._id}>
+                  <Link
+                    href={"glossary/" + groupedItem.slug}
+                    key={groupedItem._id}
+                  >
                     <div className={styles.listItem}>
                       <span className={styles.content}>
                         <h3>{groupedItem.title}</h3>
@@ -72,20 +76,20 @@ const Glossaries = ({ res }) => {
       }
     });
   }
-
+  
   return (
     <div className={styles.glossariesPage}>
       {!isPending && glossaries?.length ? (
         <div className={styles.inner}>
           <div style={{ position: "relative" }}>
             <img
-              className={styles.background}
-              src="img/glossaries/innerbg1.png"
+              className={`darkImg ${styles.background}`}
+              src="img/Glossaries/innerbg1.png"
               alt="background"
             />
             <img
-              className={styles.backgroundL}
-              src="img/glossaries/background1Light.png"
+              className={`lightImg ${styles.backgroundL}`}
+              src="img/Glossaries/background1Light.png"
               alt="background"
             />
             <div className="container textStyles">
@@ -123,11 +127,10 @@ const Glossaries = ({ res }) => {
       ) : isPending ? (
         <div className={styles.loading}>Loading ...</div>
       ) : (
-        ""
-        // <NotResult
-        //   title={"Oops! Nothing yet"}
-        //   teaser={"No glossaries purchased yet."}
-        // />
+        <NoResult
+          title={"Oops! Nothing yet"}
+          teaser={"No glossaries found."}
+        />
       )}
     </div>
   );
