@@ -23,7 +23,6 @@ const DashboardTabs = () => {
 
   const handlerClick = (e) => {
     setCurentTab(e.target.id);
-    console.log(curentTab)
   };
   return (
     <>

@@ -196,8 +196,8 @@ const DashboardHeader = (tab) => {
           </div>
           <div className={styles.userWrapper}>
             <div className={styles.user}>
-              <h5>{userData.name}</h5>
-              <p>balance: ${userData.balance}</p>
+              <h5>Konstantin</h5>
+              <p>balance: $110.00</p>
             </div>
             <div className={styles.circleImage}>
               <img src="/img/Dashboard/dashPic.png" alt="" />
