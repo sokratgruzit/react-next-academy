@@ -11,7 +11,7 @@ export const getStaticPaths = async () => {
     `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles`
   );
 
-  const paths = articles.data.docs.map((item) => ({
+  const paths = articles.data.docs?.map((item) => ({
     params: {
       slug: item.slug,
     },
@@ -39,37 +39,14 @@ export const getStaticProps = async (context) => {
 const Article = ({ article }) => {
   const router = useRouter();
   const data = article.data || null;
-  
+
   return (
     <div>
-      hey yo
       {/* we need help here */}
       {data && (
         <div className="article-page">
           <div className="container">
             <div className="top">
-              <div className="img-box">
-                <img
-                  src={data.image.path}
-                  alt={data.image.alt}
-                  className="img-absolute"
-                />
-              </div>
-              <div className="back-btn" onClick={() => router.back()}>
-                <svg
-                  width="6"
-                  height="10"
-                  viewBox="0 0 6 10"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M5.43654 1.05412L1.49066 5L5.43654 8.94588L4.38242 10L0.436538 6.05412C0.157023 5.77452 -2.01275e-07 5.39535 -2.18557e-07 5C-2.35838e-07 4.60465 0.157023 4.22548 0.436538 3.94588L4.38242 -1.91561e-07L5.43654 1.05412Z"
-                    fill="white"
-                  ></path>{" "}
-                </svg>
-                go back
-              </div>
               <h1 className="title">{data.title}</h1>
               <div className="info">
                 {data.level && (
@@ -186,6 +163,28 @@ const Article = ({ article }) => {
                   </div>
                   <span className="value">{data.duration} MIN</span>
                 </div>
+              </div>
+              <div className="img-box">
+                <img
+                  src={data.image.path}
+                  alt={data.image.alt}
+                  className="img-absolute"
+                />
+              </div>
+              <div className="back-btn" onClick={() => router.back()}>
+                <svg
+                  width="6"
+                  height="10"
+                  viewBox="0 0 6 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.43654 1.05412L1.49066 5L5.43654 8.94588L4.38242 10L0.436538 6.05412C0.157023 5.77452 -2.01275e-07 5.39535 -2.18557e-07 5C-2.35838e-07 4.60465 0.157023 4.22548 0.436538 3.94588L4.38242 -1.91561e-07L5.43654 1.05412Z"
+                    fill="white"
+                  ></path>{" "}
+                </svg>
+                go back
               </div>
             </div>
             <div className="content text">{parse(data.editor)}</div>
