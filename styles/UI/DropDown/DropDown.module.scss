@@ -1,4 +1,22 @@
 @import "../../variables.scss";
+
+body:global(.light) .mainWrapper {
+  .customSelect {
+    background-color: #ebedf0;
+    color: $c-dark;
+
+    .customOption {
+      border: 1px solid rgba(0, 5, 15, 0.1);
+      background-color: #ebedf0;
+      color: $c-dark;
+    }
+
+    svg path {
+      stroke: $c-dark;
+    }
+  }
+}
+@import "../../variables.scss";
 .mainWrapper {
   position: relative;
   height: 46px;

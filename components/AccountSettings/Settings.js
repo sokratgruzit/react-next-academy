@@ -50,7 +50,7 @@ function Settings() {
           <div className={styles.buttonbox}>
             <Button
               title={'Register'}
-              customStyles={{background: '#0500ff'}}
+              type={'blue-btn'}
             />
             {/* BUTTON ALERT !!! */}
           </div>

@@ -82,7 +82,7 @@ const Quizes = () => {
         <motion.div variants={cardVariants}>
           <div className={`${styles.products} ${"textStyles"}`}>
             {quizData.map((item, index) => {
-              return <QuizCard item={item} key={index} />;
+              return <QuizCard type={'default'} item={item} key={index} />;
             })}
           </div>
         </motion.div>

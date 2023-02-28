@@ -219,7 +219,7 @@ const FORM_DATA_WITH_LINKS = [
           fill="red"
         />
         <path
-          style={{ stroke: "none" }}
+          style={{ stroke: "none", fill: "none !important" }}
           d="M93.333 117.559l61.333-34.89-61.333-34.894z"
           fill="#fff"
         />
@@ -235,10 +235,18 @@ function SocialLinks({ type }) {
   return (
     <div className={styles.form} action="/api/form" method="post">
       {type === "withLinks" ? (
-        <Input data={FORM_DATA_WITH_LINKS} type="inputWithIcon" />
+        <Input
+          className={styles.input}
+          data={FORM_DATA_WITH_LINKS}
+          type="inputWithIcon"
+        />
       ) : (
         <>
-          <Input data={FORM_DATA} type="inputWithIcon" />
+          <Input
+            className={styles.input}
+            data={FORM_DATA}
+            type="inputWithIcon"
+          />
           <div onClick={onClick} className={styles.addButton}>
             <svg
               width="16"

@@ -276,6 +276,9 @@ body:global(.light) .banner .body {
   display: flex;
   align-items: center;
   justify-content: center;
+    .challengeHeight {
+      min-height: 700px;
+    }
 
   // coming soon
   .comingSoon {

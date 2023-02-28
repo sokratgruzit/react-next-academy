@@ -1,6 +1,20 @@
 @import "../variables.scss";
 
-
+body:global(.light) .form {
+  svg path {
+    fill: $c-dark;
+    stroke: $c-dark;
+  }
+  .addButton {
+    color: $c-dark;
+  }
+  :nth-child(4) svg path {
+    fill: none;
+  }
+  .addButton:hover {
+    color: $c-blue;
+  }
+}
 
 .form {
   display: flex;
@@ -9,9 +23,33 @@
   margin-top: 20px;
   gap: 44px;
 
+  svg path {
+    fill: $c-white;
+  }
+
+  div:hover svg path {
+    stroke: $c-blue;
+    fill: $c-blue;
+  }
+  :nth-child(4):hover svg path {
+    fill: none;
+  }
+
+  :nth-child(4) svg path {
+    fill: none;
+  }
+
+  &:hover:nth-child(4) svg path {
+    fill: none;
+  }
+
   .addButton {
     margin-bottom: 44px;
     cursor: pointer;
+
+    svg {
+      margin-right: 8px;
+    }
   }
 
   .addButton:hover svg path {

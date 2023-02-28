@@ -1,0 +1,278 @@
+@import "../../variables.scss";
+
+body:global(.light) .mobNavigation {
+  background-color: #ebedf0;
+  .top {
+    .logo {
+      .lightImg {
+        display: flex;
+      }
+
+      .darkImg {
+        display: none;
+      }
+    }
+    .headerContentWrapp {
+      .headerContent {
+        .quantityWrap {
+          .quantity {
+            svg path {
+              stroke: $c-dark;
+            }
+            span {
+              color: $c-dark;
+            }
+          }
+        }
+        .line {
+          background-color: rgba(0, 5, 15, 0.1);
+        }
+      }
+    }
+
+    .close {
+      svg path {
+        stroke: $bg-dark;
+      }
+    }
+  }
+
+  .bottomLogo {
+    .copyrightbottom {
+      color: $c-dark;
+    }
+  }
+}
+
+.mobNavigation {
+  background-color: $bg-dark;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 100%;
+  padding: 30px 0px 30px 0px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  .sideBar {
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+
+    .sidebarWrap {
+      &:last-child {
+        margin-bottom: 0px;
+      }
+    }
+
+    .sideBarContent {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      transition: 0.6s;
+      cursor: pointer;
+      margin-bottom: 30px;
+
+      &:hover p {
+        color: blue;
+      }
+
+      &:hover svg path {
+        stroke: blue;
+      }
+    }
+
+    .sideBarContent:target {
+      background-color: blue;
+    }
+
+    .mainPage {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+
+  ul:first-child {
+    margin-top: 20px;
+  }
+
+  .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    padding: 0px 16px 0px 16px;
+
+    .logo {
+      width: 159px;
+      height: 36px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+      .lightImg {
+        display: none;
+      }
+
+      .darkImg {
+        display: flex;
+      }
+    }
+
+    .headerContentWrapp {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      width: calc(100% - 275px);
+
+      h5 {
+        white-space: nowrap;
+      }
+
+      .headerContent {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        .switcher {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 24px;
+          width: 24px;
+
+          .input {
+            width: 30px;
+            height: 30px;
+            display: block;
+            cursor: pointer;
+          }
+          .marker {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display: block;
+            cursor: pointer;
+          }
+          .input:checked ~ .marker {
+            cursor: pointer;
+          }
+          .switchIcon {
+            transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
+          }
+          .switchIcon:hover {
+            opacity: 0.5;
+          }
+        }
+
+        .quantityWrap {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 20px;
+          .quantity {
+            display: flex;
+            gap: 5px;
+          }
+        }
+
+        .burgerMenu {
+          width: 24px;
+          height: 24px;
+          display: none;
+          flex-direction: column;
+          align-items: center;
+          padding: 3px 1px;
+          gap: 5px;
+
+          .burgerLine {
+            width: 100%;
+            height: 2px;
+            background-color: white;
+          }
+        }
+      }
+    }
+
+    .close {
+      cursor: pointer;
+      width: 24px;
+      height: 24px;
+      margin-right: 0;
+      margin-left: 20px;
+    }
+
+    .logo {
+      .lightImg {
+        display: none;
+        transition: 0.5s;
+      }
+      .darkImg {
+        display: block;
+        transition: 0.5s;
+      }
+    }
+  }
+
+  .item {
+    @extend %mediumSmall;
+    line-height: 20px;
+    transition: 0.4s;
+    border-bottom: #fff;
+
+    .lightMode {
+      display: flex;
+      align-items: center;
+      cursor: initial;
+      justify-content: space-between;
+
+      .mode {
+        margin-right: 17px;
+        @extend %mediumSmall;
+        line-height: 20px;
+        transition: 0.4s;
+      }
+    }
+  }
+  .item:hover,
+  .item.active {
+    color: $c-orange;
+  }
+
+  .bottomLogo {
+    margin-top: auto;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .bottomTitle {
+      margin-top: 30px;
+    }
+    .icons {
+      .lightIcons {
+        padding-top: 20px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        svg {
+          transition: 0.5s cubic-bezier(0.79, 0.01, 0.15, 0.99);
+          &:hover {
+            fill: rgb(255, 140, 115);
+          }
+        }
+        .socialIcon {
+          fill: #00050f;
+        }
+      }
+    }
+    .copyrightbottom {
+      margin-top: 30px;
+      text-align: center;
+    }
+  }
+}

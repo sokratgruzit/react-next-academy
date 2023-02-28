@@ -4,6 +4,12 @@ body:global(.light) .form .country .label {
   color: rgba(0, 5, 15, 0.5);
 }
 
+@import "../variables.scss";
+
+body:global(.light) .form .country .label {
+  color: rgba(0, 5, 15, 0.5);
+}
+
 body:global(.light) .form .country .select {
   border: 1px solid rgba(0, 5, 15, 0.1);
   color: $c-dark;
@@ -30,7 +36,6 @@ body:global(.light) .form .box textarea {
 body:global(.light) .form .btn {
   color: #fff;
 }
-
 
 .registrationForm {
   width: 100%;

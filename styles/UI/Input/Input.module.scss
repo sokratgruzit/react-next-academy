@@ -1,4 +1,45 @@
-.customInput {
+@import "../../variables.scss";
+body:global(.light) {
+  .customInput,
+  .inputWithIcon,
+  .customTextarea {
+    border: 1px solid rgba(0, 5, 15, 0.1);
+    color: $c-dark;
+  }
+
+  // .customInput > input {
+  //   border: none;
+  // }
+
+  .inputWithIcon .inputWrapp {
+    border-left: none;
+    input {
+      border: none;
+    }
+  }
+
+  .inputWithIcon:focus-within {
+    border: 1px solid #0500ff !important;
+  }
+
+  .inputWithIcon:focus-within svg path {
+    stroke: #0500ff;
+  }
+
+  .customInput:focus + .inputWithIconLabel {
+    color: #0500ff;
+  }
+
+  .inputWithButton:focus-within {
+    border: 1px solid blue;
+  }
+
+  .customInput:focus-within {
+    border: 1px solid blue;
+  }
+}
+.customInput,
+.customInputTextarea {
   width: 100%;
   height: auto;
   border: none;

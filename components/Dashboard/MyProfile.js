@@ -11,7 +11,7 @@ function MyProfile() {
   return (
     <div className={styles.profileContainer}>
       <RelatedThemes title="Edit your personal info" />
-      <div className={styles.profileRegister}>
+      <div className={`${styles.profileRegister} textStyles`}>
         <Upload />
         <div className={styles.registration}>
           <RegistrationForm />

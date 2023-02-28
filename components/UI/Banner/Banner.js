@@ -3,14 +3,8 @@ import Button from "../Button/Button";
 
 import styles from "../../../styles/UI/Banner/Banner.module.scss";
 
-function Banner({
-  type,
-  title,
-  teaser,
-  btn,
-  dependency,
-  placeholder,
-}) {
+function Banner({ type, title, teaser, btn, dependency, placeholder, img }) {
+  
   let element = null;
 
   type === "simple" &&
@@ -56,9 +50,9 @@ function Banner({
 
   let wrap = (
     <div className={styles.banner}>
-      {/* <div className="darkImg">
+      <div className="darkImg">
         <img
-          className={`${"img-absolute"}`}
+          className={`${"img-absolute"} ${styles.challengeHeight}`}
           src={`/img/Banner/${img}.png`}
           alt="bannerImage"
         />
@@ -69,7 +63,7 @@ function Banner({
           src={`/img/Banner/lBg1.png`}
           alt="bannerImage"
         />
-      </div> */}
+      </div>
       <div className="container">{element}</div>
     </div>
   );
