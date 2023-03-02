@@ -77,12 +77,12 @@ const Quizes = () => {
 
   return (
     <div className={`container ${styles.wrapper}`}>
-      <Filter className={styles.filter} />
+      <Filter type={"quizzes-filter"} className={styles.filter} />
       <MotionLayout className={styles.productsWrapper}>
         <motion.div variants={cardVariants}>
           <div className={`${styles.products} ${"textStyles"}`}>
             {quizData.map((item, index) => {
-              return <QuizCard type={'default'} item={item} key={index} />;
+              return <QuizCard type={"default"} item={item} key={index} />;
             })}
           </div>
         </motion.div>
