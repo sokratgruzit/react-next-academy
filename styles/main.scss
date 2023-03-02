@@ -114,6 +114,7 @@ body.light .bottomLevel {
 }
 
 //container
+body.light .container,
 .container {
   width: 100%;
   max-width: 1920px;
@@ -124,7 +125,7 @@ body.light .bottomLevel {
 .wrapper {
   min-height: calc(100vh - 90px);
 }
-
+body.light .container-sm,
 .container-sm {
   width: 100%;
   max-width: 1920px;
@@ -133,24 +134,28 @@ body.light .bottomLevel {
 }
 
 @media (max-width: 1900px) {
+  body.light .container,
   .container {
     padding: 0px 40px;
   }
 }
 
 @media (max-width: 1365px) {
+  body.light .container,
   .container {
     padding: 0px 40px;
   }
 }
 
 @media (max-width: 1023px) {
+  body.light .container,
   .container {
     padding: 0px 32px;
   }
 }
 
 @media (max-width: 767px) {
+  body.light .container,
   .container {
     padding: 0px 16px;
   }
@@ -343,7 +348,7 @@ body.light .nextLoaderText:hover {
     color: #000;
     font-family: "Lack";
     font-style: normal;
-    font-weight: 400;
+
     letter-spacing: 0.02em;
     text-transform: uppercase;
     line-height: 18.2px;
@@ -1280,7 +1285,7 @@ td {
   @extend %mediumSmall;
   color: $c-secondaryGray;
   font-style: normal;
-  font-weight: 400;
+
   line-height: 24px;
   text-transform: capitalize;
   text-align: left;
@@ -1457,7 +1462,7 @@ body.light .text {
   @extend %mediumSmall;
   color: $c-dirty-grey;
   font-style: normal;
-  font-weight: 400;
+
   line-height: 24px;
   text-align: left;
   text-transform: capitalize;
@@ -1493,7 +1498,6 @@ body.light .text ul li {
   counter-increment: counter;
   color: $c-dirty-grey;
   font-style: normal;
-  font-weight: 400;
 
   &::before {
     content: "";
@@ -1515,7 +1519,7 @@ body.light .text ol li {
   counter-increment: counter;
   color: $c-dirty-grey;
   font-style: normal;
-  font-weight: 400;
+
   background: #fff;
 
   &::before {
@@ -1914,7 +1918,7 @@ body.light .quizText {
   @extend %mediumSmall;
   color: $c-dirty-grey;
   font-style: normal;
-  font-weight: 400;
+
   line-height: 24px;
   text-align: left;
   text-transform: capitalize;
@@ -1949,7 +1953,6 @@ body.light .quizText ul li {
   counter-increment: counter;
   color: $c-dirty-grey;
   font-style: normal;
-  font-weight: 400;
 
   &::before {
     content: "";
@@ -1971,7 +1974,7 @@ body.light .quizText ol li {
   counter-increment: counter;
   color: $c-dirty-grey;
   font-style: normal;
-  font-weight: 400;
+
   background: #fff;
 
   &::before {
@@ -2081,6 +2084,7 @@ body.light .textStyles a {
 
 .textStyles h1 {
   @extend %largest;
+  line-height: 61px;
   text-transform: capitalize;
 }
 
@@ -2110,11 +2114,8 @@ body.light .textStyles a {
 .textStyles {
   @extend %mediumSmall;
   color: $c-secondaryGray;
-  font-style: normal;
-  font-weight: 400;
   line-height: 24px;
   text-transform: capitalize;
-  // margin-top: 32px; // es marginic magram importantit vamushaveb chemtan
 
   &:first-child {
     margin-top: 0;
@@ -2271,8 +2272,6 @@ body.light .textStyles p,
 body.light .textStyles {
   @extend %mediumSmall;
   color: $c-dirty-grey;
-  font-style: normal;
-  font-weight: 400;
   line-height: 24px;
   text-transform: capitalize;
 
@@ -2313,7 +2312,6 @@ body.light .textStyles ul li {
   counter-increment: counter;
   color: $c-dirty-grey;
   font-style: normal;
-  font-weight: 400;
 
   &::before {
     content: "";
@@ -2335,7 +2333,7 @@ body.light .textStyles ol li {
   counter-increment: counter;
   color: $c-dirty-grey;
   font-style: normal;
-  font-weight: 400;
+
   background: #fff;
 
   &::before {
@@ -2363,9 +2361,9 @@ body.light .textStyles blockquote {
     background: #fff;
   }
 
-  &:last-child {
-    margin-bottom: -30px;
-  }
+  // &:last-child {
+  //   margin-bottom: -30px;
+  // }
 }
 
 //end fo editor
