@@ -4,11 +4,14 @@ body:global(.light) .articlePage {
   .imgBox {
     .imgBoxImg {
       width: 100%;
-      height: auto;
       object-fit: cover;
       height: 100%;
       max-height: 778px;
     }
+  }
+  .categoryTags .tags {
+    border-top: 1px solid #cccdcf;
+    border-bottom: 1px solid #cccdcf;
   }
 
   .backBtn {
@@ -18,7 +21,6 @@ body:global(.light) .articlePage {
     line-height: 16px;
     margin-top: 50px;
     color: $c-orange;
-    margin-left: 40px;
     gap: 7px;
     font-family: "Lack-Regular";
     cursor: pointer;
@@ -36,6 +38,11 @@ body:global(.light) .articlePage {
   }
 
   .top {
+    .exploreArticles {
+      h2 {
+        color: $c-dark;
+      }
+    }
     .icons {
       .lightIcons {
         .socialIcon {
@@ -183,7 +190,6 @@ body:global(.light) .articlePage {
   .imgBox {
     .imgBoxImg {
       width: 100%;
-      height: auto;
       object-fit: cover;
       height: 100%;
       max-height: 778px;
@@ -192,7 +198,6 @@ body:global(.light) .articlePage {
 
   .backBtn {
     margin-top: 50px;
-    padding-left: 40px;
     display: flex;
     align-items: center;
     gap: 7px;
@@ -256,6 +261,7 @@ body:global(.light) .articlePage {
       .icons {
         .lightIcons {
           padding-top: 20px;
+          flex-wrap: wrap;
           display: flex;
           align-items: center;
           gap: 20px;
@@ -273,6 +279,7 @@ body:global(.light) .articlePage {
         padding-top: 20px;
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
         gap: 20px;
         .socialIcon {
           transition: 0.5s cubic-bezier(0.79, 0.01, 0.15, 0.99);
@@ -375,6 +382,11 @@ body:global(.light) .articlePage {
       line-height: 42px;
       text-align: center;
     }
+    .featured {
+      padding-left: 40px;
+      padding-right: 40px;
+      margin-top: 30px;
+    }
   }
 
   .wrapper {
@@ -394,10 +406,6 @@ body:global(.light) .articlePage {
 @media (max-width: 1023px) {
   .articlePage,
   body:global(.light) .articlePage {
-    .backBtn {
-      margin-left: 0px;
-    }
-
     .content {
       width: 100%;
       margin-left: 0px;
@@ -414,6 +422,23 @@ body:global(.light) .articlePage {
         .icons {
           margin-left: 40px;
         }
+      }
+    }
+
+    .exploreArticles {
+      .featured {
+        padding-left: 32px;
+        padding-right: 0px;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .articlePage {
+    .exploreArticles {
+      .featured {
+        padding-left: 16px;
       }
     }
   }

@@ -4,9 +4,10 @@ import Moment from "react-moment";
 
 import { fetchData } from "@/utils/queries";
 import { Facebook, GitHub, Linkedin, Twitter, ShareLink } from "@/svg";
+import Articles from "@/components/Articles/Articles";
 
 import styles from "../../styles/Articles/Slug.module.scss";
-import Articles from "@/components/Articles/Articles";
+import Link from "next/link";
 
 export const getStaticPaths = async () => {
   const articles = await fetchData(
@@ -30,8 +31,8 @@ export const getStaticProps = async (context) => {
   const article = await fetchData(
     `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles/${slug}`
   );
-  const featured = await fetchData(
-    `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles`
+  const { data: featured } = await fetchData(
+    `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles?category=62fb6bd0ab723fa8b038fcdf&limit=3`
   );
 
   return {
@@ -42,23 +43,9 @@ export const getStaticProps = async (context) => {
   };
 };
 
-// const getRandomElements = (arr, n) => {
-//   const result = [];
-//   for (let i = 0; i < n; i++) {
-//     const randomIndex = Math.floor(Math.random() * arr.length);
-//     result.push(arr[randomIndex]);
-//   }
-//   return result;
-// };
-
 const Article = ({ article, featured }) => {
   const router = useRouter();
   const data = article?.data || null;
-  // console.log(featured.data.docs);
-
-  // const randomElements = getRandomElements(featured?.data.docs, 3);
-
-  // console.log(randomElements);
 
   const icons = (
     <div className={styles.icons}>
@@ -226,7 +213,6 @@ const Article = ({ article, featured }) => {
               </div>
               {icons}
             </div>
-
             <div className={styles.imgBox}>
               <img
                 src={data.image.path}
@@ -274,13 +260,10 @@ const Article = ({ article, featured }) => {
             </div>
             <div className={styles.exploreArticles}>
               <h2>Explore More</h2>
-              {/* {featured &&
-                randomElements.map((item, index) => (
-                  <Articles key={index} data={item} />
-                ))}
-              {console.log(randomElements)} */}
               {featured && featured.docs?.length ? (
-                <Articles data={featured} />
+                <div className={styles.featured}>
+                  <Articles data={featured} />
+                </div>
               ) : (
                 ""
               )}
