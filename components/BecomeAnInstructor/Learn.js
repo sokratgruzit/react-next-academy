@@ -1,17 +1,17 @@
 import styles from "../../styles/BecomeAnInstructor/Learn.module.scss";
 
 const Learn = ({ data }) => {
-  const cardVariants = {
-    offscreen: {
-      opacity: 0,
-    },
-    onscreen: {
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-      },
-    },
-  };
+  // const cardVariants = {
+  //   offscreen: {
+  //     opacity: 0,
+  //   },
+  //   onscreen: {
+  //     opacity: 1,
+  //     transition: {
+  //       duration: 0.8,
+  //     },
+  //   },
+  // };
   return (
     <div className={styles.learn}>
       <img

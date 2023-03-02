@@ -4,6 +4,8 @@ import Moment from "react-moment";
 
 import { fetchData } from "@/utils/queries";
 
+import styles from "../../styles/Articles/Slug.module.scss";
+
 export const getStaticPaths = async () => {
   const articles = await fetchData(
     `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles`,
@@ -36,18 +38,21 @@ export const getStaticProps = async (context) => {
 };
 
 const Article = ({ article }) => {
+  console.log(article);
   const router = useRouter();
   const data = article?.data?.result || null;
 
   return (
     <div>
+      hey yo
       {data && (
         <div className="article-page">
           <div className="container">
             <div className="top">
               <div className="img-box">
                 <img
-                  src={process.env.NEXT_PUBLIC_IMG_PATH + data.image.path}
+                  // src={process.env.NEXT_PUBLIC_IMG_PATH + data.image.path}
+                  src={data.image.path}
                   alt={data.image.alt}
                   className="img-absolute"
                 />
@@ -60,7 +65,6 @@ const Article = ({ article }) => {
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  {" "}
                   <path
                     d="M5.43654 1.05412L1.49066 5L5.43654 8.94588L4.38242 10L0.436538 6.05412C0.157023 5.77452 -2.01275e-07 5.39535 -2.18557e-07 5C-2.35838e-07 4.60465 0.157023 4.22548 0.436538 3.94588L4.38242 -1.91561e-07L5.43654 1.05412Z"
                     fill="white"

@@ -42,7 +42,7 @@ const Card = ({ data, type }) => {
                 <h3 className={styles.ttl}>{data.title}</h3>
               </div>
               <div className="bottomLevel">
-                {data?.level?._id ? (
+                {data.level._id ? (
                   <div className={`itemDot level ${data.level.title.toLowerCase()}`}>
                     {data.level.title}
                   </div>

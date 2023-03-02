@@ -228,6 +228,8 @@ body.light .lightLogo {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  z-index: -1;
+  pointer-events: none;
 }
 
 .imgs {
@@ -958,20 +960,19 @@ body.light .pagination {
   top: 0;
   left: 0;
   transition: 0.4s;
-  color: $c-grey;
+  color: $c-white;
 }
 
 //input
 .custom-input input {
-  width: 665px;
+  width: 100%;
   max-width: 100%;
   height: 44px;
   padding: 0 16px;
-  border: 1px solid #060d1e;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 4px;
   background: transparent;
   font-size: 12px;
-  // margin-bottom: 30px;
   transition: 0.5s cubic-bezier(0.79, 0.01, 0.15, 0.99);
 }
 
@@ -1197,7 +1198,11 @@ body.light .pagination {
 .aligning {
   width: 80%;
   margin-right: 20%;
-  background: radial-gradient(50% 50% at 50% 50%, #000f2e 0%, rgba(0, 5, 15, 0) 100%);
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #000f2e 0%,
+    rgba(0, 5, 15, 0) 100%
+  );
 }
 
 .text section {
@@ -1609,7 +1614,11 @@ body.light .text blockquote {
 .aligning {
   width: 80%;
   margin-right: 20%;
-  background: radial-gradient(50% 50% at 50% 50%, #000f2e 0%, rgba(0, 5, 15, 0) 100%);
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #000f2e 0%,
+    rgba(0, 5, 15, 0) 100%
+  );
 }
 
 .quizText section {
@@ -2536,7 +2545,11 @@ body.light .bottomLevel {
 .aligning {
   width: 80%;
   margin-right: 20%;
-  background: radial-gradient(50% 50% at 50% 50%, #000f2e 0%, rgba(0, 5, 15, 0) 100%);
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #000f2e 0%,
+    rgba(0, 5, 15, 0) 100%
+  );
 }
 
 .terms .aligning {
@@ -2712,6 +2725,10 @@ body.light .aligning {
     display: flex;
     align-items: center;
   }
+}
+
+.denayedFilterValue {
+  display: none;
 }
 
 .denayedFilterValue {

@@ -1,0 +1,33 @@
+@import "../variables.scss";
+
+body:global(.light) .lbl {
+  color: #00050f !important;
+}
+
+.mainBox {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 80px 15% 80px 5%;
+  width: 80%;
+
+  .container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainBox {
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+
+    .container {
+      width: 100%;
+      padding-bottom: 80px;
+    }
+  }
+}

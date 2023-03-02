@@ -30,20 +30,23 @@ const FROM_TEXTAREA = {
 const Contact = () => {
   return (
     <div className={styles.contact}>
-      <img src="img/Bg/bg_42.png" alt="bg" />
-      <div className={styles.title}>
-        <h1>contact us</h1>
-        <h5>We’re here with you every step way!</h5>
-      </div>
-      <div className={`${styles.contactBox} ${'textStyles'}`}>
-        <Input type="input" data={FORM_DATA} />
-        <Input type="textarea" data={FROM_TEXTAREA} />
-        <Button
-          size={"btn-big"}
-          color={"blue"}
-          title="send message"
-          className={""}
-        />
+      <img className="darkImg" src="img/Bg/bg_42.png" alt="bg" />
+      <img className="lightImg" src="img/Bg/bg_421.png" alt="bg" />
+      <div className={`${styles.contactContent} container`}>
+        <div className={styles.title}>
+          <h1>contact us</h1>
+          <h5>We’re here with you every step way!</h5>
+        </div>
+        <div className={`${styles.contactBox} ${"textStyles"}`}>
+          <Input type="input" data={FORM_DATA} />
+          <Input type="textarea" data={FROM_TEXTAREA} />
+          <Button
+            size={"btn-big"}
+            color={"blue"}
+            title="send message"
+            className={""}
+          />
+        </div>
       </div>
     </div>
   );

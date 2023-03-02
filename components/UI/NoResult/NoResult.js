@@ -39,6 +39,6 @@ const NoResult = ({ title, teaser }) => {
       </svg>
     </div>
   );
-}
+};
 
 export default NoResult;

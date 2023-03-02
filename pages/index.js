@@ -15,8 +15,10 @@ import Leaderboard from "../components/UI/Leaderboard/Leaderboard";
 import ContentWrap from "../components/UI/ContentWrap/ContentWrap";
 import GlossaryCard from "../components/UI/Card/GlossaryCard";
 import Banner from "../components/UI/Banner/Banner";
+import Button from "@/components/UI/Button/Button";
 
 import styles from "../styles/Home/Home.module.scss";
+import QuizCard from "@/components/UI/Card/QuizCard";
 
 export const getStaticProps = async () => {
   const { data: glossaries } = await fetchData(
@@ -69,6 +71,59 @@ function Home({
   security,
   essentials,
 }) {
+  const DUMMY_DATA = [
+    {
+      img: "img/quiz/course1.png",
+      title: "Kali Linux For Beginners",
+      level: "Pro",
+      category: "Security",
+      time: "10 Hours",
+    },
+    {
+      img: "img/quiz/course1.png",
+      title: "Kali Linux For Beginners",
+      level: "Pro",
+      category: "Security",
+      time: "10 Hours",
+    },
+    {
+      img: "img/quiz/course1.png",
+      title: "Kali Linux For Beginners",
+      level: "Pro",
+      category: "Security",
+      time: "10 Hours",
+    },
+    {
+      img: "img/quiz/course1.png",
+      title: "Kali Linux For Beginners",
+      level: "Pro",
+      category: "Security",
+      time: "10 Hours",
+    },
+    {
+      img: "img/quiz/course1.png",
+      title: "Kali Linux For Beginners",
+      level: "Pro",
+      category: "Security",
+      time: "10 Hours",
+    },
+    {
+      img: "img/quiz/course1.png",
+      title: "Kali Linux For Beginners",
+      level: "Pro",
+      category: "Security",
+      time: "10 Hours",
+    },
+    {
+      img: "img/quiz/course1.png",
+      title: "Kali Linux For Beginners",
+      level: "Pro",
+      category: "Security",
+      time: "10 Hours",
+    },
+  ];
+  let quizData = DUMMY_DATA; // temporary
+
   return (
     <div className={styles.home__page}>
       <img
@@ -144,7 +199,35 @@ function Home({
               )
             }
           />
-          <ChallangeBanner />
+          {/* <ChallangeBanner /> */}
+          {/* <Banner type={"simple"} /> */}
+          <Banner
+            type={"simple"}
+            dependency={"challange"}
+            title={"Want A Challange?"}
+            teaser={
+              "Test Your Knowledge While You Learn With Our Range Of Quizzes."
+            }
+            img={"quizBg"}
+            clasName={"btn"}
+            btn={
+              <div className={styles.quizBtn}>
+                <Button title={"Take a Quizzes"} />
+              </div>
+            }
+          />
+          <ContentWrap
+            title={"Trending Quiz"}
+            btn={false}
+            row={false}
+            element={
+              <div className={`${styles.products} ${"textStyles"}`}>
+                {quizData.map((item, index) => {
+                  return <QuizCard item={item} key={index} />;
+                })}
+              </div>
+            }
+          />
           <ContentWrap
             title={"Leaderboard"}
             btn={false}
@@ -184,7 +267,15 @@ function Home({
             }
           />
           <Ticker elements={"academyElements"} />
-          <EmailBanner />
+          <Banner
+            type={"simple"}
+            dependency={"email"}
+            title={"Keep Up To Date — Get E-Mail Updates"}
+            teaser={"Stay Tuned For The Latest Company News."}
+            placeholder={"name@example.com"}
+            img={"contactBg"}
+            btn={<Button customStyles={{ color: "#fff" }} title={"Join Now"} />}
+          />
         </div>
       </div>
     </div>
