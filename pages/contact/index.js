@@ -113,10 +113,7 @@ const Contact = () => {
               status={"error"}
               title={"Help Text"}
               color={"#EF5350"}
-              content={
-                "your text your text your text your text your text your text your text"
-              }
-              body={"normal"}
+              body={<div>body</div>}
               active={active}
               onClick={closeHandler}
             />

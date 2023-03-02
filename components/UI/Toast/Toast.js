@@ -1,9 +1,9 @@
 import styles from "../../../styles/UI/Toast/Toast.module.scss";
 
-const Toast = (props) => {
+const Toast = ({ active, title, status, body }) => {
   let svg = (
-    <div>
-      {props.status === "success" ? (
+    <div className={styles.status}>
+      {status === "success" ? (
         <svg
           width="24"
           height="24"
@@ -33,7 +33,7 @@ const Toast = (props) => {
       ) : (
         ""
       )}
-      {props.status === "warning" ? (
+      {status === "warning" ? (
         <svg
           width="24"
           height="24"
@@ -63,7 +63,7 @@ const Toast = (props) => {
       ) : (
         ""
       )}
-      {props.status === "error" ? (
+      {status === "error" ? (
         <svg
           width="24"
           height="24"
@@ -93,7 +93,7 @@ const Toast = (props) => {
       ) : (
         ""
       )}
-      {props.status === "info" ? (
+      {status === "info" ? (
         <svg
           width="24"
           height="24"
@@ -125,109 +125,64 @@ const Toast = (props) => {
       )}
     </div>
   );
+  let color = null;
+
+  let colorHandler = () => {
+    if (status === "success") {
+      color = "";
+    }
+    if (status === "warning") {
+      color = "";
+    }
+    if (status === "error") {
+      color = "";
+    }
+    if (status === "info") {
+      color = "";
+    }
+  };
 
   return (
-    <div>
-      <div
-        className={`${styles.toast} ${props.active ? styles.animate : ""} ${
-          !props.body ? styles.toastSml : ""
-        }`}
-        role={"alert"}
-      >
-        <div className={styles.toastHeader}>
-          <div className={styles.toastTitle}>
-            {svg}
-            <p style={{ color: props.color }}>
-              {props.body === "long" ? "Mail Verification" : props.title}
-            </p>
-          </div>
-          <div className={styles.closeBtn} onClick={props.handleClose}>
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z"
-                stroke="#6A6D76"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M9.16992 14.83L14.8299 9.17"
-                stroke="#6A6D76"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M14.8299 14.83L9.16992 9.17"
-                stroke="#6A6D76"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </div>
+    <div
+      className={`${styles.toast} ${active ? styles.animate : ""}`}
+      role={"alert"}
+    >
+      <div className={styles.top}>
+        <div>
+          {svg}
+          <p>{title}</p>
         </div>
-        {!props.body ? "" : ""}
-        {props.body === "normal" ? (
-          <div className={styles.toastBody}>
-            <p>
-              {props.content}
-              <span className={styles.toastBtn}>
-                Button
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M7.66898 5.16898C7.44367 5.39428 7.44367 5.75957 7.66898 5.98487L11.2022 9.51807C11.3941 9.71004 11.3941 10.0275 11.2022 10.2195L7.66898 13.7527C7.44367 13.978 7.44367 14.3433 7.66898 14.5686C7.89428 14.7939 8.25957 14.7939 8.48487 14.5686L12.0181 11.0354C12.6606 10.3928 12.6606 9.34475 12.0181 8.70218L8.48487 5.16898C8.25957 4.94367 7.89428 4.94367 7.66898 5.16898Z"
-                    fill="#3D5AFE"
-                  />
-                </svg>
-              </span>
-            </p>
-          </div>
-        ) : (
-          ""
-        )}
-        {props.body === "long" ? (
-          <div className={styles.toastBody}>
-            <p>Mail verification is necessary to set up security.</p>
-            <p className={styles.toastText}>
-              If you did not receive the verification code in the mail
-            </p>
-            <span className={styles.toastBtn} onClick={props.onClick}>
-              Send it Again
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M7.66898 5.16898C7.44367 5.39428 7.44367 5.75957 7.66898 5.98487L11.2022 9.51807C11.3941 9.71004 11.3941 10.0275 11.2022 10.2195L7.66898 13.7527C7.44367 13.978 7.44367 14.3433 7.66898 14.5686C7.89428 14.7939 8.25957 14.7939 8.48487 14.5686L12.0181 11.0354C12.6606 10.3928 12.6606 9.34475 12.0181 8.70218L8.48487 5.16898C8.25957 4.94367 7.89428 4.94367 7.66898 5.16898Z"
-                  fill="#3D5AFE"
-                />
-              </svg>
-            </span>
-          </div>
-        ) : (
-          ""
-        )}
+        <svg
+          width="22"
+          height="22"
+          viewBox="0 0 22 22"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M11 21C16.5 21 21 16.5 21 11C21 5.5 16.5 1 11 1C5.5 1 1 5.5 1 11C1 16.5 5.5 21 11 21Z"
+            stroke="#6A6D76"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M8.16992 13.83L13.8299 8.17"
+            stroke="#6A6D76"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M13.8299 13.83L8.16992 8.17"
+            stroke="#6A6D76"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
       </div>
+      <div className={styles.body}>{body}</div>
     </div>
   );
 };
