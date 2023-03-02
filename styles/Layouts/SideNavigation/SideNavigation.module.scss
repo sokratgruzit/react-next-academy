@@ -1,6 +1,6 @@
 @import "../../variables.scss";
 
-body:global(.light) .expand__item {
+body:global(.light) .expandItem {
   color: $c-dark;
   transition: 0.5s;
 }
@@ -202,7 +202,6 @@ body:global(.light) .logo .darkImg {
     .close:hover path {
       stroke: $c-dark;
     }
-
   }
 
   .list {
@@ -233,7 +232,7 @@ body:global(.light) .logo .darkImg {
           z-index: 5;
           margin: 0 auto;
 
-          .expand__item {
+          .expandItem {
             padding: 22px 16px;
             display: flex;
             width: 100%;
@@ -248,7 +247,7 @@ body:global(.light) .logo .darkImg {
               &.active span .arrow {
                 transform: rotate(180deg);
               }
-              .item__svg {
+              .itemSvg {
                 margin-right: 5px;
                 .arrow {
                   transition: 0.4s;
@@ -259,7 +258,7 @@ body:global(.light) .logo .darkImg {
             }
           }
 
-          .item__outer {
+          .itemOuter {
             // background-color: red;
             .paragraph {
               padding: 22px 16px;

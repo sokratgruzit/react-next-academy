@@ -1,6 +1,6 @@
 import styles from "../../../styles/UI/Input/Input.module.scss";
 
-const Input = ({ data, type }) => {
+const Input = ({ data, type, onChange }) => {
   return (
     <>
       {type === "input" ? (
@@ -12,7 +12,8 @@ const Input = ({ data, type }) => {
                   className={styles.customInput}
                   type={item.type}
                   placeholder={item.placeholder}
-                  onChange={item.onChange}
+                  onChange={onChange}
+                  name={item.name}
                 />
                 <label className={styles.labelTitle}>{item.label}</label>
               </div>
@@ -25,6 +26,8 @@ const Input = ({ data, type }) => {
             className={styles.customTextarea}
             placeholder={data.placeholder}
             type={data.type}
+            name={data.name}
+            onChange={onChange}
           />
           <label className={styles.labelTitle}>{data.label}</label>
         </div>

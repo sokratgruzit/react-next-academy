@@ -5,8 +5,13 @@ import { AnimatePresence } from "framer-motion";
 
 import styles from "../../styles/Layouts/Header/DashboardHeader.module.scss";
 import DashboardSideNavigation from "./DashboardSideNavigation";
+import Dashboard from "../Dashboard/Dashboard";
+import MyCourses from "../Dashboard/MyCourses";
+import MyQuizzes from "../Dashboard/MyQuizzes";
+import MyProfile from "../Dashboard/MyProfile";
+import AccountSettings from "../Dashboard/AccountSettings";
 
-const DashboardHeader = () => {
+const DashboardHeader = (tab) => {
   let userData = [
     {
       name: "Konstantin",
@@ -20,6 +25,11 @@ const DashboardHeader = () => {
   const [topicsBox, setTopicsBox] = useState(false);
   const [burger, setBurger] = useState(false);
   const { tags } = [""];
+  const [curentTab, setCurentTab] = useState("0");
+
+  const handlerClick = (e) => {
+    setCurentTab(e.target.id);
+  };
 
   const getHeaderLinks = async () => {
     const res = await fetchData(
@@ -202,8 +212,8 @@ const DashboardHeader = () => {
             {burger && (
               <DashboardSideNavigation
                 setBurger={setBurger}
-                data={tags}
-                links={headerLinks}
+                tab={curentTab}
+                handlerClick={handlerClick}
               />
             )}
           </AnimatePresence>
