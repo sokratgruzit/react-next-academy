@@ -2,6 +2,7 @@ import Filter from "../UI/Filter/Filter";
 
 import styles from "../../styles/Market/Market.module.scss";
 import CourseCard from "../UI/Card/CourseCard";
+// import { Pagination } from "../UI/Pagination/Pagination";
 
 let courses = [
   {
@@ -14,7 +15,7 @@ let courses = [
   },
   {
     img: "/img/Marketplace/product.png",
-    title: "Kak Kushat Xui",
+    title: "HTML, CSS, and Javascript for Web Developers",
     price: "Free",
     level: "Pro",
     language: "ENG",
@@ -22,7 +23,7 @@ let courses = [
   },
   {
     img: "/img/Marketplace/product.png",
-    title: "Kak Kushat Xui",
+    title: "HTML, CSS, and Javascript for Web Developers",
     price: "Free",
     level: "Pro",
     language: "ENG",
@@ -30,7 +31,47 @@ let courses = [
   },
   {
     img: "/img/Marketplace/product.png",
-    title: "Kak Kushat Xui",
+    title: "HTML, CSS, and Javascript for Web Developers",
+    price: "Free",
+    level: "Pro",
+    language: "ENG",
+    time: "120hrs",
+  },
+  {
+    img: "/img/Marketplace/product.png",
+    title: "HTML, CSS, and Javascript for Web Developers",
+    price: "Free",
+    level: "Pro",
+    language: "ENG",
+    time: "120hrs",
+  },
+  {
+    img: "/img/Marketplace/product.png",
+    title: "HTML, CSS, and Javascript for Web Developers",
+    price: "Free",
+    level: "Pro",
+    language: "ENG",
+    time: "120hrs",
+  },
+  {
+    img: "/img/Marketplace/product.png",
+    title: "HTML, CSS, and Javascript for Web Developers",
+    price: "Free",
+    level: "Pro",
+    language: "ENG",
+    time: "120hrs",
+  },
+  {
+    img: "/img/Marketplace/product.png",
+    title: "HTML, CSS, and Javascript for Web Developers",
+    price: "Free",
+    level: "Pro",
+    language: "ENG",
+    time: "120hrs",
+  },
+  {
+    img: "/img/Marketplace/product.png",
+    title: "HTML, CSS, and Javascript for Web Developers",
     price: "Free",
     level: "Pro",
     language: "ENG",
@@ -54,6 +95,7 @@ function Market() {
             })}
           </div>
         </div>
+        {/* <Pagination /> */}
       </div>
     </div>
   );
