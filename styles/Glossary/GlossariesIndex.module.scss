@@ -241,9 +241,12 @@ body:global(.light) .item {
       .glossaryList {
         .item {
           gap: 20px;
-          .value {
-            width: 60px !important;
-            height: 60px !important;
+          .characterScroll {
+            .value {
+              width: 60px;
+              height: 60px;
+              font-size: 20px;
+            }
           }
           .contentList {
             width: 100%;

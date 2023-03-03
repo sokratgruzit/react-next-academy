@@ -64,14 +64,11 @@ body:global(.light) .glossaryPage .inner .teaser {
     height: 100%;
     object-fit: cover;
   }
-
+  
   .backBtn {
     margin: 100px 0 55px 0;
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    display: inline-flex;
     cursor: pointer;
+    width: fit-content;
 
     & p {
       color: #ff7152;
