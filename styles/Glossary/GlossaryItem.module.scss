@@ -73,10 +73,6 @@ body:global(.light) .glossaryPage .inner .teaser {
     display: inline-flex;
     cursor: pointer;
 
-    // &:hover svg {
-    //   transform: translateX(-5px);
-    // }
-
     & p {
       color: #ff7152;
     }

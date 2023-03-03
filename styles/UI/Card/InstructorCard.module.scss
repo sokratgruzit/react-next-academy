@@ -32,6 +32,11 @@ body:global(.light) .instructorWrap {
         width: 100%;
         height: 100%;
         object-fit: cover;
+
+        &:hover {
+          padding: 3px;
+          transition: 0.3s;
+        }
       }
     }
 
@@ -63,7 +68,7 @@ body:global(.light) .instructorWrap {
 @media (max-width: 1600px) {
   .instructorWrap {
     .instructorItem {
-    //   height: 270px;
+      //   height: 270px;
       .content {
         width: calc(75% - 10px);
         .text {
