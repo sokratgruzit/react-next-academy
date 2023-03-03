@@ -1,0 +1,15 @@
+.wraper {
+  .font51 {
+    inline-size: 500px;
+    font-size: 51px;
+  }
+  .bg {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .content {
+    margin-top: 90px;
+  }
+}
