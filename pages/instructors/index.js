@@ -1,11 +1,19 @@
+import Outer from "../../components/UI/ContentWrap/Outer";
 import Instructors from "../../components/Instructors/Instructors";
 import BecomeInstructorInfo from "../../components/Instructors/BecomeInstructorInfo";
 
 const index = () => {
   return (
     <>
-      <Instructors />
-      <BecomeInstructorInfo />
+      <Outer
+        title={"Instructors"}
+        element={
+          <>
+            <Instructors />
+            <BecomeInstructorInfo />
+          </>
+        }
+      />
     </>
   );
 };

@@ -25,7 +25,6 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const slug = context.params.slug || undefined;
-
   const article = await fetchData(
     `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles/${slug}`,
   );
@@ -38,20 +37,19 @@ export const getStaticProps = async (context) => {
 };
 
 const Article = ({ article }) => {
-  console.log(article);
   const router = useRouter();
-  const data = article?.data?.result || null;
+  const data = article.data || null;
 
   return (
     <div>
       hey yo
+      {/* we need help here */}
       {data && (
         <div className="article-page">
           <div className="container">
             <div className="top">
               <div className="img-box">
                 <img
-                  // src={process.env.NEXT_PUBLIC_IMG_PATH + data.image.path}
                   src={data.image.path}
                   alt={data.image.alt}
                   className="img-absolute"

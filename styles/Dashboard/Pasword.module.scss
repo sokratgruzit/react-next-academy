@@ -1,0 +1,18 @@
+@import "../variables.scss";
+
+body:global(.light) .resetForm {
+  color: rgba(0, 5, 15, 0.5);
+}
+
+  .resetForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 1023px) {
+    .resetForm {
+      gap: 24px;
+    }
+  }

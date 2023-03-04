@@ -1,0 +1,53 @@
+@import "../variables.scss";
+
+.quizzesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  .quizes {
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .line {
+    height: 1px;
+    width: calc(100% - 258px);
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+body:global(.light) .quizRelated {
+  .item__wrap {
+    .item {
+      .imgWrap {
+        background: #fff;
+      }
+    }
+  }
+}
+
+body:global(.light) {
+  .quizes {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .line {
+    background-color: rgba(0, 5, 15, 0.1);
+  }
+}
+
+@media (max-width: 1023px) {
+  .quizzesContainer {
+    gap: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .quizzesContainer {
+    gap: 16px;
+  }
+}

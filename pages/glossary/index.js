@@ -1,5 +1,3 @@
-import React from "react";
-
 import { fetchData } from "@/utils/queries";
 
 import Glossaries from "@/components/Glossary/Glossaries";

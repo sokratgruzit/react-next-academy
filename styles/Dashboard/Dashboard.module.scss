@@ -1,0 +1,11 @@
+@import "../variables.scss";
+
+.courseContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  .swiperOne {
+    padding-bottom: 80px;
+  }
+}

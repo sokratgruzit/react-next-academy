@@ -1,13 +1,9 @@
-import { motion } from "framer-motion";
-
-import CornerDecor from "../UI/CornerDecor/CornerDecor";
+import InstructorCard from "../UI/Card/InstructorCard";
 
 import styles from "../../styles/Instructors/Instructors.module.scss";
-import { useRouter } from "next/router";
 
 const Instructors = () => {
-  const router = useRouter();
-  const INSTRUCTOR_DATA = [
+  const DUMMY__DATA = [
     {
       id: 0,
       text: "Making sure that our products exceed customer expectations for quality and performance.",
@@ -27,59 +23,16 @@ const Instructors = () => {
       img: "/img/InstructorImgs/ChristianNorman.png",
     },
   ];
+  const instructorData = DUMMY__DATA;
 
-  const CARD_VARIANTS = {
-    offscreen: {
-      opacity: 0,
-    },
-    onscreen: {
-      opacity: 1,
-      transition: {
-        duration: 0.5,
-      },
-    },
-  };
   return (
-    <div className={`${styles.box} textStyles`}>
-      <div className={styles.header}>
-        <div className={styles.title}>
-          <h1>Instructors</h1>
-        </div>
-        <img className="darkImg" src="/img/InstructorImgs/bgheder.png" />
-        <img className="lightImg" src="/img/InstructorImgs/bgLight.png" />
-      </div>
-      <div className={styles.bottom}>
-        <div className={styles.img}>
-          <img
-            className={`darkImg ${styles.bottomImg}`}
-            src="/img/InstructorImgs/bgbottom.png"
-          />
-        </div>
-        <div className={`${styles.container} container`}>
-          {INSTRUCTOR_DATA.map((item) => {
-            return (
-              <motion.div
-                initial="offscreen"
-                whileInView="onscreen"
-                viewport={{ once: true, amount: 0.4 }}
-                key={item.id}
-                variants={CARD_VARIANTS}
-                className={styles.instructorList}
-                onClick={() => router.push(`/instructors/${item.id}`)}
-                style={{ zIndex: "150" }}
-              >
-                <CornerDecor />
-                <div className={styles.imgContainer}>
-                  <img src={item.img} alt="instructor img" />
-                </div>
-                <div className={styles.content}>
-                  <h3 className={styles.names}>{item.name}</h3>
-                  <p className={`${styles.text}`}>{item.text}</p>
-                </div>
-              </motion.div>
-            );
-          })}
-        </div>
+    <div className={styles.instructors}>
+      <img
+        className={`darkImg ${styles.background}`}
+        src="/img/InstructorImgs/bgbottom.png"
+      />
+      <div className="container">
+        <InstructorCard data={instructorData} />
       </div>
     </div>
   );

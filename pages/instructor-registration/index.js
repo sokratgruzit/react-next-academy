@@ -1,5 +1,5 @@
 import Input from "../../components/UI/Input/Input";
-import Button from "../../components/UI/Button/Button.js";
+import Button from "../../components/UI/Button/Button";
 
 import styles from "../../styles/InstructorRegistration/InstructorRegistration.module.scss";
 
@@ -32,6 +32,10 @@ const FORM_DATA = [
 ];
 
 const InstructorRegistration = () => {
+  const clickHandler = () => {
+    console.log('click me, click me mf')
+  }
+
   return (
     <div className={`${styles.mainBoxInstructor} `}>
       <div className={`${"contact container"} ${styles.box} ${"textStyles"}`}>
@@ -54,10 +58,10 @@ const InstructorRegistration = () => {
           </div>
           <div>
             <Button
-              size={"btn-big"}
-              color={"blue"}
-              title="send message"
-              className={styles.submitBtn}
+              type={'blue-btn'}
+              title={'Register'}
+              onClick={clickHandler}
+              customStyles={{width: '100%'}}
             />
           </div>
         </div>

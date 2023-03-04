@@ -3,9 +3,8 @@ import styles from "../../../styles/UI/ContentWrap/ContentWrap.module.scss";
 
 const ContentWrap = ({ title, btnText, element, row, href, btn }) => {
   return (
-    <div className="container">
       <div className={styles.contentWrap}>
-        <div className="textStyles">
+        <div className={` ${"textStyles"} ${"container"}`}>
           <h3 className={styles.title}>{title}</h3>
           {btn && (
             <Link href={`${href}`}>
@@ -43,7 +42,6 @@ const ContentWrap = ({ title, btnText, element, row, href, btn }) => {
           {element}
         </div>
       </div>
-    </div>
   );
 };
 

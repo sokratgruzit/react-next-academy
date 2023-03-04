@@ -1,5 +1,8 @@
+import { useState } from "react";
+
 import Input from "../../components/UI/Input/Input";
 import Button from "../../components/UI/Button/Button.js";
+import Popup from "../../components/UI/Popup/Popup";
 
 import styles from "../../styles/Contact/Contact.module.scss";
 
@@ -7,17 +10,20 @@ const FORM_DATA = [
   {
     type: "text",
     placeholder: "Your name",
-    label: "Name",
+    label: "name",
+    name: "name",
   },
   {
     type: "text",
     placeholder: "Type e-mail address",
-    label: "Email address",
+    label: "email address",
+    name: "email",
   },
   {
     type: "text",
     placeholder: "Enter your subject",
-    label: "Subject",
+    label: "subject",
+    name: "subject",
   },
 ];
 
@@ -25,9 +31,47 @@ const FROM_TEXTAREA = {
   type: "message",
   placeholder: "type here",
   label: "message",
+  value: "message",
 };
 
 const Contact = () => {
+  const [popup, setPopup] = useState(false);
+  const [data, setData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const statusHandler = () => {
+    if (data) {
+      if (data.name === "") {
+        console.log("required to fill name");
+      }
+      if (data.email === "") {
+        console.log("required to fill email");
+      }
+      if (data.subject === "") {
+        console.log("required to fill subject");
+      }
+      if (data.message === "") {
+        console.log("requred to fill message");
+      }
+    } else {
+      console.log('requred to fill')
+    }
+  };
+  const messageSendHandler = () => {
+    console.log(data);
+    setPopup(true);
+    statusHandler();
+  };
+
+  const setDataUpdater = (value, field) => {
+    setData((prevState) => ({ ...prevState, [field]: value }));
+    console.log(data);
+  };
+
   return (
     <div className={styles.contact}>
       <img className="darkImg" src="img/Bg/bg_42.png" alt="bg" />
@@ -38,14 +82,32 @@ const Contact = () => {
           <h5>We’re here with you every step way!</h5>
         </div>
         <div className={`${styles.contactBox} ${"textStyles"}`}>
-          <Input type="input" data={FORM_DATA} />
-          <Input type="textarea" data={FROM_TEXTAREA} />
-          <Button
-            size={"btn-big"}
-            color={"blue"}
-            title="send message"
-            className={""}
+          <Input
+            onChange={(e) => setDataUpdater(e.target.value, e.target.name)}
+            type="input"
+            data={FORM_DATA}
           />
+          <Input
+            onChange={(e) => setDataUpdater(e.target.value, "message")}
+            type="textarea"
+            data={FROM_TEXTAREA}
+          />
+          <Button
+            // onClick={console.log(data)}
+            onClick={messageSendHandler}
+            type={"blue-btn"}
+            title={"Send Message"}
+          />
+          <div
+            onClick={() => setPopup(false)}
+            className={popup ? styles.active : styles.inactive}
+          >
+            <Popup
+              title={""}
+              head={false}
+              teaser={"Message Sent Successfully "}
+            />
+          </div>
         </div>
       </div>
     </div>
