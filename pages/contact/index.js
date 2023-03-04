@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 import Input from "../../components/UI/Input/Input";
-import Button from "../../components/UI/Button/Button.js";
-import Popup from "../../components/UI/Popup/Popup";
+import Button from "../../components/UI/Button/Button";
+import Toast from "../../components/UI/Toast/Toast";
 
 import styles from "../../styles/Contact/Contact.module.scss";
 
@@ -35,6 +35,7 @@ const FROM_TEXTAREA = {
 };
 
 const Contact = () => {
+  const [active, setActive] = useState(true);
   const [popup, setPopup] = useState(false);
   const [data, setData] = useState({
     name: "",
@@ -42,6 +43,10 @@ const Contact = () => {
     subject: "",
     message: "",
   });
+
+  let closeHandler = () => {
+    setActive(false);
+  };
 
   const statusHandler = () => {
     if (data) {
@@ -58,7 +63,7 @@ const Contact = () => {
         console.log("requred to fill message");
       }
     } else {
-      console.log('requred to fill')
+      console.log("requred to fill");
     }
   };
   const messageSendHandler = () => {
@@ -98,14 +103,19 @@ const Contact = () => {
             type={"blue-btn"}
             title={"Send Message"}
           />
-          <div
-            onClick={() => setPopup(false)}
-            className={popup ? styles.active : styles.inactive}
-          >
-            <Popup
+          <div>
+            {/* <Popup
               title={""}
               head={false}
               teaser={"Message Sent Successfully "}
+            /> */}
+            <Toast
+              status={"error"}
+              title={"Help Text"}
+              color={"#EF5350"}
+              body={<div>body</div>}
+              active={active}
+              onClick={closeHandler}
             />
           </div>
         </div>

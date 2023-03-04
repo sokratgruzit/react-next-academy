@@ -16,7 +16,7 @@ const GlossaryCard = ({ data, quantity }) => {
           <div className={styles.item} key={index}>
             <div className={styles.itemInner}>
               <CornerDecor />
-              <div className="textStyles">
+              <div className='textStyles'>
                 <h3>{item.title}</h3>
                 <p>{item.teaser}</p>
               </div>

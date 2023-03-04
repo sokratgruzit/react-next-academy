@@ -19,8 +19,8 @@ const InstructorItem = ({ data }) => {
                 <img className={styles.img} src={item.img} alt="Instructor" />
               </div>
               <div className={styles.text}>
-                <h1 className={styles.name}>{item.name}</h1>
-                <p className={styles.teser}>{item.text}</p>
+                <h1>{item.name}</h1>
+                <p>{item.text}</p>
               </div>
               <div className={styles.bottom}>
                 {item.stat &&

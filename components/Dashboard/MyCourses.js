@@ -15,7 +15,7 @@ function MyCourses(props) {
         {COURSE_HELPER.map((item, index) => {
           return (
             <CourseCard
-              type={'row'}
+              type={"row"}
               key={index}
               img={item.img}
               title={item.title}

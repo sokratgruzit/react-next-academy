@@ -1,6 +1,7 @@
 @import "../variables.scss";
 
 body:global(.light) .instructorOuter {
+  padding-top: 150px;
   .instructor {
     .avatar {
       .img {
@@ -71,6 +72,7 @@ body:global(.light) .instructorOuter {
       align-items: center;
       padding: 20px 0px 20px 0px;
       gap: 20px;
+      text-align: center;
     }
 
     .bottom {

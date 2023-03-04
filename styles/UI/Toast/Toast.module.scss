@@ -1,0 +1,20 @@
+@import "../../variables.scss";
+
+.toast.animate {
+  position: absolute;
+  opacity: 1;
+  right: 20px;
+  top: 20px;
+  pointer-events: all;
+  transition-delay: 0s;
+  cursor: pointer;
+}
+
+.toast {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  height: auto;
+  gap: 16px;
+}
