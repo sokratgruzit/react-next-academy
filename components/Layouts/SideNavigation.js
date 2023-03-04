@@ -91,6 +91,7 @@ function SideNavigation({ setBurger, data, links }) {
             </Link>
           </li>
         ))}
+
         <li className={styles.listItem}>
           <div className={styles.accordion}>
             <div className={styles.container}>
@@ -123,17 +124,20 @@ function SideNavigation({ setBurger, data, links }) {
                 </div>
               </button>
               <div className={styles.itemOuter}>
-                {topicsDropdown &&
-                  data?.map((item) => (
-                    <Link href={`articles/?tag=${item._id}`} key={item._id}>
-                      <p className={styles.paragraph}>{item.title}</p>
-                    </Link>
-                  ))}
-                <div className={styles.listItem}>
-                  <Link className={styles.itemInner} href='/articles'>
-                    <span>See All</span>
-                  </Link>
-                </div>
+                {topicsDropdown && (
+                  <>
+                    {data?.map((item) => (
+                      <Link href={`articles/?tag=${item._id}`} key={item._id}>
+                        <p className={styles.paragraph}>{item.title}</p>
+                      </Link>
+                    ))}
+                    <div className={styles.listLink}>
+                      <Link className={styles.itemInner} href='/articles'>
+                        <span>See All</span>
+                      </Link>
+                    </div>
+                  </>
+                )}
               </div>
             </div>
           </div>
