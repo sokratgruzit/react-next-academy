@@ -1,102 +1,20 @@
 @import "../../variables.scss";
 
 .toast.animate {
+  position: absolute;
   opacity: 1;
+  right: 20px;
+  top: 20px;
   pointer-events: all;
   transition-delay: 0s;
+  cursor: pointer;
 }
-.toastSml {
-  width: 190px;
-  height: 60px;
-  padding: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 
-  .toastHeader {
-    padding: 0px;
-
-    .toastTitle {
-      padding: 0px;
-    }
-  }
-}
 .toast {
-  padding: 12px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 17px;
-  width: 320px;
-  height: fit-content;
-  background-color: #141726;
-  border: 1px solid #202431;
-  border-radius: 8px;
-  opacity: 0;
-  transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);
-  pointer-events: none;
-  transition-delay: 0.3s;
-
-  .toastHeader {
-    display: flex;
-    width: 100%;
-    padding: 0px;
-
-    .toastTitle {
-      display: flex;
-      width: 100%;
-      align-items: center;
-      gap: 10px;
-      padding: 13px 0px 0px 3px;
-
-      & svg {
-        width: 24px;
-        height: 24px;
-      }
-    }
-
-    .closeBtn {
-      width: 20px;
-      height: 20px;
-      transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);
-      cursor: pointer;
-
-      &svg path {
-        transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);
-      }
-      &:hover svg path {
-        stroke: #3d5afe;
-      }
-    }
-
-    .toastBody {
-      padding: 0px 3px 8px 3px;
-
-      .toastText {
-        color: #6a6d76;
-        margin-top: 6px;
-      }
-      .toastBtn {
-        display: flex;
-        align-items: center;
-        gap: 7px;
-        color: #3d5afe;
-        transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);
-        cursor: pointer;
-        width: fit-content;
-
-        & svg {
-          transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);
-        }
-        & svg path {
-          transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);
-        }
-        &:hover svg path {
-          fill: $c-orange;
-        }
-        &:hover svg {
-          transform: translateX(5px);
-        }
-      }
-    }
-  }
+  width: fit-content;
+  height: auto;
+  gap: 16px;
 }

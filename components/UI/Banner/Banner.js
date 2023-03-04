@@ -1,10 +1,8 @@
-import PropTypes from "prop-types";
 import Button from "../Button/Button";
 
 import styles from "../../../styles/UI/Banner/Banner.module.scss";
 
 function Banner({ type, title, teaser, btn, dependency, placeholder, img }) {
-  
   let element = null;
 
   type === "simple" &&
