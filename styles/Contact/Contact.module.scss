@@ -59,6 +59,7 @@ body:global(.light) .contact {
     object-fit: cover;
     z-index: -1;
   }
+  
   .contactContent {
     width: 85%;
     height: auto;
@@ -90,6 +91,14 @@ body:global(.light) .contact {
       flex-direction: column;
       width: calc(47% - 15px);
       gap: 30px;
+
+      .inactive {
+        opacity: 0;
+      } 
+      .active {
+        opacity: 1;
+        cursor: pointer;
+      }
     }
   }
 }

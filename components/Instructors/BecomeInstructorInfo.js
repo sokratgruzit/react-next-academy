@@ -35,7 +35,7 @@ const BecomeInstructorInfo = () => {
         </svg>
       </div>
       <h3 className={`${styles.subTitle} ${styles.subTltLigth}`}>
-        Become a Instructor
+        Become an Instructor
       </h3>
       <p className={styles.text}>
         Teach what you love. Corrector gives you the tools to create a course.

@@ -157,7 +157,7 @@ function Home({
               )
             }
           />
-          <Banner type={"coming-soon"} img={'comingSoon'} title={"Courses"} />
+          <Banner type={"coming-soon"} img={"comingSoon"} title={"Courses"} />
           <ContentWrap
             title={"Blockchain"}
             btn={true}
@@ -187,9 +187,11 @@ function Home({
               img={"quizBg"}
               clasName={"btn"}
               btn={
-                <div className={styles.quizBtn}>
-                  <Button title={"Take a Quizzes"} />
-                </div>
+                <Button
+                  clasName="quizBtn"
+                  title={"Take a Quizzes"}
+                  type={"transparent-btn"}
+                />
               }
             />
             <img

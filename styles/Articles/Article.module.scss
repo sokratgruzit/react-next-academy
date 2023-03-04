@@ -98,6 +98,7 @@ body:global(.light)
           top: 0;
           left: 0;
           width: 100%;
+          height: calc(100% - 131px);
           object-fit: cover;
         }
       }

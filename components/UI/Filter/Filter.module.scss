@@ -41,7 +41,8 @@ body:global(.light) .filterMainWrapp .filterWrapp .filter .checkBox .mark {
   outline: 1px solid grey;
 }
 
-.filterMainWrapp, .dropdown {
+.filterMainWrapp,
+.dropdown {
   width: 30%;
   display: flex;
   flex-direction: column;
@@ -91,7 +92,7 @@ body:global(.light) .filterMainWrapp .filterWrapp .filter .checkBox .mark {
         flex-direction: column;
 
         .checkBox {
-        margin-top: 20px;
+          margin-top: 20px;
 
           .label {
             display: flex;
@@ -109,6 +110,7 @@ body:global(.light) .filterMainWrapp .filterWrapp .filter .checkBox .mark {
             width: fit-content;
             cursor: pointer;
             font-size: 20px;
+            height: 22px;
           }
 
           .mark {
@@ -179,7 +181,7 @@ body:global(.light) .filterMainWrapp .filterWrapp .filter .checkBox .mark {
     height: fit-content;
     margin: 0 auto;
     width: 100%;
-    
+
     .filter {
       width: 100%;
     }
