@@ -34,7 +34,7 @@ function Layout({ children }) {
           categories: mappedResults[0],
           levels: mappedResults[1],
           tags: mappedResults[2],
-        }),
+        })
       );
     });
   }, []);

@@ -2160,26 +2160,29 @@ body.light .textStyles a {
 
 .textStyles ol,
 .textStyles ul {
-  background-color: rgba(255, 255, 255, 0.05);
   display: flex;
   flex-direction: column;
-  padding: 30px;
   gap: 30px;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin: 0;
+  padding: 0;
+}
+.textStyles ol {
+  counter-reset: muffins;
 }
 
 .textStyles ol li {
-  counter-increment: counter;
+  counter-increment: muffins;
   line-height: 24px;
+  display: flex;
   color: $c-secondaryGray;
 
   &::before {
-    content: counter(counter, decimal-leading-zero);
+    content: counter(muffins) ". ";
     display: block;
-    font-size: 51px;
-    line-height: 66px;
-    color: $c-orange;
+    font-size: 15px;
+    line-height: 21px;
+    color: $c-white;
+    margin-right: 4px;
   }
 }
 
@@ -2296,11 +2299,9 @@ body.light .textStyles ul,
 body.light .textStyles ol {
   display: flex;
   flex-direction: column;
-  padding: 30px;
   gap: 30px;
-  background: #fff;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin: 0;
+  padding: 0;
 }
 
 body.light .textStyles ul li {
@@ -2325,23 +2326,23 @@ body.light .textStyles ul li {
   }
 }
 
-body.light .textStyles ol li {
-  position: relative;
-  @extend %mediumSmall;
-  line-height: 24px;
-  // margin-bottom: 30px;
-  counter-increment: counter;
-  color: $c-dirty-grey;
-  font-style: normal;
+body.light .textStyles ol {
+  counter-reset: muffins;
+}
 
-  background: #fff;
+body.light .textStyles ol li {
+  counter-increment: muffins;
+  line-height: 24px;
+  display: flex;
+  color: $c-dirty-grey;
 
   &::before {
-    content: counter(counter, decimal-leading-zero);
+    content: counter(muffins) ". ";
+    display: block;
+    font-size: 15px;
+    line-height: 21px;
     color: $c-dirty-grey;
-    margin-right: 10px;
-    font-size: 51px;
-    line-height: 66px;
+    margin-right: 4px;
   }
 }
 
