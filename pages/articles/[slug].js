@@ -14,7 +14,7 @@ export const getStaticPaths = async () => {
     `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles`
   );
 
-  const paths = articles.data.docs.map((item) => ({
+  const paths = articles.data?.docs.map((item) => ({
     params: {
       slug: item.slug,
     },
