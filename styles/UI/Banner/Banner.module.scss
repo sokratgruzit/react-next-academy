@@ -269,6 +269,18 @@ body:global(.light) .banner .body {
 }
 
 // wrap
+.custom {
+  position: inherit !important;
+}
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+.title {
+  inline-size: 800px;
+}
 .banner {
   width: 100%;
   height: 600px;
@@ -276,9 +288,9 @@ body:global(.light) .banner .body {
   display: flex;
   align-items: center;
   justify-content: center;
-    .challengeHeight {
-      min-height: 700px;
-    }
+  .challengeHeight {
+    min-height: 700px;
+  }
 
   // coming soon
   .comingSoon {
@@ -301,6 +313,7 @@ body:global(.light) .banner .body {
     justify-content: center;
     width: 100%;
     height: 100%;
+    gap: 55px;
 
     .teaser {
       margin-top: 13px;
