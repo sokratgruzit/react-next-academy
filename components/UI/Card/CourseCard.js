@@ -4,7 +4,7 @@ import CornerDecor from "../CornerDecor/CornerDecor";
 
 import styles from "../../../styles/UI/Card/CourseCard.module.scss";
 
-const  CourseCard = ({type, data, img, title, price, time, lang, level}) => {
+const CourseCard = ({ type, data, img, title, price, time, lang, level }) => {
   let element = null;
 
   if (type === "column") {
@@ -101,6 +101,6 @@ const  CourseCard = ({type, data, img, title, price, time, lang, level}) => {
   }
 
   return element;
-}
+};
 
 export default CourseCard;
