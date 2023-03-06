@@ -35,6 +35,7 @@ export const getStaticProps = async (context) => {
     `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles?category=62fb6bd0ab723fa8b038fcdf&limit=3`
   );
 
+  console.log(`${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles/${slug}`)
   return {
     props: {
       article,
