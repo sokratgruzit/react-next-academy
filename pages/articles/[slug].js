@@ -11,10 +11,10 @@ import Link from "next/link";
 
 export const getStaticPaths = async () => {
   const articles = await fetchData(
-    `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles`,
+    `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles?limit=0`,
   );
 
-  const paths = articles.data.docs.map((item) => ({
+  const paths = articles.data.map((item) => ({
     params: {
       slug: item.slug,
     },
@@ -41,6 +41,8 @@ export const getStaticProps = async (context) => {
   const { data: featured } = await fetchData(
     `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles`
   );
+
+  console.log(article)
 
   return {
     props: {
