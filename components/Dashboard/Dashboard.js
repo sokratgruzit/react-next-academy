@@ -1,6 +1,5 @@
 import { data } from "../UI/Card/helper";
 import { COURSE_HELPER } from "../UI/Card/CourseHelper";
-// import { useSelector } from "react-redux";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
