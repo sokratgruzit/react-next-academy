@@ -24,7 +24,7 @@ import styles from "../../styles/Articles/ArticleIndex.module.scss";
 // }
 export const getStaticProps = async () => {
   const { data: articlesData } = await fetchData(
-    `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles`
+    `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles?limit=0`,
   );
 
   return {
@@ -70,7 +70,7 @@ const index = ({ articlesData, data }) => {
         <div className={styles.articleList}>
           {!isLoading ? (
             ""
-          ) : articlesData && articlesData.docs.length ? (
+          ) : articlesData && articlesData.docs?.length ? (
             articlesData?.docs.map((item, index) => {
               return (
                 <div className={styles.item} key={index}>
@@ -79,10 +79,7 @@ const index = ({ articlesData, data }) => {
               );
             })
           ) : (
-            <NoResult
-              title={"Oops! Nothing yet"}
-              teaser={"No articles purchased yet."}
-            />
+            <NoResult title={"Oops! Nothing yet"} teaser={"No articles purchased yet."} />
           )}
         </div>
       </div>

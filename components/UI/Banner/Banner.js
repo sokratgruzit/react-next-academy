@@ -65,7 +65,7 @@ function Banner({ type, title, teaser, btn, dependency, placeholder, img }) {
       </div>
       <div className="container">{element}</div>
     </div>
-  );
+  );  
   return wrap;
 }
 

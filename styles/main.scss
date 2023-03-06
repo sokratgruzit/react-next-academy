@@ -2185,7 +2185,6 @@ body.light .textStyles a {
     margin-right: 4px;
   }
 }
-
 .textStyles blockquote {
   background-color: #0d121b;
   margin: 0;
@@ -2302,6 +2301,7 @@ body.light .textStyles ol {
   gap: 30px;
   margin: 0;
   padding: 0;
+ 
 }
 
 body.light .textStyles ul li {
@@ -2325,7 +2325,6 @@ body.light .textStyles ul li {
     background: $c-dark;
   }
 }
-
 body.light .textStyles ol {
   counter-reset: muffins;
 }
