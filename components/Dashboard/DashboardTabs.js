@@ -1,10 +1,4 @@
-import { useState } from "react";
-// import dynamic from "next/dynamic";
-// const UseCourse = dynamic(() => import("./UseCourse"));
-// const MyQuizzes = dynamic(() => import("./MyQuizzes"));
-// const MyCourses = dynamic(() => import("./MyCourses"));
-// const MyProfile = dynamic(() => import("./MyProfile"));
-// const AccountSettings = dynamic(() => import("./AccountSettings"));
+import { useState, useEffect } from "react";
 
 import Dashboard from "./Dashboard";
 import MyQuizzes from "./MyQuizzes";
@@ -16,28 +10,48 @@ import DashboardHeader from "../Layouts/DashboardHeader";
 import Introduction from "./Introduction";
 
 import styles from "../../styles/Dashboard/DashboardTabs.module.scss";
-import DashboardSideNavigation from "../Layouts/DashboardSideNavigation";
 
 const DashboardTabs = () => {
   const [curentTab, setCurentTab] = useState("0");
+  const [showMenu, setShowMenu] = useState(false);
+  const [burgerMenu, setBurgerMenu] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
-  const handlerClick = (e) => {
-    setCurentTab(e.target.id);
-  };
+
+  useEffect(() => {
+    function handleResize() {
+      setIsMobile(window.innerWidth <= 768);
+      setShowMenu(window.innerWidth > 768);
+      setBurgerMenu(window.innerWidth > 768);
+    }
+   
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = isMobile ? (burgerMenu ? "hidden" : "unset") : "unset";
+  }, [burgerMenu]);
+
   return (
     <>
-      <SideMenu tab={curentTab} handlerClick={handlerClick} />
-
-      <div
-        className={`container ${styles.viewContent} ${styles.headerViewContent}`}
-      >
-        <DashboardHeader tab={curentTab} handlerClick={handlerClick} />
+    <div className={styles.burgerMenu} style={{opacity: isMobile ? "0" : "1", opacity: burgerMenu ? "1" : "0"}}>
+      <div style={{display: isMobile ? "none" : "flex", display: burgerMenu ? "flex" : "none"}} className={styles.burgerMenu}>
+        <SideMenu showMenu={showMenu} tab={curentTab} handlerClick={(e) => {
+          setCurentTab(e.target.id)
+          isMobile ? setBurgerMenu(false) : "";
+          }} />
+      </div>
+    </div>
+      <div className={`container ${styles.viewContent} ${styles.headerViewContent}`}>
+        <DashboardHeader isOpen={!burgerMenu} tab={curentTab} showSideBar={() => setBurgerMenu(!burgerMenu)} />
         <Introduction />
       </div>
-      <div
-        className={`container ${styles.viewContent}`}
-        style={{ paddingRight: curentTab === "0" ? "0" : "" }}
-      >
+      <div className={`container ${styles.viewContent}`}
+          style={{ paddingRight: curentTab === "0" ? "0" : "" }}>
         {curentTab === "0" ? (
           <Dashboard />
         ) : curentTab === "1" ? (

@@ -29,15 +29,6 @@ body:global(.light) .aboutUser {
       h5 {
         font-size: 20px;
         line-height: 22px;
-        // background: linear-gradient(
-        //   90deg,
-        //   #0500ff 0%,
-        //   rgba(5, 0, 255, 0.3) 21.98%
-        // );
-        // -webkit-background-clip: text;
-        // -webkit-text-fill-color: transparent;
-        // background-clip: text;
-        // text-fill-color: transparent;
         color: #413eda;
         text-transform: capitalize;
       }
@@ -136,6 +127,19 @@ body:global(.light) .aboutUser {
 
     .text {
       width: 100%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutUser {
+    .text {
+      .introduction {
+        h1 {
+          font-size: 40px;
+          line-height: 44px;
+        }
+      }
     }
   }
 }

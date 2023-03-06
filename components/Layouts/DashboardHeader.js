@@ -1,35 +1,19 @@
 import { fetchData } from "../../queries";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { AnimatePresence } from "framer-motion";
 
 import styles from "../../styles/Layouts/Header/DashboardHeader.module.scss";
-import DashboardSideNavigation from "./DashboardSideNavigation";
-import Dashboard from "../Dashboard/Dashboard";
-import MyCourses from "../Dashboard/MyCourses";
-import MyQuizzes from "../Dashboard/MyQuizzes";
-import MyProfile from "../Dashboard/MyProfile";
-import AccountSettings from "../Dashboard/AccountSettings";
 
-const DashboardHeader = (tab) => {
-  let userData = [
-    {
-      name: "Konstantin",
-      balance: "110.00$",
-    },
-  ];
 
+const DashboardHeader = ({ isOpen, showSideBar}) => {
+  let userData = {
+    name: "Konstantin",
+    balance: "110.00$",
+  };
+  
+  
   const [headerLinks, setHeaderLinks] = useState();
   const [theme, setTheme] = useState(false);
-  const [infoBox, setInfoBox] = useState(false);
-  const [topicsBox, setTopicsBox] = useState(false);
-  const [burger, setBurger] = useState(false);
-  const { tags } = [""];
-  const [curentTab, setCurentTab] = useState("0");
-
-  const handlerClick = (e) => {
-    setCurentTab(e.target.id);
-  };
 
   const getHeaderLinks = async () => {
     const res = await fetchData(
@@ -38,33 +22,6 @@ const DashboardHeader = (tab) => {
     res.data?.result?.length ? setHeaderLinks(res?.data?.result) : "";
     return res;
   };
-  useEffect(() => {
-    if (burger) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-
-    const checkIfClickedOutside = (e) => {
-      if (infoBox && ref.current && !ref.current.contains(e.target)) {
-        setInfoBox(false);
-      }
-
-      if (
-        topicsBox &&
-        topicsWrap.current &&
-        !topicsWrap.current.contains(e.target)
-      ) {
-        setTopicsBox(false);
-      }
-    };
-
-    document.addEventListener("mousedown", checkIfClickedOutside);
-
-    return () => {
-      document.removeEventListener("mousedown", checkIfClickedOutside);
-    };
-  }, [infoBox, topicsBox, burger]);
 
   useEffect(() => {
     const body = document.getElementsByTagName("body")[0];
@@ -196,27 +153,20 @@ const DashboardHeader = (tab) => {
           </div>
           <div className={styles.userWrapper}>
             <div className={styles.user}>
-              <h5>Konstantin</h5>
-              <p>balance: $110.00</p>
+              <h5>{userData.name}</h5>
+              <p>{userData.balance}</p>
             </div>
             <div className={styles.circleImage}>
               <img src="/img/Dashboard/dashPic.png" alt="" />
             </div>
           </div>
-          <div className={styles.burgerMenu} onClick={() => setBurger(!burger)}>
-            <div className={styles.burgerLine}></div>
-            <div className={styles.burgerLine}></div>
-            <div className={styles.burgerLine}></div>
-          </div>
-          <AnimatePresence>
-            {burger && (
-              <DashboardSideNavigation
-                setBurger={setBurger}
-                tab={curentTab}
-                handlerClick={handlerClick}
-              />
-            )}
-          </AnimatePresence>
+            <div onClick={showSideBar} className={`${styles.burger} ${!isOpen ? styles.burgerMenuActive : ""}`}>
+              <div className={styles.burgerLine}></div>
+              <div className={styles.burgerLine}></div>
+              <div className={styles.burgerLine}></div>
+              <div className={styles.burgerLine}></div>
+              <div className={styles.burgerLine}></div>
+            </div>
         </div>
       </div>
     </div>

@@ -1,90 +1,109 @@
 @import "../variables.scss";
 
-body:global(.light) {
-  .sideBar {
-    border-right: 1px solid rgba(0, 5, 15, 0.1);
-
-    .sideBarContent {
-      svg path {
-        stroke: $c-dark;
-      }
-      &:hover svg path {
-        stroke: blue;
-      }
-    }
-
-    .mainPage {
-      svg path {
-        fill: $c-dark;
-      }
-      color: #808287;
-    }
-  }
-}
-
 .sideBar {
   border-right: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
-  // justify-content: space-around;
   flex-direction: column;
-  position: fixed;
-  height: calc(100vh - 80px);
-  width: 275px;
-  padding-left: 40px;
-  padding-top: 300px;
+  justify-content: space-around;
+  align-items: flex-start;
+  height: 100%;
+  width: 100%;
 
   .sidebarWrap {
     &:last-child {
       margin-bottom: 0px;
     }
-  }
-
-  .sideBarContent {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    width: 100%;
-    transition: 0.6s;
-    cursor: pointer;
-    margin-bottom: 32px;
-
-    &:hover p {
-      color: blue;
+    
+    .sideBarContent {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      transition: 0.6s;
+      cursor: pointer;
+      margin-bottom: 32px;
+      
+      .iconSelected path {
+        stroke: blue;
+      }
+      
+      &:hover p {
+        color: blue !important;
+      }
+      
+      &:hover svg path {
+        stroke: blue;
+      }
     }
-
-    &:hover svg path {
-      stroke: blue;
-    }
-  }
-
-  .sideBarContent:target {
-    background-color: blue;
   }
 
   .mainPage {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-top: 300px;
   }
 }
 
-@media (max-width: 1023px) {
-  .sideBar {
-    padding-left: 32px;
-    padding-top: 200px;
-    .mainPage {
-      margin-top: 210px;
+.onMobileScreen {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  animation: slideupp .6s linear;
+
+  .sidebarWrap {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    .sideBarContent {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      cursor: pointer;
+
+      .iconSelected path {
+        stroke: blue;
+      }
+
+      svg {
+        height: 25px;
+        width: 25px;
+      }
+
+      &:hover .sidebarList {
+        color: blue !important;
+      }
+
+      &:hover svg path {
+        stroke: blue;
+      }
+      .sidebarList {
+        font-size: 28px;
+      }
     }
+  }
+  .mainPage {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 25px !important;
   }
 }
 
-@media (max-width: 768px) {
-  .sideBar {
-    display: none;
-    padding-top: 300px;
-    .mainPage {
-      margin-top: 320px;
-    }
+@keyframes slideupp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
+
+
