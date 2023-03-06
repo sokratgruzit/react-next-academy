@@ -1,53 +1,32 @@
-.paginationInner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-}
-.paginationInner div {
-    color: #9c9da3;
-    cursor: pointer;
-    width: 44px;
-    height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);
-}
-.paginationInner div:hover {
-    background: rgba(255, 255, 255, 0.05);
-    color: #fff;
-}
-.paginationSvg path {
-    transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);
-}
-.prev:hover svg path {
-    stroke: #fff;
-} 
-  
-.next:hover svg path {
-    stroke: #fff;
+.articleList {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  margin-top: 96px;
+  margin-bottom: 89px;
 }
 
-.activeElement {
-    background-color: #0500ff !important;
-    color: #fff !important;
+.pagination {
+  gap: 6px;
+  li {
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 4px;
+  }
 }
 
-
-.disabled {
-    opacity: 0.2;
-    pointer-events: none;
-    transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);
+.pagination > :first-child,
+.pagination > :last-child {
+  border: none;
 }
 
+@media (max-width: 1023px) {
+  .articleList {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 @media (max-width: 767px) {
-    .paginationInner div {
-        color: #9c9da3;
-        cursor: pointer;
-        width: 30px;
-        height: 30px;
-    }
+  .articleList {
+    grid-template-columns: 1fr;
+  }
 }
-  
