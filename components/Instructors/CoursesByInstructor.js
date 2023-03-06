@@ -11,13 +11,12 @@ const CoursesByInstructor = ({ data }) => {
             <div className={`${"textStyles"} ${styles.coursesBy}`} key={index}>
               <h3>Courses By {item.name}</h3>
               <div className={styles.coursesWrap}>
-                {item.courses && (
+                {item.courses &&
                   item.courses.map((item, index) => {
                     return (
-                      <CourseCard type={'column'} key={index} data={item} />
-                    )
-                  })
-                )}
+                      <CourseCard type={"column"} key={index} data={item} />
+                    );
+                  })}
               </div>
             </div>
           );

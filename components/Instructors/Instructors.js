@@ -1,10 +1,12 @@
+import { useState } from "react";
+
 import InstructorCard from "../UI/Card/InstructorCard";
 
 import styles from "../../styles/Instructors/Instructors.module.scss";
-import { useState } from "react";
 
 const Instructors = () => {
-  const [sad, setSad] = useState(false);
+  // const [sad, setSad] = useState(false);
+
   const DUMMY__DATA = [
     {
       id: 0,

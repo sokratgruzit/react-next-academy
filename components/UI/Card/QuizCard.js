@@ -1,10 +1,9 @@
 import React from "react";
-import CornerDecor from "../CornerDecor/CornerDecor";
-import styles from "@/styles/UI/Card/QuizCard.module.scss";
-import MotionLayout from "../MotionLayout/MotionLayout";
 import Link from "next/link";
 
-import { motion } from "framer-motion";
+import CornerDecor from "../CornerDecor/CornerDecor";
+
+import styles from "@/styles/UI/Card/QuizCard.module.scss";
 
 const QuizCard = ({ type, item }) => {
   const cardVariants = {
@@ -53,9 +52,7 @@ const QuizCard = ({ type, item }) => {
     );
   }
   if (type === "row") {
-    card = <Link href={"/quizes/2"}>
-      HI
-    </Link>;
+    card = <Link href={"/quizes/2"}>HI</Link>;
   }
   return card;
 };

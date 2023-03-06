@@ -214,6 +214,7 @@ body:global(.light) .logo .darkImg {
       width: 100%;
       cursor: pointer;
       padding: 22px 0px 22px 16px;
+      border-bottom: 1px solid;
       &:hover {
         background: rgba(255, 140, 115, 1);
       }

@@ -17,7 +17,6 @@ const InstructorCard = ({ data }) => {
               index % 2 ?? 0 ? styles.right : ""
             }`}
             onClick={() => router.push(`/instructors/${item.id}`)}
-            style={{ zIndex: "150" }}
           >
             <CornerDecor />
             <div className={styles.imgWrap}>
