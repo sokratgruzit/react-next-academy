@@ -35,7 +35,7 @@ export const getStaticProps = async ({ params }) => {
   const res = await fetchData(
     `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/glossaries/${slug}`
   );
-  
+
   const { data: featured } = await fetchData(
     `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/glossaries?category=62fb6bd0ab723fa8b038fcdf&limit=3`
   );
@@ -66,8 +66,8 @@ function Glossary({ res, featured }) {
       />
       {data ? (
         <div key={data._id} className="container textStyles">
-          <Link href={"/glossary"}>
-            <div className={styles.backBtn}>
+          <div className={styles.backBtn}>
+            <Link style={{display: 'flex', alignItems: 'center', gap: '7px'}} href={"/glossary"}>
               <svg
                 width="14"
                 height="11"
@@ -89,8 +89,8 @@ function Glossary({ res, featured }) {
                 />
               </svg>
               <p>Back to Glossaries</p>
-            </div>
-          </Link>
+            </Link>
+          </div>
           <div className={styles.inner}>
             <h3 className={styles.title}>{data.title}</h3>
             <div className={styles.itemOuter}>
@@ -216,24 +216,6 @@ function Glossary({ res, featured }) {
                 ""
               )}
             </div>
-            {/* <div className={styles.itemWrap}>
-              {chunk?.map((item) => {
-                return (
-                  <div key={item?._id} className={styles.itemB}>
-                    <CornerDecor />
-                    <div className={styles.innerB}>
-                      <div className={styles.itemText}>
-                        <h4>{item?.title}</h4>
-                        <p>{item?.teaser}</p>
-                        <Link href={item?.slug}>
-                          <div className={styles.fullBtn}>Full Defination</div>
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div> */}
           </div>
         </div>
       ) : (

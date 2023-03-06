@@ -48,69 +48,66 @@
 //       }
 //     }
 
-//     .container {
+// .container {
+//   display: flex;
+//   flex-direction: column;
+//   width: 100%;
+//   height: auto;
+
+//   .instructorList {
+//     display: flex;
+//     position: relative;
+//     gap: 50px;
+//     backdrop-filter: blur(10px);
+//     padding: 20px;
+//     cursor: pointer;
+//     background: rgba(17, 24, 38, 0.1);
+
+//     &:nth-child(even) {
+//       display: flex;
+//       position: relative;
+//       flex-direction: row-reverse;
+//       text-align: right;
+//       margin: 89px 0px 89px 0px;
+//     }
+
+//     &:nth-child(odd) {
+//       .content {
+//         align-items: flex-start;
+//       }
+//     }
+
+//     .imgContainer {
+//       width: 240px;
+//       height: 240px;
+//       position: relative;
+//       transition: 0.8s;
+//     }
+
+//     .content {
 //       display: flex;
 //       flex-direction: column;
-//       width: 100%;
-//       height: auto;
+//       width: 30%;
+//       gap: 30px;
 
-//       .instructorList {
-//         display: flex;
-//         position: relative;
-//         gap: 50px;
-//         backdrop-filter: blur(10px);
-//         padding: 20px;
-//         cursor: pointer;
-//         background: rgba(17, 24, 38, 0.1);
+//       .text {
+//         overflow: hidden;
+//         text-overflow: ellipsis;
+//         display: -webkit-box;
+//         -webkit-line-clamp: 5;
+//         /* number of lines to show */
+//         line-clamp: 5;
+//         -webkit-box-orient: vertical;
+//         font-weight: 400;
+//         line-height: 34px;
+//       }
 
-//         &:nth-child(even) {
-//           display: flex;
-//           position: relative;
-//           flex-direction: row-reverse;
-//           text-align: right;
-//           margin: 89px 0px 89px 0px;
-//         }
-
-//         &:nth-child(odd) {
-//           .content {
-//             align-items: flex-start;
-//           }
-//         }
-
-//         .imgContainer {
-//           width: 240px;
-//           height: 240px;
-//           position: relative;
-//           transition: 0.8s;
-//         }
-
-//         .content {
-//           display: flex;
-//           flex-direction: column;
-//           width: 30%;
-//           gap: 30px;
-
-//           .text {
-//             overflow: hidden;
-//             text-overflow: ellipsis;
-//             display: -webkit-box;
-//             -webkit-line-clamp: 5;
-//             /* number of lines to show */
-//             line-clamp: 5;
-//             -webkit-box-orient: vertical;
-//             font-weight: 400;
-//             line-height: 34px;
-//           }
-
-//           .names {
-//             overflow: visible;
-//           }
-//         }
+//       .names {
+//         overflow: visible;
 //       }
 //     }
 //   }
 // }
-
 
 .instructors {
   display: flex;
@@ -118,11 +115,12 @@
   width: 100%;
   gap: 90px;
   // height: 100%;
+
   // height: fit-content;
-  
+
   .background {
     position: absolute;
-    top: 25%;
+    top: 256px;
     left: 0;
     width: 100%;
     height: 100%;
@@ -238,4 +236,3 @@
   //   }
   // }
 }
-

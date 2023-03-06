@@ -23,6 +23,10 @@ body:global(.light) .instructorWrap {
     background: rgba(17, 24, 38, 0.1);
     backdrop-filter: blur(5px);
 
+    &:hover {
+      scale: 1.02;
+    }
+
     .imgWrap {
       position: relative;
       width: calc(20% - 10px);
@@ -63,7 +67,7 @@ body:global(.light) .instructorWrap {
 @media (max-width: 1600px) {
   .instructorWrap {
     .instructorItem {
-    //   height: 270px;
+      //   height: 270px;
       .content {
         width: calc(75% - 10px);
         .text {

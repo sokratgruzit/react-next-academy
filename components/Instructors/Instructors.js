@@ -1,8 +1,12 @@
+import { useState } from "react";
+
 import InstructorCard from "../UI/Card/InstructorCard";
 
 import styles from "../../styles/Instructors/Instructors.module.scss";
 
 const Instructors = () => {
+  // const [sad, setSad] = useState(false);
+
   const DUMMY__DATA = [
     {
       id: 0,
@@ -26,12 +30,12 @@ const Instructors = () => {
   const instructorData = DUMMY__DATA;
 
   return (
-    <div className={styles.instructors}>
+    <div className={`${styles.instructors} textStyles`}>
       <img
         className={`darkImg ${styles.background}`}
-        src="/img/InstructorImgs/bgbottom.png"
+        src='/img/InstructorImgs/bgbottom.png'
       />
-      <div className="container">
+      <div className='container'>
         <InstructorCard data={instructorData} />
       </div>
     </div>

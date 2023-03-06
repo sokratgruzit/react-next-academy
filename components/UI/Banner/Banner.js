@@ -22,6 +22,7 @@ function Banner({ type, title, teaser, btn, dependency, placeholder, img }) {
               placeholder={placeholder}
             />
             <div>
+              {btn && btn}
               <Button
                 customStyles={{
                   position: "absolute",
