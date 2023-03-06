@@ -186,6 +186,7 @@ body:global(.light) .articlePage {
 }
 
 .articlePage {
+  margin-bottom: 150px;
   .imgBox {
     .imgBoxImg {
       width: 100%;
@@ -235,7 +236,7 @@ body:global(.light) .articlePage {
         border-top: 1px solid rgba(255, 255, 255, 0.1);
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         padding: 26px 0;
-        :first-child {
+        .pins:first-child {
           margin-left: 160px;
         }
       }
@@ -401,6 +402,15 @@ body:global(.light) .articlePage {
   overflow: hidden;
 }
 
+body:global(.light) .pins .whiteCatItemBorder {
+  color: #4d5057;
+  border: 1px solid #4d5057;
+  &:hover {
+    border: 1px solid #8d8d96;
+    color: #8d8d96;
+  }
+}
+
 @media (max-width: 1023px) {
   .articlePage,
   body:global(.light) .articlePage {
@@ -413,8 +423,8 @@ body:global(.light) .articlePage {
     .top {
       .categoryTags {
         .tags {
-          :first-child {
-            margin-left: 40px;
+          .pins:first-child {
+            margin-left: 32px;
           }
         }
         .icons {

@@ -16,22 +16,3 @@
   }
 }
 
-.articleList {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 30px;
-  margin-top: 96px;
-  margin-bottom: 89px;
-}
-
-@media (max-width: 1023px) {
-  .articleList {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (max-width: 767px) {
-  .articleList {
-    grid-template-columns: 1fr;
-  }
-}

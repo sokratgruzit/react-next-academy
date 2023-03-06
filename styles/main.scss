@@ -114,7 +114,7 @@ body.light .bottomLevel {
 }
 
 //container
-body.light .container,
+
 .container {
   width: 100%;
   max-width: 1920px;
@@ -553,10 +553,16 @@ body.light .cornered-scat-item {
   text-transform: uppercase;
   color: #000000;
   padding: 4px 10px;
-  transition: 0.6s;
+  transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
   cursor: pointer;
   margin-bottom: 8px;
   margin-right: 8px;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+    opacity: 0.5;
+    color: black;
+  }
 }
 
 .white-cat-item-border {
@@ -574,7 +580,14 @@ body.light .cornered-scat-item {
   cursor: pointer;
   margin-bottom: 8px;
   margin-right: 8px;
+  transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
+
+  &:hover {
+    border: 1px solid rgb(150, 150, 150);
+    color: rgb(150, 150, 150);
+  }
 }
+
 
 //level
 body.light .lev-item {
@@ -707,74 +720,6 @@ body.light .lev-item {
   }
 }
 
-//ens small items
-body.light .pagination {
-  .item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 44px;
-    height: 44px;
-    margin-right: 8px;
-    background: transparent;
-    cursor: pointer;
-    color: rgba(0, 5, 15, 0.7);
-    transition: 0.4s;
-    border-radius: 4px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .item:last-child {
-    margin-right: 0;
-    border: none;
-    color: rgba(0, 5, 15, 0.3);
-  }
-
-  .item:first-child {
-    border: none;
-    color: rgba(0, 5, 15, 0.3);
-  }
-
-  .item:not(.disabled):hover,
-  .item.active {
-    background: $c-blue;
-    color: $c-white;
-  }
-
-  .item.disabled {
-    opacity: 0.5;
-    color: rgba(255, 255, 255, 0.7);
-  }
-
-  .prev {
-    display: block;
-
-    &:before {
-      content: "";
-      border: solid $c-dark;
-      border-width: 0 3px 3px 0;
-      display: inline-block;
-      padding: 3px;
-      transform: rotate(135deg);
-      -webkit-transform: rotate(135deg);
-    }
-  }
-
-  .next {
-    display: block;
-
-    &:before {
-      content: "";
-      border: solid $c-dark;
-      border-width: 0 3px 3px 0;
-      display: inline-block;
-      padding: 3px;
-      transform: rotate(-45deg);
-      -webkit-transform: rotate(-45deg);
-    }
-  }
-}
-
 //start of pagination
 .pagination {
   width: 100%;
@@ -791,7 +736,7 @@ body.light .pagination {
     background: transparent;
     cursor: pointer;
     color: rgba(255, 255, 255, 0.7);
-    transition: 0.4s;
+    transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);
     border-radius: 4px;
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
@@ -838,6 +783,73 @@ body.light .pagination {
     &:before {
       content: "";
       border: solid $c-white;
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 3px;
+      transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);
+    }
+  }
+}
+
+body.light .pagination {
+  .item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    margin-right: 8px;
+    background: transparent;
+    cursor: pointer;
+    color: rgba(0, 5, 15, 0.7);
+    transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .item:last-child {
+    margin-right: 0;
+    border: none;
+    color: rgba(0, 5, 15, 0.3);
+  }
+
+  .item:first-child {
+    border: none;
+    color: rgba(0, 5, 15, 0.7);
+  }
+
+  .item:not(.disabled):hover,
+  .item.active {
+    background: $c-blue;
+    color: $c-white;
+  }
+
+  .item.disabled {
+    opacity: 0.5;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .prev {
+    display: block;
+
+    &:before {
+      content: "";
+      border: solid $c-dark;
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 3px;
+      transform: rotate(135deg);
+      -webkit-transform: rotate(135deg);
+    }
+  }
+
+  .next {
+    display: block;
+
+    &:before {
+      content: "";
+      border: solid $c-dark;
       border-width: 0 3px 3px 0;
       display: inline-block;
       padding: 3px;

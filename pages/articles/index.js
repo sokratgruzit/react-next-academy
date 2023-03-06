@@ -5,6 +5,7 @@ import { fetchData } from "@/utils/queries";
 import Card from "@/components/UI/Card/Card";
 import ArticlesHeader from "@/components/Articles/ArticlesHeader";
 import NoResult from "@/components/UI/NoResult/NoResult";
+import Pagination from "@/components/UI/Pagination/Pagination";
 
 import styles from "../../styles/Articles/ArticleIndex.module.scss";
 
@@ -24,7 +25,7 @@ import styles from "../../styles/Articles/ArticleIndex.module.scss";
 // }
 export const getStaticProps = async () => {
   const { data: articlesData } = await fetchData(
-    `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles`
+    `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles?limit=0`
   );
 
   return {
@@ -32,10 +33,34 @@ export const getStaticProps = async () => {
   };
 };
 
-const index = ({ articlesData, data }) => {
+const index = ({ articlesData }) => {
   const [articles, setArticles] = useState(null);
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(true);
+
+  const [data, setData] = useState(
+    !isLoading ? (
+      ""
+    ) : articlesData && articlesData.docs.length ? (
+      articlesData?.docs.map((item, index) => {
+        return (
+          <div className={styles.item} key={index}>
+            <Card title={"Articles"} data={item} type={"default"} />
+          </div>
+        );
+      })
+    ) : (
+      <NoResult
+        title={"Oops! Nothing yet"}
+        teaser={"No articles purchased yet."}
+      />
+    )
+  );
+  const [itemsPerPage, setItemsPerPage] = useState(15);
+
+  const handleItemsPerPageChange = (event) => {
+    setItemsPerPage(parseInt(event.target.value));
+  };
 
   // const getData = async () => {
   //   if (!router.query.page)
@@ -58,7 +83,7 @@ const index = ({ articlesData, data }) => {
   // console.log(articles, isLoading)
 
   return (
-    <div>
+    <div className={styles.ArticlesIndex}>
       <div className={`lightImg ${styles.imgBox}`}>
         <img src="/img/Article/articlesBgL.png" alt="background" />
       </div>
@@ -66,25 +91,8 @@ const index = ({ articlesData, data }) => {
         <img src="/img/Article/articlesBG.png" alt="background" />
       </div>
       <ArticlesHeader />
-      <div className="container">
-        <div className={styles.articleList}>
-          {!isLoading ? (
-            ""
-          ) : articlesData && articlesData.docs.length ? (
-            articlesData?.docs.map((item, index) => {
-              return (
-                <div className={styles.item} key={index}>
-                  <Card title={"Articles"} data={item} type={"default"} />
-                </div>
-              );
-            })
-          ) : (
-            <NoResult
-              title={"Oops! Nothing yet"}
-              teaser={"No articles purchased yet."}
-            />
-          )}
-        </div>
+      <div className={styles.articlesList}>
+        <Pagination data={data} itemsPerPage={itemsPerPage} />
       </div>
     </div>
   );

@@ -259,9 +259,25 @@ const Article = ({ article, featured }) => {
             <div className={styles.categoryTags}>
               {icons}
               <div className={styles.tags}>
-                <div className="tag-item">trending</div>
-                <div className="tag-item">trending</div>
-                <div className="tag-item">trending</div>
+                <div className={styles.pins}>
+                  {data.tag?.length
+                    ? data.tag.map((tag) => {
+                        return (
+                          <div
+                            className="white-cat-item"
+                            key={tag._id + "hash"}
+                          >
+                            {tag.title}
+                          </div>
+                        );
+                      })
+                    : ""}
+                  {data.category?._id && (
+                    <div className={`white-cat-item-border ${styles.whiteCatItemBorder}`}>
+                      {data.category?._id ? data.category.title : ""}
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
             <div className={styles.exploreArticles}>
