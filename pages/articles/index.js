@@ -70,7 +70,7 @@ const index = ({ articlesData, data }) => {
         <div className={styles.articleList}>
           {!isLoading ? (
             ""
-          ) : articlesData && articlesData.docs?.length ? (
+          ) : articlesData && articlesData.docs.length ? (
             articlesData?.docs.map((item, index) => {
               return (
                 <div className={styles.item} key={index}>

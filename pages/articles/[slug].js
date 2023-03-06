@@ -14,7 +14,7 @@ export const getStaticPaths = async () => {
     `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles`
   );
 
-  const paths = articles.data?.docs.map((item) => ({
+  const paths = articles.data.docs.map((item) => ({
     params: {
       slug: item.slug,
     },
@@ -31,8 +31,15 @@ export const getStaticProps = async (context) => {
   const article = await fetchData(
     `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles/${slug}`
   );
+
+  //this should work but we dont have any featured carts yet :)
+  // const { data: featured } = await fetchData(
+  //   `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles?category=62fb6bd0ab723fa8b038fcdf&limit=3`
+  // );
+
+  //i will leave this one for a short period of time :)
   const { data: featured } = await fetchData(
-    `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles?category=62fb6bd0ab723fa8b038fcdf&limit=3`
+    `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles`
   );
 
   return {
@@ -88,7 +95,6 @@ const Article = ({ article, featured }) => {
       </div>
     </div>
   );
-
   return (
     <div>
       {data && (
@@ -265,7 +271,7 @@ const Article = ({ article, featured }) => {
                   <Articles data={featured} />
                 </div>
               ) : (
-                ""
+                "and i oOoP"
               )}
             </div>
           </div>
