@@ -35,8 +35,7 @@ const FROM_TEXTAREA = {
 };
 
 const Contact = () => {
-  const [active, setActive] = useState(true);
-  const [popup, setPopup] = useState(false);
+  const [active, setActive] = useState(false);
   const [data, setData] = useState({
     name: "",
     email: "",
@@ -44,38 +43,18 @@ const Contact = () => {
     message: "",
   });
 
-  let closeHandler = () => {
-    setActive(false);
-  };
-
-  const statusHandler = () => {
-    if (data) {
-      if (data.name === "") {
-        console.log("required to fill name");
-      }
-      if (data.email === "") {
-        console.log("required to fill email");
-      }
-      if (data.subject === "") {
-        console.log("required to fill subject");
-      }
-      if (data.message === "") {
-        console.log("requred to fill message");
-      }
-    } else {
-      console.log("requred to fill");
-    }
-  };
-  const messageSendHandler = () => {
-    console.log(data);
-    setPopup(true);
-    statusHandler();
-  };
-
   const setDataUpdater = (value, field) => {
     setData((prevState) => ({ ...prevState, [field]: value }));
-    console.log(data);
   };
+
+  const buttonHandler = () => {
+    console.log(data);
+    setActive(true);
+  };
+
+  setTimeout(() => {
+    setActive(false);
+  }, "1200");
 
   return (
     <div className={styles.contact}>
@@ -98,26 +77,20 @@ const Contact = () => {
             data={FROM_TEXTAREA}
           />
           <Button
-            // onClick={console.log(data)}
-            onClick={messageSendHandler}
+            onClick={buttonHandler}
             type={"blue-btn"}
             title={"Send Message"}
           />
-          <div>
-            {/* <Popup
-              title={""}
-              head={false}
-              teaser={"Message Sent Successfully "}
-            /> */}
-            <Toast
-              status={"error"}
-              title={"Help Text"}
-              color={"#EF5350"}
-              body={<div>body</div>}
-              active={active}
-              onClick={closeHandler}
-            />
-          </div>
+          <Toast
+            active={active}
+            position={"top-right"}
+            status={"success"}
+            title={"your message has been sent"}
+            icon={true}
+            closeBtn={false}
+            body={false}
+            onClick={() => setActive(false)}
+          />
         </div>
       </div>
     </div>

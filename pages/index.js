@@ -76,6 +76,8 @@ function Home({
       </div>
       <div className={styles.home__content}>
         <div>
+        {console.log(featured)}
+
           <ContentWrap
             title={"Featured"}
             btn={true}

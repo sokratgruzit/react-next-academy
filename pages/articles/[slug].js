@@ -53,6 +53,7 @@ export const getStaticProps = async (context) => {
 const Article = ({ article, featured }) => {
   const router = useRouter();
   const data = article?.data || null;
+  console.log(article)
 
   const icons = (
     <div className={styles.icons}>
