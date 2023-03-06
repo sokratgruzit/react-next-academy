@@ -28,11 +28,11 @@ export const getStaticProps = async () => {
   );
 
   const { data: featured } = await fetchData(
-    `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles?category=62fb6bd0ab723fa8b038fcdf&limit=3`
+    `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles?category=62fb6bdaab723fa8b038fce3&limit=3`
   );
 
   const { data: security } = await fetchData(
-    `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles?category=62fb6bb4ab723fa8b038fcdb&limit=3`
+    `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles?category=640088879fc4df796d077743&limit=3`
   );
 
   const { data: essentials } = await fetchData(

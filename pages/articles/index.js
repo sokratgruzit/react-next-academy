@@ -28,6 +28,8 @@ export const getStaticProps = async () => {
     `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles`,
   );
 
+  console.log(articlesData)
+
   return {
     props: { articlesData },
   };
@@ -95,8 +97,8 @@ const index = ({ articlesData }) => {
         <div className={styles.articleList}>
           {!isLoading ? (
             ""
-          ) : articlesData && articlesData.docs?.length ? (
-            articlesData?.docs.map((item, index) => {
+          ) : articlesData && articlesData?.length ? (
+            articlesData.map((item, index) => {
               return (
                 <div className={styles.item} key={index}>
                   <Card title={"Articles"} data={item} type={"default"} />
