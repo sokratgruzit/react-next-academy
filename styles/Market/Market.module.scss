@@ -8,6 +8,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
   }
   .content {
     margin: 90px 0 50px 0;
@@ -17,6 +18,18 @@
       display: flex;
       gap: 30px;
       flex-wrap: wrap;
+    }
+  }
+}
+
+@media (max-width: 667px) {
+  .wraper {
+    .font51 {
+      inline-size: 100%;
+      font-size: 34px;
+    }
+    .content {
+      flex-direction: column;
     }
   }
 }
