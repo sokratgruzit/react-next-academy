@@ -18,9 +18,21 @@
 
   .inner {
     padding-top: 150px;
+    .title {
+      font-size: 51px;
+      line-height: 66px;
+    }
   }
 
   .element {
     margin-top: 100px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .outer {
+    .element {
+      margin-top: 55px;
+    }
   }
 }

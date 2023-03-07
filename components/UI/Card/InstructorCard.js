@@ -20,10 +20,10 @@ const InstructorCard = ({ data }) => {
           >
             <CornerDecor />
             <div className={styles.imgWrap}>
-              <img className={styles.img} src={item.img} alt='instructor img' />
+              <img className={styles.img} src={item.img} alt="instructor img" />
             </div>
             <div className={styles.content}>
-              <h3>{item.name}</h3>
+              <h3 className={styles.name}>{item.name}</h3>
               <p className={styles.text}>{item.text}</p>
             </div>
           </div>

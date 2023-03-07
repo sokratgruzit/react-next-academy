@@ -25,10 +25,8 @@ import styles from "../../styles/Articles/ArticleIndex.module.scss";
 // }
 export const getStaticProps = async () => {
   const { data: articlesData } = await fetchData(
-    `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles`,
+    `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles?limit=0`
   );
-
-  console.log(articlesData)
 
   return {
     props: { articlesData },
@@ -40,7 +38,7 @@ const index = ({ articlesData }) => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(true);
 
-  const [data, setData] = useState(
+  const [paginationData, setPaginationData] = useState(
     !isLoading ? (
       ""
     ) : articlesData && articlesData.docs.length ? (
@@ -93,22 +91,12 @@ const index = ({ articlesData }) => {
         <img src="/img/Article/articlesBG.png" alt="background" />
       </div>
       <ArticlesHeader />
-      <div className="container">
-        <div className={styles.articleList}>
-          {!isLoading ? (
-            ""
-          ) : articlesData && articlesData?.length ? (
-            articlesData.map((item, index) => {
-              return (
-                <div className={styles.item} key={index}>
-                  <Card title={"Articles"} data={item} type={"default"} />
-                </div>
-              );
-            })
-          ) : (
-            <NoResult title={"Oops! Nothing yet"} teaser={"No articles purchased yet."} />
-          )}
-        </div>
+      <div className={styles.articlesList}>
+        <Pagination
+          type={"column"}
+          paginationData={paginationData}
+          itemsPerPage={itemsPerPage}
+        />
       </div>
     </div>
   );
