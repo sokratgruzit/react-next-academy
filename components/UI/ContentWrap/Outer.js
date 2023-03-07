@@ -12,7 +12,7 @@ const Outer = ({ title, element }) => {
         src="/img/InstructorImgs/bgLight.png"
       />
       <div className={`${"container textStyles"} ${styles.inner}`}>
-        <h1>{title}</h1>
+        <h1 className={styles.title}>{title}</h1>
       </div>
       <div className={styles.element}>{element}</div>
     </div>
