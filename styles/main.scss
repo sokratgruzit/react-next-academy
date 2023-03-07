@@ -2197,7 +2197,6 @@ body.light .textStyles a {
     margin-right: 4px;
   }
 }
-
 .textStyles blockquote {
   background-color: #0d121b;
   margin: 0;
@@ -2314,6 +2313,7 @@ body.light .textStyles ol {
   gap: 30px;
   margin: 0;
   padding: 0;
+ 
 }
 
 body.light .textStyles ul li {
@@ -2337,7 +2337,6 @@ body.light .textStyles ul li {
     background: $c-dark;
   }
 }
-
 body.light .textStyles ol {
   counter-reset: muffins;
 }
@@ -2721,9 +2720,9 @@ body.light .aligning {
 }
 
 @media (max-width: 1900px) {
-  .main-bg-img {
-    height: 70%;
-  }
+  // .main-bg-img {
+  //   height: 70%;
+  // }
 }
 
 @media (max-width: 1024px) {

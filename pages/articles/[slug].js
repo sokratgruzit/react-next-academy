@@ -11,10 +11,10 @@ import Link from "next/link";
 
 export const getStaticPaths = async () => {
   const articles = await fetchData(
-    `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles`
+    `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles?limit=0`,
   );
 
-  const paths = articles.data.docs.map((item) => ({
+  const paths = articles.data.map((item) => ({
     params: {
       slug: item.slug,
     },
@@ -29,7 +29,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
   const slug = context.params.slug || undefined;
   const article = await fetchData(
-    `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles/${slug}`
+    `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles/${slug}`,
   );
 
   //this should work but we dont have any featured carts yet :)
@@ -42,6 +42,8 @@ export const getStaticProps = async (context) => {
     `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles`
   );
 
+  console.log(article)
+
   return {
     props: {
       article,
@@ -53,43 +55,24 @@ export const getStaticProps = async (context) => {
 const Article = ({ article, featured }) => {
   const router = useRouter();
   const data = article?.data || null;
+  console.log(article)
 
   const icons = (
     <div className={styles.icons}>
       <div className={styles.lightIcons}>
-        <a
-          className={styles.socialIconLink}
-          href={"facebook.com"}
-          target="_blank"
-        >
+        <a className={styles.socialIconLink} href={"facebook.com"} target="_blank">
           <Facebook className={styles.socialIcon} />
         </a>
-        <a
-          className={styles.socialIconLink}
-          href={"facebook.com"}
-          target="_blank"
-        >
+        <a className={styles.socialIconLink} href={"facebook.com"} target="_blank">
           <Twitter className={styles.socialIcon} />
         </a>
-        <a
-          className={styles.socialIconLink}
-          href={"facebook.com"}
-          target="_blank"
-        >
+        <a className={styles.socialIconLink} href={"facebook.com"} target="_blank">
           <Linkedin className={styles.socialIcon} />
         </a>
-        <a
-          className={styles.socialIconLink}
-          href={"facebook.com"}
-          target="_blank"
-        >
+        <a className={styles.socialIconLink} href={"facebook.com"} target="_blank">
           <GitHub className={styles.socialIcon} />
         </a>
-        <a
-          className={styles.socialIconLink}
-          href={"facebook.com"}
-          target="_blank"
-        >
+        <a className={styles.socialIconLink} href={"facebook.com"} target="_blank">
           <ShareLink className={styles.socialIcon} />
         </a>
       </div>

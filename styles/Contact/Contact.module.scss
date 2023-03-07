@@ -12,6 +12,7 @@ body:global(.light) .contact {
     }
 
     .contactBox {
+
       label {
         color: rgba(0, 5, 15, 0.5);
         transition: 0.5s ease-in-out;
@@ -59,7 +60,7 @@ body:global(.light) .contact {
     object-fit: cover;
     z-index: -1;
   }
-  
+
   .contactContent {
     width: 85%;
     height: auto;
@@ -94,7 +95,7 @@ body:global(.light) .contact {
 
       .inactive {
         opacity: 0;
-      } 
+      }
       .active {
         opacity: 1;
         cursor: pointer;

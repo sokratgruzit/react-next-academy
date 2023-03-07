@@ -25,6 +25,8 @@ body:global(.light) .profile .imgBox .icon svg path {
     background: #0a0f18;
 
     &:hover img {
+      width: 100%;
+      height: 100%;
       transform: scale(1.09);
     }
 
@@ -77,5 +79,10 @@ body:global(.light) .profile .imgBox .icon svg path {
         }
       }
     }
+  }
+}
+@media (max-width: 500px) {
+  .profile {
+    width: 100%;
   }
 }
