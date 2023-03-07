@@ -181,7 +181,7 @@ function SideNavigation({ setBurger, data, links }) {
             </div>
           </div>
         </li>
-        <li className={styles.listItem}>
+        <li className={`${styles.listItem} ${styles.noneBorderListItem}`}>
           <a className={styles.item}>
             <label className={styles.switcher}>
               <input

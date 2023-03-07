@@ -259,6 +259,10 @@ body:global(.light) {
         }
       }
     }
+
+    .noneBorderListItem {
+      border: none;
+    }
   }
 
   li:last-child {
