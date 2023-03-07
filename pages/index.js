@@ -157,7 +157,12 @@ function Home({
               )
             }
           />
-          <Banner type={"coming-soon"} img={"comingSoon"} title={"Courses"} />
+          <Banner
+            container={"simple-wrap"}
+            type={"coming-soon"}
+            img={"comingSoon"}
+            title={"Courses"}
+          />
           <ContentWrap
             title={"Blockchain"}
             btn={true}
@@ -178,6 +183,7 @@ function Home({
           />
           <div className={styles.challenge}>
             <Banner
+              container={"simple-wrap"}
               type={"simple"}
               dependency={"challange"}
               title={"Want A Challange?"}
@@ -270,6 +276,7 @@ function Home({
           />
           <Ticker elements={"academyElements"} />
           <Banner
+            container={"simple-wrap"}
             type={"simple"}
             dependency={"email"}
             title={"Keep Up To Date — Get E-Mail Updates"}
