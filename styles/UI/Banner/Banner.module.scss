@@ -269,17 +269,18 @@ body:global(.light) .banner .body {
 }
 
 // wrap
-// .custom {
-//   position: inherit !important;
-// }
+
 .flex {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 16px;
 }
-.title {
+.customTitle {
   inline-size: 800px;
+}
+.custom {
+  position: inherit !important;
 }
 .banner {
   width: 100%;
