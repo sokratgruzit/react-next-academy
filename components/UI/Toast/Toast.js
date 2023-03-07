@@ -1,7 +1,15 @@
 import { useState, useEffect } from "react";
 import styles from "../../../styles/UI/Toast/Toast.module.scss";
 
-const Toast = ({ active, title, status, onClick, position, icon, closeBtn }) => {
+const Toast = ({
+  active,
+  title,
+  status,
+  onClick,
+  position,
+  icon,
+  closeBtn,
+}) => {
   const [color, setColor] = useState(null);
 
   function colorPicker(key, textColor) {
@@ -147,7 +155,9 @@ const Toast = ({ active, title, status, onClick, position, icon, closeBtn }) => 
     <div
       className={`${styles.toast} ${active ? styles.animate : ""} ${
         position === "top-right" ? styles.topRight : ""
-      }`}
+      }
+      ${position === "top-right-head" ? styles.topRightHead : ""}
+      `}
       role={"alert"}
     >
       <div className={styles.top}>

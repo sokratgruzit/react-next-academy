@@ -67,7 +67,7 @@ const Contact = () => {
         </div>
         <div className={`${styles.contactBox} ${"textStyles"}`}>
           <Input
-            onChange={(e) => setDataUpdater(e.target.value, e.target.name)}
+            onChange={(e) => setDataUpdater(e.target.value, "email")}
             type="input"
             data={FORM_DATA}
           />
