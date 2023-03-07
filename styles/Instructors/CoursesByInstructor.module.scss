@@ -1,19 +1,19 @@
 @import "../variables.scss";
 
 .coursesBy {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    padding: 150px 0px 150px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  padding: 150px 0px 150px 0px;
 
-    .coursesWrap {
-        margin-top: 55px;
-        display: flex;
-        flex-wrap: wrap;
-        width: 100%;
-        align-items: center;
-        gap: 30px;
-    }
+  .coursesWrap {
+    margin-top: 55px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    gap: 30px;
+  }
 }

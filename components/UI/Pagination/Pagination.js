@@ -2,10 +2,10 @@ import React, { useState } from "react";
 
 import styles from "../../../styles/UI/Pagination/Pagination.module.scss";
 
-const Pagination = ({ data, itemsPerPage }) => {
+const Pagination = ({ type, paginationData, itemsPerPage }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [numPages, setNumPages] = useState(
-    Math.ceil(data.length / itemsPerPage)
+    Math.ceil(paginationData.length / itemsPerPage)
   );
 
   const handleClick = (page) => {
@@ -86,20 +86,41 @@ const Pagination = ({ data, itemsPerPage }) => {
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
+  const currentItems = paginationData.slice(indexOfFirstItem, indexOfLastItem);
 
-  return (
-    <div>
-      <div className={`container ${styles.articleList}`}>
-        {currentItems.map((item, index) => {
-          return <div key={index}>{item}</div>;
-        })}
+  let element = null;
+
+  if (type === "default") {
+    element = (
+      <div>
+        <div className="container">
+          {currentItems.map((item, index) => {
+            return <div key={index}>{item}</div>;
+          })}
+        </div>
+        <ul className={`pagination ${styles.pagination}`}>
+          {renderPageNumbers()}
+        </ul>
       </div>
-      <ul className={`pagination ${styles.pagination}`}>
-        {renderPageNumbers()}
-      </ul>
-    </div>
-  );
+    );
+  }
+
+  if (type === "column") {
+    element = (
+      <div>
+        <div className={`container ${styles.articleList}`}>
+          {currentItems.map((item, index) => {
+            return <div key={index}>{item}</div>;
+          })}
+        </div>
+        <ul className={`pagination ${styles.pagination}`}>
+          {renderPageNumbers()}
+        </ul>
+      </div>
+    );
+  }
+
+  return element;
 };
 
 export default Pagination;
