@@ -10,8 +10,8 @@
     justify-content: center;
   }
   .contentWraper {
-    margin-top: 160px;
     position: relative;
+    margin-top: 160px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,6 +23,10 @@
     .playBtn {
       cursor: pointer;
       position: absolute;
+      left: 0;
+      right: 0;
+      top: 200px;
+      margin: auto;
       &:hover path {
         stroke: #0500ff;
       }
