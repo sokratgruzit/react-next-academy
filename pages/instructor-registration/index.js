@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import Input from "../../components/UI/Input/Input";
+import Toast from "../../components/UI/Toast/Toast";
 import Button from "../../components/UI/Button/Button";
 
 import styles from "../../styles/InstructorRegistration/InstructorRegistration.module.scss";
@@ -87,7 +88,7 @@ const InstructorRegistration = () => {
             <Button
               type={"blue-btn"}
               title={"Register"}
-              onClick={clickHandler}
+              // onClick={clickHandler}
               customStyles={{ width: "100%" }}
             />
           </div>
