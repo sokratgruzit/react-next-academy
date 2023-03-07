@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import Input from "../../components/UI/Input/Input";
 import Button from "../../components/UI/Button/Button";
 
@@ -32,9 +34,27 @@ const FORM_DATA = [
 ];
 
 const InstructorRegistration = () => {
-  const clickHandler = () => {
-    console.log('click me, click me mf')
-  }
+  const [active, setActive] = useState(false);
+  const [data, setData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+    check: "",
+  });
+
+  const setDataUpdater = (value, field) => {
+    setData((prevState) => ({ ...prevState, [field]: value }));
+  };
+
+  const buttonHandler = () => {
+    console.log(data);
+    setActive(true);
+  };
+
+  setTimeout(() => {
+    setActive(false);
+  }, "1200");
 
   return (
     <div className={`${styles.mainBoxInstructor} `}>
@@ -43,7 +63,11 @@ const InstructorRegistration = () => {
           <img src="/img/InstructorsRegistration/bg.png" alt="" />
         </div>
         <div className={styles.inputBox}>
-          <Input data={FORM_DATA} type="input" />
+          <Input
+            onChange={(e) => setDataUpdater(e.target.value, e.target.name)}
+            data={FORM_DATA}
+            type="input"
+          />
           <div className={`${styles.testInput} textSyles`}>
             <label className={`mainBox ${styles.mainBoxLbl} `}>
               <p className={`${styles.title} `}>
@@ -53,17 +77,30 @@ const InstructorRegistration = () => {
                 </span>
               </p>
               <input type="checkbox" />
-              <span className={`geekmark ${styles.geekmarkOne}`}></span>
+              <span
+                onChange={(e) => setDataUpdater(e.target.value, "check")}
+                className={`geekmark ${styles.geekmarkOne}`}
+              ></span>
             </label>
           </div>
           <div>
             <Button
-              type={'blue-btn'}
-              title={'Register'}
+              type={"blue-btn"}
+              title={"Register"}
               onClick={clickHandler}
-              customStyles={{width: '100%'}}
+              customStyles={{ width: "100%" }}
             />
           </div>
+          <Toast
+            active={active}
+            position={"top-right"}
+            status={"success"}
+            title={"your message has been sent"}
+            icon={true}
+            closeBtn={false}
+            body={false}
+            onClick={() => setActive(false)}
+          />
         </div>
       </div>
     </div>
