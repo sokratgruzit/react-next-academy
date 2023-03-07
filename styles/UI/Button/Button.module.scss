@@ -57,7 +57,26 @@ body:global(.light) .transparentBtn {
     background-color: transparent;
   }
 }
+.whiteBtn {
+  border: 1px solid #fff;
+  height: 42px;
+  padding: 0 22px;
+  background-color: #fff;
+  color: #ff7152;
+  border-radius: 4px;
+  &:hover {
+    background-color: transparent;
+    color: #fff;
+  }
+}
 .modifiedBtn {
   margin-top: 100px;
   width: 318px;
+}
+
+@media (max-width: 400px) {
+  .orangeBtn,
+  .whiteBtn {
+    padding: 0 8px;
+  }
 }

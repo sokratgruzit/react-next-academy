@@ -27,6 +27,14 @@ const Button = ({ type, title, onClick, customStyles }) => {
         >
           {title}
         </div>
+      ) : type === "white-btn" ? (
+        <div
+          className={`${styles.whiteBtn} ${styles.button}`}
+          onClick={onClick}
+          style={customStyles}
+        >
+          {title}
+        </div>
       ) : (
         ""
       )}
