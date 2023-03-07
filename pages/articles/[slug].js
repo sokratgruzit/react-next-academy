@@ -273,7 +273,9 @@ const Article = ({ article, featured }) => {
                       })
                     : ""}
                   {data.category?._id && (
-                    <div className={`white-cat-item-border ${styles.whiteCatItemBorder}`}>
+                    <div
+                      className={`white-cat-item-border ${styles.whiteCatItemBorder}`}
+                    >
                       {data.category?._id ? data.category.title : ""}
                     </div>
                   )}
