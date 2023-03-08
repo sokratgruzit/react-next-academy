@@ -10,6 +10,7 @@ import DashboardHeader from "../Layouts/DashboardHeader";
 import Introduction from "./Introduction";
 
 import styles from "../../styles/Dashboard/DashboardTabs.module.scss";
+import PurchaseHistory from "./PurchaseHistory";
 
 const DashboardTabs = () => {
   const [curentTab, setCurentTab] = useState("0");
@@ -61,6 +62,8 @@ const DashboardTabs = () => {
         ) : curentTab === "3" ? (
           <MyProfile />
         ) : curentTab === "4" ? (
+          <PurchaseHistory />  
+        ) : curentTab === "5" ? (
           <AccountSettings />
         ) : curentTab === "" ? (
           <MyCourses />
