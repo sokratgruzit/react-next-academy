@@ -122,19 +122,9 @@ body:global(.light) .header .navigation ul li.topics .arrow path {
   transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
 }
 
-body:global(.light)
-  .header
-  .navigation
-  ul
-  li.topics.active
-  body:global(.light)
-  .header
-  .navigation
-  ul
-  li.topics:hover {
-  .item {
-    color: $c-orange;
-  }
+body:global(.light) .header .navigation ul li.topics.active,
+body:global(.light) .header .navigation ul li.topics:hover .item {
+  color: $c-orange;
 }
 
 body:global(.light)
@@ -180,33 +170,47 @@ body:global(.light) .headerInner .right {
     display: none;
   }
 }
+.switch {
+  width: 24px;
+  height: 24px;
 
-.switcher {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  .input {
-    width: 30px;
-    height: 30px;
-    display: block;
-    cursor: pointer;
-  }
-  .marker {
+  .switcher {
     display: flex;
     justify-content: center;
     align-items: center;
-    display: block;
-    cursor: pointer;
-  }
-  .input:checked ~ .marker {
-    cursor: pointer;
-  }
-  .switchIcon {
-    transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
-  }
-  .switchIcon:hover {
-    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+
+    .input {
+      width: 30px;
+      height: 30px;
+      display: block;
+      cursor: pointer;
+    }
+    .marker {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      display: block;
+      cursor: pointer;
+
+      svg path {
+        transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
+      }
+
+      &:hover svg path {
+        fill: #ff7152;
+      }
+    }
+    .input:checked ~ .marker {
+      cursor: pointer;
+    }
+    .switchIcon {
+      transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
+    }
+    .switchIcon:hover {
+      opacity: 0.5;
+    }
   }
 }
 
@@ -227,6 +231,16 @@ body:global(.light) .headerInner .right {
     flex: 1;
     width: 100%;
     align-items: center;
+
+    .logoContainer {
+      width: 159px;
+      height: 36px;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
 
     .lightImg {
       display: none;
@@ -269,11 +283,18 @@ body:global(.light) .headerInner .right {
   .item {
     color: #ffffffb3;
     transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
+
+    &:hover {
+      color: #ff7152;
+    }
   }
+
   .arrow path {
     transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
   }
   .customBtn {
+    display: flex;
+    align-items: center;
     &:hover .arrow path {
       fill: $c-orange;
       transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
@@ -358,7 +379,7 @@ body:global(.light) .headerInner .right {
   //   }
   // }
   .arrow {
-    margin-left: 5px;
+    margin-left: 6px;
     transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
   }
   .arrow path {
@@ -366,25 +387,29 @@ body:global(.light) .headerInner .right {
   }
 }
 
-@media (max-width: 1023px) {
-  .headerInner {
-    .right {
-      justify-content: flex-end;
-    }
-    .logo {
-      margin-right: auto;
-      left: 0;
-      margin-left: 0;
-    }
+// @media (max-width: 1023px) {
+//   .headerInner {
+//     .right {
+//       justify-content: flex-end;
+//     }
+//     .logo {
+//       margin-right: auto;
+//       left: 0;
+//       margin-left: 0;
+//     }
 
-    .switch {
-      display: none;
-    }
-  }
-}
-@media (max-width: 1023px) {
+//     .switch {
+//       display: none;
+//     }
+//   }
+// }
+
+@media (max-width: 768px) {
   .header .burger {
     display: block;
+  }
+  .navigation {
+    display: none;
   }
   .header {
     .connectBtnWrap {
@@ -396,20 +421,23 @@ body:global(.light) .headerInner .right {
       }
     }
   }
-
-  .headerInner {
-    .navigation {
-      display: none;
-    }
-  }
-}
-@media (max-width: 1023px) {
-}
-
-@media (max-width: 768px) {
   .headerInner {
     .right {
       justify-content: flex-end;
+
+      .endOfHeader {
+        display: none;
+      }
+
+      .logoContainer {
+        width: 120px;
+        height: 27px;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
     }
     .logo {
       margin-right: auto;
@@ -425,6 +453,9 @@ body:global(.light) .headerInner .right {
 
 @media (max-width: 380px) {
   .header {
+    .burger {
+      margin-left: 10px;
+    }
     .connectBtn {
       inline-size: 100px;
       justify-content: center;
