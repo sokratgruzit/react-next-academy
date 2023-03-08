@@ -67,7 +67,10 @@ function Glossary({ res, featured }) {
       {data ? (
         <div key={data._id} className="container textStyles">
           <div className={styles.backBtn}>
-            <Link style={{display: 'flex', alignItems: 'center', gap: '7px'}} href={"/glossary"}>
+            <Link
+              style={{ display: "flex", alignItems: "center", gap: "7px" }}
+              href={"/glossary"}
+            >
               <svg
                 width="14"
                 height="11"

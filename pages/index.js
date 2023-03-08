@@ -67,7 +67,7 @@ function Home({
     <div className={styles.home__page}>
       <img
         className="main-bg-img default-bg"
-        src="img/Bg/bg_0.png"
+        src="/img/Bg/bg_0.png"
         alt="background"
       />
       <div className={`${styles.content__top__inner} ${"container"}`}>
@@ -265,9 +265,7 @@ function Home({
               security && security.docs.length ? (
                 <div className="container">
                   {" "}
-                  <div className="container">
-                    <Articles data={security} />
-                  </div>
+                  <Articles data={security} />
                 </div>
               ) : (
                 <div className="container">"where is fkin data?"</div>

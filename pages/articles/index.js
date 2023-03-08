@@ -41,7 +41,7 @@ const index = ({ articlesData }) => {
   const [paginationData, setPaginationData] = useState(
     !isLoading ? (
       ""
-    ) : articlesData && articlesData.docs.length ? (
+    ) : articlesData && articlesData?.docs ? (
       articlesData?.docs.map((item, index) => {
         return (
           <div className={styles.item} key={index}>
