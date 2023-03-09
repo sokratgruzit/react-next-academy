@@ -13,6 +13,8 @@ function Banner({
   img,
   profileImg,
   container,
+  questions,
+  duration,
 }) {
   let element = null;
 
@@ -110,6 +112,53 @@ function Banner({
       <div className={`${styles.comingSoon} ${"textStyles"}`}>
         <h1 className={styles.title}>{title}</h1>
         <h3 className={styles.teaser}>Coming Soon!!!</h3>
+      </div>
+    ));
+
+  type === "quizz-banner" &&
+    (element = (
+      <div className={`${"textStyles"} ${styles.body}`}>
+        <h3>{title}</h3>
+        <div className={styles.flex}>
+          <div className={styles.grey}>{questions}</div>
+          <svg
+            width="6"
+            height="6"
+            viewBox="0 0 6 6"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2.98906 5.59609C4.30906 5.59609 5.38906 4.53609 5.38906 3.21609C5.38906 1.89609 4.30906 0.816094 2.98906 0.816094C1.66906 0.816094 0.609062 1.89609 0.609062 3.21609C0.609062 4.53609 1.66906 5.59609 2.98906 5.59609Z"
+              fill="#B2B4B7"
+            />
+          </svg>
+
+          <div className={styles.grey}>{duration}</div>
+        </div>
+        {dependency === "email" ? (
+          <div className={styles.inputContainer}>
+            <input
+              className={`${styles.input} ${btn ? styles.padding : ""}`}
+              type="text"
+              placeholder={placeholder}
+            />
+            <div>
+              {btn && btn}
+              <Button
+                customStyles={{
+                  position: "absolute",
+                  right: "4px",
+                  top: " 3.5px",
+                }}
+                type={"blue-btn"}
+                title={"Join now"}
+              />
+            </div>
+          </div>
+        ) : (
+          <>{btn}</>
+        )}
       </div>
     ));
 
