@@ -40,9 +40,10 @@ const InstructorRegistration = () => {
   const [data, setData] = useState({
     name: "",
     email: "",
-    subject: "",
-    message: "",
-    check: "",
+    phoneNumber: "",
+    password: "",
+    confirmPassword: "",
+    check: false
   });
 
   const setDataUpdater = (value, field) => {
@@ -58,15 +59,12 @@ const InstructorRegistration = () => {
     setActive(false);
   }, "1200");
 
-  // const checkHandler = (value, field) => {
-  //   if (!check) {
-  //     setData((prevState) => ({ ...prevState, [field]: value }));
-  //   }
-  //   //else {
-  //   //   setCheck(false);
-  //   // }
-  //   console.log(check);
-  // };
+
+
+  const checkHandler = () => {
+    console.log()
+    console.log(check);
+  };
   return (
     <div className={`${styles.mainBoxInstructor} `}>
       <div className={`${"contact container"} ${styles.box} ${"textStyles"}`}>
@@ -75,7 +73,7 @@ const InstructorRegistration = () => {
         </div>
         <div className={styles.inputBox}>
           <Input
-            // onChange={(e) => setDataUpdater(e.target.value, e.target.name)}
+            onChange={(e) => setDataUpdater(e.target.value, e.target.name)}
             data={FORM_DATA}
             type="input"
           />
@@ -88,7 +86,7 @@ const InstructorRegistration = () => {
                 </span>
               </p>
               <input
-                // onClick={checkHandler}
+                onClick={checkHandler}
                 onChange={(e) => setDataUpdater(e.target.value, 'check')}
                 type="checkbox"
               />
