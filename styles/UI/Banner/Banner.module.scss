@@ -278,6 +278,7 @@ body:global(.light) .banner .body {
 }
 .customTitle {
   inline-size: 800px;
+  text-align: center;
 }
 .custom {
   position: inherit !important;
@@ -315,7 +316,9 @@ body:global(.light) .banner .body {
     width: 100%;
     height: 100%;
     gap: 55px;
-
+    .grey {
+      color: #b2b4b7;
+    }
     .teaser {
       margin-top: 13px;
     }
