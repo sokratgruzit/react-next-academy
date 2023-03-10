@@ -1,9 +1,13 @@
 
-import styles from "../../styles/Dashboard/PurchaseHistory.module.scss";
+import { useState } from "react";
 import RelatedThemes from "./RelatedThemes";
+import PurchaseHistoryInvoice from "./PurchaseHistoryInvoice";
+
+import styles from "../../styles/Dashboard/PurchaseHistory.module.scss";
 
 const PurchaseHistory = () => {
-    const DATA_H = [{title: "SL"}, 
+    const DATA_H = [
+    {title: "SL"}, 
     {title: "Date", 
     svg: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 2V5M16 2V5M3.5 9.09H20.5M21 8.5V17C21 20 19.5 22 16 22H8C4.5 22 3 20 3 17V8.5C3 5.5 4.5 3.5 8 3.5H16C19.5 3.5 21 5.5 21 8.5Z" stroke="white" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
@@ -38,7 +42,16 @@ const PurchaseHistory = () => {
             invoice: "view invoice"
         },
         {
-            id: 1,
+            id: 2,
+            purchaseDate: new Date(),
+            totalCourses: 1,
+            totalPrice: "19$",
+            discount: "0%",
+            paymentType: "PayPal",
+            invoice: "view invoice"
+        },
+        {
+            id: 3,
             purchaseDate: new Date(),
             totalCourses: 1,
             totalPrice: "19$",
@@ -56,16 +69,7 @@ const PurchaseHistory = () => {
             invoice: "view invoice"
         },
         {
-            id: 1,
-            purchaseDate: new Date(),
-            totalCourses: 1,
-            totalPrice: "19$",
-            discount: "0%",
-            paymentType: "PayPal",
-            invoice: "view invoice"
-        },
-        {
-            id: 1,
+            id: 4,
             purchaseDate: new Date(),
             totalCourses: 1,
             totalPrice: "19$",
@@ -102,33 +106,40 @@ const PurchaseHistory = () => {
         },
     ];
 
+    const [invoice, setInvoice] = useState(false);
+
     return (
-        <div className={styles.purchaseHistoryWrapper}>
-            <RelatedThemes title="Purchase History"/>
-            <div className={styles.purchaseHeaderWrapp}>
-                {DATA_H.map((item, index) => {
-                    return (
-                        <div className={styles.purchaseHeaders} key={index}>{item.title}{item.svg}</div>
-                    )
-                })}
+        <>
+            {invoice ?  (<PurchaseHistoryInvoice invoice={() => setInvoice(false)}/>) 
+            : (
+            <div className={styles.purchaseHistoryWrapper}>
+                <RelatedThemes title="Purchase History"/>
+                <div className={styles.purchaseHeaderWrapp}>
+                    {DATA_H.map((item, index) => {
+                        return (
+                            <div className={styles.purchaseHeaders} key={index}>{item.title}{item.svg}</div>
+                        );
+                    })}
+                </div>
+                <div className={styles.purchaseContentWrapp}>
+                    {DUMMY_DATA.map((item, index) => {
+                        return (
+                            <div className={styles.purchaseContent} key={index}>
+                                <p>{item.id}</p>
+                                <p>{item.purchaseDate.toLocaleString()}</p>
+                                <p>{item.totalCourses}</p>
+                                <p>{item.totalPrice}</p>
+                                <p>{item.discount}</p>
+                                <p>{item.paymentType}</p>
+                                <button className={styles.viewButton} onClick={() => setInvoice(true)}>{item.invoice}</button>
+                            </div>
+                        );
+                    })}
+                </div>
             </div>
-            <div className={styles.purchaseContentWrapp}>
-             {DUMMY_DATA.map((item, index) => {
-                    return (
-                        <div className={styles.purchaseContent} key={index}>
-                            <p>{item.id}</p>
-                            <p>{item.purchaseDate.toLocaleString()}</p>
-                            <p>{item.totalCourses}</p>
-                            <p>{item.totalPrice}</p>
-                            <p>{item.discount}</p>
-                            <p>{item.paymentType}</p>
-                            <button className={styles.viewButton}>{item.invoice}</button>
-                        </div>
-                    )
-                })}
-            </div>
-        </div>
-    )
-}
+            )}
+        </>
+    );
+};
 
 export default PurchaseHistory;

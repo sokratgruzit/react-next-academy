@@ -3,7 +3,7 @@ import CornerDecorTop from "../UI/CornerDecor/CornerDecorTop";
 
 import styles from "../../styles/Dashboard/Introduction.module.scss";
 
-function Introduction() {
+const Introduction = () =>  {
   return (
     <div className={`${styles.aboutUser} textStyles`}>
       <div className={styles.text}>
@@ -27,6 +27,6 @@ function Introduction() {
       </div>
     </div>
   );
-}
+};
 
 export default Introduction;
