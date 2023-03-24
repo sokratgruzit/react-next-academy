@@ -5,9 +5,8 @@ import RelatedThemes from "./RelatedThemes";
 import { COURSE_HELPER } from "../UI/Card/CourseHelper";
 
 import styles from "../../styles/Dashboard/MyCourses.module.scss";
-function MyCourses(props) {
-  //   const filterData = useSelector((state) => state.utilsState.filterData);
 
+const MyCourses = () => {
   return (
     <div className={styles.courses}>
       <RelatedThemes title="Course You Might Like" />
@@ -29,6 +28,6 @@ function MyCourses(props) {
       </div>
     </div>
   );
-}
+};
 
 export default MyCourses;
