@@ -211,7 +211,13 @@ function Home({
             btn={false}
             row={false}
             element={
-              <div style={{ position: "relative" }}>
+              <div
+                style={{
+                  position: "relative",
+                  maxWidth: "1900px",
+                  margin: "0px auto",
+                }}
+              >
                 <div className={styles.quizzContainer}>
                   <TrendingQuiz type={"default"} />
                 </div>

@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: flex-start;
+  // align-items: flex-start;
   height: 100%;
   width: 100%;
 
@@ -13,7 +13,29 @@
     &:last-child {
       margin-bottom: 0px;
     }
-    
+
+    .activeTabs {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: calc(100% + 2px);
+      transition: 0.6s;
+      cursor: pointer;
+      margin-bottom: 32px;
+      border-width: 2px;
+      border-style: solid;
+      border-left: 0;
+      border-image: linear-gradient(
+          rgba(5, 0, 255, 0),
+          rgba(5, 0, 255, 1),
+          rgba(5, 0, 255, 0)
+        )
+        0 100%;
+      .iconSelected path {
+        stroke: blue;
+      }
+    }
+
     .sideBarContent {
       display: flex;
       align-items: center;
@@ -22,15 +44,11 @@
       transition: 0.6s;
       cursor: pointer;
       margin-bottom: 32px;
-      
-      .iconSelected path {
-        stroke: blue;
-      }
-      
+
       &:hover p {
         color: blue !important;
       }
-      
+
       &:hover svg path {
         stroke: blue;
       }
@@ -51,7 +69,7 @@
   align-items: center;
   height: 100%;
   width: 100%;
-  animation: slideupp .6s linear;
+  animation: slideupp 0.6s linear;
 
   .sidebarWrap {
     width: 100%;
@@ -106,4 +124,37 @@
   }
 }
 
+body:global(.light) .sideBar {
+  .sidebarWrap {
+    .activeTabs {
+      .iconSelected path {
+        stroke: $c-blue;
+      }
+    }
+    .sideBarContent {
+      &:hover svg path {
+        stroke: blue;
+      }
+      .iconSelected {
+        color: $c-dark;
+      }
+      .sidebarList {
+        color: #808287;
+      }
 
+      svg path {
+        stroke: $c-dark;
+      }
+    }
+  }
+  .mainPage {
+    color: #808287;
+    svg path {
+      fill: $c-dark;
+    }
+  }
+}
+
+body:global(.light) .sideBar {
+  border-right: 1px solid #cccdcf;
+}

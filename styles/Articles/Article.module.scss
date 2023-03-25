@@ -93,12 +93,13 @@ body:global(.light)
         overflow: hidden;
         background: #0a0f18;
         margin: 10px 10px 0px 10px;
+        position: relative;
         .imgAbsolute {
           position: absolute;
           top: 0;
           left: 0;
           width: 100%;
-          height: calc(100% - 131px);
+          height: 100%;
           object-fit: cover;
         }
       }
