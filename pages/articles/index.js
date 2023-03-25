@@ -83,6 +83,7 @@ const index = ({ articlesData, data }) => {
           ) : (
             <NoResult title={"Oops! Nothing yet"} teaser={"No articles purchased yet."} />
           )}
+        {/* ihishishishihsishis */}
         </div>
       </div>
     </div>
