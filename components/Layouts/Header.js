@@ -24,7 +24,7 @@ function Header({ commonData }) {
   const [topicsBox, setTopicsBox] = useState(false);
   const [burger, setBurger] = useState(false);
   const [headerLinks, setHeaderLinks] = useState();
-  const [theme, setTheme] = useState(false);x
+  const [theme, setTheme] = useState(false);
   const [content, setContent] = useState("");
 
   useEffect(() => {

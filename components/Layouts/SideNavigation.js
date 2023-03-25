@@ -18,6 +18,7 @@ function SideNavigation({ setBurger, data, links , theme ,setTheme}) {
   const [infoBox, setInfoBox] = useState(false);
   const [topicsBox, setTopicsBox] = useState(false);
   const [topicsDropdown, setTopicsDropdown] = useState(false);
+  // const [theme, setTheme] = useState(false);
   const [content, setContent] = useState("");
 
 
@@ -77,7 +78,7 @@ function SideNavigation({ setBurger, data, links , theme ,setTheme}) {
     const body = document.getElementsByTagName("body")[0];
 
     if (theme) {
-      body.classList.add("light");
+      body.classList.add("ligh");
       localStorage.setItem("mode", "true");
     } else {
       body.classList.remove("light");
