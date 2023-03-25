@@ -24,7 +24,7 @@ function Header({ commonData }) {
   const [topicsBox, setTopicsBox] = useState(false);
   const [burger, setBurger] = useState(false);
   const [headerLinks, setHeaderLinks] = useState();
-  const [theme, setTheme] = useState(false);
+  const [theme, setTheme] = useState(false);x
   const [content, setContent] = useState("");
 
   useEffect(() => {
@@ -288,6 +288,8 @@ function Header({ commonData }) {
                   setBurger={setBurger}
                   data={tags}
                   links={headerLinks}
+                  theme={theme}
+                  setTheme={setTheme}
                 />
               )}
             </AnimatePresence>

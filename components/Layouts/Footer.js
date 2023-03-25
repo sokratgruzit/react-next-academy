@@ -268,11 +268,17 @@ function Footer() {
           </p>
         </div>
         <div className={styles.logo}>
-          <div className={theme ? "lightLogo" : "darkLogo"}>
+          <div className="lightLogo">
             <img
-              src={theme ? "/svg/footer-dark-logo.svg" : "/svg/footer-logo.svg"}
+              src={ "/svg/footer-dark-logo.svg" }
               alt="logo"
             />
+          </div>
+          <div className="darkLogo">
+              <img 
+              src={"/svg/footer-logo.svg"}
+              alt="logo"
+              />
           </div>
         </div>
       </div>
@@ -280,9 +286,15 @@ function Footer() {
         <div className={styles.copyrightbottom}>
           © CORE Multi-Chain, 2022 All rights reserved
         </div>
-        <div className={theme ? "lightLogo" : "darkLogo"}>
+        <div className="lightLogo" >
           <img
             src={theme ? "/svg/footer-dark-logo.svg" : "/svg/footer-logo.svg"}
+            alt="logo"
+          />
+        </div>
+        <div className="darkLogo">
+          <img 
+            src={"/svg/footer-logo.svg"}
             alt="logo"
           />
         </div>

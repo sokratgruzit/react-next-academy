@@ -10,7 +10,7 @@ import WalletConnectModal from "../WalletConnect/WalletConnectModal";
 
 import styles from "../../styles/Layouts/SideNavigation/SideNavigation.module.scss";
 
-function SideNavigation({ setBurger, data, links }) {
+function SideNavigation({ setBurger, data, links , theme ,setTheme}) {
   const ref = useRef();
   const topicsWrap = useRef();
   const { isLogged } = useContext(AuthContext);
@@ -18,8 +18,9 @@ function SideNavigation({ setBurger, data, links }) {
   const [infoBox, setInfoBox] = useState(false);
   const [topicsBox, setTopicsBox] = useState(false);
   const [topicsDropdown, setTopicsDropdown] = useState(false);
-  const [theme, setTheme] = useState(false);
   const [content, setContent] = useState("");
+
+
 
   useEffect(() => {
     function handleResize() {
@@ -74,6 +75,7 @@ function SideNavigation({ setBurger, data, links }) {
 
   useEffect(() => {
     const body = document.getElementsByTagName("body")[0];
+
     if (theme) {
       body.classList.add("light");
       localStorage.setItem("mode", "true");
