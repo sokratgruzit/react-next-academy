@@ -1,51 +1,139 @@
-@import "../variables.scss";
+// @import "../variables.scss";
 
-body:global(.light) .form .country .label {
-  color: rgba(0, 5, 15, 0.5);
+// body:global(.light) .form .country .label {
+//   color: rgba(0, 5, 15, 0.5);
+// }
+
+// @import "../variables.scss";
+
+// body:global(.light) .form .country .label {
+//   color: rgba(0, 5, 15, 0.5);
+// }
+
+// body:global(.light) .form .country .select {
+//   border: 1px solid rgba(0, 5, 15, 0.1);
+//   color: $c-dark;
+// }
+
+// body:global(.light) .form .country .select .option {
+//   color: $c-dark;
+// }
+
+// body:global(.light) .form .box .label {
+//   color: rgba(0, 5, 15, 0.5);
+// }
+
+// body:global(.light) .form .box .input {
+//   border: 1px solid rgba(0, 5, 15, 0.1);
+//   color: $c-dark;
+// }
+
+// body:global(.light) .form .box textarea {
+//   border: 1px solid rgba(0, 5, 15, 0.1);
+//   color: $c-dark;
+// }
+
+// body:global(.light) .form .btn {
+//   color: #fff;
+// }
+
+// .registrationForm {
+//   width: 100%;
+//   display: flex;
+//   flex-direction: column;
+//   gap: 24px;
+
+//   .rowDropDowns {
+//     display: grid;
+//     grid-template-columns: 1fr 1fr;
+//     gap: 30px;
+//   }
+// }
+
+.labelWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
 }
 
-@import "../variables.scss";
-
-body:global(.light) .form .country .label {
-  color: rgba(0, 5, 15, 0.5);
+.labelContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-body:global(.light) .form .country .select {
-  border: 1px solid rgba(0, 5, 15, 0.1);
-  color: $c-dark;
+.labelContainerTwo {
+  display: flex;
+  align-items: baseline;
+  gap: 30px;
+  width: 100%;
+
+  .select {
+    width: 100%;
+    max-width: 100%;
+    height: 44px;
+    padding: 0 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    background: transparent;
+    font-size: 12px;
+    transition: 0.5s cubic-bezier(0.79, 0.01, 0.15, 0.99);
+  }
+
+  .label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
 }
 
-body:global(.light) .form .country .select .option {
-  color: $c-dark;
-}
-
-body:global(.light) .form .box .label {
-  color: rgba(0, 5, 15, 0.5);
-}
-
-body:global(.light) .form .box .input {
-  border: 1px solid rgba(0, 5, 15, 0.1);
-  color: $c-dark;
-}
-
-body:global(.light) .form .box textarea {
-  border: 1px solid rgba(0, 5, 15, 0.1);
-  color: $c-dark;
-}
-
-body:global(.light) .form .btn {
+.label {
+  font-size: 12px;
+  text-transform: capitalize;
+  font-size: 12px;
+  text-transform: uppercase;
+  transition: 0.4s;
   color: #fff;
 }
 
-.registrationForm {
+.select {
+  padding: 5px;
+  color: #fff;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+  max-width: 100%;
+  height: 44px;
+  padding: 0 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  background: transparent;
+  font-size: 12px;
+  transition: 0.5s cubic-bezier(0.79, 0.01, 0.15, 0.99);
+  cursor: pointer;
+}
 
-  .rowDropDowns {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
+.select:focus {
+  border: 1px solid #0500ff;
+}
+
+.select option {
+  background-color: #fff;
+  color: #000;
+  padding: 16px;
+}
+
+body:global(.light) .select {
+  border: 1px solid rgba(0, 5, 15, 0.1);
+  color: #00050f;
+}
+
+body:global(.light) .select:focus {
+  border: 1px solid #0500ff;
+}
+
+@media (max-width: 767px) {
+  .labelContainerTwo {
+    flex-direction: column;
+    gap: 10px;
   }
 }

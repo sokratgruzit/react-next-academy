@@ -11,7 +11,6 @@ body:global(.light) .itemTitle {
   margin-bottom: 150px;
   padding-top: 150px;
 
-
   .EndingItem {
     display: flex;
     flex-direction: column;
@@ -34,5 +33,11 @@ body:global(.light) .itemTitle {
     .itemHotLink:hover {
       color: $c-blue;
     }
+  }
+}
+
+@media (max-width: 1023px) {
+  .Ending {
+    padding-top: 0px;
   }
 }

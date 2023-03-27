@@ -84,15 +84,15 @@ const Glossaries = ({ res }) => {
           <div style={{ position: "relative" }}>
             <img
               className={`darkImg ${styles.background}`}
-              src='img/Glossaries/innerbg1.png'
-              alt='background'
+              src="img/Glossaries/innerbg1.png"
+              alt="background"
             />
             <img
               className={`lightImg ${styles.backgroundL}`}
-              src='img/Glossaries/background1Light.png'
-              alt='background'
+              src="img/Glossaries/background1Light.png"
+              alt="background"
             />
-            <div className='container textStyles'>
+            <div className="container textStyles">
               <div className={styles.top}>
                 <h1 className={styles.title}>The Words of Crypto</h1>
                 <h4 className={styles.teaser}>
