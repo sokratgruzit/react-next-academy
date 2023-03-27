@@ -1,6 +1,31 @@
+import { useState, useEffect } from "react";
 import styles from "../../../styles/UI/Toast/Toast.module.scss";
 
-const Toast = ({ active, title, status, body }) => {
+const Toast = ({
+  active,
+  title,
+  status,
+  onClick,
+  position,
+  icon,
+  closeBtn,
+}) => {
+  const [color, setColor] = useState(null);
+
+  function colorPicker(key, textColor) {
+    let value = status;
+    if (value === key) {
+      setColor(textColor);
+    }
+  }
+
+  useEffect(() => {
+    colorPicker("success", "#9CCC65");
+    colorPicker("error", "#EF5350");
+    colorPicker("warning", "#FFA726");
+    colorPicker("info", "#6A6D76");
+  });
+
   let svg = (
     <div className={styles.status}>
       {status === "success" ? (
@@ -125,64 +150,57 @@ const Toast = ({ active, title, status, body }) => {
       )}
     </div>
   );
-  let color = null;
-
-  let colorHandler = () => {
-    if (status === "success") {
-      color = "";
-    }
-    if (status === "warning") {
-      color = "";
-    }
-    if (status === "error") {
-      color = "";
-    }
-    if (status === "info") {
-      color = "";
-    }
-  };
 
   return (
     <div
-      className={`${styles.toast} ${active ? styles.animate : ""}`}
+      className={`${styles.toast} ${active ? styles.animate : ""} ${
+        position === "top-right" ? styles.topRight : ""
+      }
+      ${position === "top-right-head" ? styles.topRightHead : ""}
+      `}
       role={"alert"}
     >
       <div className={styles.top}>
         <div>
-          {svg}
-          <p>{title}</p>
+          {icon ? <>{svg}</> : ""}
+          <p style={{ color: color }}>{title}</p>
         </div>
-        <svg
-          width="22"
-          height="22"
-          viewBox="0 0 22 22"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M11 21C16.5 21 21 16.5 21 11C21 5.5 16.5 1 11 1C5.5 1 1 5.5 1 11C1 16.5 5.5 21 11 21Z"
-            stroke="#6A6D76"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          <path
-            d="M8.16992 13.83L13.8299 8.17"
-            stroke="#6A6D76"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          <path
-            d="M13.8299 13.83L8.16992 8.17"
-            stroke="#6A6D76"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
+        {closeBtn ? (
+          <svg
+            className={styles.close}
+            onClick={onClick}
+            width="22"
+            height="22"
+            viewBox="0 0 22 22"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M11 21C16.5 21 21 16.5 21 11C21 5.5 16.5 1 11 1C5.5 1 1 5.5 1 11C1 16.5 5.5 21 11 21Z"
+              stroke="#6A6D76"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M8.16992 13.83L13.8299 8.17"
+              stroke="#6A6D76"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M13.8299 13.83L8.16992 8.17"
+              stroke="#6A6D76"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        ) : (
+          ""
+        )}
       </div>
-      <div className={styles.body}>{body}</div>
     </div>
   );
 };

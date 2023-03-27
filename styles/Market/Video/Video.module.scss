@@ -1,0 +1,35 @@
+.wrap {
+  height: 1126px;
+  .bg {
+    position: absolute;
+    left: 0;
+    z-index: -1;
+  }
+  .flex {
+    display: flex;
+    justify-content: center;
+  }
+  .contentWraper {
+    position: relative;
+    margin-top: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 876px;
+    .playBtn path {
+      transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
+    }
+    .playBtn {
+      cursor: pointer;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 200px;
+      margin: auto;
+      &:hover path {
+        stroke: #0500ff;
+      }
+    }
+  }
+}

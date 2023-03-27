@@ -1,10 +1,5 @@
 @import "../../variables.scss";
 
-body:global(.light) .expandItem {
-  color: $c-dark;
-  transition: 0.5s;
-}
-
 body:global(.light) .lightLogo {
   display: none !important;
 }
@@ -13,43 +8,24 @@ body:global(.light) .darkLogo {
   display: flex !important;
 }
 
-body:global(.light) .list .listItem span {
-  color: $c-dark;
-  transition: 0.5s;
-}
+//
 
-body:global(.light) .h4,
-.dark {
-  color: $c-dark;
-  transition: 0.5s;
-}
+body:global(.light) {
+  .mobNavigation {
+    .bottomLogo {
+      .icons {
+        .lightIcons {
+          .socialIcon {
+            fill: $c-white;
 
-body:global(.light) .arrow path {
-  fill: $c-dark;
-  transition: 0.5s;
-}
-
-body:global(.light) .paragraph {
-  color: $c-dark;
-  transition: 0.5s;
-}
-
-body:global(.light) .bottomLogo .bottomTitle {
-  color: $c-dark;
-  transition: 0.5s;
-}
-
-body:global(.light) .bottomLogo .copyrightbottom {
-  color: $c-dark;
-  transition: 0.5s;
-}
-
-body:global(.light) .logo .lightImg {
-  display: block !important;
-}
-
-body:global(.light) .logo .darkImg {
-  display: none !important;
+            &:hover {
+              fill: $c-blue;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 .switcher {
@@ -108,6 +84,10 @@ body:global(.light) .logo .darkImg {
       margin-left: 0px;
       margin-right: 16px;
     }
+
+    &:hover svg path {
+      fill: $c-orange !important;
+    }
   }
 }
 
@@ -137,13 +117,12 @@ body:global(.light) .logo .darkImg {
     padding: 0px 16px 0px 16px;
 
     .logo {
-      .lightImg {
-        display: none;
-        transition: 0.5s;
-      }
-      .darkImg {
-        display: block;
-        transition: 0.5s;
+      width: 120px;
+      height: 27px;
+
+      img {
+        width: 100%;
+        height: 100%;
       }
     }
 
@@ -191,16 +170,23 @@ body:global(.light) .logo .darkImg {
       font-size: $f-medium;
     }
 
-    .close {
-      cursor: pointer;
-    }
+    .closeModal {
+      display: flex;
+      gap: 20px;
+      .close {
+        cursor: pointer;
+      }
+      path {
+        transition: 0.4s;
+      }
 
-    path {
-      transition: 0.4s;
-    }
+      .close:hover path {
+        stroke: $c-dark;
+      }
 
-    .close:hover path {
-      stroke: $c-dark;
+      > .orangeBtn {
+        background-color: #fff;
+      }
     }
   }
 
@@ -214,7 +200,6 @@ body:global(.light) .logo .darkImg {
       width: 100%;
       cursor: pointer;
       padding: 22px 0px 22px 16px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
       &:hover {
         background: rgba(255, 140, 115, 1);
@@ -276,6 +261,10 @@ body:global(.light) .logo .darkImg {
         }
       }
     }
+
+    .noneBorderListItem {
+      border: none;
+    }
   }
 
   li:last-child {
@@ -325,7 +314,7 @@ body:global(.light) .logo .darkImg {
         svg {
           transition: 0.5s cubic-bezier(0.79, 0.01, 0.15, 0.99);
           &:hover {
-            fill: rgb(255, 140, 115);
+            fill: $c-blue;
           }
         }
         .socialIcon {

@@ -4,27 +4,54 @@
   padding-bottom: 120px;
 }
 
+.burgerMenu {
+  position: fixed;
+  left: 0;
+  height: calc(100vh - 80px);
+  padding-left: 40px;
+  overflow: hidden;
+  width: 275px;
+  transition: 0.6s;
+}
+
 .headerViewContent {
   padding-top: 89px;
 }
 
-// @media (max-width: 1023px) {
-//   .viewContent {
-//   }
-// }
+@media (max-width: 1023px) {
+  .sideMenuWrapp {
+    padding-left: 32px;
+  }
+}
 
 @media (max-width: 768px) {
   .viewContent {
     margin-left: 0;
     width: 100%;
+    padding-bottom: 40px;
+  }
+  .burgerMenu {
+    position: absolute;
+    padding-left: 16px;
+    position: fixed;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: black;
+    overflow: hidden;
   }
   .headerViewContent {
-    padding-top: 100px;
+    padding-top: 32px;
   }
 }
 
 @media (max-width: 420px) {
+  .viewContent {
+    padding-bottom: 16px;
+  }
   .headerViewContent {
-    padding-top: 60px;
+    padding-top: 16px;
   }
 }

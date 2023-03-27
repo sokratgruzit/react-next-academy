@@ -1,105 +1,126 @@
-import { usePagination, DOTS } from "../../../hooks/usePagination";
+import React, { useState } from "react";
 
 import styles from "../../../styles/UI/Pagination/Pagination.module.scss";
 
-export const Pagination = ({
-  paginationEvent,
-  paginationTotal,
-  siblingPagination = 1,
-  paginationCurrent,
-  customStyles,
-}) => {
-  const paginationRange = usePagination({
-    paginationCurrent,
-    paginationTotal,
-    siblingPagination,
-  });
+const Pagination = ({ type, paginationData, itemsPerPage }) => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [numPages, setNumPages] = useState(
+    Math.ceil(paginationData.length / itemsPerPage)
+  );
 
-  if (paginationCurrent === 0 || paginationRange.length < 2) {
-    return null;
+  const handleClick = (page) => {
+    setCurrentPage(page);
+  };
+
+  const handlePrevClick = () => {
+    setCurrentPage(currentPage - 1);
+  };
+
+  const handleNextClick = () => {
+    setCurrentPage(currentPage + 1);
+  };
+
+  const pages = [];
+  for (let i = 1; i <= numPages; i++) {
+    pages.push(i);
   }
 
-  const onNext = () => {
-    paginationEvent(paginationCurrent + 1);
-  };
-
-  const onPrevious = () => {
-    paginationEvent(paginationCurrent - 1);
-  };
-
-  let lastPage = paginationRange[paginationRange.length - 1];
-
-  return (
-    <div style={customStyles}>
-      <div className={styles.pagination}>
-        <div className={styles.paginationInner}>
-          <div
-            className={`${styles.prev} ${
-              paginationCurrent === 1 && styles.disabled
-            }`}
-            onClick={onPrevious}
+  const renderPageNumbers = () => {
+    if (numPages <= 1) {
+      return pages.map((page) => (
+        <li key={page} className={currentPage === page ? styles.active : null}>
+          <button
+            className={`item ${page === currentPage ? "active" : ""}`}
+            onClick={() => handleClick(page)}
           >
-            <svg
-              width="7"
-              height="12"
-              viewBox="0 0 7 12"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className={styles.paginationSvg}
-            >
-              <path
-                d="M5.66663 1.70095L1.83899 5.52859C1.38695 5.98063 1.38695 6.72032 1.83899 7.17236L5.66663 11"
-                stroke="#9C9DA3"
-                strokeWidth="1.5"
-                strokeMiterlimit="10"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </div>
-          {paginationRange.map((pageNumber, index) => {
-            if (pageNumber === DOTS) {
-              return <div key={index}>...</div>;
-            }
+            {page}
+          </button>
+        </li>
+      ));
+    } else {
+      const leftEnd = currentPage - 3 <= 0 ? 1 : currentPage - 3;
+      const rightEnd = currentPage + 1 >= numPages ? numPages : currentPage + 3;
+      const middlePages = [];
+      for (let i = leftEnd; i <= rightEnd; i++) {
+        middlePages.push(i);
+      }
+      return (
+        <>
+          <li>
+            <button
+              className={`item prev ${currentPage === 1 ? "disabled" : ""}`}
+              onClick={handlePrevClick}
+              disabled={currentPage === 1}
+            ></button>
+          </li>
 
-            return (
-              <div
-                key={index}
-                className={`${
-                  pageNumber === paginationCurrent ? styles.activeElement : ""
-                }`}
-                onClick={() => paginationEvent(pageNumber)}
+          {leftEnd > 2 && <li className="item">...</li>}
+          {middlePages.map((page) => (
+            <li
+              key={page}
+              className={currentPage === page ? styles.active : null}
+            >
+              <button
+                className={`item ${page === currentPage ? "active" : ""}`}
+                onClick={() => handleClick(page)}
               >
-                {pageNumber}
-              </div>
-            );
+                {page}
+              </button>
+            </li>
+          ))}
+          {rightEnd < numPages - 1 && <li className="item">...</li>}
+
+          <li>
+            <button
+              className={`item next ${
+                numPages === currentPage ? "disabled" : ""
+              }`}
+              onClick={handleNextClick}
+              disabled={currentPage === numPages}
+            ></button>
+          </li>
+        </>
+      );
+    }
+  };
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = paginationData.slice(indexOfFirstItem, indexOfLastItem);
+
+  let element = null;
+
+  if (type === "default") {
+    element = (
+      <div>
+        <div className="container">
+          {currentItems.map((item, index) => {
+            return <div key={index}>{item}</div>;
           })}
-          <div
-            className={`${styles.next} ${
-              paginationCurrent === lastPage && styles.disabled
-            }`}
-            onClick={onNext}
-          >
-            <svg
-              width="7"
-              height="12"
-              viewBox="0 0 7 12"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className={styles.paginationSvg}
-            >
-              <path
-                d="M1.33337 1.70095L5.16101 5.52859C5.61305 5.98063 5.61305 6.72032 5.16101 7.17236L1.33337 11"
-                stroke="#9C9DA3"
-                strokeWidth="1.5"
-                strokeMiterlimit="10"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </div>
         </div>
+        <ul className={`pagination ${styles.pagination}`}>
+          {renderPageNumbers()}
+        </ul>
       </div>
-    </div>
-  );
+    );
+  }
+
+  if (type === "column") {
+    element = (
+      <div>
+        <div className={`container ${styles.articleList}`}>
+          {currentItems.map((item, index) => {
+            return <div key={index}>{item}</div>;
+          })}
+        </div>
+        <ul className={`pagination ${styles.pagination}`}>
+          {renderPageNumbers()}
+        </ul>
+      </div>
+    );
+  }
+
+  return element;
 };
+
+export default Pagination;

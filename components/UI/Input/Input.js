@@ -40,6 +40,7 @@ const Input = ({ data, type, onChange }) => {
                 <div className={styles.inputWrapp}>
                   <input
                     className={styles.customInput}
+                    onChange={onChange}
                     type={item.type}
                     placeholder={item.placeholder}
                   />

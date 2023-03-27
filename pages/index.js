@@ -67,7 +67,7 @@ function Home({
     <div className={styles.home__page}>
       <img
         className="main-bg-img default-bg"
-        src="img/Bg/bg_0.png"
+        src="/img/Bg/bg_0.png"
         alt="background"
       />
       <div className={`${styles.content__top__inner} ${"container"}`}>
@@ -157,7 +157,12 @@ function Home({
               )
             }
           />
-          <Banner type={"coming-soon"} img={"comingSoon"} title={"Courses"} />
+          <Banner
+            container={"simple-wrap"}
+            type={"coming-soon"}
+            img={"comingSoon"}
+            title={"Courses"}
+          />
           <ContentWrap
             title={"Blockchain"}
             btn={true}
@@ -178,6 +183,7 @@ function Home({
           />
           <div className={styles.challenge}>
             <Banner
+              container={"simple-wrap"}
               type={"simple"}
               dependency={"challange"}
               title={"Want A Challange?"}
@@ -205,7 +211,13 @@ function Home({
             btn={false}
             row={false}
             element={
-              <div style={{ position: "relative" }}>
+              <div
+                style={{
+                  position: "relative",
+                  maxWidth: "1900px",
+                  margin: "0px auto",
+                }}
+              >
                 <div className={styles.quizzContainer}>
                   <TrendingQuiz type={"default"} />
                 </div>
@@ -259,9 +271,7 @@ function Home({
               security && security.docs.length ? (
                 <div className="container">
                   {" "}
-                  <div className="container">
-                    <Articles data={security} />
-                  </div>
+                  <Articles data={security} />
                 </div>
               ) : (
                 <div className="container">"where is fkin data?"</div>
@@ -270,6 +280,7 @@ function Home({
           />
           <Ticker elements={"academyElements"} />
           <Banner
+            container={"simple-wrap"}
             type={"simple"}
             dependency={"email"}
             title={"Keep Up To Date — Get E-Mail Updates"}
