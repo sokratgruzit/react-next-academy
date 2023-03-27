@@ -1,5 +1,13 @@
 @import "../variables.scss";
 
+body:global(.light) {
+  .newInput{
+    border: 1px solid rgba(0, 5, 15, 0.1);
+    color: $c-dark;
+  }
+
+}
+
 body:global(.light) .form {
   svg path {
     fill: $c-dark;
@@ -58,5 +66,18 @@ body:global(.light) .form {
 
   .addButton:hover {
     color: $c-blue;
+  }
+  .newInput {
+    border: 1px solid #060d1e;
+    height: 44px;
+    width: 100%;
+    padding-left: 10px;
+    font-size: 12px;
+    background-color: transparent;
+    transition: border 0.5s;
+    transition-delay: 0.1s;
+  }
+  .newInput:focus-within {
+    border: 1px solid #0500ff;
   }
 }

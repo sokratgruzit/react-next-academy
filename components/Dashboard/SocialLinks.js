@@ -229,8 +229,11 @@ const FORM_DATA_WITH_LINKS = [
 ];
 
 function SocialLinks({ type }) {
-  const [showResults, setShowResults] = useState(false);
-  const onClick = () => setShowResults(true);
+  const [inputCount, setInputCount] = useState(0); 
+  
+  const handleAddInput = () => {
+    setInputCount(inputCount + 1); 
+  };
 
   return (
     <div className={styles.form} action="/api/form" method="post">
@@ -242,12 +245,15 @@ function SocialLinks({ type }) {
         />
       ) : (
         <>
-          <Input
+         <Input
             className={styles.input}
             data={FORM_DATA}
             type="inputWithIcon"
-          />
-          <div onClick={onClick} className={styles.addButton}>
+          /> 
+          {Array.from({ length: inputCount }).map((_, index) => (
+        <input type="url" className={`${styles.input} ${styles.newInput}`} key={index} />
+      ))}  
+          <div onClick={handleAddInput} className={styles.addButton}>
             <svg
               width="16"
               height="16"

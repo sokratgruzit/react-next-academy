@@ -18,7 +18,7 @@ body:global(.light) .outer {
 
           &:hover {
             .icon path {
-              fill: $c-orange;
+              fill: $bg-hover-blue;
             }
           }
         }
@@ -115,7 +115,7 @@ body:global(.light) .outer {
 
         .socialIconLink:hover {
           .icon path {
-            fill: $c-orange;
+            fill: $bg-hover-blue;
           }
         }
       }
