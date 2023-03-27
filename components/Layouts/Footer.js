@@ -66,7 +66,6 @@ function Footer() {
 
   useEffect(() => {
     getFooterLinks();
-
     const mode = localStorage.getItem("mode");
     !mode || mode === "false" ? setTheme(false) : setTheme(true);
   }, []);

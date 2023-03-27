@@ -92,12 +92,11 @@ const index = ({ articlesData }) => {
       </div>
       <ArticlesHeader />
       <div className={styles.articlesList}>
-        {/* <Pagination
+        <Pagination
           type={"column"}
           paginationData={paginationData}
           itemsPerPage={itemsPerPage}
-        /> */}
-        {/* i got error */}
+        />
       </div>
     </div>
   );
