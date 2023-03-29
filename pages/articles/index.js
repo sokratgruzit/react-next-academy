@@ -9,23 +9,9 @@ import Pagination from "@/components/UI/Pagination/Pagination";
 
 import styles from "../../styles/Articles/ArticleIndex.module.scss";
 
-// export async function getServerSideProps(context) {
-//   const { data: articles } = await fetchData(
-//     `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles${
-//       context.query.tag ? "/" + context.query.tag : ""
-//     }`
-//   );
-
-//   return {
-//     props: {
-//       title: "Articles",
-//       articles,
-//     },
-//   };
-// }
 export const getStaticProps = async () => {
   const { data: articlesData } = await fetchData(
-    `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles?limit=0`
+    `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles?limit=1000`
   );
 
   return {
@@ -80,7 +66,7 @@ const index = ({ articlesData }) => {
   //   }
   // }, [router]);
 
-  // console.log(articles, isLoading)
+  // console.log(articles, isLoading);
 
   return (
     <div className={styles.ArticlesIndex}>

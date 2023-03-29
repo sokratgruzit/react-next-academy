@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "../../../styles/UI/Pagination/Pagination.module.scss";
+import styles from "../../../styles/UI/Pagination/ItemsWrapper.module.scss";
 
 const Pagination = ({ type, paginationData, itemsPerPage }) => {
   const [currentPage, setCurrentPage] = useState(1);
