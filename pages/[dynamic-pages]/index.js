@@ -2,6 +2,8 @@ import parse from "html-react-parser";
 import Moment from "react-moment";
 import { useRouter } from "next/router";
 
+import NotFound from "../404";
+
 import { fetchData } from "@/utils/queries";
 
 export async function getServerSideProps(context) {
@@ -22,8 +24,8 @@ import Introduction from "@/components/Introduction/Introduction";
 
 const index = ({ content }) => {
   console.log(content);
-  return; // <NotFound />
-  // <Introduction />
+  return <NotFound />;
+  // <Introduction />;
 };
 
 export default index;
