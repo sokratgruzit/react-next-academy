@@ -245,10 +245,10 @@ function Home({
             element={
               essentials && essentials.docs.length ? (
                 <div className={styles.assentials}>
-                  <img
+                  <img 
                     src="img/Bg/bg_13.png"
                     alt="background"
-                    className="img-absolute darkImg"
+                    className={`img-absolute darkImg ${styles.assentialsBg}`}
                   />
                   <div className="container">
                     <Articles data={essentials} />
