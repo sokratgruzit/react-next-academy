@@ -92,9 +92,12 @@ body:global(.light) .home__page {
 
     .glossariesWrap {
       position: relative;
+      width: 100%;
       .glossaryFlex {
         display: flex;
         gap: 30px;
+        max-width: 1900px;
+        margin: 0px auto;
       }
 
       .dodgeColor {
@@ -112,6 +115,20 @@ body:global(.light) .home__page {
     }
     .quizzContainer {
       padding-left: 40px;
+      padding-right: 40px;
+      max-width: 1900px;
+      margin: 0 auto;
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .home__page {
+    .home__content {
+      .quizzContainer {
+        padding-left: 32px;
+        padding-right: 0px;
+      }
     }
   }
 }
@@ -119,6 +136,9 @@ body:global(.light) .home__page {
 @media (max-width: 767px) {
   .home__page {
     .home__content {
+      .quizzContainer {
+        padding-left: 16px;
+      }
       .glossariesWrap {
         .glossaryFlex {
           flex-direction: column;

@@ -185,19 +185,31 @@ const SIDE_DATA = [
 const SideMenu = ({ showMenu, tab, handlerClick }) => {
   return (
     <>
-      <div className={`textStyles ${ showMenu ?  styles.sideBar : styles.onMobileScreen}`} >
+      <div
+        className={`textStyles ${
+          showMenu ? styles.sideBar : styles.onMobileScreen
+        }`}
+      >
         <div className={styles.sidebarWrap}>
-        {SIDE_DATA.map((item, index) => {
+          {SIDE_DATA.map((item, index) => {
             return (
               <div
                 key={index}
-                className={styles.sideBarContent}
+                className={
+                  tab == item.id ? styles.activeTabs : styles.sideBarContent
+                }
                 onClick={handlerClick}
               >
                 {cloneElement(item.icone, {
                   className: tab == item.id ? styles.iconSelected : "",
                 })}
-                <p className={styles.sidebarList} style={{color: tab == item.id ? "blue" : "white"}} id={item.id} >{item.list}</p>
+                <p
+                  className={styles.sidebarList}
+                  style={{ color: tab == item.id ? "blue" : "" }}
+                  id={item.id}
+                >
+                  {item.list}
+                </p>
               </div>
             );
           })}

@@ -218,6 +218,7 @@ body:global(.light) .item {
       .search {
         width: 100%;
         padding-right: 37px;
+        margin-left: -1px;
       }
 
       .search:after {

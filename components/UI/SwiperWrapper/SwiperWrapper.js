@@ -8,7 +8,7 @@ const SwiperWrapper = ({ children, ...props }) => {
 
   return (
     <Swiper
-      loop={false}    
+      loop={false}
       index={index}
       onIndexChanged={setIndex}
       {...props}

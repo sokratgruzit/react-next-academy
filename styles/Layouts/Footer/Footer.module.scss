@@ -8,7 +8,7 @@ body:global(.light) .footer {
             fill: $c-dark;
 
             &:hover {
-              fill: $c-orange;
+              fill: $bg-hover-blue;
             }
           }
         }
@@ -67,8 +67,8 @@ body:global(.light) .footer {
           d
           .socialIcon {
             transition: 0.5s cubic-bezier(0.79, 0.01, 0.15, 0.99);
-            &:hover {
-              fill: #200eee;
+            &:hover path{
+              fill: #0501E7;
             }
           }
         }
@@ -382,7 +382,7 @@ body:global(.light) .footer {
             pointer-events: all;
             padding: 20px 0px;
             cursor: pointer;
-            
+
             svg {
               display: flex;
               transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);

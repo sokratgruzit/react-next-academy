@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import styles from "../../../styles/UI/Pagination/Pagination.module.scss";
 
 const Pagination = ({ type, paginationData, itemsPerPage }) => {
@@ -84,9 +83,12 @@ const Pagination = ({ type, paginationData, itemsPerPage }) => {
     }
   };
 
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = paginationData.slice(indexOfFirstItem, indexOfLastItem);
+  let currentItems = [];
+  if (Array.isArray(paginationData)) {
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    currentItems = paginationData.slice(indexOfFirstItem, indexOfLastItem);
+  }
 
   let element = null;
 

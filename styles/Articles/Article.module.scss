@@ -93,12 +93,13 @@ body:global(.light)
         overflow: hidden;
         background: #0a0f18;
         margin: 10px 10px 0px 10px;
+        position: relative;
         .imgAbsolute {
           position: absolute;
           top: 0;
           left: 0;
           width: 100%;
-          height: calc(100% - 131px);
+          height: 100%;
           object-fit: cover;
         }
       }
@@ -119,7 +120,7 @@ body:global(.light)
 
       img {
         transition: 0.4s;
-        padding: 20px;
+        padding: 20px 20px 0px 20px;
       }
 
       &:hover img {
@@ -140,7 +141,8 @@ body:global(.light)
         flex: 1;
         display: flex;
         flex-direction: column;
-        min-height: 150px;
+        gap: 16px;
+        // min-height: 150px;
 
         .bottomTitle {
           background: #0a0f18;
@@ -151,7 +153,7 @@ body:global(.light)
             -webkit-box-orient: vertical;
             -webkit-line-clamp: 3;
             overflow: hidden;
-            margin: 16px 16px;
+            margin: 0px 16px 16px 16px;
             min-height: 60px;
             display: flex;
             align-items: center;
@@ -171,8 +173,8 @@ body:global(.light)
         }
 
         .bottomLevel {
-          margin: auto 0;
           padding-left: 12px;
+          padding-top: 16px;
           display: flex;
           align-items: center;
           flex-direction: row;

@@ -6,7 +6,7 @@ import Link from "next/link";
 const BecomeInstructorInfo = () => {
   return (
     <div className={styles.greenBanner}>
-      <div className={`${styles.backgroundImg} darkImg`}>
+      {/* <div className={`${styles.backgroundImg} darkImg`}>
         <svg
           width="1438"
           height="1438"
@@ -33,7 +33,7 @@ const BecomeInstructorInfo = () => {
             </radialGradient>
           </defs>
         </svg>
-      </div>
+      </div> */}
       <h3 className={`${styles.subTitle} ${styles.subTltLigth}`}>
         Become an Instructor
       </h3>

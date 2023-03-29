@@ -74,16 +74,24 @@ function Footer() {
     <footer className={styles.footer}>
       <div className={styles.footerLogoMob}>
         <Link href="/" className="logo">
-          <img className="lightImg" src="/svg/lightLogo.svg" alt="logo" />
-          <img className="darkImg" src="/svg/logo.svg" alt="logo" />
+          <img className="lightLogo" src="/svg/lightLogo.svg" alt="logo" />
+          <img className="darkLogo" src="/svg/logo.svg" alt="logo" />
         </Link>
       </div>
       <div className={styles.footerTop}>
         <div className={styles.footerLeft}>
           <div className={styles.footerLogo}>
             <Link href="/" className="logo">
-              <img className={`${"lightImg"} ${styles.logo}`} src="/svg/lightLogo.svg" alt="logo" />
-              <img className={`${"darkImg"} ${styles.logo}`} src="/svg/logo.svg" alt="logo" />
+              <img
+                className={`${"lightImg"} ${styles.logo}`}
+                src="/svg/lightLogo.svg"
+                alt="logo"
+              />
+              <img
+                className={`${"darkImg"} ${styles.logo}`}
+                src="/svg/logo.svg"
+                alt="logo"
+              />
             </Link>
           </div>
           <div className={styles.lightMode}>
