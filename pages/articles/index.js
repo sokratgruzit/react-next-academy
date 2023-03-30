@@ -83,7 +83,6 @@ const index = ({ articlesData }) => {
           paginationData={paginationData}
           itemsPerPage={itemsPerPage}
         />
-        {/* i got error */}
       </div>
     </div>
   );

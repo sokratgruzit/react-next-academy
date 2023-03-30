@@ -46,11 +46,11 @@
       margin-bottom: 32px;
 
       &:hover p {
-        color: blue !important;
+        color: rgba(255, 255, 255, 1) !important;
       }
 
       &:hover svg path {
-        stroke: blue;
+        stroke: rgba(255, 255, 255, 1);
       }
     }
   }
@@ -59,6 +59,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
+    color: rgba(150, 155, 166, 1);
   }
 }
 
@@ -66,7 +67,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-start;
   height: 100%;
   width: 100%;
   animation: slideupp 0.6s linear;
@@ -75,18 +76,24 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 32px;
+
+    .activeTabs {
+      .iconSelected path {
+        stroke:blue ;
+      }
+    }
 
     .sideBarContent {
       width: 100%;
       display: flex;
-      justify-content: center;
+      // justify-content: center;
       gap: 15px;
       cursor: pointer;
 
-      .iconSelected path {
-        stroke: blue;
-      }
+      // .iconSelected path {
+      //   stroke:blue ;
+      // }
 
       svg {
         height: 25px;
@@ -158,3 +165,10 @@ body:global(.light) .sideBar {
 body:global(.light) .sideBar {
   border-right: 1px solid #cccdcf;
 }
+
+
+// @media (max-width: 767px) {
+//   .sideBar {
+//    justify-content: flex-start;
+//   }
+// }

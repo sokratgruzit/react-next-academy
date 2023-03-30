@@ -44,8 +44,7 @@ body:global(.light) .home__page {
     .assentials {
       position: relative;
       width: 100%;
-
-      img {
+      .assentialsBg {
         min-height: 1000px;
         top: -33%;
       }
