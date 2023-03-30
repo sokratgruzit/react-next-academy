@@ -66,11 +66,13 @@
 .onMobileScreen {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: flex-start;
   height: 100%;
   width: 100%;
   animation: slideupp 0.6s linear;
+  padding-top: 69px;
+  gap: 30px;
 
   .sidebarWrap {
     width: 100%;
@@ -79,6 +81,8 @@
     gap: 32px;
 
     .activeTabs {
+      display: flex;
+      gap: 15px;
       .iconSelected path {
         stroke:blue ;
       }
@@ -101,23 +105,61 @@
       }
 
       &:hover .sidebarList {
-        color: blue !important;
+        color: rgba(255, 255, 255, 1) !important;
       }
 
       &:hover svg path {
-        stroke: blue;
+        stroke: rgba(255, 255, 255, 1);
       }
       .sidebarList {
-        font-size: 28px;
+        font-size: 16px;
       }
     }
+
   }
+
   .mainPage {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 25px !important;
+    color: rgba(150, 155, 166, 1);
+    font-size: 16px 
   }
+
+  // .bottomLogo {
+  //   // height: 100%;
+  //   margin-top: 500px;
+  //   // margin-top: auto;
+  //   // margin-bottom: 30px;
+  //   display: flex;
+  //   flex-direction: column;
+  //   align-items: center;
+  //   .bottomTitle {
+  //     margin-top: 30px;
+  //   }
+  //   .icons {
+  //     .lightIcons {
+  //       padding-top: 20px;
+  //       display: flex;
+  //       align-items: center;
+  //       gap: 20px;
+  //       svg {
+  //         transition: 0.5s cubic-bezier(0.79, 0.01, 0.15, 0.99);
+  //         &:hover {
+  //           fill: $c-blue;
+  //         }
+  //       }
+  //       .socialIcon {
+  //         fill: white;
+  //       }
+  //     }
+  //   }
+  //   .copyrightbottom {
+  //     margin-top: 30px;
+  //     text-align: center;
+  //   }
+  // }
+
 }
 
 @keyframes slideupp {
@@ -167,8 +209,4 @@ body:global(.light) .sideBar {
 }
 
 
-// @media (max-width: 767px) {
-//   .sideBar {
-//    justify-content: flex-start;
-//   }
-// }
+

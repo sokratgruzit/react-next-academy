@@ -1,5 +1,5 @@
 import React, { cloneElement } from "react";
-
+import { Facebook, GitHub, Linkedin, Twitter } from "@/svg";
 import styles from "../../styles/Dashboard/SideMenu.module.scss";
 
 const SIDE_DATA = [
@@ -224,7 +224,50 @@ const SideMenu = ({ showMenu, tab, handlerClick }) => {
           </svg>
           Main Page
         </div>
-      </div>
+{/* 
+        <div className={styles.bottomLogo}>
+        <h4 className={styles.bottomTitle}>Following</h4>
+        <div className={styles.icons}>
+          <div className={styles.lightIcons}>
+            <a
+              className={styles.socialIconLink}
+              href={"facebook.com"}
+              target="_blank"
+            >
+              <Facebook className={styles.socialIcon} />
+            </a>
+            <a
+              className={styles.socialIconLink}
+              href={"facebook.com"}
+              target="_blank"
+            >
+              <Twitter className={styles.socialIcon} />
+            </a>
+            <a
+              className={styles.socialIconLink}
+              href={"facebook.com"}
+              target="_blank"
+            >
+              <Linkedin className={styles.socialIcon} />
+            </a>
+            <a
+              className={styles.socialIconLink}
+              href={"facebook.com"}
+              target="_blank"
+            >
+              <GitHub className={styles.socialIcon} />
+            </a>
+          </div>
+        </div>
+        <div className={styles.copyrightbottom}>
+          © CORE Multi-Chain, 2022 All rights reserved
+        </div>
+      </div> */}
+
+     </div>
+
+        
+      
     </>
   );
 };
