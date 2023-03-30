@@ -8,6 +8,7 @@ import AccountSettings from "./AccountSettings";
 import SideMenu from "./SideMenu";
 import DashboardHeader from "../Layouts/DashboardHeader";
 import Introduction from "./Introduction";
+import PurchaseHistory from "./PurchaseHistory";
 
 import styles from "../../styles/Dashboard/DashboardTabs.module.scss";
 
@@ -17,13 +18,12 @@ const DashboardTabs = () => {
   const [burgerMenu, setBurgerMenu] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
-
   useEffect(() => {
     function handleResize() {
       setIsMobile(window.innerWidth <= 768);
       setShowMenu(window.innerWidth > 768);
       setBurgerMenu(window.innerWidth > 768);
-    }
+    };
    
     handleResize();
     window.addEventListener('resize', handleResize);
@@ -38,14 +38,14 @@ const DashboardTabs = () => {
 
   return (
     <>
-    <div className={styles.burgerMenu} style={{opacity: isMobile ? "0" : "1", opacity: burgerMenu ? "1" : "0"}}>
-      <div style={{display: isMobile ? "none" : "flex", display: burgerMenu ? "flex" : "none"}} className={styles.burgerMenu}>
-        <SideMenu showMenu={showMenu} tab={curentTab} handlerClick={(e) => {
-          setCurentTab(e.target.id)
-          isMobile ? setBurgerMenu(false) : "";
-          }} />
+      <div className={styles.burgerMenu} style={{opacity: isMobile ? "0" : "1", opacity: burgerMenu ? "1" : "0", zIndex: burgerMenu ? "10" : "-1"}}>
+        <div style={{display: isMobile ? "none" : "flex", display: burgerMenu ? "flex" : "none"}} className={styles.burgerMenu}>
+          <SideMenu showMenu={showMenu} tab={curentTab} handlerClick={(e) => {
+            setCurentTab(e.target.id)
+            isMobile ? setBurgerMenu(false) : "";
+            }} />
+        </div>
       </div>
-    </div>
       <div className={`container ${styles.viewContent} ${styles.headerViewContent}`}>
         <DashboardHeader isOpen={!burgerMenu} tab={curentTab} showSideBar={() => setBurgerMenu(!burgerMenu)} />
         <Introduction />
@@ -61,6 +61,8 @@ const DashboardTabs = () => {
         ) : curentTab === "3" ? (
           <MyProfile />
         ) : curentTab === "4" ? (
+          <PurchaseHistory />  
+        ) : curentTab === "5" ? (
           <AccountSettings />
         ) : curentTab === "" ? (
           <MyCourses />

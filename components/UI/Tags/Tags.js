@@ -1,4 +1,7 @@
+import {useState} from "react"
+
 import styles from "./Tags.module.scss";
+  // const [selectedTag, setselectedTag] = useState('security');
 
 const Tags = ({ data, type }) => {
   return (

@@ -1,5 +1,4 @@
 import { data } from "../UI/Card/helper";
-
 import TrendingCard from "../UI/Card/TrendingCard";
 import RelatedThemes from "./RelatedThemes";
 
@@ -25,6 +24,6 @@ function MyQuizzes() {
       })}
     </div>
   );
-}
+};
 
 export default MyQuizzes;

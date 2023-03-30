@@ -10,7 +10,10 @@ const Card = ({ data, type }) => {
 
   if (type === "default") {
     element = (
-      <Link href={`/articles/${data.slug}`} className={styles.article}>
+      <Link
+        href={`/articles/${data.slug}`}
+        className={styles.article}
+      >
         <div className={styles.cornerBorderDiv}>
           <CornerDecor />
           <div className={styles.cornerBorder}>

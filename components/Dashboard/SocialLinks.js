@@ -282,6 +282,6 @@ function SocialLinks({ type }) {
       )}
     </div>
   );
-}
+};
 
 export default SocialLinks;
