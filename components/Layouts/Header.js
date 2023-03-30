@@ -288,6 +288,8 @@ function Header({ commonData }) {
                   setBurger={setBurger}
                   data={tags}
                   links={headerLinks}
+                  theme={theme}
+                  setTheme={setTheme}
                 />
               )}
             </AnimatePresence>

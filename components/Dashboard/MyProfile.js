@@ -7,7 +7,7 @@ import RelatedThemes from "./RelatedThemes";
 
 import styles from "../../styles/Dashboard/MyProfile.module.scss";
 
-function MyProfile() {
+function MyProfile({ type, title, onClick, customStyles }) {
   return (
     <div className={styles.profileContainer}>
       <RelatedThemes title="Edit your personal info" />
@@ -16,15 +16,16 @@ function MyProfile() {
         <div className={styles.registration}>
           <RegistrationForm />
           <Button
-            size={"btn-big"}
-            color={"blue"}
-            title="Change Password"
-            className={"btn"}
+            className={`${styles.blueBtn} ${styles.button}`}
+            onClick={onClick}
+            style={customStyles}
+            title={title}
           />
+          {/* <button>asdwa</button> */}
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default MyProfile;

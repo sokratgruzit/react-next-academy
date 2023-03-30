@@ -1,4 +1,3 @@
-import { useState } from "react";
 
 import Tags from "../UI/Tags/Tags";
 import ArticlesTabs from "./ArticlesTabs";
@@ -63,8 +62,9 @@ const TOPICS_BTN_DATA = [
     name: "crypto",
   },
 ];
-
+  
 export default function ArticlesHeader() {
+
   const tabs = [
     {
       id: 0,
