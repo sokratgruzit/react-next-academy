@@ -8,14 +8,14 @@ const ITEMS_TOP = [
     title: "Making learning more accessible",
     teaser:
       "One educational platform for both instructors and students. Anyone across the globe can now have access to and create high-quality educational content.",
-    btn: [{}],
+    btn: [],
   },
   {
     id: 1,
     title: "Our Instructors",
     teaser:
       "CORE Academy instructors have a passion for what they teach and want to share it with students across the globe.",
-    btn: [{}],
+    btn: [],
   },
   {
     id: 2,

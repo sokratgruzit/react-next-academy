@@ -63,6 +63,7 @@ function Home({
   featured,
   security,
   essentials,
+  onClick,
 }) {
   return (
     <div className={styles.home__page}>
@@ -287,7 +288,13 @@ function Home({
             teaser={"Stay Tuned For The Latest Company News."}
             placeholder={"name@example.com"}
             img={"contactBg"}
-            btn={<Button customStyles={{ color: "#fff" }} title={"Join Now"} />}
+            btn={
+              <Button
+                onClick={onClick}
+                customStyles={{ color: "#fff" }}
+                title={"Join Now"}
+              />
+            }
           />
         </div>
       </div>
