@@ -1,4 +1,5 @@
 import { fetchData } from "@/utils/queries";
+import Link from "next/link";
 
 import Articles from "../components/Articles/Articles";
 import IntroBox from "../components/Home/IntroBox";
@@ -245,7 +246,7 @@ function Home({
             element={
               essentials && essentials.docs.length ? (
                 <div className={styles.assentials}>
-                  <img 
+                  <img
                     src="img/Bg/bg_13.png"
                     alt="background"
                     className={`img-absolute darkImg ${styles.assentialsBg}`}
@@ -270,7 +271,6 @@ function Home({
             element={
               security && security.docs.length ? (
                 <div className="container">
-                  {" "}
                   <Articles data={security} />
                 </div>
               ) : (

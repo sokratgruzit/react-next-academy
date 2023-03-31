@@ -24,7 +24,7 @@ import Introduction from "@/components/Introduction/Introduction";
 const index = ({ content }) => {
   console.log(content);
   return <NotFound />;
-  // <Introduction />
+  <Introduction />;
 };
 
 export default index;

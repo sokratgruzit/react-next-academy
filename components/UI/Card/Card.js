@@ -10,10 +10,7 @@ const Card = ({ data, type }) => {
 
   if (type === "default") {
     element = (
-      <Link
-        href={`/articles/${data.slug}`}
-        className={styles.article}
-      >
+      <Link href={`/articles/${data.slug}`} className={styles.article}>
         <div className={styles.cornerBorderDiv}>
           <CornerDecor />
           <div className={styles.cornerBorder}>
@@ -46,7 +43,9 @@ const Card = ({ data, type }) => {
               </div>
               <div className="bottomLevel">
                 {data.level._id ? (
-                  <div className={`itemDot level ${data.level.title.toLowerCase()}`}>
+                  <div
+                    className={`itemDot level ${data.level.title.toLowerCase()}`}
+                  >
                     {data.level.title}
                   </div>
                 ) : (
