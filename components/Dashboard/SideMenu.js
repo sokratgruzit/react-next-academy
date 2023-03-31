@@ -1,4 +1,5 @@
 import React, { cloneElement } from "react";
+import Link from "next/link";
 import { Facebook, GitHub, Linkedin, Twitter } from "@/svg";
 import styles from "../../styles/Dashboard/SideMenu.module.scss";
 
@@ -231,6 +232,7 @@ const SideMenu = ({ showMenu, tab, handlerClick }) => {
             );
           })}
         </div>
+        <Link href="/">
         <div className={styles.mainPage}>
           <svg
             width="22"
@@ -254,6 +256,7 @@ const SideMenu = ({ showMenu, tab, handlerClick }) => {
           </svg>
           Main Page
         </div>
+        </Link>
         {/* 
         <div className={styles.bottomLogo}>
         <h4 className={styles.bottomTitle}>Following</h4>
