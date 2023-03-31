@@ -38,7 +38,12 @@ const DashboardTabs = () => {
 
   return (
     <>
-      <div className={styles.burgerMenu} style={{opacity: isMobile ? "0" : "1", opacity: burgerMenu ? "1" : "0", zIndex: burgerMenu ? "10" : "-1"}}>
+      <div className={styles.burgerMenu} style={{
+          opacity: isMobile ? "0" : "1",
+          opacity: burgerMenu ? "1" : "0",
+          zIndex: burgerMenu ? "1" : "10",
+          zIndex: isMobile ? "10" : "1",
+        }}>
         <div style={{display: isMobile ? "none" : "flex", display: burgerMenu ? "flex" : "none"}} className={styles.burgerMenu}>
           <SideMenu showMenu={showMenu} tab={curentTab} handlerClick={(e) => {
             setCurentTab(e.target.id)

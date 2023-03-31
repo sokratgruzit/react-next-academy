@@ -90,7 +90,7 @@ function Home({
                   <img
                     src="img/Bg/bg_999.png"
                     alt="background"
-                    className="img-absolute darkImg"
+                    className={`img-absolute darkImg ${styles.featuredBg}`}
                   />
                   <img
                     src="img/Bg/bg_998.png"
