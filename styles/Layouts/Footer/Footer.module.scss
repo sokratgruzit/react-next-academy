@@ -33,16 +33,13 @@ body:global(.light) .footer {
   .footerLogoMob {
     display: none;
   }
-
   .footerTop {
     width: 100%;
     display: flex;
-
     .footerLeft {
       width: 400px;
       display: flex;
       flex-direction: column;
-
       .footerLogo {
         position: relative;
         width: 160px;
@@ -64,10 +61,9 @@ body:global(.light) .footer {
           display: flex;
           align-items: center;
           gap: 20px;
-          d
           .socialIcon {
             transition: 0.5s cubic-bezier(0.79, 0.01, 0.15, 0.99);
-            &:hover path{
+            &:hover {
               fill: #0501E7;
             }
           }
@@ -81,16 +77,6 @@ body:global(.light) .footer {
         .switcher {
           .input {
             display: none;
-          }
-
-          .marker { 
-            margin: 25px 0px 25px 0px;
-
-            .svg { 
-              display: flex;
-              justify-content: center;
-              margin-left: 15px;
-            }
           }
         }
       }
@@ -119,24 +105,20 @@ body:global(.light) .footer {
       }
     }
     .footerRight {
-      width: calc(100% - 300px);
+      width: calc(100% - 400px);
       display: flex;
       justify-content: space-between;
-
       .footerRightCol {
         width: 100%;
         display: flex;
         flex-direction: column;
-
         .footerRightColLinks {
           display: flex;
           flex-direction: column;
         }
-
         .footerRightColLink {
           display: none;
         }
-        
         .footerRightColTtl {
           font-size: 20px;
           line-height: 30px;
@@ -159,7 +141,7 @@ body:global(.light) .footer {
           color: #c2c3c5;
           font-size: 15px;
           &:hover {
-            color: blue;
+            color: $c-orange;
           }
         }
       }
@@ -219,12 +201,9 @@ body:global(.light) .footer {
   .footer {
     .footerTop {
       .footerLeft {
-        width: 250px;
+        width: 300px;
         .copyright {
           margin-bottom: 20px;
-        }
-        .footerRight { 
-          width: calc(90% - 200px);
         }
       }
     }
@@ -239,7 +218,6 @@ body:global(.light) .footer {
   .footer {
     padding: 0px 25px;
     padding-top: 50px;
-    
     .footerTop {
       .footerLeft {
         width: 210px;
@@ -251,11 +229,11 @@ body:global(.light) .footer {
         }
       }
       .footerRight {
-        width: calc(85% - 10px);
+        width: calc(100% - 260px);
       }
     }
     .upBtn {
-      right: 10px;
+      right: 32px;
     }
     .bottom {
       margin-top: 20px;
@@ -408,9 +386,6 @@ body:global(.light) .footer {
     }
     .upBtn {
       right: 16px;
-      // width: 20px;
-      // height: 20px;
-      // font-size: 10px;
     }
   }
   .bottomLogo {
@@ -444,8 +419,6 @@ body:global(.light) .footer {
     border-bottom: 1px solid rgba(0, 5, 15, 0.05);
   }
 }
-
-
 body:global(.light) .footer {
   background: #fff;
 }
