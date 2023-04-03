@@ -47,6 +47,7 @@ const DashboardTabs = () => {
           opacity: burgerMenu ? "1" : "0",
           zIndex: burgerMenu ? "1" : "10",
           zIndex: isMobile ? "10" : "1",
+          display: burgerMenu ? "flex" : "none",
         }}>
         <div style={{display: isMobile ? "none" : "flex", display: burgerMenu ? "flex" : "none"}} className={styles.burgerMenu}>
           <SideMenu showMenu={showMenu} tab={curentTab} handlerClick={(e) => {
