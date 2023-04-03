@@ -296,6 +296,7 @@ const SideMenu = ({ showMenu, tab, handlerClick }) => {
           © CORE Multi-Chain, 2022 All rights reserved
         </div>
       </div> */}
+      {/* here */}
       </div>
     </>
   );
