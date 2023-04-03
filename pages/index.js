@@ -42,7 +42,6 @@ export const getStaticProps = async () => {
   const { data: category } = await fetchData(
     `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/category`
   );
-
   return {
     props: {
       glossaries,
@@ -63,6 +62,7 @@ function Home({
   security,
   essentials,
 }) {
+  console.log(blockchain?.docs[0], 'id?')
   return (
     <div className={styles.home__page}>
       <img
