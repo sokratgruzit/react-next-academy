@@ -1,5 +1,5 @@
 import Button from "../Button/Button";
-
+import Link from "next/link";
 import styles from "../../../styles/UI/Banner/Banner.module.scss";
 
 function Banner({
@@ -144,16 +144,16 @@ function Banner({
               placeholder={placeholder}
             />
             <div>
-              {btn && btn}
-              <Button
-                customStyles={{
-                  position: "absolute",
-                  right: "4px",
-                  top: " 3.5px",
-                }}
-                type={"blue-btn"}
-                title={"Join now"}
-              />
+             {btn && btn}
+                <Button
+                  customStyles={{
+                    position: "absolute",
+                    right: "4px",
+                    top: "3.5px",
+                  }}
+                  type={"blue-btn"}
+                  title={"Join now"}
+                />
             </div>
           </div>
         ) : (
