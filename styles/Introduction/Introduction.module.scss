@@ -1,5 +1,15 @@
 @import "../variables.scss";
 
+body:global(.light) .getStarted {
+  .gradient {
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      rgba(211, 222, 245, 0.5) 0%,
+      rgba(211, 222, 245, 0) 100%
+    );
+  }
+}
+
 .getStarted {
   display: flex;
   justify-content: center;
