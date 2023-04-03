@@ -32,9 +32,6 @@ export const getStaticProps = async () => {
     );
     values[slug] =catData?.data; 
   }
-
-
-
   return {
     props: values,
   };
