@@ -223,7 +223,7 @@ const SideMenu = ({ showMenu, tab, handlerClick }) => {
                 })}
                 <p
                   className={styles.sidebarList}
-                  style={{ color: tab == item.id ? "blue" : "" }}
+                  style={{ color: tab == item.id ? "blue" : null}}
                   id={item.id}
                 >
                   {item.list}
