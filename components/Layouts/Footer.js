@@ -287,6 +287,7 @@ function Footer() {
               alt="logo"
             />
           </div>
+          <p>sadadwa</p>
         </div>
       </div>
       <div className={styles.bottomLogo}>
