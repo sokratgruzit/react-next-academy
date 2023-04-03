@@ -199,6 +199,8 @@ function Home({
                   clasName="quizBtn"
                   title={"Take a Quizzes"}
                   type={"transparent-btn"}
+                  custumLink={{ color: "#fff" }}
+                  href={"/quizzes"}
                 />
               }
             />
@@ -288,13 +290,7 @@ function Home({
             teaser={"Stay Tuned For The Latest Company News."}
             placeholder={"name@example.com"}
             img={"contactBg"}
-            btn={
-              <Button
-                onClick={onClick}
-                customStyles={{ color: "#fff" }}
-                title={"Join Now"}
-              />
-            }
+            btn={<Button onClick={onClick} />}
           />
         </div>
       </div>

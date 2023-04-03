@@ -43,7 +43,7 @@ const InstructorRegistration = () => {
     phoneNumber: "",
     password: "",
     confirmPassword: "",
-    check: false
+    check: false,
   });
 
   const setDataUpdater = (value, field) => {
@@ -59,10 +59,8 @@ const InstructorRegistration = () => {
     setActive(false);
   }, "1200");
 
-
-
   const checkHandler = () => {
-    console.log()
+    console.log();
     console.log(check);
   };
   return (
@@ -87,7 +85,7 @@ const InstructorRegistration = () => {
               </p>
               <input
                 onClick={checkHandler}
-                onChange={(e) => setDataUpdater(e.target.value, 'check')}
+                onChange={(e) => setDataUpdater(e.target.value, "check")}
                 type="checkbox"
               />
               <span className={`geekmark ${styles.geekmarkOne}`}></span>
@@ -99,6 +97,7 @@ const InstructorRegistration = () => {
               title={"Register"}
               onClick={buttonHandler}
               customStyles={{ width: "100%" }}
+              custumLink={{ color: "#fff" }}
             />
           </div>
           <Toast

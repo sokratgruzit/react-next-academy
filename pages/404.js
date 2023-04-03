@@ -13,9 +13,14 @@ function NotFound() {
           <h4 className={styles.teaser}>
             Your browser sent a request that this server could not understand
           </h4>
-          <Link className={styles.return} href="/">
-            <Button type={"blue-btn"} title={"Go Back To Main Page"} />
-          </Link>
+          <div className={styles.return}>
+            <Button
+              type={"blue-btn"}
+              custumLink={{ color: "#fff" }}
+              title={"Go Back To Main Page"}
+              href="/"
+            />
+          </div>
         </div>
       </div>
     </div>

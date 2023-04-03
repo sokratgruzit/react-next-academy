@@ -80,6 +80,7 @@ const Contact = () => {
             onClick={buttonHandler}
             type={"blue-btn"}
             title={"Send Message"}
+            custumLink={{ color: "#fff" }}
           />
           <Toast
             active={active}

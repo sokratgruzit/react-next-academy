@@ -10,7 +10,7 @@ import WalletConnectModal from "../WalletConnect/WalletConnectModal";
 
 import styles from "../../styles/Layouts/SideNavigation/SideNavigation.module.scss";
 
-function SideNavigation({ setBurger, data, links , theme ,setTheme}) {
+function SideNavigation({ setBurger, data, links, theme, setTheme }) {
   const ref = useRef();
   const topicsWrap = useRef();
   const { isLogged } = useContext(AuthContext);
@@ -20,8 +20,6 @@ function SideNavigation({ setBurger, data, links , theme ,setTheme}) {
   const [topicsDropdown, setTopicsDropdown] = useState(false);
   // const [theme, setTheme] = useState(false);
   const [content, setContent] = useState("");
-
-
 
   useEffect(() => {
     function handleResize() {
@@ -110,6 +108,7 @@ function SideNavigation({ setBurger, data, links , theme ,setTheme}) {
             type={"white-btn"}
             title={content}
             onClick={handleConnectClick}
+            custumLink={{ color: "#FF7152" }}
           />
           <button className={styles.close} onClick={() => setBurger(false)}>
             <svg

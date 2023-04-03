@@ -1,6 +1,9 @@
+// import { useState, useEffect } from "react";
+import Link from "next/link";
+
 import styles from "../../../styles/UI/Button/Button.module.scss";
 
-const Button = ({ type, title, onClick, customStyles }) => {
+const Button = ({ type, title, onClick, customStyles, href, custumLink }) => {
   return (
     <>
       {type === "transparent-btn" ? (
@@ -9,7 +12,9 @@ const Button = ({ type, title, onClick, customStyles }) => {
           onClick={onClick}
           style={customStyles}
         >
-          {title}
+          <Link style={custumLink} href={`${href}`}>
+            {title}
+          </Link>
         </div>
       ) : type === "blue-btn" ? (
         <div
@@ -17,7 +22,9 @@ const Button = ({ type, title, onClick, customStyles }) => {
           onClick={onClick}
           style={customStyles}
         >
-          {title}
+          <Link style={custumLink} href={`${href}`}>
+            {title}
+          </Link>
         </div>
       ) : type === "orange-btn" ? (
         <div
@@ -25,7 +32,9 @@ const Button = ({ type, title, onClick, customStyles }) => {
           onClick={onClick}
           style={customStyles}
         >
-          {title}
+          <Link style={custumLink} href={`${href}`}>
+            {title}
+          </Link>
         </div>
       ) : type === "white-btn" ? (
         <div
@@ -33,7 +42,9 @@ const Button = ({ type, title, onClick, customStyles }) => {
           onClick={onClick}
           style={customStyles}
         >
-          {title}
+          <Link style={custumLink} href={`${href}`}>
+            {title}
+          </Link>
         </div>
       ) : (
         ""

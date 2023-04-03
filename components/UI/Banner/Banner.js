@@ -42,8 +42,10 @@ function Banner({
                   right: "4px",
                   top: " 3.5px",
                 }}
+                custumLink={{ color: "#fff" }}
                 type={"blue-btn"}
                 title={"Join now"}
+                href={"/contact"}
               />
             </div>
           </div>
@@ -144,16 +146,16 @@ function Banner({
               placeholder={placeholder}
             />
             <div>
-             {btn && btn}
-                <Button
-                  customStyles={{
-                    position: "absolute",
-                    right: "4px",
-                    top: "3.5px",
-                  }}
-                  type={"blue-btn"}
-                  title={"Join now"}
-                />
+              {btn && btn}
+              <Button
+                customStyles={{
+                  position: "absolute",
+                  right: "4px",
+                  top: "3.5px",
+                }}
+                type={"blue-btn"}
+                title={"Join now"}
+              />
             </div>
           </div>
         ) : (
