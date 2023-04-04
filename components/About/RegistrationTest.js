@@ -73,18 +73,27 @@ const RegistrationTest = () => {
                 title={"Register"}
                 type={"blue-btn"}
                 custumLink={{ color: "#fff", padding: "12px 41px" }}
-                href={"/"}
+                // href={"/"}
               />
             </div>
-            <div className={styles.btnCancel}>
-              <button
-                onClick={() => {
-                  setClose(true);
-                }}
-              >
-                Cancel
-              </button>
-            </div>
+            <Button
+              onClick={() => {
+                setClose(true);
+              }}
+              clasName="btnCancel"
+              title={"Cancel"}
+              type={"blue-btn"}
+              custumLink={{
+                color: "#00050F",
+                borderBottom: "1px solid #0500FF",
+              }}
+              href={"/"}
+              customStyles={{
+                padding: "12px",
+                backgroundColor: "transparent",
+                border: "1px solid transparent",
+              }}
+            />
           </div>
         </div>
       </dialog>
