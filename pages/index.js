@@ -22,15 +22,15 @@ export const getStaticProps = async () => {
   const { data: category } = await fetchData(
     `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/category`
   );
-  const values = {glossaries};
-  for(let i=0; i<category.length; i++){
+  const values = { glossaries };
+  for (let i = 0; i < category.length; i++) {
     let oneCategory = category[i];
     let slug = oneCategory?.slug;
     let catId = oneCategory?._id;
-    let catData= await fetchData(
+    let catData = await fetchData(
       `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles?category=${catId}&limit=3`
     );
-    values[slug] =catData?.data; 
+    values[slug] = catData?.data;
   }
   return {
     props: values,
@@ -46,7 +46,6 @@ function Home({
   essentials,
   onClick,
 }) {
-  console.log(blockchain?.docs[0], 'id?')
   return (
     <div className={styles.home__page}>
       <img

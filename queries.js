@@ -18,7 +18,6 @@ const fetchData = async (url) => {
     })
     .catch((err) => {
       if (err.name === "AbortError") {
-        console.log("fetch aborted");
       } else {
         isPending = false;
         error = err.message;

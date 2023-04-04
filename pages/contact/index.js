@@ -48,7 +48,6 @@ const Contact = () => {
   };
 
   const buttonHandler = () => {
-    console.log(data);
     setActive(true);
   };
 

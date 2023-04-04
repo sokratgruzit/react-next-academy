@@ -18,8 +18,6 @@ export const commonDataSlice = createSlice({
   },
 });
 
-// console.log(commonDataSlice.actions.setCommonData, "aahh");
-
 export function shit() {}
 
 export const { setCommonData } = commonDataSlice.actions;

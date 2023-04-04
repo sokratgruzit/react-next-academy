@@ -45,7 +45,6 @@ const Introduction = ({ params }) => {
             </p>
           </div>
         </div>
-        {console.log(params)}
         {params && params.editor && (
           <div className="textStyles">
             <div className={styles.gradient}>

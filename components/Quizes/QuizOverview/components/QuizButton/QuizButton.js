@@ -3,9 +3,12 @@ import styles from "./QuizButton.module.scss";
 
 const QuizButton = ({ onClick, className, label }) => {
   return (
-    <button onClick={onClick} className={`${className} ${styles.quizButton}`}>
-      {label}
-    </button>
+    <Button
+      onClick={onClick}
+      className={`quizBtn ${className} ${styles.quizButton}`}
+      title={label}
+      type={"transparent-btn"}
+    />
   );
 };
 

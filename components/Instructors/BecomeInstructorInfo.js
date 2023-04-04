@@ -40,9 +40,14 @@ const BecomeInstructorInfo = () => {
       <p className={styles.text}>
         Teach what you love. Corrector gives you the tools to create a course.
       </p>
-      <Link href={"/become-an-instructor"}>
-        <Button type={"orange-btn"} title={"Start Teaching"} />
-      </Link>
+
+      <Button
+        clasName="orange-btn"
+        title={"Start Teaching"}
+        type={"orange-btn"}
+        custumLink={{ color: "#fff" }}
+        href={"/become-an-instructor"}
+      />
     </div>
   );
 };

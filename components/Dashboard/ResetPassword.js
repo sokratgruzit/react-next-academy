@@ -31,7 +31,6 @@ const ResetPassword = () => {
             wtf: email,
           }
         );
-        console.log(request, "wtf");
       }
     } catch (e) {
       setError(e.respons);
@@ -78,7 +77,13 @@ const ResetPassword = () => {
       action="/api/form"
     >
       <Input type="input" data={LOGIN_INFO} />
-      <Button size={"btn-pass"} color={"blue"} title="save changes" />
+      <Button
+        clasName="blue-btn"
+        title={"save changes"}
+        type={"blue-btn"}
+        custumLink={{ color: "#fff" }}
+        // href={"/"}
+      />
     </div>
   );
 };

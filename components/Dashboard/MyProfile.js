@@ -15,17 +15,19 @@ function MyProfile({ type, title, onClick, customStyles }) {
         <Upload />
         <div className={styles.registration}>
           <RegistrationForm />
+
           <Button
-            className={`${styles.blueBtn} ${styles.button}`}
+            clasName="blue-btn"
+            title={"save changes"}
             onClick={onClick}
-            style={customStyles}
-            title={title}
+            type={"blue-btn"}
+            custumLink={{ color: "#fff" }}
+            // href={"/"}
           />
-          {/* <button>asdwa</button> */}
         </div>
       </div>
     </div>
   );
-};
+}
 
 export default MyProfile;

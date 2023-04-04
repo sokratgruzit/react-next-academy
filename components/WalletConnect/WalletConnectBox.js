@@ -78,7 +78,6 @@ function WalletConnectBox() {
           throw error;
         }
         SignOut();
-        console.log("disconnect");
         setMessage("");
       });
     }

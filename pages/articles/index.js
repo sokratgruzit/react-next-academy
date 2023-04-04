@@ -66,8 +66,6 @@ const index = ({ articlesData }) => {
   //   }
   // }, [router]);
 
-  // console.log(articles, isLoading);
-
   return (
     <div className={styles.ArticlesIndex}>
       <div className={`lightImg ${styles.imgBox}`}>

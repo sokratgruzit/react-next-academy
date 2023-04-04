@@ -47,13 +47,15 @@ function Settings() {
           <div className={styles.conteiner}>
             <Input data={FORM_DATA} type="input" />
           </div>
-          <div className={styles.buttonbox}>
-            <Button
-              title={'Register'}
-              type={'blue-btn'}
-            />
-            {/* BUTTON ALERT !!! */}
-          </div>
+          <Button
+            clasName="blue-btn"
+            title={"save changes"}
+            onClick={onClick}
+            type={"blue-btn"}
+            custumLink={{ color: "#fff" }}
+            // href={"/"}
+          />
+          {/* BUTTON ALERT !!! */}
         </div>
       </div>
     </div>

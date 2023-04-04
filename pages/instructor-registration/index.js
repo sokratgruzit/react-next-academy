@@ -51,7 +51,6 @@ const InstructorRegistration = () => {
   };
 
   const buttonHandler = () => {
-    console.log(data);
     setActive(true);
   };
 
@@ -59,10 +58,8 @@ const InstructorRegistration = () => {
     setActive(false);
   }, "1200");
 
-  const checkHandler = () => {
-    console.log();
-    console.log(check);
-  };
+  // const checkHandler = () => {
+  // };
   return (
     <div className={`${styles.mainBoxInstructor} `}>
       <div className={`${"contact container"} ${styles.box} ${"textStyles"}`}>
