@@ -6,6 +6,7 @@ body:global(.light) .footer {
         .lightIcons {
           .socialIcon {
             fill: $c-dark;
+            transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);
 
             &:hover {
               fill: $bg-hover-blue;
@@ -64,10 +65,10 @@ body:global(.light) .footer {
           display: flex;
           align-items: center;
           gap: 20px;
-          d .socialIcon {
-            transition: 0.5s cubic-bezier(0.79, 0.01, 0.15, 0.99);
+          .socialIcon {
+            transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);
             &:hover path {
-              fill: #0501e7;
+              fill: $bg-hover-blue;
             }
           }
         }
