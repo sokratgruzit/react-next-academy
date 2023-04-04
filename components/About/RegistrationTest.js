@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import Button from "../UI/Button/Button";
+
 import styles from "../../styles/About/Items.module.scss";
 
 const RegistrationTest = () => {
@@ -66,7 +68,13 @@ const RegistrationTest = () => {
           </div>
           <div className={styles.btnsOuter}>
             <div className={styles.btn}>
-              <button className="blue-btn">Register</button>
+              <Button
+                clasName="blue-btn"
+                title={"Register"}
+                type={"blue-btn"}
+                custumLink={{ color: "#fff", padding: "12px 41px" }}
+                href={"/"}
+              />
             </div>
             <div className={styles.btnCancel}>
               <button
