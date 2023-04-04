@@ -23,7 +23,7 @@ export const getStaticProps = async () => {
     `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/category`
   );
   const values = { glossaries };
-  for (let i = 0; i < category.length; i++) {
+  for (let i = 0; i < category?.length; i++) {
     let oneCategory = category[i];
     let slug = oneCategory?.slug;
     let catId = oneCategory?._id;
