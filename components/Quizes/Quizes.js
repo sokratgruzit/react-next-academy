@@ -11,8 +11,15 @@ const DUMMY_DATA = [
   {
     img: "img/quiz/course1.png",
     title: "Kali Linux For Beginners",
+    level: "Begginer",
+    category: "Blockchain",
+    time: "10 Hours",
+  },
+  {
+    img: "img/quiz/course1.png",
+    title: "Kali Linux For Beginners",
     level: "Pro",
-    category: "Security",
+    category: "Phyton",
     time: "10 Hours",
   },
   {
@@ -25,29 +32,15 @@ const DUMMY_DATA = [
   {
     img: "img/quiz/course1.png",
     title: "Kali Linux For Beginners",
-    level: "Pro",
-    category: "Security",
+    level: "Begginer",
+    category: "Phyton",
     time: "10 Hours",
   },
   {
     img: "img/quiz/course1.png",
     title: "Kali Linux For Beginners",
-    level: "Pro",
-    category: "Security",
-    time: "10 Hours",
-  },
-  {
-    img: "img/quiz/course1.png",
-    title: "Kali Linux For Beginners",
-    level: "Pro",
-    category: "Security",
-    time: "10 Hours",
-  },
-  {
-    img: "img/quiz/course1.png",
-    title: "Kali Linux For Beginners",
-    level: "Pro",
-    category: "Security",
+    level: "Advance",
+    category: "Blockchain",
     time: "10 Hours",
   },
   {
@@ -61,6 +54,10 @@ const DUMMY_DATA = [
 
 const Quizes = () => {
   const quizData = DUMMY_DATA;
+  const filterCategory = () => {
+    DUMMY_DATA.filter((p) => p.level)
+
+  }
   const cardVariants = {
     offscreen: {
       y: 80,

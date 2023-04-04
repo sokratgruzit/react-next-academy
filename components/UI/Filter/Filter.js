@@ -7,6 +7,10 @@ import CornerDecor from "../CornerDecor/CornerDecor";
 
 import styles from "./Filter.module.scss";
 
+const filterLevel = () => { 
+  console.log(QUIZZES_FILTER.filter((p) => p.items.title.value) )
+} 
+
 const QUIZZES_FILTER = [
   {
     title: "Level",
@@ -160,7 +164,7 @@ const Filter = ({ className, type }) => {
               return (
                 <div key={index} className={styles.item}>
                   <h4>{item.title}</h4>
-                  {item.items.map((subItem, index) => {
+                  {item.items.map((subItem, index) => )
                     return (
                       <div key={index + "hash"} className={styles.checkBox}>
                         <button type="button">
