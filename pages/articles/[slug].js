@@ -11,12 +11,11 @@ import Link from "next/link";
 
 export const getStaticPaths = async () => {
   const articles = await fetchData(
-    `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles`
+    `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles?limit=0`
   );
-
-  const paths = articles.data.docs.map((item) => ({
+  const paths = articles?.data?.map((item) => ({
     params: {
-      slug: item.slug,
+      slug: item?.slug,
     },
   }));
 
@@ -28,7 +27,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const slug = context.params.slug || undefined;
-  const article = await fetchData(
+  const {data:article} = await fetchData(
     `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles/${slug}`
   );
 
@@ -38,21 +37,15 @@ export const getStaticProps = async (context) => {
   // );
 
   //i will leave this one for a short period of time :)
-  const { data: featured } = await fetchData(
-    `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles`
-  );
 
   return {
-    props: {
-      article,
-      featured,
-    },
+    props: article,
   };
 };
 
 const Article = ({ article, featured }) => {
   const router = useRouter();
-  const data = article?.data || null;
+  const data = article || null;
 
   const icons = (
     <div className={styles.icons}>
@@ -101,20 +94,20 @@ const Article = ({ article, featured }) => {
         <div className={styles.articlePage}>
           <div className={styles.top}>
             <div className={`${styles.infoDiv} container`}>
-              <h1 className={styles.title}>{data.title}</h1>
+              <h1 className={styles.title}>{data?.title}</h1>
               <div className={styles.info}>
-                {data.level && (
+                {data?.level && (
                   <div
                     className={`${
                       styles.item
                     } lev-item-simple ${data?.level?.title.toLowerCase()}`}
                   >
-                    {data.level.title}
+                    {data?.level?.title}
                   </div>
                 )}
-                {data.tag?.length > 0 && (
+                {data?.tag?.length > 0 && (
                   <div className={`${styles.item} lev-item-simple`}>
-                    {data.tag[0].title}
+                    {data?.tag[0]?.title}
                   </div>
                 )}
                 <div className={styles.item}>
@@ -157,7 +150,7 @@ const Article = ({ article, featured }) => {
                     </svg>
                   </div>
                   <Moment className={styles.value} format="Do/MMM/YYYY">
-                    {data.createdAt}
+                    {data?.createdAt}
                   </Moment>
                 </div>
                 <div className={styles.item}>
@@ -192,7 +185,7 @@ const Article = ({ article, featured }) => {
                     </svg>
                   </div>
                   <Moment className={styles.value} format="Do/MMM/YYYY">
-                    {data.updatedAt}
+                    {data?.updatedAt}
                   </Moment>
                 </div>
                 <div className={styles.item}>
@@ -214,15 +207,15 @@ const Article = ({ article, featured }) => {
                       ></path>
                     </svg>
                   </div>
-                  <span className={styles.value}>{data.duration} MIN</span>
+                  <span className={styles.value}>{data?.duration} MIN</span>
                 </div>
               </div>
               {icons}
             </div>
             <div className={styles.imgBox}>
               <img
-                src={data.image.path}
-                alt={data.image.alt}
+                src={data?.image?.path}
+                alt={data?.image?.alt}
                 className={styles.imgBoxImg}
               />
             </div>
@@ -254,13 +247,13 @@ const Article = ({ article, featured }) => {
               </div>
             </div>
             <div className={`${styles.content} content textStyles container`}>
-              {parse(data.editor)}
+              {parse((data?.editor)?data?.editor:"")}
             </div>
             <div className={styles.categoryTags}>
               {icons}
               <div className={styles.tags}>
                 <div className={styles.pins}>
-                  {data.tag?.length
+                  {data?.tag?.length
                     ? data.tag.map((tag) => {
                         return (
                           <div
@@ -272,11 +265,11 @@ const Article = ({ article, featured }) => {
                         );
                       })
                     : ""}
-                  {data.category?._id && (
+                  {data?.category?._id && (
                     <div
                       className={`white-cat-item-border ${styles.whiteCatItemBorder}`}
                     >
-                      {data.category?._id ? data.category.title : ""}
+                      {data?.category?._id ? data?.category.title : ""}
                     </div>
                   )}
                 </div>
@@ -284,7 +277,8 @@ const Article = ({ article, featured }) => {
             </div>
             <div className={styles.exploreArticles}>
               <h2>Explore More</h2>
-              {featured && featured.docs?.length ? (
+              
+              {featured && featured?.docs.length ? (
                 <div className={styles.featured}>
                   <Articles data={featured} />
                 </div>

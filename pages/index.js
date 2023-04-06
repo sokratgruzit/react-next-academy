@@ -19,39 +19,21 @@ export const getStaticProps = async () => {
   const { data: glossaries } = await fetchData(
     `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/glossaries?limit=3`
   );
-
-  const { data: releases } = await fetchData(
-    `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles?category=62fb6be2ab723fa8b038fce7&limit=3`
-  );
-
-  const { data: blockchain } = await fetchData(
-    `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles?category=62fb6bf2ab723fa8b038fcef&limit=3`
-  );
-
-  const { data: featured } = await fetchData(
-    `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles?category=62fb6bdaab723fa8b038fce3&limit=3`
-  );
-
-  const { data: security } = await fetchData(
-    `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles?category=640088879fc4df796d077743&limit=3`
-  );
-
-  const { data: essentials } = await fetchData(
-    `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles?category=62fb6bf9ab723fa8b038fcf3&limit=3`
-  );
-
   const { data: category } = await fetchData(
     `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/category`
   );
+  const values = {glossaries};
+  for(let i=0; i<category.length; i++){
+    let oneCategory = category[i];
+    let slug = oneCategory?.slug;
+    let catId = oneCategory?._id;
+    let catData= await fetchData(
+      `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles?category=${catId}&limit=3`
+    );
+    values[slug] =catData?.data; 
+  }
   return {
-    props: {
-      glossaries,
-      releases,
-      blockchain,
-      featured,
-      security,
-      essentials,
-    },
+    props: values,
   };
 };
 
