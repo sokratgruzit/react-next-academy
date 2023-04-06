@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react"
 
 import Filter from "../UI/Filter/Filter";
 import QuizCard from "../UI/Card/QuizCard";
@@ -7,12 +7,54 @@ import styles from "@/styles/Quizes/Quizes.module.scss";
 import MotionLayout from "../UI/MotionLayout/MotionLayout";
 import { motion } from "framer-motion";
 
+
+
+const QUIZZES_FILTER = [
+  {
+    title: "Level",
+    items: [
+      {
+        title: "Begginer",
+        amount: "(794)",
+      },
+      {
+        title: "Advance",
+        amount: "(203)",
+      },
+      {
+        title: "Pro",
+        amount: "(80)",
+      },
+    ],
+  },
+  {
+    title: "Category",
+    items: [
+      {
+        title: "Blockchain",
+      },
+      {
+        title: "Security",
+      },
+      {
+        title: "Phyton",
+      },
+    ],
+  },
+];
 const DUMMY_DATA = [
   {
     img: "img/quiz/course1.png",
     title: "Kali Linux For Beginners",
+    level: "Begginer",
+    category: "Blockchain",
+    time: "10 Hours",
+  },
+  {
+    img: "img/quiz/course1.png",
+    title: "Kali Linux For Beginners",
     level: "Pro",
-    category: "Security",
+    category: "Phyton",
     time: "10 Hours",
   },
   {
@@ -25,29 +67,15 @@ const DUMMY_DATA = [
   {
     img: "img/quiz/course1.png",
     title: "Kali Linux For Beginners",
-    level: "Pro",
-    category: "Security",
+    level: "Begginer",
+    category: "Phyton",
     time: "10 Hours",
   },
   {
     img: "img/quiz/course1.png",
     title: "Kali Linux For Beginners",
-    level: "Pro",
-    category: "Security",
-    time: "10 Hours",
-  },
-  {
-    img: "img/quiz/course1.png",
-    title: "Kali Linux For Beginners",
-    level: "Pro",
-    category: "Security",
-    time: "10 Hours",
-  },
-  {
-    img: "img/quiz/course1.png",
-    title: "Kali Linux For Beginners",
-    level: "Pro",
-    category: "Security",
+    level: "Advance",
+    category: "Blockchain",
     time: "10 Hours",
   },
   {
@@ -59,7 +87,11 @@ const DUMMY_DATA = [
   },
 ];
 
+
+
 const Quizes = () => {
+  const [filterlevel ,setFilterlevel] = useState('')
+  const [filtercategory ,setFiltercategory] = useState('')
   const quizData = DUMMY_DATA;
   const cardVariants = {
     offscreen: {
@@ -74,17 +106,33 @@ const Quizes = () => {
       },
     },
   };
+  const filteredArray = DUMMY_DATA.filter(item => item.level  === filterlevel);
+  const filtercategoryArray = DUMMY_DATA.filter(item =>  item.category === filtercategory );
 
-  return (
+    return (
     <div className={`container ${styles.wrapper}`}>
-      <Filter type={"quizzes-filter"} className={styles.filter} />
+      <Filter type={"quizzes-filter"} className={styles.filter} quizzFilter={QUIZZES_FILTER}  filterChng={setFilterlevel}  filtcategory={setFiltercategory} />
       <MotionLayout className={styles.productsWrapper}>
         <motion.div variants={cardVariants}>
-          <div className={`${styles.products} ${"textStyles"}`}>
+
+        {!filterlevel && !filtercategory &&  <div className={`${styles.products} ${"textStyles"}`}>
             {quizData.map((item, index) => {
               return <QuizCard type={"default"} item={item} key={index} />;
             })}
-          </div>
+          </div>}
+
+        {filterlevel && filtercategory &&  <div className={`${styles.products} ${"textStyles"}`}>
+            {filtercategoryArray.map((item, index) => {
+              return <QuizCard type={"default"} item={item} key={index} />;
+            })}
+          </div>}
+
+          {filterlevel && filtercategory &&  <div className={`${styles.products} ${"textStyles"}`}>
+            {filteredArray.map((item, index) => {
+              return <QuizCard type={"default"} item={item} key={index} />;
+            })}
+          </div>}
+
         </motion.div>
       </MotionLayout>
     </div>

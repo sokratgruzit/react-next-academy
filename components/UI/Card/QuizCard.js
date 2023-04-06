@@ -30,6 +30,7 @@ const QuizCard = ({ type, item }) => {
           <div className={styles.img}>
             <img src={item.img} />
           </div>
+
           <div className={styles.text}>
             <p>{item.title}</p>
           </div>
@@ -50,9 +51,6 @@ const QuizCard = ({ type, item }) => {
         </div>
       </Link>
     );
-  }
-  if (type === "row") {
-    card = <Link href={"/quizes/2"}>HI</Link>;
   }
   return card;
 };

@@ -6,40 +6,9 @@ import StrokeSvg from "../../../public/img/Marketplace/Vector (Stroke).svg";
 import CornerDecor from "../CornerDecor/CornerDecor";
 
 import styles from "./Filter.module.scss";
+import { log } from "util";
 
-const QUIZZES_FILTER = [
-  {
-    title: "Level",
-    items: [
-      {
-        title: "Begginer",
-        amount: "(794)",
-      },
-      {
-        title: "Advance",
-        amount: "(203)",
-      },
-      {
-        title: "Pro",
-        amount: "(80)",
-      },
-    ],
-  },
-  {
-    title: "Category",
-    items: [
-      {
-        title: "Blockchain",
-      },
-      {
-        title: "Security",
-      },
-      {
-        title: "Phyton",
-      },
-    ],
-  },
-];
+ 
 const MARKET_FILTER = [
   {
     title: "Level",
@@ -104,10 +73,10 @@ function calculateFilterObj(data) {
   }, {});
 }
 
-const Filter = ({ className, type }) => {
+const Filter = ({ className, type, quizzFilter , filterChng , filtcategory }) => {
   const filterObj = useMemo(
-    () => calculateFilterObj(QUIZZES_FILTER, MARKET_FILTER),
-    [QUIZZES_FILTER, MARKET_FILTER]
+    () => calculateFilterObj(quizzFilter, MARKET_FILTER),
+    [quizzFilter, MARKET_FILTER]
   );
   const [filter, setFilter] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -156,7 +125,7 @@ const Filter = ({ className, type }) => {
         </div>
         <div className={styles.filterWrapp}>
           <div className={styles.filter}>
-            {QUIZZES_FILTER.map((item, index) => {
+            {quizzFilter.map((item, index) => {
               return (
                 <div key={index} className={styles.item}>
                   <h4>{item.title}</h4>
@@ -164,6 +133,7 @@ const Filter = ({ className, type }) => {
                     return (
                       <div key={index + "hash"} className={styles.checkBox}>
                         <button type="button">
+                          
                           <label className={styles.checkBox__inner}>
                             <p className={styles.label}>{subItem.title}</p>
                             <input
@@ -180,6 +150,10 @@ const Filter = ({ className, type }) => {
                               }
                               onChange={(e) => {
                                 const checked = e.currentTarget.checked;
+                                filterChng(subItem.title)
+                                filtcategory(subItem.title)
+                                console.log(subItem.title , "movida")
+
                                 setSelectedProperties((prev) => ({
                                   ...prev,
                                   [item.title]: {
