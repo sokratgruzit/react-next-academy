@@ -10,11 +10,10 @@ import Pagination from "@/components/UI/Pagination/Pagination";
 import styles from "../../styles/Articles/ArticleIndex.module.scss";
 
 export const getStaticProps = async (context) => {
-  const {query}=context;
+  const { query } = context;
   const { data: articlesData } = await fetchData(
     `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles?limit=0`
   );
-
   return {
     props: { articlesData },
   };
