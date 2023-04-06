@@ -134,3 +134,22 @@ body:global(.light) .products {
     }
   }
 }
+
+
+
+//// finished
+
+.box { 
+  position: absolute;
+  width: 665px;
+  height: 222px;
+
+  .tlt { 
+    display: flex;
+  }
+
+  .paragrap { 
+    display: flex;
+  }
+}
+

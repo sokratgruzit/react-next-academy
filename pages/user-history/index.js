@@ -1,7 +1,7 @@
 import UserMainBoard from "../../components/UserHistory/UserMainBoard";
 import EarnedBadges from "../../components/UserHistory/EarnedBadges";
 import FinishedQuizzes from "../../components/UserHistory/FinishedQuizzes";
-
+import img from "../../public/img/UserHistory/badge2.png"
 const DUMMY_DATA = [
   {
     title: "Im here",
@@ -36,35 +36,35 @@ const QuizData = [
   {
     title: "Introduction to Superfluid: Stream money every second",
     p: "Tokenomics describes how a token's use affects its price. You will learn: - What are tokenomics? - What makes a token valuable? - The principles of tokenomics",
-    img: "img/History/img1.png",
+    img: "img/UserHistory/img1.png",
     vector: "/img/CommonComponents/courseQuizes/vector.svg",
     date: "12.4.2022",
   },
   {
     title: "Introduction to Superfluid: Stream money every second",
     p: "Tokenomics describes how a token's use affects its price. You will learn: - What are tokenomics? - What makes a token valuable? - The principles of tokenomics",
-    img: "img/History/img2.png",
+    img: "img/UserHistory/img2.png",
     vector: "/img/CommonComponents/courseQuizes/vector.svg",
     date: "12.4.2022",
   },
   {
     title: "Introduction to Superfluid: Stream money every second",
     p: "Tokenomics describes how a token's use affects its price. You will learn: - What are tokenomics? - What makes a token valuable? - The principles of tokenomics",
-    img: "img/History/img2.png",
+    img: "img/UserHistory/img1.png",
     vector: "/img/CommonComponents/courseQuizes/vector.svg",
     date: "12.4.2022",
   },
   {
     title: "Introduction to Superfluid: Stream money every second",
     p: "Tokenomics describes how a token's use affects its price. You will learn: - What are tokenomics? - What makes a token valuable? - The principles of tokenomics",
-    img: "img/History/img2.png",
+    img: "img/UserHistory/img2.png",
     vector: "/img/CommonComponents/courseQuizes/vector.svg",
     date: "12.4.2022",
   },
   {
     title: "Introduction to Superfluid: Stream money every second",
     p: "Tokenomics describes how a token's use affects its price. You will learn: - What are tokenomics? - What makes a token valuable? - The principles of tokenomics",
-    img: "img/History/img2.png",
+    img: "img/UserHistory/img1.png",
     vector: "/img/CommonComponents/courseQuizes/vector.svg",
     date: "12.4.2022",
   },
