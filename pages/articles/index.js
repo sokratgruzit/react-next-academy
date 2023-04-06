@@ -14,6 +14,7 @@ export const getStaticProps = async (context) => {
   const { data: articlesData } = await fetchData(
     `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles?limit=0`
   );
+
   return {
     props: { articlesData },
   };
@@ -23,6 +24,21 @@ const index = ({ articlesData }) => {
   const [articles, setArticles] = useState(null);
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(true);
+  //ან ეს რომელიც ლინკს აგდებს კონსოლში
+
+  // useEffect(() => {
+  //   console.log(window.location.href);
+  // }, []);
+
+  //ან ეს რომელიც იმას აჩვენებს რაც ემატება "localhost:3000-ს"
+
+  // console.log(router.asPath);
+
+  //ეს მარტო ბოლო სიტყვას ანუ კატეგორიას აჩვენებს
+  const url = router.asPath;
+  const urlArray = url.split("=");
+  const lastWord = urlArray.pop();
+  console.log(lastWord);
 
   const [paginationData, setPaginationData] = useState(
     !isLoading ? (
