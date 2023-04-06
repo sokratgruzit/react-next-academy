@@ -66,9 +66,7 @@ body:global(.light) .footer {
           align-items: center;
           gap: 20px; 
           .socialIcon {
-            // &svg path  {
-            // transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);
-            // }
+            transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);
             &:hover path {
               fill: $bg-hover-blue;
             }
