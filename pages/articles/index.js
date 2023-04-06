@@ -35,10 +35,19 @@ const index = ({ articlesData }) => {
   // console.log(router.asPath);
 
   //ეს მარტო ბოლო სიტყვას ანუ კატეგორიას აჩვენებს
-  const url = router.asPath;
-  const urlArray = url.split("=");
-  const lastWord = urlArray.pop();
-  console.log(lastWord);
+
+  let url = router.asPath;
+  if (url.length < 10) {
+    url = null;
+    console.log(url);
+  } else if (url.length > 10 || url.length == 10) {
+    const urlArray = url.split("=");
+    let lastWord = urlArray.pop();
+    console.log(lastWord);
+  }
+  // const urlArray = url.split("=");
+  // const lastWord = urlArray.pop();
+  // console.log(lastWord);
 
   const [paginationData, setPaginationData] = useState(
     !isLoading ? (
