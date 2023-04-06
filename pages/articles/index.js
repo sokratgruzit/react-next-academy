@@ -14,6 +14,7 @@ export const getStaticProps = async () => {
     `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles?limit=0`
   );
 
+
   return {
     props: { articlesData },
   };
@@ -47,6 +48,7 @@ const index = ({ articlesData }) => {
   const handleItemsPerPageChange = (event) => {
     setItemsPerPage(parseInt(event.target.value));
   };
+
 
   // const getData = async () => {
   //   if (!router.query.page)

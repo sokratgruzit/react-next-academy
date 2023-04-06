@@ -22,6 +22,7 @@ export const getStaticProps = async () => {
   const { data: category } = await fetchData(
     `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/category`
   );
+  
   const values = { glossaries };
   for (let i = 0; i < category?.length; i++) {
     let oneCategory = category[i];
@@ -277,6 +278,7 @@ function Home({
       </div>
     </div>
   );
+
 }
 
 export default Home;
