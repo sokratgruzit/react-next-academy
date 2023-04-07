@@ -27,10 +27,17 @@ body:global(.light) .aboutUser {
 
     .introduction {
       h5 {
-        font-size: 20px;
-        line-height: 22px;
-        color: #413eda;
         text-transform: capitalize;
+        font-size: 20px;
+        line-height: 110%;
+        letter-spacing: 0.1em;
+        background: linear-gradient(
+          90deg,
+          #0500ff 0%,
+          rgba(5, 0, 255, 0.3) 21.98%
+        );
+        background-clip: text;
+        color: transparent;
       }
       h1 {
         font-size: 51px;

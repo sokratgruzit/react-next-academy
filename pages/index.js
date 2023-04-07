@@ -67,7 +67,7 @@ function Home({
             btn={true}
             btnText={"Explore All"}
             href={`articles?category=${
-              featured?.docs ? featured?.docs[0]?.category?.slug : ""
+              featured?.docs?featured?.docs[0]?.category?.slug : ""
             }`}
             row={false}
             element={
@@ -97,7 +97,7 @@ function Home({
             btn={true}
             btnText={"Explore All"}
             href={`articles?category=${
-              releases?.docs ? releases?.docs[0]?.category?.slug : ""
+              releases?.docs?releases?.docs[0]?.category?.slug : ""
             }`}
             row={false}
             element={
@@ -280,6 +280,7 @@ function Home({
       </div>
     </div>
   );
+
 }
 
 export default Home;

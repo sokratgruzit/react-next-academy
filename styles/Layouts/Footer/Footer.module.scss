@@ -64,7 +64,7 @@ body:global(.light) .footer {
           padding-top: 20px;
           display: flex;
           align-items: center;
-          gap: 20px;
+          gap: 20px; 
           .socialIcon {
             transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);
             &:hover path {

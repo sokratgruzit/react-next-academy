@@ -31,6 +31,7 @@ export const getStaticProps = async (context) => {
     `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles/${slug}`
   );
 
+
   //this should work but we dont have any featured carts yet :)
   // const { data: featured } = await fetchData(
   //   `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles?category=62fb6bd0ab723fa8b038fcdf&limit=3`
