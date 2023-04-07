@@ -13,7 +13,6 @@ export const getStaticPaths = async () => {
   const articles = await fetchData(
     `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles?limit=0`
   );
-  console.log(articles);
   const paths = articles?.data?.map((item) => ({
     params: {
       slug: item?.slug,
@@ -31,6 +30,7 @@ export const getStaticProps = async (context) => {
   const {data:article} = await fetchData(
     `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles/${slug}`
   );
+
 
   //this should work but we dont have any featured carts yet :)
   // const { data: featured } = await fetchData(

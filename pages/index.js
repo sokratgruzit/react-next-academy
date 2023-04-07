@@ -16,23 +16,24 @@ import Button from "../components/UI/Button/Button";
 import styles from "../styles/Home/Home.module.scss";
 
 export const getStaticProps = async () => {
+  const time = Date.now();
   const { data: glossaries } = await fetchData(
     `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/glossaries?limit=3`
   );
-  const { data: category } = await fetchData(
-    `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/category`
+  const values = {glossaries};
+  let catData= await fetchData(
+    `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles?groupBy=category&limit=3`
   );
-  
-  const values = { glossaries };
-  for (let i = 0; i < category?.length; i++) {
-    let oneCategory = category[i];
-    let slug = oneCategory?.slug;
-    let catId = oneCategory?._id;
-    let catData = await fetchData(
-      `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles?category=${catId}&limit=3`
-    );
-    values[slug] = catData?.data;
+  for(let i=0; i<catData.data.length; i++){
+    let oneCategory = catData.data[i];
+    let slug = oneCategory?._id;
+    let topush = {
+      docs:oneCategory?.articles
+    }
+    values[slug]=topush;
   }
+  console.log(Date.now()-time);
+ 
   return {
     props: values,
   };
@@ -65,11 +66,11 @@ function Home({
             btn={true}
             btnText={"Explore All"}
             href={`articles?category=${
-              featured?.docs ? featured?.docs[0]?.category?.slug : ""
+              featured?.docs?featured?.docs[0]?.category?.slug : ""
             }`}
             row={false}
             element={
-              featured && featured.docs?.length ? (
+              featured?.docs && featured?.docs?.length ? (
                 <div className={styles.featured}>
                   <img
                     src="img/Bg/bg_999.png"
@@ -99,7 +100,7 @@ function Home({
             }`}
             row={false}
             element={
-              releases && releases.docs?.length ? (
+              releases?.docs && releases?.docs?.length ? (
                 <div className="container">
                   <Articles data={releases} />
                 </div>
@@ -115,7 +116,7 @@ function Home({
             href={"/glossary"}
             row={true}
             element={
-              glossaries && glossaries.result?.length ? (
+              glossaries?.docs && glossaries?.docs.result?.length ? (
                 <div className={styles.glossariesWrap}>
                   <img
                     className="img-absolute darkImg"
@@ -156,7 +157,7 @@ function Home({
             }`}
             row={false}
             element={
-              blockchain && blockchain.docs.length ? (
+              blockchain?.docs && blockchain?.docs.length ? (
                 <div className="container">
                   <Articles data={blockchain} title="Blockchain" />
                 </div>
@@ -229,7 +230,7 @@ function Home({
             }`}
             row={false}
             element={
-              essentials && essentials.docs.length ? (
+              essentials?.docs && essentials?.docs?.length ? (
                 <div className={styles.assentials}>
                   <img
                     src="img/Bg/bg_13.png"
@@ -254,7 +255,7 @@ function Home({
             }`}
             row={false}
             element={
-              security && security.docs.length ? (
+              security?.docs && security?.docs?.length ? (
                 <div className="container">
                   <Articles data={security} />
                 </div>
