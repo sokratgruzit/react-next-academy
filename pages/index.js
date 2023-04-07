@@ -1,4 +1,5 @@
 import { fetchData } from "@/utils/queries";
+import axios from "axios";
 import Link from "next/link";
 
 import Articles from "../components/Articles/Articles";
@@ -20,20 +21,20 @@ export const getStaticProps = async () => {
   const { data: glossaries } = await fetchData(
     `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/glossaries?limit=3`
   );
-  const values = {glossaries};
-  let catData= await fetchData(
+  const values = { glossaries };
+  let catData = await fetchData(
     `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles?groupBy=category&limit=3`
   );
-  for(let i=0; i<catData.data.length; i++){
+
+  for (let i = 0; i < catData?.data?.length; i++) {
     let oneCategory = catData.data[i];
     let slug = oneCategory?._id;
     let topush = {
-      docs:oneCategory?.articles
-    }
-    values[slug]=topush;
+      docs: oneCategory?.articles,
+    };
+    values[slug] = topush;
   }
-  console.log(Date.now()-time);
- 
+  console.log(Date.now() - time);
   return {
     props: values,
   };

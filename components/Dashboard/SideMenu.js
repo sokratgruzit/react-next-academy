@@ -223,7 +223,7 @@ const SideMenu = ({ showMenu, tab, handlerClick }) => {
                 })}
                 <p
                   className={styles.sidebarList}
-                  style={{ color: tab == item.id ? "blue" : null}}
+                  style={{ color: tab == item.id ? "blue" : null }}
                   id={item.id}
                 >
                   {item.list}
@@ -257,45 +257,47 @@ const SideMenu = ({ showMenu, tab, handlerClick }) => {
             Main Page
           </div>
         </Link>
-        {/* 
-        <div className={styles.bottomLogo}>
-        <h4 className={styles.bottomTitle}>Following</h4>
-        <div className={styles.icons}>
-          <div className={styles.lightIcons}>
-            <a
-              className={styles.socialIconLink}
-              href={"facebook.com"}
-              target="_blank"
-            >
-              <Facebook className={styles.socialIcon} />
-            </a>
-            <a
-              className={styles.socialIconLink}
-              href={"facebook.com"}
-              target="_blank"
-            >
-              <Twitter className={styles.socialIcon} />
-            </a>
-            <a
-              className={styles.socialIconLink}
-              href={"facebook.com"}
-              target="_blank"
-            >
-              <Linkedin className={styles.socialIcon} />
-            </a>
-            <a
-              className={styles.socialIconLink}
-              href={"facebook.com"}
-              target="_blank"
-            >
-              <GitHub className={styles.socialIcon} />
-            </a>
+
+        {!showMenu ? (
+          <div className={styles.bottomLogo}>
+            <h4 className={styles.bottomTitle}>Following</h4>
+            <div className={styles.icons}>
+              <div className={styles.lightIcons}>
+                <a
+                  className={styles.socialIconLink}
+                  href={"facebook.com"}
+                  target="_blank"
+                >
+                  <Facebook className={styles.socialIcon} />
+                </a>
+                <a
+                  className={styles.socialIconLink}
+                  href={"facebook.com"}
+                  target="_blank"
+                >
+                  <Twitter className={styles.socialIcon} />
+                </a>
+                <a
+                  className={styles.socialIconLink}
+                  href={"facebook.com"}
+                  target="_blank"
+                >
+                  <Linkedin className={styles.socialIcon} />
+                </a>
+                <a
+                  className={styles.socialIconLink}
+                  href={"facebook.com"}
+                  target="_blank"
+                >
+                  <GitHub className={styles.socialIcon} />
+                </a>
+              </div>
+            </div>
+            <div className={styles.copyrightbottom}>
+              © CORE Multi-Chain, 2022 All rights reserved
+            </div>
           </div>
-        </div>
-        <div className={styles.copyrightbottom}>
-          © CORE Multi-Chain, 2022 All rights reserved
-        </div>
-      </div> */}
+        ) : null}
       </div>
     </>
   );

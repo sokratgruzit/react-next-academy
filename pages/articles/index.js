@@ -10,7 +10,7 @@ import Pagination from "@/components/UI/Pagination/Pagination";
 import styles from "../../styles/Articles/ArticleIndex.module.scss";
 
 export const getStaticProps = async (context) => {
-  const {query}=context;
+  const { query } = context;
   const { data: articlesData } = await fetchData(
     `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles?limit=0`
   );
@@ -25,6 +25,30 @@ const index = ({ articlesData }) => {
   const [articles, setArticles] = useState(null);
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(true);
+  //ან ეს რომელიც ლინკს აგდებს კონსოლში
+
+  // useEffect(() => {
+  //   console.log(window.location.href);
+  // }, []);
+
+  //ან ეს რომელიც იმას აჩვენებს რაც ემატება "localhost:3000-ს"
+
+  // console.log(router.asPath);
+
+  //ეს მარტო ბოლო სიტყვას ანუ კატეგორიას აჩვენებს
+
+  let url = router.asPath;
+  if (url.length < 10) {
+    url = null;
+    console.log(url);
+  } else if (url.length > 10 || url.length == 10) {
+    const urlArray = url.split("=");
+    let lastWord = urlArray.pop();
+    console.log(lastWord);
+  }
+  // const urlArray = url.split("=");
+  // const lastWord = urlArray.pop();
+  // console.log(lastWord);
 
   const [paginationData, setPaginationData] = useState(
     !isLoading ? (
