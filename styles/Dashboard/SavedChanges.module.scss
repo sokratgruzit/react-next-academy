@@ -1,0 +1,64 @@
+.mainWrapper {
+  width: 100%;
+  .contentWrapper {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+
+    .invoiceWrapper {
+      display: flex;
+      position: relative;
+      background: #111826;
+      width: 20%;
+
+      .wrapper {
+        display: flex;
+        position: relative;
+        padding: 30px;
+        width: 100%;
+        .content {
+          width: 100%;
+          gap: 8px;
+          display: flex;
+          flex-direction: column;
+          .line {
+            width: 100%;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+            margin: 24px 0;
+          }
+          .place,
+          .edit {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+          }
+          .edit {
+            .gap {
+              height: 50%;
+              width: 1px;
+              background: #fff;
+            }
+          }
+          p {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 21px;
+          }
+        }
+        .add {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          gap: 16px;
+          width: 100%;
+          h4 {
+            font-size: 16px;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+  }
+}

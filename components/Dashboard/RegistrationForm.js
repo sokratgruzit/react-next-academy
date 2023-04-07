@@ -3,6 +3,7 @@ import { useState } from "react";
 import Input from "../UI/Input/Input";
 import SocialLinks from "./SocialLinks";
 import DropDown from "../UI/DropDown/DropDown";
+import SavedChanges from "./SavedChanges";
 
 import styles from "../../styles/Dashboard/RegistrationForm.module.scss";
 
@@ -145,10 +146,19 @@ const RegistrationForm = () => {
   const filteredCityOptions = cityOptions.filter(
     (option) => option.countryCode === selectedCountry
   );
+  const [inputValue, setInputValue] = useState("");
 
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
+  };
   return (
     <form className={styles.registrationForm} action="/api/form" method="post">
-      <Input type="input" data={REGITRATION_DATA} />
+      <Input
+        type="input"
+        data={REGITRATION_DATA}
+        value={inputValue}
+        onChange={handleInputChange}
+      />
       {/* <label className={styles.label}>Language</label>
       <DropDown zIndex="12" type="select" />
       <div className={styles.rowDropDowns}>
@@ -207,8 +217,18 @@ const RegistrationForm = () => {
           </label>
         </div>
       </div>
-      <Input type="input" data={ADDRESS_INFO} />
-      <Input type="textarea" data={ABOUT_ME} />
+      <Input
+        type="input"
+        data={ADDRESS_INFO}
+        value={inputValue}
+        onChange={handleInputChange}
+      />
+      <Input
+        type="textarea"
+        data={ABOUT_ME}
+        value={inputValue}
+        onChange={handleInputChange}
+      />
       <SocialLinks />
     </form>
   );
