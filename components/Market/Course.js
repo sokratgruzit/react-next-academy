@@ -4,7 +4,11 @@ import Button from "../UI/Button/Button";
 import Marquee from "react-fast-marquee";
 
 import styles from "../../styles/Market/Course.module.scss";
-import InstructorItem from "../Instructors/InstructorItem";
+// import InstructorItem from "../Instructors/InstructorItem";
+import Instructor from "./Instructor/Instructor";
+
+
+
 
 let instructorElements = (
   <>
@@ -131,6 +135,16 @@ let instructorElements = (
   </>
 );
 
+const Dummy_Data = [
+  {
+    name: "David Tavadze",
+    position: "Creative Director at TUX Creative Co, previously Locomotive.",
+    mail: "@sokratgruzit",
+    text: "He leads the digital team while staying a hands-on designer and creating brand narratives via interactive web experiences. When he's not working, Louis loves spending time in the outdoors with his canine crew: hiking, camping, climbing. He also shares his passion for the field by teaching Web Design classes in college." ,
+    img: "img/InstructorInnerProfile/instavatar.png"
+  }
+];
+
 function Course(elements) {
   return (
     <div>
@@ -167,7 +181,11 @@ function Course(elements) {
       <Marquee className={styles.inner} speed={100} loop={0} gradient={false}>
         {elements === "academyElements" ? academyElements : instructorElements}
       </Marquee>
-      <InstructorItem />
+      {/* <InstructorItem  /> */}
+      < Instructor  data={Dummy_Data}/>
+      <Marquee className={styles.inner} speed={100} loop={0} gradient={false}>
+        {elements === "academyElements" ? academyElements : instructorElements}
+      </Marquee>
     </div>
   );
 }
