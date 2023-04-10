@@ -1,3 +1,17 @@
+@import "../variables.scss";
 .bannerWrap {
   position: relative;
 }
+
+.bannerWrap div div div h3,
+body:global(.light) .bannerWrap div div div h3 {
+  @extend %largest;
+  text-align: center;
+  line-height: 60px;
+}
+
+body:global(.light) .bannerWrap div div div div a {
+  color: $c-dark;
+}
+
+

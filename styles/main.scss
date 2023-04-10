@@ -588,7 +588,6 @@ body.light .cornered-scat-item {
   }
 }
 
-
 //level
 body.light .lev-item {
   color: $c-dark;
@@ -1265,9 +1264,10 @@ td {
 
 .text h1 {
   @extend %largest;
-  text-align: left !important;
+  text-align: left;
   line-height: 61px;
   text-transform: capitalize;
+  color: $c-dark;
 }
 
 .text h2 {
@@ -2313,7 +2313,6 @@ body.light .textStyles ol {
   gap: 30px;
   margin: 0;
   padding: 0;
- 
 }
 
 body.light .textStyles ul li {

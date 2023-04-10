@@ -8,7 +8,6 @@ import CornerDecor from "../CornerDecor/CornerDecor";
 import styles from "./Filter.module.scss";
 import { log } from "util";
 
- 
 const MARKET_FILTER = [
   {
     title: "Level",
@@ -64,8 +63,8 @@ const MARKET_FILTER = [
 ];
 
 function calculateFilterObj(data) {
-  return data.reduce((acc, { title, items }) => {
-    acc[title] = items.reduce((subAcc, { title }) => {
+  return data?.reduce((acc, { title, items }) => {
+    acc[title] = items?.reduce((subAcc, { title }) => {
       subAcc[title] = false;
       return subAcc;
     }, {});
@@ -73,7 +72,7 @@ function calculateFilterObj(data) {
   }, {});
 }
 
-const Filter = ({ className, type, quizzFilter , filterChng , filtcategory }) => {
+const Filter = ({ className, type, quizzFilter, filterChng, filtcategory }) => {
   const filterObj = useMemo(
     () => calculateFilterObj(quizzFilter, MARKET_FILTER),
     [quizzFilter, MARKET_FILTER]
@@ -133,7 +132,6 @@ const Filter = ({ className, type, quizzFilter , filterChng , filtcategory }) =>
                     return (
                       <div key={index + "hash"} className={styles.checkBox}>
                         <button type="button">
-                          
                           <label className={styles.checkBox__inner}>
                             <p className={styles.label}>{subItem.title}</p>
                             <input
@@ -150,9 +148,9 @@ const Filter = ({ className, type, quizzFilter , filterChng , filtcategory }) =>
                               }
                               onChange={(e) => {
                                 const checked = e.currentTarget.checked;
-                                filterChng(subItem.title)
-                                filtcategory(subItem.title)
-                                console.log(subItem.title , "movida")
+                                filterChng(subItem.title);
+                                filtcategory(subItem.title);
+                                console.log(subItem.title, "movida");
 
                                 setSelectedProperties((prev) => ({
                                   ...prev,
