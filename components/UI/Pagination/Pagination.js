@@ -1,11 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import styles from "../../../styles/UI/Pagination/ItemsWrapper.module.scss";
 
 const Pagination = ({ type, paginationData, itemsPerPage }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [numPages, setNumPages] = useState(
-    Math.ceil(paginationData.length / itemsPerPage)
-  );
+  const [numPages, setNumPages] = useState(1);
+
+  useEffect(() => {
+    if (Array.isArray(paginationData)) {
+      setNumPages(Math.ceil(paginationData.length / itemsPerPage));
+    } else {
+      ("");
+      setNumPages(1);
+    }
+  }, [paginationData, itemsPerPage]);
 
   const handleClick = (page) => {
     setCurrentPage(page);
@@ -19,68 +27,54 @@ const Pagination = ({ type, paginationData, itemsPerPage }) => {
     setCurrentPage(currentPage + 1);
   };
 
-  const pages = [];
-  for (let i = 1; i <= numPages; i++) {
-    pages.push(i);
-  }
-
   const renderPageNumbers = () => {
     if (numPages <= 1) {
-      return pages.map((page) => (
-        <li key={page} className={currentPage === page ? styles.active : null}>
-          <button
-            className={`item ${page === currentPage ? "active" : ""}`}
-            onClick={() => handleClick(page)}
-          >
-            {page}
-          </button>
-        </li>
-      ));
-    } else {
-      const leftEnd = currentPage - 3 <= 0 ? 1 : currentPage - 3;
-      const rightEnd = currentPage + 1 >= numPages ? numPages : currentPage + 3;
-      const middlePages = [];
-      for (let i = leftEnd; i <= rightEnd; i++) {
-        middlePages.push(i);
-      }
-      return (
-        <>
-          <li>
-            <button
-              className={`item prev ${currentPage === 1 ? "disabled" : ""}`}
-              onClick={handlePrevClick}
-              disabled={currentPage === 1}
-            ></button>
-          </li>
-
-          {leftEnd > 2 && <li className="item">...</li>}
-          {middlePages.map((page) => (
-            <li
-              key={page}
-              className={currentPage === page ? styles.active : null}
-            >
-              <button
-                className={`item ${page === currentPage ? "active" : ""}`}
-                onClick={() => handleClick(page)}
-              >
-                {page}
-              </button>
-            </li>
-          ))}
-          {rightEnd < numPages - 1 && <li className="item">...</li>}
-
-          <li>
-            <button
-              className={`item next ${
-                numPages === currentPage ? "disabled" : ""
-              }`}
-              onClick={handleNextClick}
-              disabled={currentPage === numPages}
-            ></button>
-          </li>
-        </>
-      );
+      return null;
     }
+
+    const leftEnd = currentPage - 3 <= 0 ? 1 : currentPage - 3;
+    const rightEnd = currentPage + 3 >= numPages ? numPages : currentPage + 3;
+    const middlePages = [];
+    for (let i = leftEnd; i <= rightEnd; i++) {
+      middlePages.push(i);
+    }
+
+    const pageButtons = middlePages.map((page) => (
+      <li key={page} className={currentPage === page ? styles.active : null}>
+        <button
+          className={`item ${page === currentPage ? "active" : ""}`}
+          onClick={() => handleClick(page)}
+        >
+          {page}
+        </button>
+      </li>
+    ));
+
+    return (
+      <>
+        <li>
+          <button
+            className={`item prev ${currentPage === 1 ? "disabled" : ""}`}
+            onClick={handlePrevClick}
+            disabled={currentPage === 1}
+          ></button>
+        </li>
+
+        {leftEnd > 2 && <li className="item">...</li>}
+        {pageButtons}
+        {rightEnd < numPages - 1 && <li className="item">...</li>}
+
+        <li>
+          <button
+            className={`item next ${
+              currentPage === numPages ? "disabled" : ""
+            }`}
+            onClick={handleNextClick}
+            disabled={currentPage === numPages}
+          ></button>
+        </li>
+      </>
+    );
   };
 
   let currentItems = [];
@@ -90,39 +84,29 @@ const Pagination = ({ type, paginationData, itemsPerPage }) => {
     currentItems = paginationData.slice(indexOfFirstItem, indexOfLastItem);
   }
 
-  let element = null;
-
-  if (type === "default") {
-    element = (
-      <div>
-        <div className="container">
-          {currentItems.map((item, index) => {
-            return <div key={index}>{item}</div>;
-          })}
-        </div>
-        <ul className={`pagination ${styles.pagination}`}>
-          {renderPageNumbers()}
-        </ul>
+  return (
+    <div>
+      <div
+        className={`container ${type === "column" ? styles.articleList : ""}`}
+      >
+        {currentItems.map((item, index) => {
+          return <div key={index}>{item}</div>;
+        })}
       </div>
-    );
-  }
+      <ul className={`pagination ${styles.pagination}`}>
+        {renderPageNumbers()}
+      </ul>
+    </div>
+  );
+};
 
-  if (type === "column") {
-    element = (
-      <div>
-        <div className={`container ${styles.articleList}`}>
-          {currentItems.map((item, index) => {
-            return <div key={index}>{item}</div>;
-          })}
-        </div>
-        <ul className={`pagination ${styles.pagination}`}>
-          {renderPageNumbers()}
-        </ul>
-      </div>
-    );
-  }
-
-  return element;
+Pagination.propTypes = {
+  type: PropTypes.string,
+  paginationData: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
+    .isRequired,
+  itemsPerPage: PropTypes.number.isRequired,
+  onPageChange: PropTypes.func,
+  initialPage: PropTypes.number,
 };
 
 export default Pagination;

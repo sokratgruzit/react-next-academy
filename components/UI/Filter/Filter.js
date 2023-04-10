@@ -150,7 +150,6 @@ const Filter = ({ className, type, quizzFilter, filterChng, filtcategory }) => {
                                 const checked = e.currentTarget.checked;
                                 filterChng(subItem.title);
                                 filtcategory(subItem.title);
-                                console.log(subItem.title, "movida");
 
                                 setSelectedProperties((prev) => ({
                                   ...prev,

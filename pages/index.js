@@ -34,7 +34,7 @@ export const getStaticProps = async () => {
     };
     values[slug] = topush;
   }
-  console.log(Date.now() - time);
+  // console.log(Date.now() - time);
   return {
     props: values,
   };
