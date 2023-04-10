@@ -11,6 +11,7 @@ function Banner({
   dependency,
   placeholder,
   img,
+  img2,
   profileImg,
   container,
   questions,
@@ -105,6 +106,7 @@ function Banner({
             clasName="quizBtn"
             title={"Buy course for 65$"}
             type={"orange-btn"}
+            custumLink={{ color: "#fff" }}
           />
         </div>
       </div>
@@ -179,7 +181,7 @@ function Banner({
         <div className="lightImg">
           <img
             className={"img-absolute"}
-            src={`/img/Banner/lBg1.png`}
+            src={`/img/Banner/${img2}.png`}
             alt="bannerImage"
           />
         </div>

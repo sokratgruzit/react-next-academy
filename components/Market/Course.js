@@ -151,13 +151,15 @@ function Course(elements) {
           title={"check yourself in the quiz"}
           questions={"10 questions"}
           duration={"10 min"}
-          img={"coursesQuizz"}
+          img={"checkYourself"}
+          img2={"checkYourselfL"}
           clasName={"btn"}
           btn={
             <Button
               clasName="quizBtn"
               title={"Take a Quiz"}
               type={"transparent-btn"}
+              custumLink={{ color: "#fff" }}
             />
           }
         />

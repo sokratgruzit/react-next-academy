@@ -5,9 +5,9 @@ import Tabs from "@/components/UI/Tabs/Tabs";
 
 const tabs = [
   {
-    title: "Introduction",
+    label: "Introduction",
     content: (
-      <div>
+      <p>
         Motion design creates movement, excitement and adds life to otherwise
         static experiences. When it comes to digital environments, it not only
         creates delight but also serves strategic purposes such as brand
@@ -16,13 +16,13 @@ const tabs = [
         We will cover topics ranging from micro-interactions to full screen
         transitions as well as how to prepare, animate and export your
         animations in After Effects and Lottie.
-      </div>
+      </p>
     ),
   },
   {
-    title: "Welcome",
+    label: "Welcome",
     content: (
-      <div>
+      <p>
         Motion design creates movement, excitement and adds life to otherwise
         static experiences. When it comes to digital environments, it not only
         creates delight but also serves strategic purposes such as brand
@@ -31,39 +31,39 @@ const tabs = [
         We will cover topics ranging from micro-interactions to full screen
         transitions as well as how to prepare, animate and export your
         animations in After Effects and Lottie.
-      </div>
+      </p>
     ),
   },
   {
-    title: "Best Practices",
+    label: "Best Practices",
     content: (
-      <div>
+      <p>
         Motion design creates movement, excitement and adds life to otherwise
         static experiences. When it comes to digital environments, it not only
         creates delight but also serves strategic purposes such as brand
         expression.
-      </div>
+      </p>
     ),
   },
   {
-    title: "Lottie",
+    label: "Lottie",
     content: (
-      <div>
+      <p>
         Motion design creates movement, excitement and adds life to otherwise
         static experiences. Motion design creates movement, excitement and adds
         life to otherwise static experiences.
-      </div>
+      </p>
     ),
   },
   {
-    title: "Conclusion",
+    label: "Conclusion",
     content: (
-      <div>
+      <p>
         Motion design creates movement, excitement and adds life to otherwise
         static experiences. When it comes to digital environments, it not only
         creates delight but also serves strategic purposes such as brand
         expression, accessibility, information and guidance.
-      </div>
+      </p>
     ),
   },
 ];
@@ -141,7 +141,7 @@ function Video({ img, type }) {
                 </defs>
               </svg>
             </div>
-            <div>
+            <div className={styles.tabs}>
               <Tabs tabs={tabs} />
             </div>
           </div>

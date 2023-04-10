@@ -6,10 +6,14 @@ body:global(.light) .orangeBtn {
 }
 
 body:global(.light) .transparentBtn {
-  color: $c-dirty-grey !important;
+  a {
+    color: $c-dirty-grey !important;
+    &:hover {
+      color: $c-orange !important;
+    }
+  }
   border: 1px solid $c-dark;
   &:hover {
-    color: $c-orange !important;
     border: 1px solid $c-orange;
   }
 }
@@ -29,10 +33,13 @@ body:global(.light) .transparentBtn {
   // margin-top: 50px;
   border: 1px solid $c-white;
   border-radius: 4px;
+}
 
-  &:hover {
-    border: 1px solid $c-orange;
-    color: $c-orange;
+.transparentBtn:hover {
+  border: 1px solid $c-orange;
+
+  a {
+    color: $c-orange !important;
   }
 }
 
