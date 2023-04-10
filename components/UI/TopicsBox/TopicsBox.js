@@ -22,7 +22,7 @@ function TopicBox({ tags }) {
         }
       </div>
       <div className='bottom'>
-        <Link href='articles' className='see-all-btn'>
+        <Link href='/articles' className='see-all-btn'>
           <span>See All</span>
           <svg
             width='6'
