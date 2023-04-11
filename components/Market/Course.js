@@ -2,6 +2,8 @@ import Banner from "../UI/Banner/Banner";
 import Video from "./Video/Video";
 import Button from "../UI/Button/Button";
 import Marquee from "react-fast-marquee";
+import { COURSE_HELPER } from "../UI/Card/CourseHelper";
+import CourseCard from "../UI/Card/CourseCard";
 
 import styles from "../../styles/Market/Course.module.scss";
 // import InstructorItem from "../Instructors/InstructorItem";
@@ -216,6 +218,25 @@ function Course(elements) {
           alt="background"
           className={`img-absolute darkImg ${styles.stars}`}
         />
+      </div>
+      <div className="container">
+        <h4 className={styles.offeredCourses}>you may also like</h4>
+        <div className={styles.itemsWrapper}>
+          {COURSE_HELPER?.map((item, index) => {
+            return (
+              <CourseCard
+                key={index}
+                type={"row"}
+                img={item.img}
+                title={item.title}
+                price={item.price}
+                level={item.level}
+                lang={item.lang}
+                time={item.time}
+              />
+            );
+          })}
+        </div>
       </div>
     </div>
   );

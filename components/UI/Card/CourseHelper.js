@@ -11,6 +11,7 @@ export const COURSE_HELPER = [
     level: "beginner",
     category: "security",
     time: "8 min",
+    price: "free",
   },
   {
     id: 1,
@@ -24,6 +25,7 @@ export const COURSE_HELPER = [
     level: "Pro",
     category: "Crypto",
     time: "8 min",
+    price: "$19.00",
   },
   {
     id: 2,
@@ -37,6 +39,7 @@ export const COURSE_HELPER = [
     level: "beginner",
     category: "security",
     time: "8 min",
+    price: "$19.00",
   },
   {
     id: 3,
@@ -50,6 +53,7 @@ export const COURSE_HELPER = [
     level: "Pro",
     category: "Crypto",
     time: "8 min",
+    price: "free",
   },
   {
     id: 4,
@@ -63,6 +67,7 @@ export const COURSE_HELPER = [
     level: "Pro",
     category: "Crypto",
     time: "8 min",
+    price: "$19.00",
   },
   {
     id: 5,
@@ -76,6 +81,7 @@ export const COURSE_HELPER = [
     level: "Pro",
     category: "Crypto",
     time: "8 min",
+    price: "$19.00",
   },
   {
     id: 6,
@@ -89,6 +95,7 @@ export const COURSE_HELPER = [
     level: "Pro",
     category: "Crypto",
     time: "8 min",
+    price: "free",
   },
 ];
 

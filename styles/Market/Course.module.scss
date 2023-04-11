@@ -10,7 +10,6 @@
   }
 }
 
-
 .bannerWrap div div div h3,
 body:global(.light) .bannerWrap div div div h3 {
   @extend %largest;
@@ -22,4 +21,35 @@ body:global(.light) .bannerWrap div div div div a {
   color: $c-dark;
 }
 
+.offeredCourses {
+  font-size: 30px;
+  line-height: 40px;
+  margin: 82px auto 55px auto;
+  display: flex;
+  justify-content: center;
+}
 
+.itemsWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 150px;
+}
+.bannerWrap div div div h5 {
+  -webkit-text-stroke: 1px #ff7152;
+  // text-stroke: 1px #ff7152;
+  color: rgba(255, 113, 82, 0.1);
+  text-shadow: 0px 0px 110px #ff7152;
+  font-size: 51px;
+  line-height: 68px;
+}
+@media (max-width: 1023px) {
+  .itemsWrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 767px) {
+  .itemsWrapper {
+    grid-template-columns: 1fr;
+  }
+}
