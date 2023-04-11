@@ -7,9 +7,6 @@ import styles from "../../styles/Market/Course.module.scss";
 // import InstructorItem from "../Instructors/InstructorItem";
 import Instructor from "./Instructor/Instructor";
 
-
-
-
 let instructorElements = (
   <>
     <svg
@@ -140,9 +137,9 @@ const Dummy_Data = [
     name: "David Tavadze",
     position: "Creative Director at TUX Creative Co, previously Locomotive.",
     mail: "@sokratgruzit",
-    text: "He leads the digital team while staying a hands-on designer and creating brand narratives via interactive web experiences. When he's not working, Louis loves spending time in the outdoors with his canine crew: hiking, camping, climbing. He also shares his passion for the field by teaching Web Design classes in college." ,
-    img: "img/InstructorInnerProfile/instavatar.png"
-  }
+    text: "He leads the digital team while staying a hands-on designer and creating brand narratives via interactive web experiences. When he's not working, Louis loves spending time in the outdoors with his canine crew: hiking, camping, climbing. He also shares his passion for the field by teaching Web Design classes in college.",
+    img: "img/InstructorInnerProfile/instavatar.png",
+  },
 ];
 
 function Course(elements) {
@@ -177,15 +174,47 @@ function Course(elements) {
             />
           }
         />
+         <img
+              src="/img/Banner/bigStars.svg"
+              alt="background"
+              className={`img-absolute darkImg ${styles.stars}`}
+            />
       </div>
       <Marquee className={styles.inner} speed={100} loop={0} gradient={false}>
         {elements === "academyElements" ? academyElements : instructorElements}
       </Marquee>
       {/* <InstructorItem  /> */}
-      < Instructor  data={Dummy_Data}/>
+      <Instructor data={Dummy_Data} />
       <Marquee className={styles.inner} speed={100} loop={0} gradient={false}>
         {elements === "academyElements" ? academyElements : instructorElements}
       </Marquee>
+      <div className={styles.bannerWrap}>
+        <Banner
+          container={"simple-wrap"}
+          type={"simple"}
+          dependency={"challange"}
+          title={"introducing to programming with python and java"}
+          teaser={
+            "65$"
+          }
+          img={"banner"}
+          clasName={"btn"}
+          btn={
+            <Button
+              clasName="quizBtn"
+              title={"Buy Course"}
+              type={"orange-btn"}
+              custumLink={{ color: "#fff" }}
+              customStyles={{ padding: "18px 64px" }}
+            />
+          }
+        />
+              <img
+              src="/img/Banner/stars.svg"
+              alt="background"
+              className={`img-absolute darkImg ${styles.stars}`}
+            />
+      </div>
     </div>
   );
 }

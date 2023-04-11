@@ -1,7 +1,15 @@
 @import "../variables.scss";
 .bannerWrap {
   position: relative;
+  .stars {
+    mix-blend-mode: color-dodge;
+    // width: 100%;
+    // height: 100%;
+    top: -15%;
+    min-height: 500px;
+  }
 }
+
 
 .bannerWrap div div div h3,
 body:global(.light) .bannerWrap div div div h3 {
