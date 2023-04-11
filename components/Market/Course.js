@@ -219,7 +219,7 @@ function Course(elements) {
           className={`img-absolute darkImg ${styles.stars}`}
         />
       </div>
-      <div className="container">
+      <div className="container textStyles">
         <h4 className={styles.offeredCourses}>you may also like</h4>
         <div className={styles.itemsWrapper}>
           {COURSE_HELPER?.map((item, index) => {

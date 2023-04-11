@@ -10,12 +10,10 @@
     object-fit: contain;
   }
   .bigStar {
-    width: 54%;
-    height: 59%;
-    left: 31%;
     object-fit: contain;
-    top: 20%;
-    transform: scale(1.5);
+    width: 90%;
+    left: 5%;
+    top: 3%;
   }
 }
 
@@ -45,6 +43,14 @@ body:global(.light) .bannerWrap div div div div a {
   margin-bottom: 150px;
 }
 .bannerWrap div div div h5 {
+  -webkit-text-stroke: 1px #ff7152;
+  // text-stroke: 1px #ff7152;
+  color: rgba(255, 113, 82, 0.1);
+  text-shadow: 0px 0px 110px #ff7152;
+  font-size: 51px;
+  line-height: 68px;
+}
+body:global(.light) .bannerWrap div div div h5 {
   -webkit-text-stroke: 1px #ff7152;
   // text-stroke: 1px #ff7152;
   color: rgba(255, 113, 82, 0.1);

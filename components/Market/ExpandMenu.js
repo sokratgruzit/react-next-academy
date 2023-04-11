@@ -45,7 +45,7 @@ function ExpandMenu() {
   };
 
   return (
-    <div className={styles.expandMenu}>
+    <div className={`textStyles ${styles.expandMenu} `}>
       <div className={styles.title}>
         <div className="darkImg">
           <img src="/img/MarketPlace/expandBg.png" alt="" />
