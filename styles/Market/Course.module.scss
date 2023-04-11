@@ -19,6 +19,10 @@
   }
 }
 
+.bannerWrap div div div h3 {
+ width: 80%;
+}
+
 .bannerWrap div div div h3,
 body:global(.light) .bannerWrap div div div h3 {
   @extend %largest;
@@ -56,9 +60,20 @@ body:global(.light) .bannerWrap div div div div a {
   .itemsWrapper {
     grid-template-columns: 1fr 1fr;
   }
+
+  .bannerWrap div div div h3 {
+    width: 90%;
+   }
 }
 @media (max-width: 767px) {
   .itemsWrapper {
     grid-template-columns: 1fr;
   }
+  .bannerWrap div div div h3 {
+    width: 100%;
+   }
 }
+
+
+
+
