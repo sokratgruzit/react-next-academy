@@ -189,6 +189,9 @@ function Course(elements) {
       <Marquee className={styles.inner} speed={100} loop={0} gradient={false}>
         {elements === "academyElements" ? academyElements : instructorElements}
       </Marquee>
+      <div className="container">
+        <ExpandMenu />
+      </div>
       <div className={styles.bannerWrap}>
         <Banner
           container={"simple-wrap"}
@@ -213,9 +216,6 @@ function Course(elements) {
           alt="background"
           className={`img-absolute darkImg ${styles.stars}`}
         />
-      </div>
-      <div className="container">
-        <ExpandMenu />
       </div>
     </div>
   );
