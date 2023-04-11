@@ -178,9 +178,9 @@ function Course(elements) {
           }
         />
         <img
-          src="/img/Banner/bigStars.svg"
+          src="/img/Banner/singleBigStars.png"
           alt="background"
-          className={`img-absolute darkImg ${styles.stars}`}
+          className={`img-absolute darkImg ${styles.bigStar}`}
         />
       </div>
       <Marquee className={styles.inner} speed={100} loop={0} gradient={false}>
