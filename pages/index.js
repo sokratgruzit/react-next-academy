@@ -110,7 +110,7 @@ function Home({
               )
             }
           />
-          <ContentWrap
+          {/* <ContentWrap
             title={"270+ Terms in our Glossary"}
             btn={true}
             btnText={"Go to the Glossary"}
@@ -118,6 +118,39 @@ function Home({
             row={true}
             element={
               glossaries?.docs && glossaries?.docs.result?.length ? (
+                <div className={styles.glossariesWrap}>
+                  <img
+                    className="img-absolute darkImg"
+                    src="/img/Glossaries/background1.png"
+                    alt="background"
+                  />
+                  <img
+                    className={`darkImg ${styles.dodgeColor}`}
+                    src="img/Bg/stars.svg"
+                    alt="background"
+                  />
+                  <img
+                    className="img-absolute lightImg"
+                    src="/img/Glossaries/bgL.png"
+                    alt="background"
+                  />
+                  <div className={`container ${styles.glossaryFlex}`}>
+                    <GlossaryCard quantity={"2"} data={glossaries} />
+                  </div>
+                </div>
+              ) : (
+                ""
+              )
+            }
+          /> */}
+          <ContentWrap
+            title={"270+ Terms in our Glossary"}
+            btn={true}
+            btnText={"Go to the Glossary"}
+            href={"/glossary"}
+            row={true}
+            element={
+              glossaries && glossaries.result?.length ? (
                 <div className={styles.glossariesWrap}>
                   <img
                     className="img-absolute darkImg"

@@ -13,22 +13,22 @@ const FORM_DATA = [
     label: "Name",
   },
   {
-    type: "text",
+    type: "email",
     placeholder: "Type e-mail address",
     label: "Email address",
   },
   {
-    type: "text",
+    type: "tel",
     placeholder: "Enter your phone number",
     label: "Phone number",
   },
   {
-    type: "text",
+    type: "password",
     placeholder: "Enter password",
     label: "Password",
   },
   {
-    type: "text",
+    type: "password",
     placeholder: "Confirm password",
     label: "Confirm password",
   },
@@ -54,12 +54,14 @@ const InstructorRegistration = () => {
     setActive(true);
   };
 
+  const checkHandler = () => {
+    setCheck(!check);
+  };
+
   setTimeout(() => {
     setActive(false);
   }, "1200");
 
-  // const checkHandler = () => {
-  // };
   return (
     <div className={`${styles.mainBoxInstructor} `}>
       <div className={`${"contact container"} ${styles.box} ${"textStyles"}`}>
