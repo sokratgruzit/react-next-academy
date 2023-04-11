@@ -202,6 +202,7 @@ function Course(elements) {
           title={"introducing to programming with python and java"}
           teaser={"65$"}
           img={"banner"}
+          img2={"lightBanner"}
           clasName={"btn"}
           btn={
             <Button

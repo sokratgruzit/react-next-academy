@@ -34,6 +34,15 @@ body:global(.light) .bannerWrap div div div div a {
   color: $c-dark;
 }
 
+body:global(.light) .bannerWrap  {
+  .stars {
+    opacity: 0.6;
+  }
+  .bigStar{
+    opacity: 1;
+  }
+}
+
 .offeredCourses {
   font-size: 30px;
   line-height: 40px;
