@@ -17,6 +17,10 @@
   }
 }
 
+.bannerWrap div div div h3 {
+ width: 80%;
+}
+
 .bannerWrap div div div h3,
 body:global(.light) .bannerWrap div div div h3 {
   @extend %largest;
@@ -26,6 +30,15 @@ body:global(.light) .bannerWrap div div div h3 {
 
 body:global(.light) .bannerWrap div div div div a {
   color: $c-dark;
+}
+
+body:global(.light) .bannerWrap  {
+  .stars {
+    opacity: 0.6;
+  }
+  .bigStar{
+    opacity: 1;
+  }
 }
 
 .offeredCourses {
@@ -62,9 +75,20 @@ body:global(.light) .bannerWrap div div div h5 {
   .itemsWrapper {
     grid-template-columns: 1fr 1fr;
   }
+
+  .bannerWrap div div div h3 {
+    width: 90%;
+   }
 }
 @media (max-width: 767px) {
   .itemsWrapper {
     grid-template-columns: 1fr;
   }
+  .bannerWrap div div div h3 {
+    width: 100%;
+   }
 }
+
+
+
+
