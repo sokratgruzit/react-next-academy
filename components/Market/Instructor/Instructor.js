@@ -1,11 +1,11 @@
 import CornerDecor from "@/components/UI/CornerDecor/CornerDecor";
-import styles from  "../../../styles/Instructors/Instructor.module.scss"
+import styles from  "../../../styles/Market/Instructor.module.scss"
 
 
 
 const Instructor = ({ data }) => {
   return (
-    <div className={`${"textStyles"} ${"container"} `}>
+    <div className={`${"textStyles"} ${"container"}`}>
       {data &&
         data?.map((item, index) => {
           return (

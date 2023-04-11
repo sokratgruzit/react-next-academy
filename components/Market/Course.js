@@ -175,6 +175,11 @@ function Course(elements) {
             />
           }
         />
+        <img
+          src="/img/Banner/bigStars.svg"
+          alt="background"
+          className={`img-absolute darkImg ${styles.stars}`}
+        />
       </div>
       <Marquee className={styles.inner} speed={100} loop={0} gradient={false}>
         {elements === "academyElements" ? academyElements : instructorElements}
@@ -184,6 +189,31 @@ function Course(elements) {
       <Marquee className={styles.inner} speed={100} loop={0} gradient={false}>
         {elements === "academyElements" ? academyElements : instructorElements}
       </Marquee>
+      <div className={styles.bannerWrap}>
+        <Banner
+          container={"simple-wrap"}
+          type={"simple"}
+          dependency={"challange"}
+          title={"introducing to programming with python and java"}
+          teaser={"65$"}
+          img={"banner"}
+          clasName={"btn"}
+          btn={
+            <Button
+              clasName="quizBtn"
+              title={"Buy Course"}
+              type={"orange-btn"}
+              custumLink={{ color: "#fff" }}
+              customStyles={{ padding: "18px 64px" }}
+            />
+          }
+        />
+        <img
+          src="/img/Banner/stars.svg"
+          alt="background"
+          className={`img-absolute darkImg ${styles.stars}`}
+        />
+      </div>
       <div className="container">
         <ExpandMenu />
       </div>
