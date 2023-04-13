@@ -7,6 +7,7 @@ import { data } from "../Card/helper";
 
 import "swiper/css";
 import styles from "../../../styles/UI/TrendingQuiz/TrendingQuiz.module.scss";
+import Marquee from "react-fast-marquee";
 
 const TrendingQuiz = (props) => {
   return (
@@ -64,6 +65,7 @@ const TrendingQuiz = (props) => {
           </div>
         </Swiper>
       </div>
+      
     </div>
   );
 };

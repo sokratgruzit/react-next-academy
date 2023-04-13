@@ -33,6 +33,7 @@ const SwiperWrapper = ({ children, ...props }) => {
         <SwiperSlide key={index}>{child}</SwiperSlide>
       ))}
     </Swiper>
+    
   );
 };
 

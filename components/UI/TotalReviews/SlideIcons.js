@@ -7,7 +7,7 @@ export default function SlideIcons(props) {
     <div>
       <button
         style={{ marginRight: "20px" }}
-        onClick={() => swiper.slidePrev()}
+        onClick={() => swiper?.slidePrev()}
       >
         <svg
           style={props.customStyles}
@@ -31,7 +31,7 @@ export default function SlideIcons(props) {
           />
         </svg>
       </button>
-      <button onClick={() => swiper.slideNext()}>
+      <button onClick={() => swiper?.slideNext()}>
         <svg
           style={props.customStyles}
           width="14"
@@ -54,6 +54,7 @@ export default function SlideIcons(props) {
           />
         </svg>
       </button>
+      
     </div>
   );
 }

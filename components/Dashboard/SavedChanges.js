@@ -18,7 +18,7 @@ function SavedChanges({ invoice }) {
     },
   ];
   return (
-    <div className={styles.mainWrapper}>
+    <div className={`${styles.mainWrapper} textStyles`}>
       <RelatedThemes title="Edit your personal info" />
       <div className={styles.contentWrapper}>
         <div className={styles.invoiceWrapper}>

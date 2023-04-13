@@ -1,3 +1,4 @@
+import Button from "@/components/UI/Button/Button";
 import React from "react";
 import styles from "./QuizButton.module.scss";
 

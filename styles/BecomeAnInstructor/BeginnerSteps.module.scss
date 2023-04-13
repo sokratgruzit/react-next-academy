@@ -5,6 +5,11 @@ body:global(.light) .title {
   color: $c-dark;
 }
 
+body:global(.light) .title {
+  line-height: 48px !important;
+  font-size: 30px !important;
+}
+
 body:global(.light) .num {
   background: none !important;
 }

@@ -183,7 +183,7 @@ const PurchaseHistory = () => {
   const [invoice, setInvoice] = useState(false);
 
   return (
-    <>
+    <div className="textStyles">
       {invoice ? (
         <PurchaseHistoryInvoice invoice={() => setInvoice(false)} />
       ) : (
@@ -193,7 +193,8 @@ const PurchaseHistory = () => {
             {DATA_H.map((item, index) => {
               return (
                 <div className={styles.purchaseHeaders} key={index}>
-                  {item.title}
+                  <h5>{item.title}</h5>
+
                   {item.svg}
                 </div>
               );
@@ -233,7 +234,7 @@ const PurchaseHistory = () => {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

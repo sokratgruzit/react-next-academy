@@ -110,39 +110,7 @@ function Home({
               )
             }
           />
-          {/* <ContentWrap
-            title={"270+ Terms in our Glossary"}
-            btn={true}
-            btnText={"Go to the Glossary"}
-            href={"/glossary"}
-            row={true}
-            element={
-              glossaries?.docs && glossaries?.docs.result?.length ? (
-                <div className={styles.glossariesWrap}>
-                  <img
-                    className="img-absolute darkImg"
-                    src="/img/Glossaries/background1.png"
-                    alt="background"
-                  />
-                  <img
-                    className={`darkImg ${styles.dodgeColor}`}
-                    src="img/Bg/stars.svg"
-                    alt="background"
-                  />
-                  <img
-                    className="img-absolute lightImg"
-                    src="/img/Glossaries/bgL.png"
-                    alt="background"
-                  />
-                  <div className={`container ${styles.glossaryFlex}`}>
-                    <GlossaryCard quantity={"2"} data={glossaries} />
-                  </div>
-                </div>
-              ) : (
-                ""
-              )
-            }
-          /> */}
+
           <ContentWrap
             title={"270+ Terms in our Glossary"}
             btn={true}
@@ -167,7 +135,7 @@ function Home({
                     src="/img/Glossaries/glossLight.png"
                     alt="background"
                   />
-                    <img
+                  <img
                     className={`img-absolute lightImg ${styles.dodgeColor}`}
                     src="img/Banner/stars.svg"
                     alt="background"
@@ -181,19 +149,15 @@ function Home({
               )
             }
           />
-           <div className={styles.challenge}>
-          <Banner
-            container={"simple-wrap"}
-            type={"coming-soon"}
-            img={"comingSoon"}
-            title={"Courses"}
-          />
-             <img
-              src="/img/Banner/lBg1.png"
-              alt="background"
-              className="img-absolute lightImg"
+          <div className={styles.challenge}>
+            <Banner
+              container={"simple-wrap"}
+              type={"coming-soon"}
+              img={"comingSoon"}
+              title={"Courses"}
+              img2={"lBg1"}
             />
-             </div>
+          </div>
           <ContentWrap
             title={"Blockchain"}
             btn={true}
@@ -222,6 +186,7 @@ function Home({
                 "Test Your Knowledge While You Learn With Our Range Of Quizzes."
               }
               img={"quizBg"}
+              img2={"lBg1"}
               clasName={"btn"}
               btn={
                 <Button
@@ -237,11 +202,6 @@ function Home({
               src="/img/Banner/lastBigStar.svg"
               alt="background"
               className={`img-absolute darkImg ${styles.bigStars}`}
-            />
-              <img
-              src="/img/Banner/lBg1.png"
-              alt="background"
-              className="img-absolute lightImg"
             />
           </div>
           <ContentWrap
@@ -317,22 +277,18 @@ function Home({
           />
           <Ticker elements={"academyElements"} />
           <div className={styles.email}>
-          <Banner
-            container={"simple-wrap"}
-            type={"simple"}
-            dependency={"email"}
-            title={"Keep Up To Date — Get E-Mail Updates"}
-            teaser={"Stay Tuned For The Latest Company News."}
-            placeholder={"name@example.com"}
-            img={"contactBg"}
-            btn={<Button onClick={onClick} />}
-          />
-              <img
-              src="/img/Banner/quizLight.png"
-              alt="background"
-              className="img-absolute lightImg"
+            <Banner
+              container={"simple-wrap"}
+              type={"simple"}
+              dependency={"email"}
+              title={"Keep Up To Date — Get E-Mail Updates"}
+              teaser={"Stay Tuned For The Latest Company News."}
+              placeholder={"name@example.com"}
+              img={"contactBg"}
+              img2={"quizLight"}
+              btn={<Button onClick={onClick} />}
             />
-            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -133,33 +133,33 @@ body.light .container-sm,
   margin: 0 auto;
 }
 
-@media (max-width: 1900px) {
-  body.light .container,
-  .container {
-    padding: 0px 40px;
-  }
-}
+// @media (max-width: 1900px) {
+//   body.light .container,
+//   .container {
+//     padding: 0px 40px;
+//   }
+// }
 
-@media (max-width: 1365px) {
-  body.light .container,
-  .container {
-    padding: 0px 40px;
-  }
-}
+// @media (max-width: 1365px) {
+//   body.light .container,
+//   .container {
+//     padding: 0px 40px;
+//   }
+// }
 
-@media (max-width: 1023px) {
-  body.light .container,
-  .container {
-    padding: 0px 32px;
-  }
-}
+// @media (max-width: 1023px) {
+//   body.light .container,
+//   .container {
+//     padding: 0px 32px;
+//   }
+// }
 
-@media (max-width: 767px) {
-  body.light .container,
-  .container {
-    padding: 0px 16px;
-  }
-}
+// @media (max-width: 767px) {
+//   body.light .container,
+//   .container {
+//     padding: 0px 16px;
+//   }
+// }
 
 //themes
 .switcher {
@@ -2496,6 +2496,13 @@ body.light .bottomLevel {
 }
 
 //end of switcher
+body.light .aligning {
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(211, 222, 245, 0.5) 0%,
+    rgba(211, 222, 245, 0) 100%
+  );
+}
 
 .aligning {
   width: 80%;

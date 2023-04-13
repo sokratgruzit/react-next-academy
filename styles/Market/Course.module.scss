@@ -1,4 +1,10 @@
 @import "../variables.scss";
+body:global(.light) .customWrap div div div div {
+  color: $c-dark;
+}
+body:global(.light) .customWrap div div div div svg path {
+  fill: $c-dark;
+}
 .bannerWrap {
   position: relative;
   .stars {
@@ -18,7 +24,7 @@
 }
 
 .bannerWrap div div div h3 {
- width: 80%;
+  width: 80%;
 }
 
 .bannerWrap div div div h3,
@@ -32,11 +38,11 @@ body:global(.light) .bannerWrap div div div div a {
   color: $c-dark;
 }
 
-body:global(.light) .bannerWrap  {
+body:global(.light) .bannerWrap {
   .stars {
     opacity: 0.6;
   }
-  .bigStar{
+  .bigStar {
     opacity: 1;
   }
 }
@@ -78,7 +84,7 @@ body:global(.light) .bannerWrap div div div h5 {
 
   .bannerWrap div div div h3 {
     width: 90%;
-   }
+  }
 }
 @media (max-width: 767px) {
   .itemsWrapper {
@@ -86,9 +92,5 @@ body:global(.light) .bannerWrap div div div h5 {
   }
   .bannerWrap div div div h3 {
     width: 100%;
-   }
+  }
 }
-
-
-
-

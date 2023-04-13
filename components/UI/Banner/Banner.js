@@ -194,19 +194,26 @@ function Banner({
       <div className={`${styles.banner} ${styles.custom}`}>
         <div className="darkImg">
           <img
-            className={`${"img-absolute"} ${styles.challengeHeight}`}
+            className={`${"img-absolute"} ${styles.challengeHeight} `}
             src={`/img/Banner/${img}.png`}
             alt="bannerImage"
           />
         </div>
         <div className="lightImg">
           <img
+            className={`${"img-absolute"} ${styles.challengeHeight} lightImg`}
+            src={`/img/Banner/${img2}.png`}
+            alt="bannerImage"
+          />
+        </div>
+        {/* <div className="lightImg">
+          <img
             className={"img-absolute"}
             src={`/img/Banner/lBg1.png`}
             alt="bannerImage"
           />
-        </div>
-        <div className="container">{element}</div>
+        </div> */}
+        <div className="container textStyles">{element}</div>
       </div>
     ));
   return wrap;

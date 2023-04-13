@@ -1,10 +1,11 @@
 @import "../variables.scss";
 
-body:global(.light) .paragraphDml,
 body:global(.light) .paragraphBig {
   color: $c-dark;
 }
-
+body:global(.light) .headBackgroundWrap .head .paragraphSml {
+  color: $c-dark;
+}
 body:global(.light) .bgL {
   opacity: 1;
 }

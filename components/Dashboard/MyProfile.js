@@ -32,7 +32,7 @@ function MyProfile({ type, title, onClick, customStyles }) {
                 return (
                   <div className={styles.purchaseContent} key={index}>
                     <button
-                      style={{ width: "100%" }}
+                      style={{ width: "100%", color: "#fff" }}
                       className="blue-btn"
                       onClick={() => setInvoice(true)}
                     >

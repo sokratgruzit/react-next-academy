@@ -68,15 +68,20 @@ const tabs = [
   },
 ];
 
-function Video({ img, type }) {
+function Video({ img, type, img2 }) {
   let video = null;
 
   type === "video" &&
     (video = (
       <div className={`${styles.wrap} container`}>
         <img
-          className={styles.bg}
+          className={`${styles.bg} darkImg`}
           src={`/img/Marketplace/${img}.png`}
+          alt="background image"
+        />
+        <img
+          className={`${styles.bg} lightImg`}
+          src={`/img/Marketplace/${img2}.png`}
           alt="background image"
         />
         <div className={styles.flex}>
