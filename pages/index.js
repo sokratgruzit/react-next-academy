@@ -81,7 +81,7 @@ function Home({
                   <img
                     src="img/Bg/bg_998.png"
                     alt="background"
-                    className="img-absolute lightImg"
+                    className={`img-absolute lightImg ${styles.featuredBg}`}
                   />
                   <div className="container">
                     <Articles data={featured} />
@@ -158,13 +158,18 @@ function Home({
                     alt="background"
                   />
                   <img
-                    className={`darkImg ${styles.dodgeColor}`}
-                    src="img/Bg/stars.svg"
+                    className={`img-absolute darkImg ${styles.dodgeColor}`}
+                    src="img/Banner/stars.svg"
                     alt="background"
                   />
                   <img
                     className="img-absolute lightImg"
-                    src="/img/Glossaries/bgL.png"
+                    src="/img/Glossaries/glossLight.png"
+                    alt="background"
+                  />
+                    <img
+                    className={`img-absolute lightImg ${styles.dodgeColor}`}
+                    src="img/Banner/stars.svg"
                     alt="background"
                   />
                   <div className={`container ${styles.glossaryFlex}`}>
@@ -176,12 +181,19 @@ function Home({
               )
             }
           />
+           <div className={styles.challenge}>
           <Banner
             container={"simple-wrap"}
             type={"coming-soon"}
             img={"comingSoon"}
             title={"Courses"}
           />
+             <img
+              src="/img/Banner/lBg1.png"
+              alt="background"
+              className="img-absolute lightImg"
+            />
+             </div>
           <ContentWrap
             title={"Blockchain"}
             btn={true}
@@ -225,6 +237,11 @@ function Home({
               src="/img/Banner/lastBigStar.svg"
               alt="background"
               className={`img-absolute darkImg ${styles.bigStars}`}
+            />
+              <img
+              src="/img/Banner/lBg1.png"
+              alt="background"
+              className="img-absolute lightImg"
             />
           </div>
           <ContentWrap
@@ -299,6 +316,7 @@ function Home({
             }
           />
           <Ticker elements={"academyElements"} />
+          <div className={styles.email}>
           <Banner
             container={"simple-wrap"}
             type={"simple"}
@@ -309,6 +327,12 @@ function Home({
             img={"contactBg"}
             btn={<Button onClick={onClick} />}
           />
+              <img
+              src="/img/Banner/quizLight.png"
+              alt="background"
+              className="img-absolute lightImg"
+            />
+            </div>
         </div>
       </div>
     </div>

@@ -50,7 +50,7 @@ function Settings() {
           <Button
             clasName="blue-btn"
             title={"save changes"}
-            onClick={onClick}
+            // onClick={onClick}
             type={"blue-btn"}
             custumLink={{ color: "#fff" }}
             // href={"/"}
