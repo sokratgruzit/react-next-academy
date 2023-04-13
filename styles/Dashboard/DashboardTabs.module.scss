@@ -1,3 +1,7 @@
+body:global(.light) .burgerMenu {
+  //  background-color: #ebedf0;
+}
+
 .viewContent {
   width: calc(100% - 275px);
   margin-left: 275px;
@@ -12,6 +16,7 @@
   overflow: hidden;
   width: 275px;
   transition: 0.6s;
+  margin-top: -8px;
 }
 
 .headerViewContent {

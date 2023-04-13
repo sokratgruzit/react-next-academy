@@ -226,3 +226,177 @@ body:global(.light) .sideBar {
 body:global(.light) .sideBar {
   border-right: 1px solid #cccdcf;
 }
+
+ body:global(.light) .onMobileScreen {
+  background-color: #ebedf0;
+  background:  #ebedf0;
+  .sidebarWrap {
+    .activeTabs {
+      .iconSelected path {
+        stroke: $c-blue;
+      }
+    }
+    .sideBarContent {
+      &:hover svg path {
+        stroke: #00050f;
+      }
+      &:hover p {
+        color: #00050f !important;
+      }
+      .iconSelected {
+        color: $c-dark;
+      }
+      .sidebarList {
+        color: #808287;
+      }
+
+      .sidebarList:hover {
+        color: #00050f;
+      }
+
+      svg path {
+        stroke: #00050f;
+      }
+    }
+  }
+  .mainPage {
+    color: #808287 !important;
+    svg path {
+      fill: $c-dark !important;
+    }
+    &:hover {
+      color: #00050f !important;
+    }
+  }
+  // .mainPage svg:hover {
+  //   stroke: blue;
+  // }
+  .bottomLogo {
+    .bottomTitle {
+    .icons {
+      .lightIcons {
+       svg path{
+          transition: 0.5s cubic-bezier(0.79, 0.01, 0.15, 0.99);
+          &:hover {
+            fill: $c-blue;
+          }
+        }
+       
+      }
+    }
+  }
+   .socialIconLink svg path {
+    fill: #00050f;
+  }
+  .socialIconLink svg:hover path {
+    fill: $c-blue ;
+  }
+  .copyrightbottom {
+    color: #00050f;
+  }
+}
+
+ }
+
+// body:global(.light) .onMobileScreen {
+//   .onMobileScreen {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: flex-start;
+//     align-items: flex-start;
+//     height: 100%;
+//     width: 100%;
+//     animation: slideupp 0.6s linear;
+//     gap: 30px;
+//     mix-blend-mode: screen;
+//     background: radial-gradient(
+//       50% 50% at 50% 50%,
+//       #00091a 0%,
+//       rgba(0, 5, 15, 0) 100%
+//     );
+//     padding: 21px 16px;
+  
+//     .sidebarWrap {
+//       width: 100%;
+//       display: flex;
+//       flex-direction: column;
+//       gap: 32px;
+  
+//       .activeTabs {
+//         display: flex;
+//         gap: 15px;
+//         .iconSelected path {
+//           stroke: blue;
+//         }
+//       }
+  
+//       .sideBarContent {
+//         width: 100%;
+//         display: flex;
+//         gap: 15px;
+//         cursor: pointer;
+//         svg {
+//           height: 25px;
+//           width: 25px;
+//         }
+  
+//         &:hover .sidebarList {
+//           color: rgba(255, 255, 255, 1) !important;
+//         }
+  
+//         &:hover svg path {
+//           stroke: rgba(255, 255, 255, 1);
+//         }
+//       }
+//     }
+  
+//     .mainPage {
+//       display: flex;
+//       align-items: center;
+//       gap: 10px;
+//       color: rgba(150, 155, 166, 1) !important;
+//       font-size: 16px;
+//       cursor: pointer;
+//       transition: 0.6s;
+  
+//       &:hover {
+//         color: rgba(255, 255, 255, 1) !important;
+//       }
+//     }
+  
+//     .bottomLogo {
+//       display: flex;
+//       flex-direction: column;
+//       align-items: center;
+//       justify-content: center;
+//       margin: auto auto 0px auto;
+//       .bottomTitle {
+//         margin-top: 30px;
+//         font-size: 16px;
+//         letter-spacing: 0.04em;
+//       }
+//       .icons {
+//         .lightIcons {
+//           padding-top: 20px;
+//           display: flex;
+//           align-items: center;
+//           gap: 20px;
+//           svg {
+//             transition: 0.5s cubic-bezier(0.79, 0.01, 0.15, 0.99);
+//             &:hover {
+//               fill: $c-blue;
+//             }
+//           }
+//           .socialIcon {
+//             fill: white;
+//           }
+//         }
+//       }
+//       .copyrightbottom {
+//         margin-top: 30px;
+//         text-align: center;
+//         opacity: 0.5;
+//       }
+//     }
+//   }
+// }
