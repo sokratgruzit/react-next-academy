@@ -1,4 +1,17 @@
 @import "../../variables.scss";
+body:global(.light) .content {
+  .tabsNav {
+    .list {
+      color: #808287;
+    }
+
+    .activeList {
+      color: $c-dark;
+      border-bottom: 2px solid $c-dark;
+    }
+  }
+}
+
 .content {
   padding-left: 20px;
   padding-right: 20px;

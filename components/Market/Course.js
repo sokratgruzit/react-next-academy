@@ -148,15 +148,18 @@ const Dummy_Data = [
 function Course(elements) {
   return (
     <div>
-      <Banner
-        container={"custom-wrap"}
-        type={"course-banner"}
-        title={"introducing to programming with python and java"}
-        teacher={"davit tavadze"}
-        profileImg={"teacher"}
-        img={"banner1"}
-      />
-      <Video type={"video"} img={"courseBg"} />
+      <div className={styles.customWrap}>
+        <Banner
+          container={"custom-wrap"}
+          type={"course-banner"}
+          title={"introducing to programming with python and java"}
+          teacher={"davit tavadze"}
+          profileImg={"teacher"}
+          img={"banner1"}
+          img2={"banner1L"}
+        />
+      </div>
+      <Video type={"video"} img={"courseBg"} img2={"bgL"} />
       <div className={styles.bannerWrap}>
         <Banner
           container={"simple-wrap"}

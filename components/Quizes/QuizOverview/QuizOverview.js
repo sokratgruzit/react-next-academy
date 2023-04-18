@@ -49,9 +49,9 @@ const QuizOverview = () => {
               <img src="img/Quiz/product1.png" alt="card" />
             </div>
             <p className={styles.text}>
-              Tokenomics describes how a token's use affects its price. You will learn: -
-              What are tokenomics? - What makes a token valuable? - The principles of
-              tokenomics
+              Tokenomics describes how a token's use affects its price. You will
+              learn: - What are tokenomics? - What makes a token valuable? - The
+              principles of tokenomics
             </p>
           </div>
           <div className={styles.itemBadge}>

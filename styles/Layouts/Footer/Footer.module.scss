@@ -43,6 +43,7 @@ body:global(.light) .footer {
       width: 400px;
       display: flex;
       flex-direction: column;
+      gap: 33px;
 
       .footerLogo {
         position: relative;
@@ -61,7 +62,6 @@ body:global(.light) .footer {
 
       .icons {
         .lightIcons {
-          padding-top: 20px;
           display: flex;
           align-items: center;
           gap: 20px;
@@ -86,13 +86,23 @@ body:global(.light) .footer {
           }
 
           .marker {
-            margin: 25px 0px 25px 0px;
-
+            div p {
+              transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);
+            }
+            div svg path {
+              transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);
+            }
             .svg {
               display: flex;
               justify-content: center;
               margin-left: 15px;
             }
+          }
+          .marker:hover div p {
+            color: $c-orange;
+          }
+          .marker:hover div svg path {
+            fill: $c-orange;
           }
         }
       }
@@ -222,17 +232,10 @@ body:global(.light) .footer {
     .footerTop {
       .footerLeft {
         width: 250px;
-        .copyright {
-          margin-bottom: 20px;
-        }
+
         .footerRight {
           width: calc(90% - 200px);
         }
-      }
-    }
-    .bottomLogo {
-      .copyrightbottom {
-        margin-top: 20px;
       }
     }
   }
@@ -278,12 +281,12 @@ body:global(.light) .footer {
       padding-top: 20px;
       border-top: 1px solid rgba(255, 255, 255, 0.05);
       width: 100%;
+      gap: 33px;
 
       .copyrightbottom {
         color: $c-secondary;
         font-size: 15px;
         max-width: 100%;
-        margin-top: 20px;
       }
     }
   }
@@ -305,16 +308,12 @@ body:global(.light) .footer {
       flex-direction: column-reverse;
       .footerLeft {
         width: 100%;
+        gap: 0px;
         .themes {
           display: flex;
           align-items: center;
           justify-content: space-between;
           width: 100%;
-        }
-        .icons {
-          .lightIcons {
-            padding-top: 20px;
-          }
         }
 
         .lightMode {
@@ -329,13 +328,15 @@ body:global(.light) .footer {
 
           .switcher {
             width: 100%;
+            .marker {
+              .svg {
+                margin-left: auto;
+              }
+            }
           }
           .mode {
             color: $c-white;
             font-size: 15px;
-          }
-          svg {
-            margin-left: auto;
           }
         }
         .footerLogo {
@@ -421,7 +422,6 @@ body:global(.light) .footer {
     margin-bottom: 20px;
     .copyrightbottom {
       max-width: 100%;
-      margin-bottom: 30px;
     }
   }
   body:global(.light) .footer .footerTop .footerLeft .lightMode {

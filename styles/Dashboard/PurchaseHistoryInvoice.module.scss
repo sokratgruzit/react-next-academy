@@ -1,91 +1,98 @@
+body:global(.light) .options {
+  svg path {
+    stroke: #00050f;
+  }
+}
+
 .options {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  padding-bottom: 40px;
+  flex-wrap: wrap;
+
+  .backBtn {
+    cursor: pointer;
+
+    &:hover path {
+      stroke: blue;
+    }
+
+    path {
+      transition: 0.6s;
+    }
+  }
+
+  p {
+    white-space: nowrap;
+  }
+
+  .invoiceButtons {
     display: flex;
-    gap: 32px;
+    gap: 10px;
+    border: 1px solid blue;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.6s;
     align-items: center;
-    padding-bottom: 40px;
 
-    .backBtn {
-        cursor: pointer;
-
-        &:hover path {
-            stroke: blue;
-        }
-
-        path {
-            transition: .6s;
-        }
+    &:hover {
+      background-color: blue;
     }
-
-    p {
-        white-space: nowrap;
-    }
-
-    .invoiceButtons {
-        display: flex;
-        gap: 10px;
-        border: 1px solid blue;
-        padding: 8px 16px;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: .6s;
-
-        &:hover {
-            background-color: blue;
-        }
-    }
-    .line {
-        height: 1px;
-        background-color: #1D2638;
-        width: 100%;
-    }
+  }
+  .line {
+    height: 1px;
+    background-color: #1d2638;
+    width: 100%;
+  }
 }
 .invoiceWrapper {
-    width: 60%;
+  width: 60%;
+  display: grid;
+  gap: 60px;
+
+  .invoiceContentWrapper {
     display: grid;
-    gap: 60px;
+    grid-template-columns: 0.3fr 1fr;
 
-    .invoiceContentWrapper {
+    .invoiceContent {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+
+      .invoiceContentItem {
         display: grid;
-        grid-template-columns: .3fr 1fr;
-
-        .invoiceContent {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-
-            .invoiceContentItem {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                padding-bottom: 16px;
-                border-bottom: 1px solid #1D2638;
-            }
-        }
+        grid-template-columns: 1fr 1fr;
+        padding-bottom: 16px;
+        border-bottom: 1px solid #1d2638;
+      }
     }
+  }
 }
 
 @media (max-width: 1400px) {
-    .invoiceWrapper {
-        width: 80%;
-    }
+  .invoiceWrapper {
+    width: 80%;
+  }
 }
 
 @media (max-width: 1200px) {
-    .invoiceWrapper {
-        width: 100%;
-    }
+  .invoiceWrapper {
+    width: 100%;
+  }
 }
 
 @media (max-width: 1023px) {
-    .options {
-        gap: 10px;
-    }
+  .options {
+    gap: 10px;
+  }
 }
 
 @media (max-width: 500px) {
-    .invoiceWrapper {
-
-        .invoiceContentWrapper {
-           grid-template-columns: 1fr;
-        }
+  .invoiceWrapper {
+    .invoiceContentWrapper {
+      grid-template-columns: 1fr;
     }
+  }
 }
