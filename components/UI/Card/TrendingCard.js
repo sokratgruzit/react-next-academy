@@ -36,26 +36,57 @@ const TrendingCard = (props) => {
     ));
   } else if (props.type === "two") {
     return (element = (
-      <div className={styles.quizWrap}>
+      <div
+        className={styles.quizWrap}
+        onClick={() => { 
+        props.setItem(props.card)
+        console.log(props.card.title, 'sdwadw')
+
+       }}
+       >
         <div className={styles.quiz}>
           <CornerDecor />
           <div className={styles.border}>
             <div className={styles.imgBox}>
-              <img className={styles.img} src={props.img} alt="image" />
+              <img className={styles.img} src={props.card.img} alt="image" />
             </div>
             <div className={styles.content}>
-              <h4 className={styles.h4}>{props.title}</h4>
-              <p className={styles.p}>{props.subTxt}</p>
+              <h4 className={styles.h4}>{ props.card.title}</h4>
+              <p className={styles.p}>{props.card.subTxt}</p>
               <div className={styles.bottom}>
-                <img src={props.vector} />
-                <p className={styles.itemDot}>{props.date}</p>
+                <img src={props.card.vector} />
+                <p className={styles.itemDot}>{props.card.date}</p>
               </div>
             </div>
           </div>
         </div>
       </div>
     ));
-  }
+  } else if (props.type === "historyUsers") {
+    return (element = (
+      <div className={styles.container}>
+        <div className={styles.box1}>
+          <img src={props.img}/>
+          <h4>asdwasdwa</h4>
+        </div>
+        <div className={styles.box2}>
+          <>
+            img
+            title
+            title
+          </>
+          <img src={props.vector} />
+          <p>{props.date}</p>
+        </div>
+        <div className={styles.box3}>
+          <h4 className={styles.h4}>{props.title}</h4>
+          <img src={props.img}/>
+          <p className={styles.p}>{props.subTxt}</p>
+        </div>
+      </div>
+    ))};
+
+
 
   return element;
 };

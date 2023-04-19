@@ -12,8 +12,14 @@ const EarnedBadges = ({ data }) => {
         {data.length
           ? data.map((item, index) => {
               return (
-                <div className={styles.badge}  key={index}>
-                  <img className={styles.icon} src={item.img} alt="badge" />
+                <div
+                   className={styles.badge}
+                   key={index}>
+                  <img
+                    className={styles.icon}
+                    src={item.img}
+                    alt="badge" 
+                  />
                   <p>{item.title}</p>
                 </div>
               );
