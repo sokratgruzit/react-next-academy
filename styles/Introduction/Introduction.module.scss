@@ -14,6 +14,7 @@ body:global(.light) .getStarted {
   display: flex;
   justify-content: center;
   align-items: center;
+  
 
   .content {
     position: relative;
@@ -32,6 +33,9 @@ body:global(.light) .getStarted {
       #000f2e 0%,
       rgba(0, 5, 15, 0) 100%
     );
+  }
+  .gradient h4 {
+    font-size: 20px;
   }
 }
 

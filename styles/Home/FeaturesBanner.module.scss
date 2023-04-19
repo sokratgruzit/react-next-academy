@@ -36,7 +36,11 @@ body:global(.light) .svgDark {
 
       .title {
         color: $c-orange;
+        font-size: 20px;
       }
+    }
+    .text h5 {
+      font-size: 15px;
     }
   }
 }
