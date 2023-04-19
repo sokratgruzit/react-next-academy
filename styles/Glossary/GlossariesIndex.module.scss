@@ -40,9 +40,11 @@ body:global(.light) .item {
       .title {
         color: $c-orange;
         text-align: center;
+        font-size: 51px;
       }
       .teaser {
         padding-top: 34px;
+        font-size: 20px;
       }
     }
 
@@ -68,6 +70,7 @@ body:global(.light) .item {
           text-transform: uppercase;
           transition: 0.4s;
           cursor: pointer;
+          font-size: 20px;
         }
 
         .item:hover {
@@ -127,6 +130,9 @@ body:global(.light) .item {
               display: flex;
               flex-direction: column;
               word-break: break-all;
+            }
+            .content h3 {
+              font-size: 20px;
             }
           }
 
