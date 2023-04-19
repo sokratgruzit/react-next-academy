@@ -30,11 +30,23 @@ body:global(.light) .quizStructure {
     }
   }
 }
+body:global(.light) .quizStructure {
+  .inner {
+    .buttons {
+      .button {
+        svg path {
+          fill: #00050f;
+        }
+      }
+    }
+  }
+}
 .quizStructure {
   position: relative;
   margin-top: 150px;
   width: 100%;
   height: 300px;
+
   .inner {
     width: 100%;
   }
@@ -43,6 +55,9 @@ body:global(.light) .quizStructure {
     display: flex;
     align-items: center;
     width: 100%;
+    & div div p {
+      color: #b2b4b7;
+    }
 
     & div div:first-child {
       margin-top: -8px;
@@ -72,16 +87,21 @@ body:global(.light) .quizStructure {
       margin: 0px;
     }
   }
+
   .outer {
-    .buttons {
-      display: flex;
-      gap: 30px;
-      align-items: center;
-      div {
-        left: auto;
-        right: auto;
-      }
-    }
+    // .buttons {
+    //   display: flex;
+    //   align-items: center;
+    //   justify-content: center;
+    //   .myPrevButton {
+    //     margin-right: 15px;
+    //     margin-left: calc(50% - 55px);
+    //   }
+    //   .myNextButton {
+    //     margin-left: 15px;
+    //     margin-right: calc(50% - 55px);
+    //   }
+    // }
     .gradientF {
       position: absolute;
       top: -35px;
@@ -137,6 +157,33 @@ body:global(.light) .quizStructure {
 
       &:hover svg path {
         fill: $c-orange;
+      }
+    }
+  }
+}
+.quizStructure {
+  .inner {
+    .buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      gap: 30px;
+      margin-top: 76px;
+
+      .button {
+        width: 40px;
+        height: 40px;
+        position: relative;
+        cursor: pointer;
+        svg {
+          width: 40px;
+          height: 40px;
+          text-align: center;
+          cursor: pointer;
+          z-index: 10;
+          transition: all 0.3s ease-in-out;
+        }
       }
     }
   }

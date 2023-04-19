@@ -8,7 +8,7 @@ import QuizStructure from "./components/QuizStructure";
 
 const QuizOverview = () => {
   return (
-    <div className="container">
+    <div className="container textStyles">
       <img className={styles.bg} src="/img/Quiz/bg1.png" alt="background" />
       <div className={styles.infoWrapper}>
         <div className={styles.quizzHead}>
@@ -56,7 +56,7 @@ const QuizOverview = () => {
           </div>
           <div className={styles.itemBadge}>
             <p className={styles.title}>Earn a Badge:</p>
-            <img src="img/Quiz/badge1.png" alt="badge" />
+            <img src="img/Quiz/badge2.svg" alt="badge" />
             <h6>I’m here!</h6>
             <div className={styles.btn}>
               <StartPlay />

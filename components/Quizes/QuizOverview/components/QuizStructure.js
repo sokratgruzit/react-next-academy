@@ -36,8 +36,8 @@ const QuizStructure = (props) => {
           slidesPerView={4}
           // loop={true}
           navigation={{
-            prevEl: ".swiper-button-prev",
-            nextEl: ".swiper-button-next",
+            prevEl: ".prev-button",
+            nextEl: ".next-button",
           }}
           onSlideChange={() => {
             /*...*/
@@ -169,11 +169,9 @@ const QuizStructure = (props) => {
           </SwiperSlide>
           <SwiperSlide>start</SwiperSlide>
         </Swiper>
-
         <div className={styles.outer}>
           <Marquee
             className={styles.marquee}
-            style={{ zIndex: "-1" }}
             speed={50}
             loop={0}
             gradient={false}
@@ -203,15 +201,49 @@ const QuizStructure = (props) => {
               />
             </svg>
           </Marquee>
-          <div className={styles.buttons}>
-            <div
-              className="swiper-button-prev"
-              onClick={handlePrevButtonClick}
-            />
-            <div
-              className="swiper-button-next"
-              onClick={handleNextButtonClick}
-            />
+        </div>
+        <div className={styles.buttons}>
+          <div
+            className={`${styles.button} prev-button`}
+            onClick={handlePrevButtonClick}
+          >
+            <svg
+              width="40"
+              height="41"
+              viewBox="0 0 40 41"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15.953 32.0397C16.2697 32.0397 16.5864 31.923 16.8364 31.673C17.0689 31.4378 17.1992 31.1204 17.1992 30.7897C17.1992 30.459 17.0689 30.1416 16.8364 29.9064L7.60305 20.673L16.8364 11.4397C17.0689 11.2045 17.1992 10.8871 17.1992 10.5564C17.1992 10.2257 17.0689 9.90828 16.8364 9.67305C16.3531 9.18971 15.553 9.18971 15.0697 9.67305L4.95305 19.7897C4.46972 20.273 4.46972 21.073 4.95305 21.5564L15.0697 31.673C15.3197 31.923 15.6364 32.0397 15.953 32.0397Z"
+                fill="white"
+              />
+              <path
+                d="M6.11797 21.9238H34.168C34.8513 21.9238 35.418 21.3572 35.418 20.6738C35.418 19.9905 34.8513 19.4238 34.168 19.4238H6.11797C5.43464 19.4238 4.86797 19.9905 4.86797 20.6738C4.86797 21.3572 5.43464 21.9238 6.11797 21.9238Z"
+                fill="white"
+              />
+            </svg>
+          </div>
+          <div
+            className={`${styles.button} next-button`}
+            onClick={handleNextButtonClick}
+          >
+            <svg
+              width="40"
+              height="41"
+              viewBox="0 0 40 41"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M24.047 32.0397C23.7303 32.0397 23.4136 31.923 23.1636 31.673C22.9311 31.4378 22.8008 31.1204 22.8008 30.7897C22.8008 30.459 22.9311 30.1416 23.1636 29.9064L32.397 20.673L23.1636 11.4397C22.9311 11.2045 22.8008 10.8871 22.8008 10.5564C22.8008 10.2257 22.9311 9.90828 23.1636 9.67305C23.6469 9.18971 24.447 9.18971 24.9303 9.67305L35.047 19.7897C35.5303 20.273 35.5303 21.073 35.047 21.5564L24.9303 31.673C24.6803 31.923 24.3636 32.0397 24.047 32.0397Z"
+                fill="white"
+              />
+              <path
+                d="M33.882 21.9238H5.83203C5.1487 21.9238 4.58203 21.3572 4.58203 20.6738C4.58203 19.9905 5.1487 19.4238 5.83203 19.4238H33.882C34.5654 19.4238 35.132 19.9905 35.132 20.6738C35.132 21.3572 34.5654 21.9238 33.882 21.9238Z"
+                fill="white"
+              />
+            </svg>
           </div>
         </div>
       </div>
