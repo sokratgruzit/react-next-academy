@@ -78,13 +78,3 @@ const index = ({ articlesData }) => {
 };
 
 export default index;
-
-
-
-
-
-
-
-
-
-

@@ -149,15 +149,20 @@ function Home({
               )
             }
           />
-          <div className={styles.challenge}>
-            <Banner
-              container={"simple-wrap"}
-              type={"coming-soon"}
-              img={"comingSoon"}
-              title={"Courses"}
-              img2={"lBg1"}
-            />
-          </div>
+          <ContentWrap
+            btn={false}
+            element={
+              <div className={styles.challenge}>
+                <Banner
+                  container={"simple-wrap"}
+                  type={"coming-soon"}
+                  img={"comingSoon"}
+                  title={"Courses"}
+                  img2={"lBg1"}
+                />
+              </div>
+            }
+          />
           <ContentWrap
             title={"Blockchain"}
             btn={true}
@@ -176,34 +181,38 @@ function Home({
               )
             }
           />
-          <div className={styles.challenge}>
-            <Banner
-              container={"simple-wrap"}
-              type={"simple"}
-              dependency={"challange"}
-              title={"Want A Challange?"}
-              teaser={
-                "Test Your Knowledge While You Learn With Our Range Of Quizzes."
-              }
-              img={"quizBg"}
-              img2={"lBg1"}
-              clasName={"btn"}
-              btn={
-                <Button
-                  clasName="quizBtn"
-                  title={"Take a Quizzes"}
-                  type={"transparent-btn"}
-                  custumLink={{ color: "#fff" }}
-                  href={"/quizzes"}
+          <ContentWrap
+            element={
+              <div className={styles.challenge}>
+                <Banner
+                  container={"simple-wrap"}
+                  type={"simple"}
+                  dependency={"challange"}
+                  title={"Want A Challange?"}
+                  teaser={
+                    "Test Your Knowledge While You Learn With Our Range Of Quizzes."
+                  }
+                  img={"quizBg"}
+                  img2={"lBg1"}
+                  clasName={"btn"}
+                  btn={
+                    <Button
+                      clasName="quizBtn"
+                      title={"Take a Quizzes"}
+                      type={"transparent-btn"}
+                      custumLink={{ color: "#fff" }}
+                      href={"/quizzes"}
+                    />
+                  }
                 />
-              }
-            />
-            <img
-              src="/img/Banner/lastBigStar.svg"
-              alt="background"
-              className={`img-absolute darkImg ${styles.bigStars}`}
-            />
-          </div>
+                <img
+                  src="/img/Banner/lastBigStar.svg"
+                  alt="background"
+                  className={`img-absolute darkImg ${styles.bigStars}`}
+                />
+              </div>
+            }
+          />
           <ContentWrap
             title={"Trending Quiz"}
             btn={false}
@@ -276,19 +285,24 @@ function Home({
             }
           />
           <Ticker elements={"academyElements"} />
-          <div className={styles.email}>
-            <Banner
-              container={"simple-wrap"}
-              type={"simple"}
-              dependency={"email"}
-              title={"Keep Up To Date — Get E-Mail Updates"}
-              teaser={"Stay Tuned For The Latest Company News."}
-              placeholder={"name@example.com"}
-              img={"contactBg"}
-              img2={"quizLight"}
-              btn={<Button onClick={onClick} />}
-            />
-          </div>
+          <ContentWrap
+            btn={false}
+            element={
+              <div className={styles.email}>
+                <Banner
+                  container={"simple-wrap"}
+                  type={"simple"}
+                  dependency={"email"}
+                  title={"Keep Up To Date — Get E-Mail Updates"}
+                  teaser={"Stay Tuned For The Latest Company News."}
+                  placeholder={"name@example.com"}
+                  img={"contactBg"}
+                  img2={"quizLight"}
+                  btn={<Button onClick={onClick} />}
+                />
+              </div>
+            }
+          />
         </div>
       </div>
     </div>
