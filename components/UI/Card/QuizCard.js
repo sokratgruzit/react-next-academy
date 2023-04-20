@@ -21,10 +21,11 @@ const QuizCard = ({ type, item }) => {
   };
 
   let card = null;
+  const slug = item.title.toLowerCase().replace(/\s+/g, "-");
 
   if (type === "default") {
     card = (
-      <Link href={"/quizes/2"} className={styles.product}>
+      <Link href={`/quizzes/${slug}`} className={styles.product}>
         <div className={styles.test}>
           <CornerDecor />
           <div className={styles.img}>

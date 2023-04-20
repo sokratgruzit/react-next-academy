@@ -5,6 +5,7 @@ import CornerDecor from "@/components/UI/CornerDecor/CornerDecor";
 import Link from "next/link";
 import Circle from "@/svg/Circle";
 import QuizStructure from "./components/QuizStructure";
+import QuizCompetitionHistory from "../QuizCompetitionHinstory";
 
 const QuizOverview = () => {
   return (
@@ -46,7 +47,7 @@ const QuizOverview = () => {
           <div className={styles.item}>
             <div className={styles.card}>
               <CornerDecor />
-              <img src="img/Quiz/product1.png" alt="card" />
+              <img src="/img/Quiz/product1.png" alt="card" />
             </div>
             <p className={styles.text}>
               Tokenomics describes how a token's use affects its price. You will
@@ -56,7 +57,7 @@ const QuizOverview = () => {
           </div>
           <div className={styles.itemBadge}>
             <p className={styles.title}>Earn a Badge:</p>
-            <img src="img/Quiz/badge2.svg" alt="badge" />
+            <img src="/img/Quiz/badge2.svg" alt="badge" />
             <h6>I’m here!</h6>
             <div className={styles.btn}>
               <StartPlay />
@@ -68,6 +69,7 @@ const QuizOverview = () => {
         </div>
       </div>
       <QuizStructure />
+      <QuizCompetitionHistory />
     </div>
   );
 };
