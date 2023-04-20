@@ -7,11 +7,11 @@ import styles from "../../../styles/UI/Card/CourseCard.module.scss";
 
 const CourseCard = ({ type, data, img, title, price, time, lang, level }) => {
   let element = null;
-  if (!data) {
-    return null;
-  }
+  // if (!data) {
+  //   return null;
+  // }
 
-  const slug = data.title.toLowerCase().replace(/\s+/g, "-");
+  const slug = data?.title.toLowerCase().replace(/\s+/g, "-");
 
   if (type === "column") {
     element = (

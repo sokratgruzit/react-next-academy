@@ -156,17 +156,6 @@ const QuizCompetitionHistory = () => {
   const [itemsCount, setItemsCount] = useState(25);
   let swiper;
 
-  const handlePrevButtonClick = () => {
-    if (swiper) {
-      swiper.slidePrev();
-    }
-  };
-
-  const handleNextButtonClick = () => {
-    if (swiper) {
-      swiper.slideNext();
-    }
-  };
   return (
     <div className="container textStyles">
       <div className={styles.quizCompoetitionHistory}>
@@ -177,13 +166,6 @@ const QuizCompetitionHistory = () => {
             style={{ position: "inherit" }}
             spaceBetween={10}
             slidesPerView={49}
-            navigation={{
-              prevEl: ".prev-button",
-              nextEl: ".next-button",
-            }}
-            onSwiper={(swiper) => {
-              swiper = swiper;
-            }}
             breakpoints={{
               0: {
                 slidesPerView: 10,
@@ -202,13 +184,7 @@ const QuizCompetitionHistory = () => {
             {USERS_ARR.map((item, index) => {
               return (
                 <SwiperSlide key={index}>
-                  <div
-                    // className={`${
-                    //   index > itemsCount ? styles.disabledElement : ""
-                    // } ${styles.user}`}
-                    // className={styles.user}
-                    className={styles.userContent}
-                  >
+                  <div className={styles.userContent}>
                     <img className="img-absolute" src={item.img} alt="avatar" />
                   </div>
                 </SwiperSlide>

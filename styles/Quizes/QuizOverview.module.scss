@@ -5,7 +5,15 @@
   width: 100%;
   margin: auto;
 }
-
+.bottomContent {
+  background: #080d17;
+}
+body:global(.light) .bottomContent {
+  background: transparent;
+}
+body:global(.light) .bg {
+  display: none;
+}
 .bg {
   position: absolute;
   top: 0;
@@ -24,13 +32,16 @@
 
 body:global(.light) {
   .quizzHead {
+    h3 {
+      line-height: 36px;
+    }
     .headItem {
       .itemSocial {
         & div .icon path {
           fill: $c-dark;
         }
         & div:hover .icon path {
-          fill: $c-orange;
+          fill: $c-blue;
         }
       }
     }
