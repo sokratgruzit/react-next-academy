@@ -102,6 +102,14 @@ body:global(.light) .headerWrapper {
           align-items: center;
           display: block;
           cursor: pointer;
+
+          svg path {
+            transition: 0.4s cubic-bezier(0.79, 0.01, 0.15, 0.99);
+          }
+    
+          &:hover svg path {
+            fill: #ff7152;
+          }
         }
         .input:checked ~ .marker {
           cursor: pointer;
