@@ -1,11 +1,18 @@
 import Button from "../UI/Button/Button";
-
+import { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 import styles from "../../styles/Instructors/BecomeInstructorInfo.module.scss";
 import Link from "next/link";
 
 const BecomeInstructorInfo = () => {
+  useEffect(() => {
+    Aos.init({ duration: 700 });
+  }),
+    [];
+
   return (
-    <div className={styles.greenBanner}>
+    <div className={styles.greenBanner} data-aos="fade-up">
       {/* <div className={`${styles.backgroundImg} darkImg`}>
         <svg
           width="1438"

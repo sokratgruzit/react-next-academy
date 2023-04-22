@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState } from "react";
 
 import Filter from "../UI/Filter/Filter";
 import QuizCard from "../UI/Card/QuizCard";
@@ -6,8 +6,6 @@ import QuizCard from "../UI/Card/QuizCard";
 import styles from "@/styles/Quizes/Quizes.module.scss";
 import MotionLayout from "../UI/MotionLayout/MotionLayout";
 import { motion } from "framer-motion";
-
-
 
 const QUIZZES_FILTER = [
   {
@@ -87,11 +85,9 @@ const DUMMY_DATA = [
   },
 ];
 
-
-
 const Quizes = () => {
-  const [filterlevel ,setFilterlevel] = useState('')
-  const [filtercategory ,setFiltercategory] = useState('')
+  const [filterlevel, setFilterlevel] = useState("");
+  const [filtercategory, setFiltercategory] = useState("");
   const quizData = DUMMY_DATA;
   const cardVariants = {
     offscreen: {
@@ -106,33 +102,45 @@ const Quizes = () => {
       },
     },
   };
-  const filteredArray = DUMMY_DATA.filter(item => item.level  === filterlevel);
-  const filtercategoryArray = DUMMY_DATA.filter(item =>  item.category === filtercategory );
+  const filteredArray = DUMMY_DATA.filter((item) => item.level === filterlevel);
+  const filtercategoryArray = DUMMY_DATA.filter(
+    (item) => item.category === filtercategory
+  );
 
-    return (
+  return (
     <div className={`container ${styles.wrapper}`}>
-      <Filter type={"quizzes-filter"} className={styles.filter} quizzFilter={QUIZZES_FILTER}  filterChng={setFilterlevel}  filtcategory={setFiltercategory} />
+      <Filter
+        type={"quizzes-filter"}
+        className={styles.filter}
+        quizzFilter={QUIZZES_FILTER}
+        filterChng={setFilterlevel}
+        filtcategory={setFiltercategory}
+      />
       <MotionLayout className={styles.productsWrapper}>
         <motion.div variants={cardVariants}>
+          {!filterlevel && !filtercategory && (
+            <div className={`${styles.products} ${"textStyles"}`}>
+              {quizData.map((item, index) => {
+                return <QuizCard type={"default"} item={item} key={index} />;
+              })}
+            </div>
+          )}
 
-        {!filterlevel && !filtercategory &&  <div className={`${styles.products} ${"textStyles"}`}>
-            {quizData.map((item, index) => {
-              return <QuizCard type={"default"} item={item} key={index} />;
-            })}
-          </div>}
+          {filterlevel && filtercategory && (
+            <div className={`${styles.products} ${"textStyles"}`}>
+              {filtercategoryArray.map((item, index) => {
+                return <QuizCard type={"default"} item={item} key={index} />;
+              })}
+            </div>
+          )}
 
-        {filterlevel && filtercategory &&  <div className={`${styles.products} ${"textStyles"}`}>
-            {filtercategoryArray.map((item, index) => {
-              return <QuizCard type={"default"} item={item} key={index} />;
-            })}
-          </div>}
-
-          {filterlevel && filtercategory &&  <div className={`${styles.products} ${"textStyles"}`}>
-            {filteredArray.map((item, index) => {
-              return <QuizCard type={"default"} item={item} key={index} />;
-            })}
-          </div>}
-
+          {filterlevel && filtercategory && (
+            <div className={`${styles.products} ${"textStyles"}`}>
+              {filteredArray.map((item, index) => {
+                return <QuizCard type={"default"} item={item} key={index} />;
+              })}
+            </div>
+          )}
         </motion.div>
       </MotionLayout>
     </div>

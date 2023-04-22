@@ -1,6 +1,9 @@
 import { useRouter } from "next/router";
 import parse from "html-react-parser";
 import Moment from "react-moment";
+import { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 import { fetchData } from "@/utils/queries";
 import { Facebook, GitHub, Linkedin, Twitter, ShareLink } from "@/svg";
@@ -27,10 +30,9 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const slug = context.params.slug || undefined;
-  const {data:article} = await fetchData(
+  const { data: article } = await fetchData(
     `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles/${slug}`
   );
-
 
   //this should work but we dont have any featured carts yet :)
   // const { data: featured } = await fetchData(
@@ -47,6 +49,10 @@ export const getStaticProps = async (context) => {
 const Article = ({ article, featured }) => {
   const router = useRouter();
   const data = article || null;
+  useEffect(() => {
+    Aos.init({ duration: 700 });
+  }),
+    [];
 
   const icons = (
     <div className={styles.icons}>
@@ -248,9 +254,9 @@ const Article = ({ article, featured }) => {
               </div>
             </div>
             <div className={`${styles.content} content textStyles container`}>
-              {parse((data?.editor)?data?.editor:"")}
+              {parse(data?.editor ? data?.editor : "")}
             </div>
-            <div className={styles.categoryTags}>
+            <div className={styles.categoryTags} data-aos="fade-up">
               {icons}
               <div className={styles.tags}>
                 <div className={styles.pins}>
@@ -276,9 +282,9 @@ const Article = ({ article, featured }) => {
                 </div>
               </div>
             </div>
-            <div className={styles.exploreArticles}>
+            <div className={styles.exploreArticles} data-aos="fade-up">
               <h2>Explore More</h2>
-              
+
               {featured && featured?.docs.length ? (
                 <div className={styles.featured}>
                   <Articles data={featured} />

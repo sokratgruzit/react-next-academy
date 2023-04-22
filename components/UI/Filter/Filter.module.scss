@@ -43,6 +43,7 @@ body:global(.light) .filterMainWrapp .filterWrapp .filter .checkBox .mark {
 
 .filterMainWrapp,
 .dropdown {
+  max-width: 320px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -169,7 +170,7 @@ body:global(.light) .filterMainWrapp .filterWrapp .filter .checkBox .mark {
 
 @media (max-width: 1025px) {
   .filterMainWrapp {
-    width: calc((100% + 30px) / 3);
+    width: 100%;
 
     .filter {
       width: 100%;
@@ -180,7 +181,9 @@ body:global(.light) .filterMainWrapp .filterWrapp .filter .checkBox .mark {
   .dropdown {
     height: fit-content;
     margin: 0 auto;
+    max-width: 100%;
     width: 100%;
+    min-width: 100%;
 
     .filter {
       width: 100%;
@@ -190,8 +193,11 @@ body:global(.light) .filterMainWrapp .filterWrapp .filter .checkBox .mark {
       display: flex;
     }
   }
+
   .filterMainWrapp {
     max-height: 80px;
+    max-width: 100%;
+    min-width: 100%;
     margin: 0 auto;
     width: 100%;
 
@@ -203,11 +209,4 @@ body:global(.light) .filterMainWrapp .filterWrapp .filter .checkBox .mark {
       display: flex;
     }
   }
-}
-@media (max-width: 667px) {
-  .filterMainWrapp {
-    width: 100%;
-  }
-}
-@media (max-width: 514px) {
 }

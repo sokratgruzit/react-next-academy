@@ -1,5 +1,8 @@
 import Link from "next/link";
+import { useEffect } from "react";
 import { Link as ScrollLink, Element } from "react-scroll";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 import CornerDecor from "../UI/CornerDecor/CornerDecor";
 import NoResult from "../UI/NoResult/NoResult";
@@ -40,6 +43,10 @@ const Glossaries = ({ res }) => {
   ];
 
   let group = null;
+  useEffect(() => {
+    Aos.init({ duration: 700 });
+  }),
+    [];
 
   if (!isPending && glossaries && glossaries?.length) {
     group = ALPHABET.map((character) => {
@@ -60,6 +67,7 @@ const Glossaries = ({ res }) => {
                   <Link
                     href={"glossary/" + groupedItem.slug}
                     key={groupedItem._id}
+                    data-aos="fade-up"
                   >
                     <div className={styles.listItem}>
                       <span className={styles.content}>

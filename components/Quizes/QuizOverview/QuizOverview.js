@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 import styles from "@/styles/Quizes/QuizOverview.module.scss";
 import { Linkedin, ShareLink, StartPlay, Twitter } from "@/svg";
 import CornerDecor from "@/components/UI/CornerDecor/CornerDecor";
@@ -9,9 +11,12 @@ import QuizCompetitionHistory from "../QuizCompetitionHinstory";
 import RelatedQuizes from "../RelatedQuizes";
 
 const QuizOverview = () => {
+  useEffect(() => {
+    Aos.init({ duration: 700 });
+  }),
+    [];
   return (
     <div>
-      {" "}
       <div className="container textStyles">
         <img className={styles.bg} src="/img/Quiz/bg1.png" alt="background" />
         <div className={styles.infoWrapper}>
@@ -31,7 +36,7 @@ const QuizOverview = () => {
                 <h6>8 min</h6>
               </div>
             </div>
-            <div className={styles.headItem}>
+            <div className={styles.headItem} data-aos="fade-up">
               <p className={styles.shareBtn}>Share This Quiz</p>
               <div className={styles.itemSocial}>
                 <div>
@@ -46,7 +51,7 @@ const QuizOverview = () => {
               </div>
             </div>
           </div>
-          <div className={styles.quizzCard}>
+          <div className={styles.quizzCard} data-aos="fade-up">
             <div className={styles.item}>
               <div className={styles.card}>
                 <CornerDecor />
@@ -71,11 +76,17 @@ const QuizOverview = () => {
             </div>
           </div>
         </div>
-        <QuizStructure />
+        <div data-aos="fade-up">
+          <QuizStructure />
+        </div>
       </div>
       <div className={styles.bottomContent}>
-        <QuizCompetitionHistory />
-        <RelatedQuizes />
+        <div data-aos="fade-up">
+          <QuizCompetitionHistory />
+        </div>
+        <div data-aos="fade-up">
+          <RelatedQuizes />
+        </div>
       </div>
     </div>
   );

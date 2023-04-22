@@ -31,6 +31,13 @@
     margin-top: 55px;
     justify-content: space-between;
   }
+  .wrapper {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .productsWrapper {
+    width: 100%;
+  }
 }
 
 @media (max-width: 514px) {

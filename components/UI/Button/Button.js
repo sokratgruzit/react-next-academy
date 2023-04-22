@@ -1,9 +1,15 @@
-// import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 import Link from "next/link";
 
 import styles from "../../../styles/UI/Button/Button.module.scss";
 
 const Button = ({ type, title, onClick, customStyles, href, custumLink }) => {
+  useEffect(() => {
+    Aos.init({ duration: 700 });
+  }),
+    [];
   return (
     <>
       {type === "transparent-btn" ? (
@@ -11,6 +17,7 @@ const Button = ({ type, title, onClick, customStyles, href, custumLink }) => {
           className={`${styles.transparentBtn} ${styles.button}`}
           onClick={onClick}
           style={customStyles}
+          data-aos="fade-up"
         >
           <Link style={custumLink} href={`${href}`}>
             {title}
@@ -31,6 +38,7 @@ const Button = ({ type, title, onClick, customStyles, href, custumLink }) => {
           className={`${styles.orangeBtn} ${styles.button}`}
           onClick={onClick}
           style={customStyles}
+          data-aos="fade-up"
         >
           <Link style={custumLink} href={`${href}`}>
             {title}
@@ -41,6 +49,7 @@ const Button = ({ type, title, onClick, customStyles, href, custumLink }) => {
           className={`${styles.whiteBtn} ${styles.button}`}
           onClick={onClick}
           style={customStyles}
+          data-aos="fade-up"
         >
           <Link style={custumLink} href={`${href}`}>
             {title}

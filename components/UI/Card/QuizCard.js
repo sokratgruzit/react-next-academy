@@ -1,4 +1,6 @@
-import React from "react";
+import { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 import Link from "next/link";
 
 import CornerDecor from "../CornerDecor/CornerDecor";
@@ -23,9 +25,17 @@ const QuizCard = ({ type, item }) => {
   let card = null;
   const slug = item.title.toLowerCase().replace(/\s+/g, "-");
 
+  useEffect(() => {
+    Aos.init({ duration: 700 });
+  }),
+    [];
   if (type === "default") {
     card = (
-      <Link href={`/quizzes/${slug}`} className={styles.product}>
+      <Link
+        href={`/quizzes/${slug}`}
+        className={styles.product}
+        data-aos="fade-up"
+      >
         <div className={styles.test}>
           <CornerDecor />
           <div className={styles.img}>

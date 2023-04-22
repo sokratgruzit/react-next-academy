@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 import Banner from "../UI/Banner/Banner";
 import Video from "./Video/Video";
 import Button from "../UI/Button/Button";
@@ -141,14 +144,18 @@ const Dummy_Data = [
     position: "Creative Director at TUX Creative Co, previously Locomotive.",
     mail: "@sokratgruzit",
     text: "He leads the digital team while staying a hands-on designer and creating brand narratives via interactive web experiences. When he's not working, Louis loves spending time in the outdoors with his canine crew: hiking, camping, climbing. He also shares his passion for the field by teaching Web Design classes in college.",
-    img: "img/InstructorInnerProfile/instavatar.png",
+    img: "/img/InstructorInnerProfile/instavatar.png",
   },
 ];
 
 function Course(elements) {
+  useEffect(() => {
+    Aos.init({ duration: 700 });
+  }),
+    [];
   return (
     <div>
-      <div className={styles.customWrap}>
+      <div className={styles.customWrap} data-aos="fade-up">
         <Banner
           container={"custom-wrap"}
           type={"course-banner"}
@@ -159,8 +166,10 @@ function Course(elements) {
           img2={"banner1L"}
         />
       </div>
-      <Video type={"video"} img={"courseBg"} img2={"bgL"} />
-      <div className={styles.bannerWrap}>
+      <div data-aos="fade-up">
+        <Video type={"video"} img={"courseBg"} img2={"bgL"} />
+      </div>
+      <div className={styles.bannerWrap} data-aos="fade-up">
         <Banner
           container={"simple-wrap"}
           type={"quizz-banner"}
@@ -190,14 +199,16 @@ function Course(elements) {
         {elements === "academyElements" ? academyElements : instructorElements}
       </Marquee>
       {/* <InstructorItem  /> */}
-      <Instructor data={Dummy_Data} />
+      <div data-aos="fade-up">
+        <Instructor data={Dummy_Data} />
+      </div>
       <Marquee className={styles.inner} speed={100} loop={0} gradient={false}>
         {elements === "academyElements" ? academyElements : instructorElements}
       </Marquee>
-      <div className="container">
+      <div className="container" data-aos="fade-up">
         <ExpandMenu />
       </div>
-      <div className={styles.bannerWrap}>
+      <div className={styles.bannerWrap} data-aos="fade-up">
         <Banner
           container={"simple-wrap"}
           type={"simple"}
@@ -223,7 +234,7 @@ function Course(elements) {
           className={`img-absolute darkImg ${styles.stars}`}
         />
       </div>
-      <div className="container textStyles">
+      <div className="container textStyles" data-aos="fade-up">
         <h4 className={styles.offeredCourses}>you may also like</h4>
         <div className={styles.itemsWrapper}>
           {COURSE_HELPER?.map((item, index) => {

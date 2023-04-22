@@ -1,5 +1,8 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 import CornerDecor from "../CornerDecor/CornerDecor";
 
@@ -10,12 +13,20 @@ const CourseCard = ({ type, data, img, title, price, time, lang, level }) => {
   // if (!data) {
   //   return null;
   // }
+  useEffect(() => {
+    Aos.init({ duration: 700 });
+  }),
+    [];
 
   const slug = data?.title.toLowerCase().replace(/\s+/g, "-");
 
   if (type === "column") {
     element = (
-      <Link className={styles.outer} href={`/market/${slug}`}>
+      <Link
+        className={styles.outer}
+        href={`/market/${slug}`}
+        data-aos="fade-up"
+      >
         <div className={styles.courseCard}>
           <CornerDecor />
           <div className={styles.top}>
@@ -75,7 +86,7 @@ const CourseCard = ({ type, data, img, title, price, time, lang, level }) => {
   }
   if (type === "row") {
     element = (
-      <div className={styles.products}>
+      <div className={styles.products} data-aos="fade-up">
         <CornerDecor />
         <div className={styles.product}>
           <div className={styles.imgBox}>

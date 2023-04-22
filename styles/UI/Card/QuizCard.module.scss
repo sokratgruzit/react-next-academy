@@ -18,7 +18,6 @@ body:global(.light) .products {
   width: 100%;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 
 .product {
@@ -58,6 +57,7 @@ body:global(.light) .products {
     overflow: hidden;
     width: 90%;
     white-space: nowrap;
+    text-align: left;
   }
 
   .text p {
@@ -106,10 +106,9 @@ body:global(.light) .products {
   }
 }
 
-@media (max-width: 1025px) {
+@media (max-width: 1365px) {
   .product {
-    width: calc((100% - 90px) / 2);
-
+    width: 100%;
     .info p {
       font-size: 16px;
     }
@@ -119,7 +118,6 @@ body:global(.light) .products {
 @media (max-width: 767px) {
   .product {
     margin-left: 0;
-    width: calc((100% - 15px) / 2);
   }
 }
 
@@ -135,21 +133,18 @@ body:global(.light) .products {
   }
 }
 
-
-
 //// finished
 
-.box { 
+.box {
   position: absolute;
   width: 665px;
   height: 222px;
 
-  .tlt { 
+  .tlt {
     display: flex;
   }
 
-  .paragrap { 
+  .paragrap {
     display: flex;
   }
 }
-
