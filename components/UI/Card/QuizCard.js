@@ -23,7 +23,7 @@ const QuizCard = ({ type, item }) => {
   };
 
   let card = null;
-  const slug = item.title.toLowerCase().replace(/\s+/g, "-");
+  const slug = item?.title?.toLowerCase().replace(/\s+/g, "-");
 
   useEffect(() => {
     Aos.init({ duration: 700 });
@@ -33,7 +33,7 @@ const QuizCard = ({ type, item }) => {
     card = (
       <Link
         href={`/quizzes/${slug}`}
-        className={styles.product}
+        className={`${styles.product} textStyles`}
         data-aos="fade-up"
       >
         <div className={styles.test}>
