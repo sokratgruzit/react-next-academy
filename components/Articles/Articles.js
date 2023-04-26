@@ -1,20 +1,21 @@
-import Link from "next/link";
-
 import Card from "../UI/Card/Card";
 import SwiperWrapper from "../UI/SwiperWrapper/SwiperWrapper";
+import uniqueId from "lodash.uniqueid";
 
 import styles from "../../styles/Articles/Articles.module.scss";
 
-function Articles({ title, data }) {
+function Articles({ data }) {
   return (
     <div className={styles.list}>
-      {data?.docs?.length ? (
+      {data?.length > 0 ? (
         <SwiperWrapper>
-          {data?.docs.map((item, index) => (
-            <div key={index} className={styles.item}>
-              <Card data={item} type={"default"} />
-            </div>
-          ))}
+          {data?.map((item) => {
+            return (
+              <div key={uniqueId('article_') + item._id} className={styles.item}>
+                <Card data={item} type={"default"} />
+              </div>
+            )
+          })}
         </SwiperWrapper>
       ) : null}
     </div>

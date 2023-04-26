@@ -2,41 +2,35 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setCommonData } from "@/store/commonData/commonDataSlice";
 import { setSettings } from "@/store/settings/settingsSlice";
-
-import axios from "axios";
+import { fetchData } from "@/utils/queries";
 
 function Layout({ children }) {
   const dispatch = useDispatch();
+  
   useEffect(() => {
-    axios
-      .get(`${process.env.NEXT_PUBLIC_DATA_URL}/api/data/settings`)
-      .then((res) => {
-        dispatch(setSettings(res.data));
-      })
-      .catch((e) => {});
-
-    Promise.allSettled([
-      axios.get(`${process.env.NEXT_PUBLIC_DATA_URL}/api/data/category`),
-      axios.get(`${process.env.NEXT_PUBLIC_DATA_URL}/api/data/level`),
-      axios.get(`${process.env.NEXT_PUBLIC_DATA_URL}/api/data/tag`),
-    ]).then((results) => {
-      let mappedResults;
-      results.forEach((result) => {
-        mappedResults = results.map((result) => {
-          if (result.status === "fulfilled") {
-            return result.value.data;
-          }
-          return null;
-        });
-      });
+    const getCommonData = async () => {
+      const { data } = await fetchData(
+        `${process.env.NEXT_PUBLIC_DATA_URL}/api/content/common-data`
+      );
+  
       dispatch(
         setCommonData({
-          categories: mappedResults[0],
-          levels: mappedResults[1],
-          tags: mappedResults[2],
+          categories: data.categories,
+          levels: data.levels,
+          tags: data.tags,
+          header: data.header,
+          footer: data.footer,
+          glossaries: data.glossaries,
+          featured: data.featured,
+          blockchain: data.blockchain,
+          latest: data.latest,
+          essentials: data.essentials,
+          security: data.security
         })
       );
-    });
+    };
+
+    getCommonData();
   }, []);
 
   return <>{children}</>;

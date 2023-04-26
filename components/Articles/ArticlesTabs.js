@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
+import uniqueId from "lodash.uniqueid";
 
 import styles from "../../styles/Articles/ArticlesTabs.module.scss";
 
@@ -40,7 +41,7 @@ function ArticlesTabs({ tabs }) {
         <ul className={styles.tabsNav}>
           {tabs.map((tab, index) => (
             <li
-              key={index}
+              key={uniqueId("tabs_")}
               className={`${styles.tabsNavItem} ${
                 activeIndex === index ? styles.active : ""
               }`}

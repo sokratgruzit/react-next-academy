@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { animateScroll } from "react-scroll";
-
-import { fetchData } from "../../utils/queries";
+import { connect } from "react-redux";
 
 import styles from "../../styles/Layouts/Footer/Footer.module.scss";
 import { Arrow, Facebook, GitHub, Linkedin, Twitter } from "@/svg";
 
-function Footer() {
+function Footer({ commonData }) {
   const scroll = animateScroll;
+  const { footer } = commonData;
 
   const [activeMenu, setActiveMenu] = useState(false);
-  const [footerLinks, setFooterLinks] = useState(null);
   const [theme, setTheme] = useState(false);
   const [show1, setShow1] = useState(false);
   const [show2, setShow2] = useState(false);
@@ -23,15 +22,6 @@ function Footer() {
     } else {
       setActiveMenu(id);
     }
-  };
-
-  const getFooterLinks = async () => {
-    await fetchData(`${process.env.NEXT_PUBLIC_DATA_URL}/api/data/footer`).then(
-      (res) => {
-        const links = res.data?.result;
-        setFooterLinks(links);
-      }
-    );
   };
 
   useEffect(() => {
@@ -47,8 +37,8 @@ function Footer() {
   }, [theme]);
 
   const getLinks = (row) => {
-    if (!footerLinks) return false;
-    return footerLinks
+    if (!footer) return false;
+    return footer
       .filter((item) => item.row === row)
       .map((link) => {
         return (
@@ -65,7 +55,6 @@ function Footer() {
   };
 
   useEffect(() => {
-    getFooterLinks();
     const mode = localStorage.getItem("mode");
     !mode || mode === "false" ? setTheme(false) : setTheme(true);
   }, []);
@@ -304,4 +293,10 @@ function Footer() {
   );
 }
 
-export default Footer;
+const mapStateToProps = (state) => {
+  return {
+    commonData: state.commonData,
+  };
+};
+
+export default connect(mapStateToProps, null)(Footer);

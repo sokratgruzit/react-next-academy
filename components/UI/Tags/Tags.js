@@ -12,7 +12,7 @@ const Tags = ({ data, type }) => {
             className={`${
               type === "dificulity" ? styles[data[index].customStyle] : ""
             } ${styles[type]}`}
-            key={index}
+            key={item._id}
           >
             {item.name}
           </div>
