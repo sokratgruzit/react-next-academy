@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { connect } from "react-redux";
 import { motion } from "framer-motion";
+import { v4 as uuidv4 } from 'uuid';
 
 function TopicBox({ tags }) {
   return (
@@ -16,7 +17,7 @@ function TopicBox({ tags }) {
               return (
                 <Link
                   href={`articles/?tag=${tag._id}`}
-                  key={tag._id}
+                  key={uuidv4()}
                   className="tag-item"
                 >
                   {tag.title}

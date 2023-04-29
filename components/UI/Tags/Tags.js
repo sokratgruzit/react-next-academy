@@ -1,4 +1,5 @@
-import {useState} from "react"
+import { v4 as uuidv4 } from 'uuid';
+import Link from "next/link";
 
 import styles from "./Tags.module.scss";
   // const [selectedTag, setselectedTag] = useState('security');
@@ -7,15 +8,26 @@ const Tags = ({ data, type }) => {
   return (
     <>
       {data.map((item, index) => {
+        let query = "";
+
+        if (type === 'topics') {
+          query = "tag";
+        } else if (type === 'difficulty') {
+          query = "level"
+        } else {
+          query = "category"
+        }
+
         return (
-          <div
+          <Link
             className={`${
-              type === "dificulity" ? styles[data[index].customStyle] : ""
+              type === "difficulty" ? styles[data[index].customStyle] : ""
             } ${styles[type]}`}
-            key={item._id}
+            key={uuidv4()}
+            href={`articles/?${query}=${item._id}&limit=0`}
           >
-            {item.name}
-          </div>
+            {item.title}
+          </Link>
         );
       })}
     </>

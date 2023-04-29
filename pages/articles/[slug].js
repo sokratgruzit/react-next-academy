@@ -26,12 +26,12 @@ export const getStaticProps = async (context) => {
 
   //this should work but we dont have any featured carts yet :)
   const featured = await fetchData(
-    `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles?category=${article?.data?.docs[0].category}f&limit=3`
+    `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles?category=${article?.data?.category}f&limit=3`
   );
-
+    
   //i will leave this one for a short period of time :)
   const data = {
-    article: article?.data?.docs[0],
+    article: article?.data[0],
     featured: featured?.data?.docs
   };
 

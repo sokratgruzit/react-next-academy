@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { v4 as uuidv4 } from 'uuid';
 
 import CornerDecor from "../CornerDecor/CornerDecor";
 
@@ -24,7 +25,7 @@ const Card = ({ data, type }) => {
                 {data.tag?.length
                   ? data.tag.map((tag) => {
                       return (
-                        <div className="white-cat-item" key={tag._id + "hash"}>
+                        <div className="white-cat-item" key={uuidv4()}>
                           {tag.title}
                         </div>
                       );

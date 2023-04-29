@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { Link as ScrollLink, Element } from "react-scroll";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import { v4 as uuidv4 } from 'uuid';
 
 import CornerDecor from "../UI/CornerDecor/CornerDecor";
 import NoResult from "../UI/NoResult/NoResult";
@@ -56,7 +57,7 @@ const Glossaries = ({ res }) => {
 
       if (GROUPED_BY_LETTER?.length) {
         return (
-          <Element className={styles.item} key={character} name={character}>
+          <Element className={styles.item} key={uuidv4()} name={character}>
             <div className={styles.characterScroll}>
               <div className={styles.value}>{character}</div>
             </div>

@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import { v4 as uuidv4 } from 'uuid';
 import parse from "html-react-parser";
 import Moment from "react-moment";
 import { useEffect } from "react";
@@ -229,7 +230,7 @@ const Article = ({ article, featured }) => {
                           return (
                             <div
                               className="white-cat-item"
-                              key={tag._id + "hash"}
+                              key={uuidv4()}
                             >
                               {tag.title}
                             </div>

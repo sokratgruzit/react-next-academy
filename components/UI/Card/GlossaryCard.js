@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { v4 as uuidv4 } from 'uuid';
 
 import CornerDecor from "../CornerDecor/CornerDecor";
 
@@ -11,9 +12,9 @@ const GlossaryCard = ({ data, quantity }) => {
 
   return (
     <>
-      {resultGlossary?.map((item, index) => {
+      {resultGlossary?.map((item) => {
         return (
-          <div className={styles.item} key={index}>
+          <div className={styles.item} key={uuidv4()}>
             <div className={styles.itemInner}>
               <CornerDecor />
               <div className='textStyles'>

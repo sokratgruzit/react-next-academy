@@ -1,8 +1,8 @@
 import Card from "../UI/Card/Card";
 import SwiperWrapper from "../UI/SwiperWrapper/SwiperWrapper";
-import uniqueId from "lodash.uniqueid";
 
 import styles from "../../styles/Articles/Articles.module.scss";
+import { v4 as uuidv4 } from 'uuid';
 
 function Articles({ data }) {
   return (
@@ -10,8 +10,10 @@ function Articles({ data }) {
       {data?.length > 0 ? (
         <SwiperWrapper>
           {data?.map((item) => {
+            let uid = uuidv4();
+            
             return (
-              <div key={uniqueId('article_') + item._id} className={styles.item}>
+              <div key={uid} className={styles.item}>
                 <Card data={item} type={"default"} />
               </div>
             )

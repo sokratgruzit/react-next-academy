@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import uniqueId from "lodash.uniqueid";
+import { v4 as uuidv4 } from 'uuid';
 
 import { fetchData } from "@/utils/queries";
 import Card from "@/components/UI/Card/Card";
@@ -13,7 +13,7 @@ import Pagination from "@/components/UI/Pagination/Pagination";
 import styles from "../../styles/Articles/ArticleIndex.module.scss";
 import LoadingSpinner from "@/components/UI/LoadingSpinner/LoadingSpinner";
 
-const index = ({ articlesData }) => {
+const index = () => {
   const [articles, setArticles] = useState(null);
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(true);
@@ -22,8 +22,15 @@ const index = ({ articlesData }) => {
 
   useEffect(() => {
     const fetchAndRenderData = async () => {
+      let rQuery = router.query;
+      let query = "";
+
+      for (let key of Object.keys(rQuery)) {
+        query += key + "=" + rQuery[key] + "&";
+      }
+
       const { data } = await fetchData(
-        `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles?limit=0`
+        `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles?${query}limit=0`
       );
       setArticles(data.docs);
       setIsLoading(false);
@@ -34,9 +41,9 @@ const index = ({ articlesData }) => {
   useEffect(() => {
     if (!isLoading && articles) {
       setPaginationData(
-        articles.map((item, index) => {
+        articles.map((item) => {
           return (
-            <div className={styles.item} key={uniqueId('all_articles_') + item._id} data-aos="fade-up">
+            <div className={styles.item} key={uuidv4()} data-aos="fade-up">
               <Card title={"Articles"} data={item} type={"default"} />
             </div>
           );
