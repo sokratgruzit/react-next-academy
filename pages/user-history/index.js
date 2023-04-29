@@ -99,28 +99,29 @@ const data = DUMMY_DATA;
 const index = () => {  
   const [openBar, setOpenBar] = useState(false);  
   const [ item ,setItem ] = useState({})
-
   const clickHandler = () => {
     setOpenBar(true)
   }
-  
+  const [ cngWidth , setCngWidth ] = useState(false);
   return (
     <div>
-      <UserMainBoard />
-      <EarnedBadges data={data} />
-      <FinishedQuizzes 
-        onClick={clickHandler} 
-        data={QuizData}
-        setItem={setItem}
-       />
+      <div style={{display: "flex", flexDirection: "column"}}>
+        <UserMainBoard /> 
+        <EarnedBadges data={data} />
+        <FinishedQuizzes 
+          onClick={clickHandler} 
+          data={QuizData}
+          setItem={setItem}
+          />
+      </div>
       {
       openBar && 
         <CardPopup 
           data={item}
           setOpenBar={setOpenBar}
+          cngWidth={cngWidth}
         />
       }
-      
     </div>
   );
 };

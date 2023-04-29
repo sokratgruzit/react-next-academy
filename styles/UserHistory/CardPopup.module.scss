@@ -1,3 +1,6 @@
+
+@import "../variables.scss";
+
 .cardPopUp {
   display: flex;
   flex-direction: column;
@@ -8,13 +11,14 @@
   width: 470px;
   height: 100vh;
   z-index: 99999;
-  background-color: rgb(70, 66, 66);
+  background-color: linear-gradient(180deg, rgba(0, 5, 15, 0) -23.6%, #00050F 100%);
+  border: 1px solid #161B24;
   
   .group { 
-    margin: 30px 0px 30px 0px ;
+    margin: 20px 0px 15px 0px ;
   }
   .title { 
-    margin: 0px 0px 20px 0px ;
+    margin: 0px 0px 10px 0px ;
   }
   .box { 
     display: flex;
@@ -25,19 +29,10 @@
     .hderBox { 
       display: flex;
       margin: 20px 20px 20px 20px;
-
-      .dataTaitle { 
-        display: flex;
-        align-items: center;
-    
-        .vectorImg { 
-          margin: 1px 7px 0px 0px;
-        }
-      }
-
       .top {
         display: flex;
         width: 100%;
+        justify-content: center;
 
         .avatar {
           position: relative;
@@ -77,44 +72,56 @@
             height: 10px;
             display: flex;
             position: absolute;
-            margin: 25px 0px 0px 80px;
+            margin: 10px 0px 0px 80px;
           }
         }
       }
+      .dataTaitle { 
+        display: flex;
+        align-items: center;
+    
+        .vectorImg { 
+          margin: 1px 7px 0px 0px;
+        }
+      }
     }  
+  }
+  .line { 
+    border-top: 1px solid $border-color;
+    width: 380px;
+    margin-top: 20px;
   }
   .container { 
     display: flex;
     flex-direction: column;
     width: 100%;
     height: auto;
-    margin: 35px 40px 0px 40px;
+    margin: 15px 0px 0px 0px;
     z-index: 999999;
 
     .dataTitle { 
       font-size: 20px;
       text-align: center;
-      margin: 5px 20px 0px 20px;
-
+      margin: 0px 20px 0px 20px;
     }
 
     .dataImg { 
       margin: auto;
       width: 207px;
       height: 200px;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
 
     .dataSubTxt { 
       text-align: center;
-      margin: 5px 20px 20px 20px;
+      margin: 15px 20px 10px 20px;
     }
 
     .level { 
       display: flex;
       justify-content: center;
       align-items: center;
-      margin: 20px 0px 20px 0px;
+      margin: 10px 0px 10px 0px;
 
       .pointonegren { 
         width: 8px;
@@ -135,14 +142,57 @@
       }
     }
   }
-}
+  .dataContainer {
+    position: relative;
+    width: 250px;
+    margin: auto;
 
-     // .line { 
-          //   margin-left: auto;
-          //   margin-right: auto;
-          //   border-top: 1px solid #111826;
-          //   padding-top: 16px;
-          //   margin-top: 16px;
-          //   width: 100px;
-          //   height: 1px;
-          // }
+    .dataImgCornerDecor { 
+      display: flex;
+      position: relative;
+      justify-content: center;
+      .dataImg { 
+        margin: 10px 10px 10px 10px ;
+      }
+    }
+  }
+  .lowerBox  {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    align-items: center;
+
+    .lowerBoxTitl { 
+      font-size: 20px;
+    }
+
+    .badge { 
+      width: 30px;
+      height: 30px;
+    }
+  }
+  .button { 
+    display: flex;
+    border: 2px solid #FF7152;
+    padding: 5px 40px 5px 40px;
+    border-radius: 20px;
+    margin-top: 20px;
+    .buttonBox { 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .img { 
+          width: 20px;
+          height: 20px;
+          margin: 10px 10px;
+        }
+
+        .buttonTtle { 
+          color: #FF7152;
+          font-size: 16px;
+        }
+    }
+  }
+}

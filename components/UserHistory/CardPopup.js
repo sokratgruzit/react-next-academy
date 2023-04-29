@@ -1,16 +1,24 @@
+import { useDispatch } from 'react-redux';
+import { makeStateFalse } from "../../store/mode/modeSlice";
+
 import CornerDecor from "../UI/CornerDecor/CornerDecor";
+
 
 import styles from "../../styles/UserHistory/CardPopup.module.scss"
 
+export default function CardPopup({setOpenBar, data , cngWidth }) { 
+  const dispatch = useDispatch();
 
-export default function CardPopup({setOpenBar, data }) { 
     return (
         <div className="textStyles container">
             <div className={styles.cardPopUp}>
                 <img 
                     className={styles.group}
                     src='img/UserHistory/Group.png'
-                    onClick={() => {setOpenBar(false)}}
+                    onClick={() => { 
+                        setOpenBar(false)
+                        dispatch(makeStateFalse())
+                     }}
                 />
                 <p className={styles.title}>Completed</p>
                 <div className={styles.box}>
@@ -39,8 +47,9 @@ export default function CardPopup({setOpenBar, data }) {
                         </div>
                     </div>
                 </div>
+                <div className={styles.line}></div>
                 <div className={styles.container}>
-                    <h7 className={styles.dataTitle}>{data.title}</h7>
+                    <h6 className={styles.dataTitle}>{data.title}</h6>
                     <div className={styles.level}>
                         <img 
                             src='img/UserHistory/pointonegren.png' 
@@ -58,21 +67,29 @@ export default function CardPopup({setOpenBar, data }) {
                         />
                         <p>8 min</p>
                     </div>
-                    <img 
-                        src={data.img} 
-                        className={styles.dataImg}
-                    />
-                    <p 
-                    className={styles.dataSubTxt}>{data.subTxt}</p>
+                    <div className={styles.dataContainer } >
+                        <CornerDecor />
+                        <div className={styles.dataImgCornerDecor}>
+                            <img 
+                                src={data.img} 
+                                className={styles.dataImg}
+                            />
+                        </div>
+                    </div>
+                    <p className={styles.dataSubTxt}>{data.subTxt}</p>
                 </div>
                 <div className={styles.lowerBox}>
                     <h1 className={styles.lowerBoxTitl}>Earn a Badge:</h1>
-                    <div className={styles.badge}>
-                        <img src='img/UserHistory/badge1.png'/>
-                        <p>I’m here!</p>
-                    </div>
+                        <img className={styles.badge} src='img/UserHistory/badge1.png'/>
+                        <p className={styles.text}>I’m here!</p>
                     <div className={styles.button}>
-                        <p>See More Details</p> 
+                        <button className={styles.buttonBox}>
+                            <img
+                                className={styles.img}
+                                src="img/UserHistory/image.png"
+                            />
+                            <h5 className={styles.buttonTtle}>See More Details</h5>
+                        </button>                      
                     </div>
                 </div>
             </div>

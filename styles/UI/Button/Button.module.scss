@@ -4,7 +4,6 @@ body:global(.light) .orangeBtn {
     color: #000;
   }
 }
-
 body:global(.light) .transparentBtn {
   a {
     color: $c-dirty-grey !important;
@@ -17,15 +16,19 @@ body:global(.light) .transparentBtn {
     border: 1px solid $c-orange;
   }
 }
-
 .button {
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);
-}
 
+  .btnIcon { 
+    width: 20px;
+    height: 20px;
+    margin: 0px 10px 0px 15px;
+  }
+}
 .transparentBtn {
   background-color: transparent;
   padding: 14px 40px;
@@ -34,7 +37,6 @@ body:global(.light) .transparentBtn {
   border: 1px solid $c-white;
   border-radius: 4px;
 }
-
 .transparentBtn:hover {
   border: 1px solid $c-orange;
 
@@ -42,7 +44,6 @@ body:global(.light) .transparentBtn {
     color: $c-orange !important;
   }
 }
-
 .blueBtn {
   height: 44px;
   padding: 16px;
@@ -75,11 +76,14 @@ body:global(.light) .transparentBtn {
     background-color: transparent;
     color: #fff;
   }
+
+  
 }
 .modifiedBtn {
   margin-top: 100px;
   width: 318px;
 }
+
 
 @media (max-width: 400px) {
   .orangeBtn,

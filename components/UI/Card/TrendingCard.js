@@ -1,10 +1,13 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { toggleNewBooleanState } from "../../../store/mode/modeSlice"
 
 import CornerDecor from "../CornerDecor/CornerDecor";
 
 import styles from "../../../styles/UI/TrendingCards/Card.module.scss";
 
 const TrendingCard = (props) => {
+  const dispatch = useDispatch()
   let element = null;
 
   if (props.type === "one") {
@@ -40,8 +43,7 @@ const TrendingCard = (props) => {
         className={styles.quizWrap}
         onClick={() => { 
         props.setItem(props.card)
-        console.log(props.card.title, 'sdwadw')
-
+        dispatch(toggleNewBooleanState())
        }}
        >
         <div className={styles.quiz}>

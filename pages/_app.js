@@ -13,7 +13,6 @@ import store from "../store/store";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
-
   const pageVariants = {
     initial: {
       opacity: 0,

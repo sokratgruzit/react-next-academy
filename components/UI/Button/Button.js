@@ -1,9 +1,10 @@
-// import { useState, useEffect } from "react";
 import Link from "next/link";
 
 import styles from "../../../styles/UI/Button/Button.module.scss";
+import { images } from "@/next.config";
+import Image from "next/image";
 
-const Button = ({ type, title, onClick, customStyles, href, custumLink }) => {
+const Button = ({ type, title, onClick, customStyles, href, custumLink ,image}) => {
   return (
     <>
       {type === "transparent-btn" ? (
@@ -32,9 +33,11 @@ const Button = ({ type, title, onClick, customStyles, href, custumLink }) => {
           onClick={onClick}
           style={customStyles}
         >
+          <img src={image} alt="badge" className={styles.btnIcon} />
           <Link style={custumLink} href={`${href}`}>
             {title}
           </Link>
+
         </div>
       ) : type === "white-btn" ? (
         <div
