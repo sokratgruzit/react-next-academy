@@ -1,10 +1,17 @@
+import { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 import Link from "next/link";
 
 import styles from "../../../styles/UI/Button/Button.module.scss";
 import { images } from "@/next.config";
 import Image from "next/image";
 
-const Button = ({ type, title, onClick, customStyles, href, custumLink ,image}) => {
+const Button = ({ type, title, onClick, customStyles, href, custumLink , image }) => {
+  useEffect(() => {
+    Aos.init({ duration: 700 });
+  }),
+    [];
   return (
     <>
       {type === "transparent-btn" ? (
@@ -12,6 +19,7 @@ const Button = ({ type, title, onClick, customStyles, href, custumLink ,image}) 
           className={`${styles.transparentBtn} ${styles.button}`}
           onClick={onClick}
           style={customStyles}
+          data-aos="fade-up"
         >
           <Link style={custumLink} href={`${href}`}>
             {title}
@@ -32,6 +40,7 @@ const Button = ({ type, title, onClick, customStyles, href, custumLink ,image}) 
           className={`${styles.orangeBtn} ${styles.button}`}
           onClick={onClick}
           style={customStyles}
+          data-aos="fade-up"
         >
           <img src={image} alt="badge" className={styles.btnIcon} />
           <Link style={custumLink} href={`${href}`}>
@@ -44,6 +53,7 @@ const Button = ({ type, title, onClick, customStyles, href, custumLink ,image}) 
           className={`${styles.whiteBtn} ${styles.button}`}
           onClick={onClick}
           style={customStyles}
+          data-aos="fade-up"
         >
           <Link style={custumLink} href={`${href}`}>
             {title}

@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import uniqueId from "lodash.uniqueid";
 
 import { fetchData } from "@/utils/queries";
 import Card from "@/components/UI/Card/Card";
@@ -22,7 +25,7 @@ const index = ({ articlesData }) => {
       const { data } = await fetchData(
         `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/articles?limit=0`
       );
-      setArticles(data);
+      setArticles(data.docs);
       setIsLoading(false);
     };
     fetchAndRenderData();
@@ -33,7 +36,7 @@ const index = ({ articlesData }) => {
       setPaginationData(
         articles.map((item, index) => {
           return (
-            <div className={styles.item} key={index}>
+            <div className={styles.item} key={uniqueId('all_articles_') + item._id} data-aos="fade-up">
               <Card title={"Articles"} data={item} type={"default"} />
             </div>
           );
@@ -52,6 +55,10 @@ const index = ({ articlesData }) => {
   const handleItemsPerPageChange = (event) => {
     setItemsPerPage(parseInt(event.target.value));
   };
+  useEffect(() => {
+    Aos.init({ duration: 700 });
+  }),
+    [];
 
   return (
     <div className={styles.ArticlesIndex}>

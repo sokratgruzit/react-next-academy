@@ -17,14 +17,14 @@ export const modeSlice = createSlice({
     },
     makeStateFalse(state) {
       state.newBooleanState = false;
-    }
+    },
   },
 });
   
 export const {
   toggleMode,
   toggleNewBooleanState,
-  makeStateFalse
+  makeStateFalse,
 } = modeSlice.actions;
 
 export default modeSlice.reducer;

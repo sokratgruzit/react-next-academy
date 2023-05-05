@@ -4,11 +4,9 @@ import SwiperCore, { Navigation as SwiperNavigation } from "swiper";
 import "swiper/css";
 import styles from "../../../../styles/Quizes/QuizOverview/quizStructure.module.scss";
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 
-// install Swiper Navigation module
 SwiperCore.use([SwiperNavigation]);
 
 const QuizStructure = (props) => {
@@ -34,19 +32,11 @@ const QuizStructure = (props) => {
           style={{ position: "inherit" }}
           spaceBetween={250}
           slidesPerView={4}
-          // loop={true}
           navigation={{
             prevEl: ".prev-button",
             nextEl: ".next-button",
           }}
-          onSlideChange={() => {
-            /*...*/
-          }}
-          onReachEnd={() => {
-            /*...*/
-          }}
           onSwiper={(swiper) => {
-            // Store the swiper instance for later use
             swiper = swiper;
           }}
           breakpoints={{

@@ -5,6 +5,8 @@
   position: relative;
   flex-direction: column;
   align-items: center;
+  grid-template-columns: 1fr 1fr;
+
   margin-top: 90px;
 
   .boxCourses {
@@ -15,6 +17,12 @@
     width: 100%;
     display: grid;
     gap: 30px;
+  }
+}
+
+@media (max-width: 700px ) { 
+  .boxCourses { 
+    grid-template-columns: 1fr !important;
   }
 }
 
@@ -30,7 +38,6 @@
   .quizzesWrapp {
     .boxCourses {
       display: grid;
-      grid-template-columns: 1fr;
       width: 100%;
     }
   }

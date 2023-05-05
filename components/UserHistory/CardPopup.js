@@ -5,10 +5,16 @@ import CornerDecor from "../UI/CornerDecor/CornerDecor";
 
 
 import styles from "../../styles/UserHistory/CardPopup.module.scss"
+import { log } from 'util';
+import { useState } from 'react';
 
-export default function CardPopup({setOpenBar, data , cngWidth }) { 
-  const dispatch = useDispatch();
+export default function CardPopup({setOpenBar, data , cngWidth, changeWidthHandler }) { 
+  const dispatch = useDispatch(false);
+  const [ chngColumns , setchngColums ] = useState(true)
 
+    const changeColumnHandler = () => {
+        changeWidthHandler(false)
+    };
     return (
         <div className="textStyles container">
             <div className={styles.cardPopUp}>
@@ -18,6 +24,7 @@ export default function CardPopup({setOpenBar, data , cngWidth }) {
                     onClick={() => { 
                         setOpenBar(false)
                         dispatch(makeStateFalse())
+                        changeColumnHandler()
                      }}
                 />
                 <p className={styles.title}>Completed</p>

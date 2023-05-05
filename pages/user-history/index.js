@@ -103,23 +103,32 @@ const index = () => {
     setOpenBar(true)
   }
   const [ cngWidth , setCngWidth ] = useState(false);
+  const [ changeWidth, setChangeWidth ] = useState(false);
+  const changeWidthHandler = (changeState) => {
+    setChangeWidth(changeState)
+  }
+
   return (
     <div>
       <div style={{display: "flex", flexDirection: "column"}}>
         <UserMainBoard /> 
         <EarnedBadges data={data} />
-        <FinishedQuizzes 
+        <FinishedQuizzes
+          changeWidthHandler={changeWidthHandler}
           onClick={clickHandler} 
           data={QuizData}
           setItem={setItem}
+          changeWidth={changeWidth}
           />
       </div>
       {
       openBar && 
-        <CardPopup 
+        <CardPopup
+          changeWidthHandler={changeWidthHandler}
           data={item}
           setOpenBar={setOpenBar}
           cngWidth={cngWidth}
+          onClick={clickHandler} 
         />
       }
     </div>

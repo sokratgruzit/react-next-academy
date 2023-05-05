@@ -1,8 +1,9 @@
 import { GitHub, Twitter } from "@/svg";
+import { useState } from "react";
 
 import styles from "../../styles/UserHistory/UserMainBoard.module.scss";
 
-const UserMainBoard = () => {
+const UserMainBoard = () => { 
   return (
     <div className={styles.outer}>
       <img

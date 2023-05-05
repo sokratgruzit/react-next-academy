@@ -6,9 +6,9 @@ import Head from "next/head";
 
 function MainLayout({ children, title = "Core Academy" }) {
   const newBooleanState = useSelector((state) => state.mode.newBooleanState);
- 
+
   return (
-    <>
+    <div>
       <Head>
         <title>{title}</title>
         <meta name="keywords" content="core academy" />
@@ -20,8 +20,9 @@ function MainLayout({ children, title = "Core Academy" }) {
         <main>{children}</main>
         <Footer />
       </div>
-    </>
+    </div>
   );
 }
 
 export default MainLayout;
+

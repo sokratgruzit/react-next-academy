@@ -3,7 +3,6 @@ import { useContext, useState, useEffect, useRef } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 import { connect } from "react-redux";
 import { AnimatePresence } from "framer-motion";
-import { fetchData } from "../../utils/queries";
 
 import Button from "../UI/Button/Button";
 import TopicsBox from "../UI/TopicsBox/TopicsBox";
@@ -16,14 +15,13 @@ function Header({ commonData }) {
   const ref = useRef();
   const topicsWrap = useRef();
 
-  const { tags } = commonData;
+  const { tags, header } = commonData;
   const { isLogged } = useContext(AuthContext);
 
   const [modal, setModal] = useState(false);
   const [infoBox, setInfoBox] = useState(false);
   const [topicsBox, setTopicsBox] = useState(false);
   const [burger, setBurger] = useState(false);
-  const [headerLinks, setHeaderLinks] = useState();
   const [theme, setTheme] = useState(false);
   const [content, setContent] = useState("");
 
@@ -42,14 +40,6 @@ function Header({ commonData }) {
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-  const getHeaderLinks = async () => {
-    const res = await fetchData(
-      `${process.env.NEXT_PUBLIC_DATA_URL}/api/data/header`
-    );
-    res.data?.result?.length ? setHeaderLinks(res?.data?.result) : "";
-    return res;
-  };
 
   const handleConnectClick = () => {
     isLogged ? setInfoBox(!infoBox) : setModal(!modal);
@@ -105,7 +95,6 @@ function Header({ commonData }) {
   }, [theme]);
 
   useEffect(() => {
-    getHeaderLinks();
     const mode = localStorage.getItem("mode");
     !mode || mode === "false" ? setTheme(false) : setTheme(true);
   }, []);
@@ -131,8 +120,8 @@ function Header({ commonData }) {
             </Link>
             <div className={`${styles.endOfHeader}`}>
               <nav className={styles.navigation}>
-                {headerLinks
-                  ? headerLinks.map((item) => {
+                {header
+                  ? header.map((item) => {
                       return (
                         <Link
                           key={item._id}

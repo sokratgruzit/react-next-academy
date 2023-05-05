@@ -88,7 +88,7 @@ function Market() {
         </div>
         <img className={styles.bg} src="/img/Marketplace/background1.png" />
         <div className={styles.content}>
-          <Filter type={"market-filter"} />
+          {/* <Filter type={"market-filter"} /> */}
           <div className={`${"textStyles"} ${styles.gap}`}>
             {courses.map((item, index) => {
               return <CourseCard type={"column"} key={index} data={item} />;
