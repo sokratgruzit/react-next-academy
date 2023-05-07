@@ -46,16 +46,13 @@ function Settings() {
           <h4 className={styles.name}>Ali Piriev</h4>
           <div className={styles.conteiner}>
             <Input data={FORM_DATA} type="input" />
+            <Button
+              clasName="blue-btn"
+              title={"save changes"}
+              type={"blue-btn"}
+              custumLink={{ color: "#fff" }}
+            />
           </div>
-          <Button
-            clasName="blue-btn"
-            title={"save changes"}
-            // onClick={onClick}
-            type={"blue-btn"}
-            custumLink={{ color: "#fff" }}
-            // href={"/"}
-          />
-          {/* BUTTON ALERT !!! */}
         </div>
       </div>
     </div>

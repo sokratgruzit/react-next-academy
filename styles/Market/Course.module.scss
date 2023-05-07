@@ -77,6 +77,7 @@ body:global(.light) .bannerWrap div div div h5 {
   font-size: 51px;
   line-height: 68px;
 }
+
 @media (max-width: 1023px) {
   .itemsWrapper {
     grid-template-columns: 1fr 1fr;
@@ -92,5 +93,17 @@ body:global(.light) .bannerWrap div div div h5 {
   }
   .bannerWrap div div div h3 {
     width: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  .beginingContainer { 
+    display: none;
+  }
+}
+
+@media (min-width: 800px) {
+  .swiperContainer { 
+    display: none;
   }
 }

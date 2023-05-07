@@ -54,7 +54,6 @@ export default function SlideIcons(props) {
           />
         </svg>
       </button>
-      
     </div>
   );
 }

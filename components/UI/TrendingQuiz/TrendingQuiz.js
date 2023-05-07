@@ -14,8 +14,8 @@ const TrendingQuiz = (props) => {
     <div className={`textStyles ${styles.swiper} `}>
       <div>
         <Swiper
-          className={styles.quizSwiper}
-          style={{ position: "inherit" }}
+          // className={styles.quizSwiper}
+          // style={{ position: "inherit" }}
           breakpoints={{
             0: {
               slidesPerView: 1.1,
@@ -65,7 +65,6 @@ const TrendingQuiz = (props) => {
           </div>
         </Swiper>
       </div>
-      
     </div>
   );
 };

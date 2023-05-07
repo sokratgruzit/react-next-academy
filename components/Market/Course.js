@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import { useEffect , useState } from "react";
+import { useLayoutEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import Banner from "../UI/Banner/Banner";
@@ -7,6 +8,8 @@ import Button from "../UI/Button/Button";
 import Marquee from "react-fast-marquee";
 import { COURSE_HELPER } from "../UI/Card/CourseHelper";
 import CourseCard from "../UI/Card/CourseCard";
+import { Swiper, SwiperSlide } from "swiper/react";
+
 
 import styles from "../../styles/Market/Course.module.scss";
 // import InstructorItem from "../Instructors/InstructorItem";
@@ -137,7 +140,6 @@ let instructorElements = (
     </svg>
   </>
 );
-
 const Dummy_Data = [
   {
     name: "David Tavadze",
@@ -149,6 +151,17 @@ const Dummy_Data = [
 ];
 
 function Course(elements) {
+  // const [chngWidth, setChngWidth] = useState(null);
+
+  // useEffect(() => {
+  //   function updateSize() {
+  //     setChngWidth([window.innerWidth]);
+  //   }
+  //   window.addEventListener('resize', updateSize, true);
+  // }, []);
+
+  // console.log(chngWidth , "width")
+
   useEffect(() => {
     Aos.init({ duration: 700 });
   }),
@@ -236,21 +249,57 @@ function Course(elements) {
       </div>
       <div className="container textStyles" data-aos="fade-up">
         <h4 className={styles.offeredCourses}>you may also like</h4>
-        <div className={styles.itemsWrapper}>
-          {COURSE_HELPER?.map((item, index) => {
-            return (
-              <CourseCard
-                key={index}
-                type={"row"}
-                img={item.img}
-                title={item.title}
-                price={item.price}
-                level={item.level}
-                lang={item.lang}
-                time={item.time}
-              />
-            );
-          })}
+        <div className={styles.beginingContainer}>
+          <div className={styles.itemsWrapper}>
+            {COURSE_HELPER?.map((item, index) => {
+              return (
+                  <CourseCard
+                    key={index}
+                    type={"row"}
+                    img={item.img}
+                    title={item.title}
+                    price={item.price}
+                    level={item.level}
+                    lang={item.lang}
+                    time={item.time}
+                  />
+              );
+            })}
+          </div>  
+        </div>
+        <div className={styles.swiperContainer}>
+          <Swiper 
+          breakpoints={{
+              0: {
+                slidesPerView: 1.1,
+                spaceBetween: 16,
+              },
+              768: {
+                slidesPerView: 1.4,
+                spaceBetween: 10,
+              },
+          
+            }}
+          >
+          <div className={styles.itemsWrapper}>
+            {COURSE_HELPER?.map((item, index) => {
+              return (
+                <SwiperSlide>
+                  <CourseCard
+                    key={index}
+                    type={"row"}
+                    img={item.img}
+                    title={item.title}
+                    price={item.price}
+                    level={item.level}
+                    lang={item.lang}
+                    time={item.time}
+                  />
+                </SwiperSlide>
+              );
+            })}
+          </div>
+          </Swiper>
         </div>
       </div>
     </div>
