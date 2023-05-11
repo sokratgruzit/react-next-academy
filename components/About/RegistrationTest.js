@@ -73,7 +73,6 @@ const RegistrationTest = () => {
                 title={"Register"}
                 type={"blue-btn"}
                 custumLink={{ color: "#fff", padding: "12px 41px" }}
-                // href={"/"}
               />
             </div>
             <Button

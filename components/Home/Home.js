@@ -154,7 +154,7 @@ const Home = ({ commonData }) => {
             />
             <ContentWrap
               element={
-                <div className={styles.challenge}>
+                <div className={styles.challenge} style={{textAlign: "center"}}>
                   <Banner
                     container={"simple-wrap"}
                     type={"simple"}
@@ -259,7 +259,7 @@ const Home = ({ commonData }) => {
             <ContentWrap
               btn={false}
               element={
-                <div className={styles.email}>
+                <div className={styles.email} style={{textAlign: "center"}}>
                   <Banner
                     container={"simple-wrap"}
                     type={"simple"}

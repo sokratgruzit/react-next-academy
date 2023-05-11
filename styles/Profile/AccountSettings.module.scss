@@ -12,6 +12,12 @@ body:global(.light) .lbl {
   margin-top: 100px;
   margin-bottom: 130px;
 
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
   .textContainer {
     display: flex;
     flex-direction: column;

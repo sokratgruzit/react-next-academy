@@ -11,11 +11,8 @@ import styles from "../../../styles/UI/TrendingCards/Card.module.scss";
 const TrendingCard = (props) => {
   useEffect(() => {
     Aos.init({ duration: 700 });
-  }),
-    [];
-
-    const dispatch = useDispatch();
-
+  }),[];
+  const dispatch = useDispatch();
   let element = null;
 
   if (props.type === "one") {

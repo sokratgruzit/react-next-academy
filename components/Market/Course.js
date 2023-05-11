@@ -179,7 +179,7 @@ function Course(elements) {
           img2={"banner1L"}
         />
       </div>
-      <div data-aos="fade-up">
+      <div data-aos="fade-up" style={{position: "relative"}}>
         <Video type={"video"} img={"courseBg"} img2={"bgL"} />
       </div>
       <div className={styles.bannerWrap} data-aos="fade-up">

@@ -8,24 +8,28 @@ const FORM_DATA = [
     type: "text",
     placeholder: "piriev.ali777@gmail.com",
     label: "e-mail",
+    value: "mail"
   },
+  
   {
-    type: "text",
+    type: "password",
     placeholder: "Enter",
     label: "Existing password",
+    value: "password"
   },
   {
-    type: "text",
+    type: "number",
     placeholder: "Enter",
     label: "Phone number",
+    value: "phoneNumber"
   },
   {
-    type: "text",
+    type: "password",
     placeholder: "Enter",
     label: "Re-type new password",
+    value: 'message'
   },
 ];
-
 function Settings() {
   return (
     <div className="container textStyles">
