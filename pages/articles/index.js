@@ -27,6 +27,7 @@ const index = ({ articlesData }) => {
       );
       setArticles(data.docs);
       setIsLoading(false);
+      console.log(data , "asdwad")
     };
     fetchAndRenderData();
   }, []);

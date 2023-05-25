@@ -69,6 +69,7 @@ const ResetPassword = () => {
       onChange: handleChange,
     },
   ];
+  console.log(LOGIN_INFO)
   return (
     <div
       className={styles.resetForm}

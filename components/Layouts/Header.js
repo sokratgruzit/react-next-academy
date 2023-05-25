@@ -4,6 +4,7 @@ import { AuthContext } from "../../contexts/AuthContext";
 import { connect } from "react-redux";
 import { AnimatePresence } from "framer-motion";
 
+
 import Button from "../UI/Button/Button";
 import TopicsBox from "../UI/TopicsBox/TopicsBox";
 import SideNavigation from "./SideNavigation";
@@ -24,6 +25,8 @@ function Header({ commonData }) {
   const [burger, setBurger] = useState(false);
   const [theme, setTheme] = useState(false);
   const [content, setContent] = useState("");
+
+  
 
   useEffect(() => {
     function handleResize() {
@@ -276,7 +279,7 @@ function Header({ commonData }) {
                 <SideNavigation
                   setBurger={setBurger}
                   data={tags}
-                  links={headerLinks}
+                  links={[]}
                   theme={theme}
                   setTheme={setTheme}
                 />

@@ -18,7 +18,6 @@ function GlossaryInner({ data }) {
       },
     },
   };
-
   return (
     <div className={styles.glossary}>
       <img

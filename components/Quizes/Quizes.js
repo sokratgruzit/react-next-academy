@@ -112,7 +112,7 @@ const Quizes = () => {
         className={`${styles.bg} img-absolute lightImg`}
         src="/img/Marketplace/background2.png"
       />
-      <h1>Join the Millions for better learning</h1>
+      <h1 style={{textAlign: "center"}}>Join the Millions for better learning</h1>
       <div className={styles.wrapper}>
         <Filter
           type={"quizzes-filter"}

@@ -1,6 +1,6 @@
 import styles from "../../../styles/UI/Input/Input.module.scss";
 
-const Input = ({ data, type, onChange }) => {
+const Input = ({ data, type, onChange, errors }) => {
   return (
     <>
       {type === "input" ? (
@@ -16,7 +16,7 @@ const Input = ({ data, type, onChange }) => {
                   name={item.name}
                 />
                 <label className={styles.labelTitle}>{item.label}</label>
-              </div>
+              </div> 
             );
           })}
         </>
@@ -65,6 +65,24 @@ const Input = ({ data, type, onChange }) => {
           </div>
           <div className={styles.buttonInInput}>Join now</div>
         </div>
+      ) : type === "error" ? (
+        <>
+          {data.map((item, index) => {
+            return (
+              <div className="custom-input" key={index}>
+                <input
+                  className={styles.customInput}
+                  type={item.type}
+                  placeholder={item.placeholder}
+                  onChange={onChange}
+                  name={item.name}
+                />
+                <label className={styles.labelTitle}>{item.label}</label>
+                {errors[item.name] && <p className={styles.error}>{item.errorText}</p>}
+              </div> 
+            );
+          })}
+        </>
       ) : (
         ""
       )}

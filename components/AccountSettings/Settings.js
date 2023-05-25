@@ -30,6 +30,7 @@ const FORM_DATA = [
     value: 'message'
   },
 ];
+
 function Settings() {
   return (
     <div className="container textStyles">
@@ -49,7 +50,7 @@ function Settings() {
           />
           <h4 className={styles.name}>Ali Piriev</h4>
           <div className={styles.conteiner}>
-            <Input data={FORM_DATA} type="input" />
+            <Input data={FORM_DATA} type="input" required/>
             <Button
               clasName="blue-btn"
               title={"save changes"}

@@ -3,7 +3,6 @@ import Articles from "@/components/Articles/Articles";
 import IntroBox from "@/components/Home/IntroBox";
 import FeaturesBanner from "@/components/Home/FeaturesBanner";
 import TrendingQuiz from "@/components/UI/TrendingQuiz/TrendingQuiz";
-
 import Ticker from "@/components/UI/Ticker/Ticker";
 import Leaderboard from "@/components/UI/Leaderboard/Leaderboard";
 import ContentWrap from "@/components/UI/ContentWrap/ContentWrap";
@@ -15,11 +14,9 @@ import styles from "@/styles/Home/Home.module.scss";
 
 const Home = ({ commonData }) => {
     const { featured, latest, blockchain, essentials, security, glossaries } = commonData;
-    
     const handleClick = () => {
         console.log('hello');
     };
-
     return (
       <div className={styles.home__page}>
         <img
@@ -77,11 +74,10 @@ const Home = ({ commonData }) => {
                     <Articles data={latest} />
                   </div>
                 ) : (
-                    <div className="container">"No arcticles found"</div>
+                  <div className="container">"No arcticles found"</div>
                 )
               }
             />
-  
             <ContentWrap
               title={"270+ Terms in our Glossary"}
               btn={true}
