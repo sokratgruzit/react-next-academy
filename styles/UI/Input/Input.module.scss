@@ -163,9 +163,10 @@ body:global(.light) {
 
 
 .error { 
-  color: rgb(24, 0, 238) !important;
+  color:  #ff7152 !important;
   font-size: 13px !important;
   position: absolute ;
-  border-bottom:  1px solid rgb(0, 17, 255);
+  border-bottom:  1px solid  #ff7152;
+  margin: -35px 0px 0px 550px;
   
 }

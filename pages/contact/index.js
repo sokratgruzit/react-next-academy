@@ -21,6 +21,7 @@ const Contact = () => {
     subject: "",
     message: "",
   });
+  
   const [errors, setErrors] = useState({})
   const setDataUpdater = (value, field) => {
     setData((prevState) => ({ ...prevState, [field]: value }));
